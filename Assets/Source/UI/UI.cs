@@ -64,13 +64,13 @@ public class UI : MonoBehaviour
 
         float f = playerHealthBar.fillAmount;
 
-        if (f < playerController.health + 0.01f &&
-            Mathf.Abs(playerController.health - playerHealthBar.fillAmount) > 0.015f)
+        if (f < playerController.playerHealth.health + 0.01f &&
+            Mathf.Abs(playerController.playerHealth.health - playerHealthBar.fillAmount) > 0.015f)
         {
             f += 0.01f;
         }
-        else if (f > playerController.health &&
-                 Mathf.Abs(playerController.health - playerHealthBar.fillAmount) > 0.015f)
+        else if (f > playerController.playerHealth.health &&
+                 Mathf.Abs(playerController.playerHealth.health - playerHealthBar.fillAmount) > 0.015f)
         {
             f -= 0.01f;
         }
@@ -79,7 +79,7 @@ public class UI : MonoBehaviour
         
         playerHealthBar.color = Color.Lerp(playerHealthBarEmpty,
                                            playerHealthBarFull,
-                                           playerController.health);
+                                           playerController.playerHealth.health);
     }
 
     private void PlayerStaminaBar()
@@ -95,14 +95,14 @@ public class UI : MonoBehaviour
         bossHealthBar.fillAmount = bossHealth.health;
         bossHealthBar.color = Color.Lerp(playerHealthBarEmpty,
                                          playerHealthBarFull,
-                                         playerController.health);
+                                         playerController.playerHealth.health);
     }
 
     private void healCoolDown()
     {
-        healReady.fillAmount = playerController.healCount;
+        healReady.fillAmount = playerController.playerHealth.healCount;
         healReady.color = Color.Lerp(healCoolDownStart,
                                      healCoolDownDone,
-                                     playerController.healCount);
+                                     playerController.playerHealth.healCount);
     }
 }

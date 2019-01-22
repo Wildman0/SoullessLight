@@ -17,6 +17,8 @@ using XInputDotNetPure;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public PlayerHealth playerHealth;
+    
     public CharacterController characterController;
 
     //Passive bools
@@ -29,8 +31,6 @@ public class PlayerController : MonoBehaviour
 
     public bool canRoll = true;
     public bool canAttack = true;
-    //Added canHeal to because the old "CanHeal" meant that the heal trigger didn't have a cooldown (Isaac)
-    public bool canHeal = true;
     public bool isSprinting;
     public bool isBlocking;
 
@@ -39,8 +39,6 @@ public class PlayerController : MonoBehaviour
     private bool xIsNegative;
 
     public bool canMove = true;
-    private bool healStop = false;
-
 
     //Movement modifiers
     private float maxSpeed = 2f;
@@ -54,10 +52,6 @@ public class PlayerController : MonoBehaviour
     private float deadZone = 1f;
     private float sprintSpeed = 4f;
     private float sprintStaminaCostPerSecond = 0.25f;
-    private float healAmount = 0.2f;
-    public float healTime = 2.2f;
-    public float healCool = 3f;
-    public float healCount = 3f;
 
     private float zMoveRatio;
     private float xMoveRatio;
@@ -67,8 +61,6 @@ public class PlayerController : MonoBehaviour
     public float stamina = 1f;
     private float staminaReplenishPerSecond = 0.25f;
     private float maxStamina = 1f;
-    public float health = 1f;
-    private float HealTriggerDuration = 0.45f;
 
     //Movement speeds in each axis
     private float moveSpeedX;
@@ -101,7 +93,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveRatio;
 
     //InputControllers
-    private InputController inputController;
+    public InputController inputController;
     private KeyboardInputController keyboardInputController = new KeyboardInputController();
     private XboxOneInputController xboxOneInputController = new XboxOneInputController();
     
@@ -114,11 +106,9 @@ public class PlayerController : MonoBehaviour
 
     public UI ui;
 
-    private const float fullHealth = 1.0f;
-
     public float totalMoveSpeed;
 
-    private Camera mainCamera;
+    public Camera mainCamera;
 
     /// <summary>
     /// Runs on initialization
@@ -188,7 +178,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void RollInputCheck()
     {
-        if (FloatCasting.ToBool(inputController.rollDown) && canRoll && canHeal && totalMoveSpeed > 1) //Fixed rolling whilst not moving bug (Isaac)
+        if (FloatCasting.ToBool(inputController.rollDown) && canRoll && totalMoveSpeed > 1)
         {
             Roll();
         }
@@ -196,12 +186,7 @@ public class PlayerController : MonoBehaviour
 
     private void HealInputCheck()
     {
-        if (FloatCasting.ToBool(inputController.healDown) 
-            && canHeal && !playerAnim.anim.GetBool("IsHealing") && (!isRolling) && !healStop && healCount > 0) //Fixed rolling whilst healing bug & Multiple heals bug (Isaac)
-        {
-            Heal();
-            Debug.Log("Heal");
-        }
+        
     }
 
     /// <summary>
@@ -522,26 +507,6 @@ public class PlayerController : MonoBehaviour
             return currentMoveModifier -= (speedDecreaseModifier/100);
         }
     }
-    
-    /// <summary>
-    /// Damages the player by a given amount and checks if the player should be dead
-    /// </summary>
-    public void Damage(float i)
-    {
-        health -= i;
-
-        if (health < 0.01f)
-        {
-            Death();
-        }
-        else
-        {
-            playerAnim.Flinch();
-            DisableMovement(0.3f);
-            mainCamera.GetComponent<RFX4_CameraShake>().PlayShake();
-            Controller.Vibrate(0, 1, 0.3f);
-        }
-    }
 
     /// <summary>
     /// Call whenever the conditions for player death have been met
@@ -579,49 +544,6 @@ public class PlayerController : MonoBehaviour
         isBlocking = FloatCasting.ToBool(inputController.block);
     }
 
-    //TODO: NEEDS AN INVENTORY OF HEALING FLASKS
-    //Returns whether or not the player can heal 
-    //Ditched this, caused too many bugs, made canHeal Instead, just like how u did rolling (Isaac)
-    private bool CanHeal()
-    {
-        if (health > 0)
-            return true;
-        else
-            return false;
-    }
-
-    //Heals the player
-    private void Heal()
-    {
-        if (canHeal && health > 0) 
-
-            playerAnim.Heal();
-            DisableMovement(healTime);
-            StartCoroutine(HealDuration());
-            ui.Healing.GetComponent<Image>().enabled = true;
-            ui.Healing.GetComponent<Animator>().SetTrigger("IsDamaged");
-            health += healAmount;
-            healCount -= 1;
-            Debug.Log(healCount);
-
-        if (health > fullHealth)
-        {
-            health = fullHealth;
-        }
-    }
-    //To fix multiple healing bug (Isaac)
-    private IEnumerator HealDuration()
-    {
-        canHeal = false;
-        yield return new WaitForSeconds(healTime);
-        healStop = true;
-        Debug.Log("Healing CoolDown");
-        canHeal = true;
-        yield return new WaitForSeconds(healCool);
-        healStop = false;
-        Debug.Log("Healing Ready"); 
-    }
-
     public void DisableMovement(float time)
     {
         StartCoroutine(DisableMovementIEnumerator(time));
@@ -641,13 +563,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator Retry()
+    public IEnumerator Retry()
     {
         yield return new WaitForSeconds(2);
        //going to add later
     }
         
-
     /// <summary>
     /// Runs all methods the need to run constantly (50 times per second)
     /// </summary>
@@ -659,23 +580,6 @@ public class PlayerController : MonoBehaviour
         GetInputs();
         SetMoveSpeeds();
         ReplenishStamina();
-
-        if (health < 0.25f && !audioSource.isPlaying && health > 0f) //Heartbeat Effect Activate
-        {
-            audioSource.Play();
-            NearDeath.GetComponent<Animator>().SetBool("NearDeath", true);
-        }
-        else if (health <= 0)
-        {
-            audioSource.Stop();
-            audioSource1.Stop();
-            StartCoroutine(Retry());
-
-        }
-        else if (health > 0.25f) //Heartbeat Effect Cancel (Isaac)
-        {
-            NearDeath.GetComponent<Animator>().SetBool("NearDeath", false);
-        }
 
         if (IsMovingDiagonally())
         {
