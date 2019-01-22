@@ -703,46 +703,5 @@ public class PlayerController : MonoBehaviour
 
         //TODO: MOVE THIS
         playerAnim.Jog();
-
-        
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Cine")
-        {
-            Debug.Log("entered collider");
-            if (FloatCasting.ToBool(inputController.jumpDown))
-            {
-                Debug.Log("A Pressed");
-                StartCoroutine(Lerp());
-                playerAnim.Cinematic();
-                StartCoroutine(WaitSecs());
-            }
-        }
-    }
-
-    private IEnumerator WaitSecs()
-    {
-        yield return new WaitForSeconds(2.8f);
-        StartCoroutine(Lerp1());               
-    }
-
-    private IEnumerator Lerp()
-    {
-        for (int i = 0; i < 30; i++)
-        {
-            GetComponent<CharacterController>().transform.position = Vector3.Lerp(transform.position, targetCine.transform.position, Time.deltaTime);
-            yield return new WaitForFixedUpdate();
-        }               
-    }
-
-    private IEnumerator Lerp1()
-    {
-        for (int i = 0; i < 30; i++)
-        {
-            GetComponent<CharacterController>().transform.position = Vector3.Lerp(transform.position, targetJump.transform.position, Time.deltaTime);
-            yield return new WaitForFixedUpdate();
-        }
     }
 }
