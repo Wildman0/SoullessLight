@@ -3968,7 +3968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &189690182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15602,6 +15602,7 @@ GameObject:
   - component: {fileID: 398207900}
   - component: {fileID: 398207899}
   - component: {fileID: 398207901}
+  - component: {fileID: 398207902}
   m_Layer: 0
   m_Name: CinematicCollider
   m_TagString: Cine
@@ -15645,6 +15646,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7c84578af43bb4ea6baf76472ebc54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &398207902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398207898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53c822b81341b644a573e16467ca7ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customImage: {fileID: 189690181}
 --- !u!1 &400085314
 GameObject:
   m_ObjectHideFlags: 0
@@ -47074,6 +47087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84df2cf6e8b02741bb049636cc7aaec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  memoryProfilerTexts: []
+  processorProfilerTexts: []
 --- !u!1 &1008170731
 GameObject:
   m_ObjectHideFlags: 0
@@ -51798,6 +51813,11 @@ Prefab:
       propertyPath: audioSource2
       value: 
       objectReference: {fileID: 2048903814}
+    - target: {fileID: 114245829664669542, guid: 5ffdbcd1c5c7172478179167b5834075,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114590979139175758, guid: 5ffdbcd1c5c7172478179167b5834075, type: 2}
     - {fileID: 114512449581868488, guid: 5ffdbcd1c5c7172478179167b5834075, type: 2}
