@@ -77,7 +77,7 @@ public class ParticleManager : MonoBehaviour {
         if (playerAnim.GetBool("IsDamaged"))
         {
             GameObject NewObject;
-            NewObject = Instantiate(playerParticles[1], character1.transform.position, transform.rotation);
+            NewObject = Instantiate(playerParticles[2], character1.transform.position, transform.rotation);
             NewObject.transform.parent = character1.transform;
         }
 
