@@ -6,7 +6,8 @@ public class CoolDown : MonoBehaviour
 {
     Phase phase;
 
-    private float timer;
+    public float timer;
+    public float countUpTimer;
 
     private void Start()
     {
@@ -15,14 +16,26 @@ public class CoolDown : MonoBehaviour
 
     private void Update()
     {
-        
+        CoolDownTimer();
     }
 
     private void CoolDownTimer()
     {
-        if(phase.activateAttacking == true)
+        timer = phase.currentPhase.coolDownTimer;
+
+        if (phase.activateAttacking == true)
         {
-            
+            countUpTimer += 1f * Time.deltaTime;
+            if(countUpTimer >= timer)
+            {
+                phase.ChooseAttackAnimation();
+                phase.activateAttacking = false;
+                countUpTimer = 0f;
+            }
+        }
+        else
+        {
+            countUpTimer = 0f;
         }
     }
 

@@ -11,8 +11,8 @@ public class Distance : MonoBehaviour
 
     public float closeMinDistance;
     public float closeMaxDistance;
-    private float midMinDistance;
-    private float midMaxDistance;
+    public float midMinDistance;
+    public float midMaxDistance;
     public float longMinDistance;
     public float longMaxDistance;
 
@@ -59,8 +59,8 @@ public class Distance : MonoBehaviour
     {
         if (distance <= 20.5f)
         {
-            Boss.start = true;
-            //Intro.activateBoss = true;
+            //Boss.start = true;
+            Intro.activateBoss = true;
             //Changing Audio for Trigger
             if (isOn == false)
             {

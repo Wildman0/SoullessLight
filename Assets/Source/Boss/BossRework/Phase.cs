@@ -14,12 +14,16 @@ public class Phase : MonoBehaviour
     public List<AnimationClip> currentAttackAnimationClips = new List<AnimationClip>();
     public AnimatorOverrideController animatorOverrideController;
     private Distance distance;
+    private CoolDown coolDown;
     public Animator anim;
 
-    public float timer;
     public int animationIndex;
+    public int lastIndex;
+
+    public float comboChance;
 
     public bool activateAttacking;
+    public bool intermission;
 
     private void Start()
     {
@@ -27,14 +31,20 @@ public class Phase : MonoBehaviour
         anim.runtimeAnimatorController = animatorOverrideController;
         ////animatorOverrideController = new AnimatorOverrideController(anim.runtimeAnimatorController);
         distance = GetComponent<Distance>();
-
-        SelectPhase();
+        coolDown = GetComponent<CoolDown>();
     }
 
     private void Update()
     {
-        SelectPhase();
-        BeginAttacking();
+        Intermission();
+    }
+
+    private void Intermission()
+    {
+        if(intermission == false)
+        {
+            SelectPhase();
+        }
     }
 
     private void SelectPhase()
@@ -43,19 +53,14 @@ public class Phase : MonoBehaviour
         {
             currentPhase = phaseValues.Find(x => x.min <= bossHealth.health && x.max >= bossHealth.health);
             Debug.Log(currentPhase.phaseName);
-
-            timer = currentPhase.coolDownTimer;
+            GetAttackAnimations();
+            comboChance = currentPhase.comboChance;
 
             activateAttacking = true;
         }
-    }
-
-    private void BeginAttacking()
-    {
-        if(activateAttacking == true)
+        else
         {
-            GetAttackAnimations();
-            AttackCoolDown();
+            activateAttacking = false;
         }
     }
 
@@ -98,22 +103,54 @@ public class Phase : MonoBehaviour
         }
     }
 
-    private void AttackCoolDown()
+    public void ChooseAttackAnimation()
     {
-        timer -= 1f * Time.deltaTime;
-        if(timer <= 0)
+        float randomNum = Random.Range(0.0f, 1.0f);
+        Debug.Log(randomNum);
+
+        if (randomNum < comboChance)
         {
-            ChooseAttackAnimation();
-            anim.SetBool("ATTACK", true);
-            timer = currentPhase.coolDownTimer;
+            if (lastIndex == animationIndex)
+            {
+                SelectNewIndex();
+            }
+            else
+            {
+                animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
+                anim.SetBool("Attack", true);
+
+                StartCoroutine(Wait());
+            }
+    }
+        else
+        {
+            ComboChance();
         }
     }
 
-    private void ChooseAttackAnimation()
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(0.6f);
+        anim.SetBool("Attack", false);
+        lastIndex = animationIndex;
+    }
+
+    private void SelectNewIndex()
     {
         animationIndex = Random.Range(0, currentAttackAnimationClips.Count);
+        ChooseAttackAnimation();
+    }
+
+    private void ComboChance()
+    {
+        anim.SetBool("Combo", true);
         animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
-        timer = currentPhase.coolDownTimer;
-        anim.SetBool("ATTACK", false);
+        StartCoroutine(test());
+    }
+
+    private IEnumerator test()
+    {
+        yield return new WaitForSeconds(0.3f);
+        anim.SetBool("Combo", false);
     }
 }
