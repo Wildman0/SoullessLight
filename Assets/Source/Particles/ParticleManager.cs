@@ -6,10 +6,12 @@ public class ParticleManager : MonoBehaviour {
 
     [Header("Particle Anchors")]
     public GameObject character;
+    public GameObject character1;
     public GameObject boss;
     public GameObject bossSword;
 
     [Header("Character Particles")]
+    public Animator playerAnim;
     public GameObject[] playerParticles;
 
     [Header("Boss Particles")]
@@ -33,6 +35,7 @@ public class ParticleManager : MonoBehaviour {
         GetBossAnimInfo();
         Explosion();
         Flinch();
+        PlayerDamage();
 	}
 
     public void GetBossAnimInfo()
@@ -69,7 +72,18 @@ public class ParticleManager : MonoBehaviour {
 
     }
 
-    public void Flinch()
+    public void PlayerDamage()
+    {
+        if (playerAnim.GetBool("IsDamaged"))
+        {
+            GameObject NewObject;
+            NewObject = Instantiate(playerParticles[1], character1.transform.position, transform.rotation);
+            NewObject.transform.parent = character1.transform;
+        }
+
+            
+    }
+        public void Flinch()
     {
         if (bossAnim.GetBool("IsBossDamaged")) 
         {
