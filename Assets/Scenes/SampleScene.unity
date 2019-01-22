@@ -56798,6 +56798,7 @@ MonoBehaviour:
   playerParticles:
   - {fileID: 1411855599500768, guid: 4a4db2f8bdf2cc94c9a0bb935f111c7e, type: 2}
   - {fileID: 1838407379677288, guid: 17bed76a337ed704c8121750dc20c2ed, type: 2}
+  - {fileID: 1097175511397846, guid: 4d31802d03366134bace2f177af08c62, type: 2}
   bossAnim: {fileID: 18233226}
   bossParticles:
   - {fileID: 1017125743485730, guid: f162c74b03a7b7b43a2019c22e95ecb3, type: 2}
@@ -93680,10 +93681,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.48168153
+  m_Radius: 0.4737166
   m_Height: 55.81926
   m_Direction: 1
-  m_Center: {x: 0.0146626, y: -22.09037, z: -0.023448944}
+  m_Center: {x: 0.0146626, y: -22.09037, z: 0.056200504}
 --- !u!54 &1666046458
 Rigidbody:
   m_ObjectHideFlags: 0
