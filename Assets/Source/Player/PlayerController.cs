@@ -59,8 +59,6 @@ public class PlayerController : MonoBehaviour
     public float healCool = 3f;
     public float healCount = 3f;
 
-    
-
     private float zMoveRatio;
     private float xMoveRatio;
     private float ratioTotal;
@@ -85,10 +83,6 @@ public class PlayerController : MonoBehaviour
     readonly float moveSmoothingModifierUpperLimit = 1.0f;
 
     private int movementDisablers;
-
-    //Input modifiers
-    public float verticalSensitivity;
-    public float horizontalSensitivity;
 
     //Audio
     public AudioSource audioSource;
@@ -115,8 +109,6 @@ public class PlayerController : MonoBehaviour
     public GameObject playerCharacter;
     //Heartbeat effect when near dying (Isaac)
     public GameObject NearDeath;
-    public GameObject targetCine;
-    public GameObject targetJump;
 
     private PlayerAttack playerAttack;
 

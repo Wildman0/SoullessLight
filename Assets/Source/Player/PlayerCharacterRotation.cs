@@ -12,7 +12,7 @@ public class PlayerCharacterRotation : MonoBehaviour
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         //If the player isn't moving (Uses some large number as a check because this
         //Occasionally returns the player position when the player isn't moving

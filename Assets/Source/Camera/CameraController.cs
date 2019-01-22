@@ -13,8 +13,8 @@ public class CameraController : MonoBehaviour
 
     float verticalSens = 1.75f;
 
-    float maxCamHeight = 0f;
-    float minCamHeight = -1.5f;
+    public float maxCamHeight = 0f;
+    public float minCamHeight = -1.5f;
     
     void FixedUpdate () {
         //Makes the camera look at the midpoint of the player and the boss
