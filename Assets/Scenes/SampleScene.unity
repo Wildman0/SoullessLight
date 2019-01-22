@@ -14960,6 +14960,8 @@ MonoBehaviour:
   secondaryTarget: {fileID: 901053080}
   smoothing: 0.09
   offset: {x: 0, y: -1, z: -5}
+  maxCamHeight: 0
+  minCamHeight: -1.5
 --- !u!114 &370983025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45218,6 +45220,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 950584836}
   m_Mesh: {fileID: 4300000, guid: 539087cc7af031742bbe1f6ffab988e5, type: 3}
+--- !u!1 &951420491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1421378348315818, guid: e0c4179627b252044918b2f8342ed5a4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1649642111}
+--- !u!114 &951420500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 951420491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03101f7aef62f904d9d10eebf1e66d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1663003044}
+  health: 1
+  healCount: 3
 --- !u!1 &961210094
 GameObject:
   m_ObjectHideFlags: 0
@@ -47068,8 +47089,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 1475239395}
+  character1: {fileID: 0}
   boss: {fileID: 550409432}
   bossSword: {fileID: 2075843167}
+  playerAnim: {fileID: 0}
   playerParticles:
   - {fileID: 1411855599500768, guid: 4a4db2f8bdf2cc94c9a0bb935f111c7e, type: 2}
   - {fileID: 1838407379677288, guid: 17bed76a337ed704c8121750dc20c2ed, type: 2}
@@ -75756,6 +75779,11 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -0.011628376
       objectReference: {fileID: 0}
+    - target: {fileID: 114516317812963728, guid: e0c4179627b252044918b2f8342ed5a4,
+        type: 2}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 951420500}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0c4179627b252044918b2f8342ed5a4, type: 2}
   m_IsPrefabAsset: 0
