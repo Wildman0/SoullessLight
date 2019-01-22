@@ -59,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
 	
 	public void TakeDamage(float f)
 	{
-		health = f;
+		health -= f;
 
 		if (health < 0.01f)
 		{
