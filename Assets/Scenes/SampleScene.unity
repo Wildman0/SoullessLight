@@ -21381,9 +21381,9 @@ MonoBehaviour:
   target: {fileID: 481892012}
   secondaryTarget: {fileID: 901053080}
   smoothing: 0.09
-  offset: {x: 0, y: -1, z: -5}
-  maxCamHeight: 0
-  minCamHeight: -1.5
+  offset: {x: 0, y: -1, z: -4}
+  maxCamHeight: -1.8
+  minCamHeight: -2.5
 --- !u!114 &370983025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25162,7 +25162,6 @@ Transform:
   - {fileID: 1790118078}
   - {fileID: 1798443959}
   - {fileID: 1327031095}
-  - {fileID: 1247934084}
   m_Father: {fileID: 1502540842}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 9.394104, y: -5.773842, z: -5.7021832}
@@ -56791,14 +56790,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 1475239395}
-  character1: {fileID: 1247934083}
+  character1: {fileID: 0}
   boss: {fileID: 550409432}
   bossSword: {fileID: 2075843167}
-  playerAnim: {fileID: 98601827}
+  playerAnim: {fileID: 0}
   playerParticles:
   - {fileID: 1411855599500768, guid: 4a4db2f8bdf2cc94c9a0bb935f111c7e, type: 2}
   - {fileID: 1838407379677288, guid: 17bed76a337ed704c8121750dc20c2ed, type: 2}
-  - {fileID: 1097175511397846, guid: 4d31802d03366134bace2f177af08c62, type: 2}
   bossAnim: {fileID: 18233226}
   bossParticles:
   - {fileID: 1017125743485730, guid: f162c74b03a7b7b43a2019c22e95ecb3, type: 2}
@@ -70633,34 +70631,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1247838214}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1247934083
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1247934084}
-  m_Layer: 0
-  m_Name: Anchor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1247934084
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1247934083}
-  m_LocalRotation: {x: 0.008802043, y: 0.008649743, z: 0.008649744, w: 0.99988645}
-  m_LocalPosition: {x: -0.032, y: 0.318, z: -0.043}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 481892012}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 1, y: 1, z: 1}
 --- !u!1 &1255852008
 GameObject:
   m_ObjectHideFlags: 0
@@ -93681,10 +93651,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4737166
+  m_Radius: 0.48168153
   m_Height: 55.81926
   m_Direction: 1
-  m_Center: {x: 0.0146626, y: -22.09037, z: 0.056200504}
+  m_Center: {x: 0.0146626, y: -22.09037, z: -0.023448944}
 --- !u!54 &1666046458
 Rigidbody:
   m_ObjectHideFlags: 0
