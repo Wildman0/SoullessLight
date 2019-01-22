@@ -511,7 +511,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Call whenever the conditions for player death have been met
     /// </summary>
-    private void Death()
+    public void Death()
     {
         playerAnim.Death();
         DisableMovement(100);

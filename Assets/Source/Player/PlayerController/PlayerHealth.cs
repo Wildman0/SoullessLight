@@ -63,14 +63,13 @@ public class PlayerHealth : MonoBehaviour
 
 		if (health < 0.01f)
 		{
-			//Death
+			playerController.Death();
 		}
 		else
 		{
 			playerController.playerAnim.Flinch();
 			playerController.DisableMovement(0.3f);
 			playerController.mainCamera.GetComponent<RFX4_CameraShake>().PlayShake();
-			Controller.Vibrate(0, 1, 0.3f);
 		}
 	}
 	
