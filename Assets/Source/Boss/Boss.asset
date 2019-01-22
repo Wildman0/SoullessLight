@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58378818cf551804b9fcbb84996f57e3, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  phaseOneCloseAttacks:
+  - A_Horizontal_1
+  - A_Horizontal_2
+  - A_Swatting
+  - A_DeepSlice
+  phaseOneLongAttacks: []
+  phaseOneCoolDownTimer: 0.5
+  phaseTwoCloseAttacks: []
+  phaseTwoLongAttacks: []
+  phaseTwoCoolDownTimer: 0
+  phaseThreeCloseAttacks: []
+  phaseThreeLongAttacks: []
+  phaseThreeCoolDownTimer: 0
+  phaseTwoIntroIntermission: 0
+  phaseThreeIntroIntermission: 0
