@@ -32,6 +32,7 @@ public class ParticleManager : MonoBehaviour {
     {
         GetBossAnimInfo();
         Explosion();
+        Flinch();
 	}
 
     public void GetBossAnimInfo()
@@ -58,13 +59,27 @@ public class ParticleManager : MonoBehaviour {
             NewObject.transform.parent = boss.transform;
 
             StartCoroutine(Wait());
-            Destroy(NewObject, 6);
+            Destroy(NewObject, 8);
             
 
-            Debug.Log(animClipName + dontDuplicate);          
+            Debug.Log(animClipName + dontDuplicate);   
+            
+
         }
 
     }
+
+    public void Flinch()
+    {
+        if (bossAnim.GetBool("IsBossDamaged")) 
+        {
+            GameObject NewObject;
+            NewObject = Instantiate(playerParticles[1], character.transform.position, transform.rotation);
+            NewObject.transform.parent = character.transform;
+
+        }
+    }
+
     
     IEnumerator Wait()
     {
