@@ -697,7 +697,6 @@ public class PlayerController : MonoBehaviour
         targetLookPosition = TargetLookPosition();
 
         Move();
-        LookAtBoss();
 
         totalMoveSpeed = FloatMath.InvertIfNegative(movement.x)*100
                          + FloatMath.InvertIfNegative(movement.z)*100;
