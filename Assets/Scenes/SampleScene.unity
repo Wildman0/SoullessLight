@@ -390,6 +390,32 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1788360428512634, guid: 5ffdbcd1c5c7172478179167b5834075,
     type: 2}
   m_PrefabInternal: {fileID: 1140640167}
+--- !u!114 &18233215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18233214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5558c09d8f29f14d86c8658fb2f11b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  countUpTimer: 0
+--- !u!114 &18233216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18233214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08330b02ea5102043a879ce439f57ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraShake: 0
+  shakeLength: 5
 --- !u!95 &18233226 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95525404287027468, guid: 5ffdbcd1c5c7172478179167b5834075,
@@ -62283,8 +62309,45 @@ Prefab:
     - target: {fileID: 114245829664669542, guid: 5ffdbcd1c5c7172478179167b5834075,
         type: 2}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114527265098529992, guid: 5ffdbcd1c5c7172478179167b5834075,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114525416380560266, guid: 5ffdbcd1c5c7172478179167b5834075,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114238136493809578, guid: 5ffdbcd1c5c7172478179167b5834075,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114224963144238326, guid: 5ffdbcd1c5c7172478179167b5834075,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95525404287027468, guid: 5ffdbcd1c5c7172478179167b5834075,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: f5d6cf712a9d90a418ed5f67df1b3709,
+        type: 2}
+    - target: {fileID: 114245829664669542, guid: 5ffdbcd1c5c7172478179167b5834075,
+        type: 2}
+      propertyPath: animatorOverrideController
+      value: 
+      objectReference: {fileID: 22100000, guid: f5d6cf712a9d90a418ed5f67df1b3709,
+        type: 2}
+    - target: {fileID: 114245829664669542, guid: 5ffdbcd1c5c7172478179167b5834075,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 18233226}
     m_RemovedComponents:
     - {fileID: 114590979139175758, guid: 5ffdbcd1c5c7172478179167b5834075, type: 2}
     - {fileID: 114512449581868488, guid: 5ffdbcd1c5c7172478179167b5834075, type: 2}

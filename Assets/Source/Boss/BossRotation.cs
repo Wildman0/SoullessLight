@@ -55,7 +55,7 @@ public class BossRotation : MonoBehaviour
         }
         else
         {
-            BossAnim.anim.SetInteger("LeftRotation_Index", index);
+            //BossAnim.anim.SetInteger("LeftRotation_Index", index);
 
             BossCollider.isRotating = true;
             Conditions.isRotating = true; 
@@ -70,7 +70,7 @@ public class BossRotation : MonoBehaviour
         }
         else
         {
-            BossAnim.anim.SetInteger("RightRotation_Index", index);
+            //BossAnim.anim.SetInteger("RightRotation_Index", index);
 
             BossCollider.isRotating = true;
             Conditions.isRotating = true;
@@ -82,8 +82,8 @@ public class BossRotation : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Conditions.isRotating = false;
 
-        BossAnim.anim.SetInteger("LeftRotation_Index", 0);
-        BossAnim.anim.SetInteger("RightRotation_Index", 0);
+        //BossAnim.anim.SetInteger("LeftRotation_Index", 0);
+        //BossAnim.anim.SetInteger("RightRotation_Index", 0);
         lastIndex = index;
 
         BossCollider.isRotating = false;
