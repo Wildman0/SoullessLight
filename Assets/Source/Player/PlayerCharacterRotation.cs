@@ -5,21 +5,21 @@ using UnityEngine;
 
 public class PlayerCharacterRotation : MonoBehaviour
 {
-    private PlayerController playerController;
+    private PlayerMovement playerMovement;
 
     void Awake()
     {
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     void Update()
     {
         //If the player isn't moving (Uses some large number as a check because this
         //Occasionally returns the player position when the player isn't moving
-        if (Vector3.Distance(transform.position, playerController.CharacterModelTargetLookPosition()) > 500)
+        if (Vector3.Distance(transform.position, playerMovement.directionVector) > 500)
         {
             transform.LookAt(
-                (playerController.CharacterModelTargetLookPosition()));
+                (playerMovement.directionVector));
         }
     }
 }

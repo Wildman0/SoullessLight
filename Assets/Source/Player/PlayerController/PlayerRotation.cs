@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlayerRotation : MonoBehaviour
 {
 	public PlayerController playerController;
-	
-	// Use this for initialization
-	void Start () 
+	private GameObject boss;
+	private Vector3 lockOnPosition;
+
+	void Start()
 	{
-		
+		boss = GameObject.FindWithTag("Boss");
+
 	}
 	
 	// Update is called once per frame
@@ -20,6 +22,8 @@ public class PlayerRotation : MonoBehaviour
 
 	private void LookAtBoss()
 	{
-		transform.LookAt(playerController.targetLookPosition);
+		transform.LookAt(new Vector3(boss.transform.position.x,
+			transform.position.y,
+			boss.transform.position.z));
 	}
 }
