@@ -54456,6 +54456,7 @@ GameObject:
   - component: {fileID: 1663003043}
   - component: {fileID: 951420499}
   - component: {fileID: 951420498}
+  - component: {fileID: 951420502}
   - component: {fileID: 951420501}
   - component: {fileID: 1663003044}
   - component: {fileID: 951420497}
@@ -54809,6 +54810,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1663003044}
+--- !u!114 &951420502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 951420491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a302efd4f89fb47ae34b88b3efb4f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1663003044}
+  directionVector: {x: 0, y: 0, z: 0}
 --- !u!1 &958956588
 GameObject:
   m_ObjectHideFlags: 0
@@ -93260,11 +93274,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 951420500}
   characterController: {fileID: 0}
-  canRoll: 1
   canAttack: 1
   isSprinting: 0
   isBlocking: 0
-  canMove: 1
   stamina: 1
   totalMoveSpeedX: 0
   totalMoveSpeedZ: 0
@@ -93274,8 +93286,6 @@ MonoBehaviour:
   playerAnim: {fileID: 98601820}
   movement: {x: 0, y: 0, z: 0}
   targetLookPosition: {x: 0, y: 0, z: 0}
-  boss: {fileID: 18233214}
-  playerCharacter: {fileID: 0}
   NearDeath: {fileID: 1566671748}
   ui: {fileID: 0}
   totalMoveSpeed: 0
