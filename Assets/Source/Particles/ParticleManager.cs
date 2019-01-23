@@ -91,6 +91,9 @@ public class ParticleManager : MonoBehaviour {
             NewObject = Instantiate(playerParticles[1], character.transform.position, transform.rotation);
             NewObject.transform.parent = character.transform;
 
+            StartCoroutine(Wait());
+            Destroy(NewObject, 3);
+
         }
     }
 
