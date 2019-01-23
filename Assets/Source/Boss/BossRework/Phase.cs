@@ -14,7 +14,7 @@ public class Phase : MonoBehaviour
     public List<AnimationClip> currentAttackAnimationClips = new List<AnimationClip>();
     public AnimatorOverrideController animatorOverrideController;
     private Distance distance;
-    private CoolDown coolDown;
+    public CoolDown coolDown;
     public Animator anim;
 
     public int animationIndex;

@@ -38,5 +38,4 @@ public class CoolDown : MonoBehaviour
             countUpTimer = 0f;
         }
     }
-
 }

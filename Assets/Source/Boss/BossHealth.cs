@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class BossHealth : MonoBehaviour
 {
+    Phase phase;
+
     [Range(0, 1)]
     public float health = 0;
 
@@ -17,10 +19,13 @@ public class BossHealth : MonoBehaviour
     public AudioSource audioSource1;
     public AudioSource audioSource2;
 
+    private void Start()
+    {
+        phase = GetComponent<Phase>();
+    }
+
     private void Update()
     {
-        PhaseChangeOnHealth();
-
         Death();
     }
 
@@ -29,14 +34,14 @@ public class BossHealth : MonoBehaviour
         health -= i;
         //TODO: SORRY ASH, YOU'LL NEED TO GET THIS REFERENCE PROPERLY
         FindObjectOfType<RFX4_CameraShake>().PlayShake();
-        BossAnim.anim.SetTrigger("IsBossDamaged");
+        phase.anim.SetTrigger("IsBossDamaged");
     }
 
     private void Death()
     {
         if (health <= 0 && active == false)
         {
-            BossAnim.anim.SetTrigger("IsDead");
+            phase.anim.SetTrigger("IsDead");
             ui.BossDefeated.GetComponent<Image>().enabled = true;
             ui.BossDefeated.GetComponent<Animator>().SetTrigger("IsDefeated");
             audioSource.Stop();
@@ -57,15 +62,15 @@ public class BossHealth : MonoBehaviour
     }
 
 
-    private void PhaseChangeOnHealth()
-    {
-        if(health <= 0.65f && health >= 0.35)
-        {
-            Boss.currentPhase = "PhaseTwo";
-        }
-        else if (health <= 0.35 && health >= 0.01f)
-        {
-            Boss.currentPhase = "PhaseThree";
-        }
-    }
+    //private void PhaseChangeOnHealth()
+    //{
+    //    if(health <= 0.65f && health >= 0.35)
+    //    {
+    //        Boss.currentPhase = "PhaseTwo";
+    //    }
+    //    else if (health <= 0.35 && health >= 0.01f)
+    //    {
+    //        Boss.currentPhase = "PhaseThree";
+    //    }
+    //}
 }
