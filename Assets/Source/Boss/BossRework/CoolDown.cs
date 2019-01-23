@@ -14,12 +14,7 @@ public class CoolDown : MonoBehaviour
         phase = GetComponent<Phase>();
     }
 
-    private void Update()
-    {
-        CoolDownTimer();
-    }
-
-    private void CoolDownTimer()
+    public void CoolDownTimer()
     {
         timer = phase.currentPhase.coolDownTimer;
 

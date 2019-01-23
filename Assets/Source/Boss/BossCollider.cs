@@ -24,7 +24,7 @@ public class BossCollider : MonoBehaviour
 
     private void HitDetection()
     {
-        if (Attacks.isAttacking == true)
+        if (Phase.isAttacking == true)
         {
             calledAmount += 1;
             if (calledAmount == 1)

@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
     public float maxCamHeight = 0f;
     public float minCamHeight = -1.5f;
     
-    void Update () {
+    void FixedUpdate () {
         //Makes the camera look at the midpoint of the player and the boss
         transform.LookAt(Midpoint(target, secondaryTarget));
 
@@ -40,7 +40,7 @@ public class CameraController : MonoBehaviour
 
         float v = verticalSens * (GameManager.inputController.raiseCamera -
                                   GameManager.inputController.lowerCamera) *
-                                  Time.deltaTime;
+                                  Time.fixedDeltaTime;
 
         offset = new Vector3(offset.x, offset.y + v, offset.z);
     }
