@@ -50,9 +50,9 @@ public class PhaseInspector : Editor
 
         EditorGUILayout.BeginHorizontal();
 
-        EditorGUILayout.LabelField("Phase Activation: Min", GUILayout.Width(130), GUILayout.Height(16));
+        EditorGUILayout.LabelField("Phase Activation: Max", GUILayout.Width(130), GUILayout.Height(16));
         phaseValues.min = EditorGUILayout.FloatField(phaseValues.min, GUILayout.Width(75), GUILayout.Height(16));
-        EditorGUILayout.LabelField("Max", GUILayout.Width(30), GUILayout.Height(16));
+        EditorGUILayout.LabelField("Min", GUILayout.Width(30), GUILayout.Height(16));
         phaseValues.max = EditorGUILayout.FloatField(phaseValues.max, GUILayout.Width(75), GUILayout.Height(16));
 
         EditorGUILayout.Space();

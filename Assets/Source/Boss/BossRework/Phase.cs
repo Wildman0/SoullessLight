@@ -24,6 +24,7 @@ public class Phase : MonoBehaviour
 
     public bool activateAttacking;
     public bool intermission;
+    public static bool isAttacking;
 
     private void Start()
     {
@@ -51,10 +52,10 @@ public class Phase : MonoBehaviour
     {
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
-            currentPhase = phaseValues.Find(x => x.min <= bossHealth.health && x.max >= bossHealth.health);
-            Debug.Log(currentPhase.phaseName);
+            currentPhase = phaseValues.Find(x => x.min >= bossHealth.health && x.max <= bossHealth.health);
             GetAttackAnimations();
             comboChance = currentPhase.comboChance;
+            coolDown.CoolDownTimer();
 
             activateAttacking = true;
         }
@@ -69,46 +70,28 @@ public class Phase : MonoBehaviour
         if (distance.showDesignersDistance == "Close")
         {
             attackAnimations = currentPhase.closeAttacks;
-
-            Debug.Log("close range" + attackAnimations);
         }
         else if (distance.showDesignersDistance == "Mid")
         {
             attackAnimations = currentPhase.midAttacks;
-
-            Debug.Log("mid range" + attackAnimations);
         }
         else if (distance.showDesignersDistance == "Long")
         {
             attackAnimations = currentPhase.longAttacks;
-
-            Debug.Log("long range" + attackAnimations);
         }
 
         if (PlayerDirection.direction == "Left")
         {
-            Debug.Log("Left");
-
             currentAttackAnimationClips = attackAnimations.leftAttacks;
-
-            Debug.Log("left direction" + currentAttackAnimationClips);
         }
         else if (PlayerDirection.direction == "Right")
         {
-            Debug.Log("Right");
-
             currentAttackAnimationClips = attackAnimations.rightAttacks;
-
-            Debug.Log("right direction" + currentAttackAnimationClips);
         }
     }
 
     public void ChooseAttackAnimation()
     {
-        //float randomNum = Random.Range(0.0f, 1.0f);
-        //Debug.Log(randomNum);
-
-        //if (randomNum < comboChance)
         {
             if (lastIndex == animationIndex)
             {
@@ -117,15 +100,12 @@ public class Phase : MonoBehaviour
             else
             {
                 animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
+                isAttacking = true;
                 anim.SetBool("Attack", true);
 
                 StartCoroutine(Wait());
             }
-    }
-        //else
-        //{
-        //    ComboChance();
-        //}
+        }
     }
 
     public IEnumerator Wait()
@@ -133,6 +113,7 @@ public class Phase : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         anim.SetBool("Attack", false);
         lastIndex = animationIndex;
+        isAttacking = false;
     }
 
     private void SelectNewIndex()
@@ -140,13 +121,6 @@ public class Phase : MonoBehaviour
         animationIndex = Random.Range(0, currentAttackAnimationClips.Count);
         ChooseAttackAnimation();
     }
-
-    //private void ComboChance()
-    //{
-    //    anim.SetBool("Combo", true);
-    //    animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
-    //    StartCoroutine(test());
-    //}
 
     private IEnumerator test()
     {
