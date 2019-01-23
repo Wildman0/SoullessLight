@@ -105,10 +105,10 @@ public class Phase : MonoBehaviour
 
     public void ChooseAttackAnimation()
     {
-        float randomNum = Random.Range(0.0f, 1.0f);
-        Debug.Log(randomNum);
+        //float randomNum = Random.Range(0.0f, 1.0f);
+        //Debug.Log(randomNum);
 
-        if (randomNum < comboChance)
+        //if (randomNum < comboChance)
         {
             if (lastIndex == animationIndex)
             {
@@ -122,10 +122,10 @@ public class Phase : MonoBehaviour
                 StartCoroutine(Wait());
             }
     }
-        else
-        {
-            ComboChance();
-        }
+        //else
+        //{
+        //    ComboChance();
+        //}
     }
 
     public IEnumerator Wait()
@@ -141,12 +141,12 @@ public class Phase : MonoBehaviour
         ChooseAttackAnimation();
     }
 
-    private void ComboChance()
-    {
-        anim.SetBool("Combo", true);
-        animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
-        StartCoroutine(test());
-    }
+    //private void ComboChance()
+    //{
+    //    anim.SetBool("Combo", true);
+    //    animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
+    //    StartCoroutine(test());
+    //}
 
     private IEnumerator test()
     {
