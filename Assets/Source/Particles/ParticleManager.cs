@@ -92,7 +92,7 @@ public class ParticleManager : MonoBehaviour {
             NewObject.transform.parent = character.transform;
 
             StartCoroutine(Wait());
-            Destroy(NewObject, 3);
+            Destroy(NewObject, 2);
 
         }
     }
