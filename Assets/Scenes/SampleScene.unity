@@ -54739,6 +54739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 1663003044}
   directionVector: {x: 0, y: 0, z: 0}
+  velocity: 0
 --- !u!1 &958956588
 GameObject:
   m_ObjectHideFlags: 0
@@ -56888,7 +56889,7 @@ MonoBehaviour:
   bossSword: {fileID: 2075843167}
   playerAnim: {fileID: 98601827}
   playerParticles:
-  - {fileID: 1411855599500768, guid: 4a4db2f8bdf2cc94c9a0bb935f111c7e, type: 2}
+  - {fileID: 1110185676591068, guid: 7186b29926d01ca49b9079365235f00b, type: 2}
   - {fileID: 1838407379677288, guid: 17bed76a337ed704c8121750dc20c2ed, type: 2}
   - {fileID: 1097175511397846, guid: 4d31802d03366134bace2f177af08c62, type: 2}
   bossAnim: {fileID: 18233226}
@@ -91313,11 +91314,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1565100975}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1566671748 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1168860769964878, guid: bf3e0dfae14960f48ab84e1749847df7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1044173826}
 --- !u!1 &1569303642
 GameObject:
   m_ObjectHideFlags: 0
@@ -93303,22 +93299,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 951420500}
+  playerMovement: {fileID: 0}
   characterController: {fileID: 0}
-  canAttack: 1
-  isSprinting: 0
-  isBlocking: 0
   stamina: 1
-  totalMoveSpeedX: 0
-  totalMoveSpeedZ: 0
   audioSource: {fileID: 951420492}
   audioSource1: {fileID: 71946254}
   audioSource2: {fileID: 2014001183}
   playerAnim: {fileID: 98601820}
-  movement: {x: 0, y: 0, z: 0}
-  targetLookPosition: {x: 0, y: 0, z: 0}
-  NearDeath: {fileID: 1566671748}
-  ui: {fileID: 0}
-  totalMoveSpeed: 0
   mainCamera: {fileID: 0}
 --- !u!1 &1664618015
 GameObject:

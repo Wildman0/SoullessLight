@@ -10,7 +10,6 @@ public class AudioPlay : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        audioData = GetComponent<AudioSource>();
         audioData.Play();
 
     }
