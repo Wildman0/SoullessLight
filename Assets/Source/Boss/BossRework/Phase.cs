@@ -104,7 +104,7 @@ public class Phase : MonoBehaviour
         {
             Debug.Log(comboChance);
             comboChance = Random.Range(0.0f, 1.0f);
-            if (comboChance > currentPhase.comboChance)
+            if (comboChance < currentPhase.comboChance)
             {
                 attackCombo.SelectComboAnimations();
                 selectAttackStyle = true;
