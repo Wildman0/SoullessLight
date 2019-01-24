@@ -2594,7 +2594,7 @@ GameObject:
   - component: {fileID: 91682418}
   - component: {fileID: 91682417}
   m_Layer: 0
-  m_Name: Aura Directional Light
+  m_Name: Main_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2608,7 +2608,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 91682415}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -22.07, y: 56.1, z: 63.6}
+  m_LocalPosition: {x: -22, y: 50, z: 50}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 531916466}
@@ -2627,15 +2627,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  shadowResolution: 469
+  shadowResolution: 400
   shadowDimmer: 1
   shadowFadeDistance: 10000
   contactShadows: 0
-  viewBiasMin: 0.2
+  viewBiasMin: 0.33
   viewBiasMax: 100
-  viewBiasScale: 1
-  normalBiasMin: 0.5
-  normalBiasMax: 0.5
+  viewBiasScale: 0
+  normalBiasMin: 1.57
+  normalBiasMax: 1.57
   normalBiasScale: 1
   sampleBiasScale: 0
   edgeLeakFixup: 1
@@ -2678,8 +2678,8 @@ MonoBehaviour:
   areaIntensity: 200
   enableSpotReflector: 0
   m_InnerSpotPercent: 0
-  lightDimmer: 1
-  volumetricDimmer: 1
+  lightDimmer: 0.56
+  volumetricDimmer: 0.67
   lightUnit: 2
   fadeDistance: 10000
   affectDiffuse: 1
@@ -2696,7 +2696,7 @@ MonoBehaviour:
   useOldInspector: 0
   featuresFoldout: 1
   showAdditionalSettings: 1
-  displayLightIntensity: 1.04
+  displayLightIntensity: 0.9
   displayAreaLightEmissiveMesh: 0
 --- !u!108 &91682420
 Light:
@@ -2709,7 +2709,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 0.6564169, g: 0.9128043, b: 0.9339623, a: 1}
-  m_Intensity: 1.04
+  m_Intensity: 0.9
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -9203,156 +9203,6 @@ Transform:
   m_Father: {fileID: 1327031095}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 4.2593594, y: -3.7634614, z: -0.089258134}
---- !u!1 &146599022
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 146599027}
-  - component: {fileID: 146599026}
-  - component: {fileID: 146599024}
-  - component: {fileID: 146599023}
-  m_Layer: 0
-  m_Name: Aura Point Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &146599023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 146599022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c2871f720b2af4e9210febdac74517, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  shadowResolution: 512
-  shadowDimmer: 1
-  shadowFadeDistance: 10000
-  contactShadows: 0
-  viewBiasMin: 0.2
-  viewBiasMax: 100
-  viewBiasScale: 1
-  normalBiasMin: 0.5
-  normalBiasMax: 0.5
-  normalBiasScale: 1
-  sampleBiasScale: 0
-  edgeLeakFixup: 1
-  edgeToleranceNormal: 1
-  edgeTolerance: 1
-  shadowCascadeCount: 4
-  shadowCascadeRatios:
-  - 0.05
-  - 0.15
-  - 0.3
-  shadowCascadeBorders:
-  - 0
-  - 0
-  - 0
-  - 0.2
-  shadowAlgorithm: 0
-  shadowVariant: 2
-  shadowPrecision: 0
-  shadowData:
-    format: 0
-    data: 000000000000803f
-  shadowDatas:
-  - format: 0
-    data: 000000000000803f
---- !u!114 &146599024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 146599022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1.1
-  directionalIntensity: 3.1415927
-  punctualIntensity: 600
-  areaIntensity: 200
-  enableSpotReflector: 0
-  m_InnerSpotPercent: 0
-  lightDimmer: 1
-  volumetricDimmer: 1
-  lightUnit: 0
-  fadeDistance: 10000
-  affectDiffuse: 1
-  affectSpecular: 1
-  nonLightmappedOnly: 0
-  lightTypeExtent: 0
-  spotLightShape: 0
-  shapeWidth: 0.5
-  shapeHeight: 0.5
-  aspectRatio: 1
-  shapeRadius: 0
-  maxSmoothness: 1
-  applyRangeAttenuation: 1
-  useOldInspector: 0
-  featuresFoldout: 1
-  showAdditionalSettings: 1
-  displayLightIntensity: 1.29
-  displayAreaLightEmissiveMesh: 0
---- !u!108 &146599026
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 146599022}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 2
-  m_Color: {r: 0.06608225, g: 0.254717, b: 0.2508673, a: 1}
-  m_Intensity: 0.102654934
-  m_Range: 340.04
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 1
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 2
-  m_AreaSize: {x: 0.5, y: 0.01}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &146599027
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 146599022}
-  m_LocalRotation: {x: -0.08994936, y: -0.40508693, z: 0.8232361, w: 0.38742226}
-  m_LocalPosition: {x: 17.96, y: -59.82, z: -27.86}
-  m_LocalScale: {x: 340.03998, y: 340.04007, z: 340.04}
-  m_Children: []
-  m_Father: {fileID: 1409817927}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &150921189
 GameObject:
   m_ObjectHideFlags: 0
@@ -17082,7 +16932,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 269617817}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -19002,7 +18852,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 291020433}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -26821,8 +26671,10 @@ Transform:
   - {fileID: 1100239914}
   - {fileID: 569962095}
   - {fileID: 91682416}
+  - {fileID: 1996338871}
+  - {fileID: 1342724569}
   m_Father: {fileID: 1409817927}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &532776135
 GameObject:
@@ -29655,7 +29507,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 583719663}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -35870,7 +35722,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 625745944}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -52328,7 +52180,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 811563707}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -52480,7 +52332,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827824108}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -53140,7 +52992,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 847816011}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4434.027, y: 0, z: 251.67212}
+  m_LocalPosition: {x: 4434, y: 0, z: 251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1638102139}
@@ -60215,7 +60067,7 @@ Transform:
   m_LocalScale: {x: 8.84, y: 8.84, z: 8.84}
   m_Children: []
   m_Father: {fileID: 1409817927}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1098037592
 MonoBehaviour:
@@ -71968,7 +71820,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1291835476}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -73248,7 +73100,7 @@ GameObject:
   - component: {fileID: 1342724567}
   - component: {fileID: 1342724566}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Light_Accent_Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73282,8 +73134,8 @@ MonoBehaviour:
   edgeTolerance: 1
   shadowCascadeCount: 4
   shadowCascadeRatios:
-  - 0.05
-  - 0.15
+  - 0.005
+  - 0.141
   - 0.3
   shadowCascadeBorders:
   - 0
@@ -73334,7 +73186,7 @@ MonoBehaviour:
   useOldInspector: 0
   featuresFoldout: 1
   showAdditionalSettings: 0
-  displayLightIntensity: 0.16
+  displayLightIntensity: 0.76
   displayAreaLightEmissiveMesh: 0
 --- !u!108 &1342724568
 Light:
@@ -73346,7 +73198,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 0.11741101, g: 0.4339623, b: 0.055268783, a: 1}
-  m_Intensity: 0.16
+  m_Intensity: 0.76
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -73379,12 +73231,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1342724565}
-  m_LocalRotation: {x: -0.26377755, y: 0.038862277, z: -0.15589531, w: 0.95110875}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.04780001, y: 0.63151175, z: -0.73303586, w: 0.24812607}
+  m_LocalPosition: {x: -22, y: 50, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1409817927}
-  m_RootOrder: 0
+  m_Father: {fileID: 531916466}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -29.317001, y: 10.318001, z: -21.323002}
 --- !u!1 &1344796878
 GameObject:
@@ -76799,11 +76651,8 @@ Transform:
   m_LocalPosition: {x: -2.459999, y: 5.3600006, z: -7.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1342724569}
-  - {fileID: 146599027}
   - {fileID: 1098037591}
   - {fileID: 531916466}
-  - {fileID: 1996338871}
   m_Father: {fileID: 72412540}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -77087,7 +76936,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1417911080}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -91926,7 +91775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1595504103
 Transform:
   m_ObjectHideFlags: 0
@@ -97289,7 +97138,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1750412167}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -98466,8 +98315,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1824911901}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.7199364, y: -54.2, z: 0.09854126}
-  m_LocalScale: {x: 67.19115, y: 108.09975, z: 48.225914}
+  m_LocalPosition: {x: -5.7199364, y: 1.47, z: -4.11}
+  m_LocalScale: {x: 67.19115, y: 5, z: 48.225914}
   m_Children: []
   m_Father: {fileID: 1595504103}
   m_RootOrder: 0
@@ -102766,7 +102615,7 @@ GameObject:
   - component: {fileID: 1996338873}
   - component: {fileID: 1996338872}
   m_Layer: 0
-  m_Name: Directional Light (1)
+  m_Name: Light_Accent_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102778,12 +102627,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996338870}
-  m_LocalRotation: {x: -0.8727318, y: 0.16179687, z: 0.368884, w: 0.27583614}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+  m_LocalRotation: {x: -0.030677335, y: 0.8597048, z: 0.28392142, w: 0.42350364}
+  m_LocalPosition: {x: -22, y: 50, z: 50}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1409817927}
-  m_RootOrder: 4
+  m_Father: {fileID: 531916466}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: -143.071, y: 43.93199, z: 5.6649933}
 --- !u!114 &1996338872
 MonoBehaviour:
@@ -102847,8 +102696,8 @@ MonoBehaviour:
   areaIntensity: 200
   enableSpotReflector: 0
   m_InnerSpotPercent: 0
-  lightDimmer: 1
-  volumetricDimmer: 1
+  lightDimmer: 0.49
+  volumetricDimmer: 0.36
   lightUnit: 0
   fadeDistance: 10000
   affectDiffuse: 1
@@ -102864,7 +102713,7 @@ MonoBehaviour:
   applyRangeAttenuation: 1
   useOldInspector: 0
   featuresFoldout: 1
-  showAdditionalSettings: 0
+  showAdditionalSettings: 1
   displayLightIntensity: 1.63
   displayAreaLightEmissiveMesh: 0
 --- !u!108 &1996338874
@@ -105289,7 +105138,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2097980874}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -110687,7 +110536,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2136397464}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
