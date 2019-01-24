@@ -91,7 +91,7 @@ public class FieldOfView : MonoBehaviour
     }
 
     public void NoTargetsVisible()
-    {
+    { 
         rotationDelay -= 1f * Time.deltaTime;
         if(rotationDelay <= 0)
         {

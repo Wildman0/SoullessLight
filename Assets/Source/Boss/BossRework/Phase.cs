@@ -14,16 +14,20 @@ public class Phase : MonoBehaviour
     public List<AnimationClip> currentAttackAnimationClips = new List<AnimationClip>();
     public AnimatorOverrideController animatorOverrideController;
     private Distance distance;
-    public CoolDown coolDown;
+    private CoolDown coolDown;
     public Animator anim;
+    private AttackCombo attackCombo;
 
+    [HideInInspector]
     public int animationIndex;
+    [HideInInspector]
     public int lastIndex;
 
     public float comboChance;
 
     public bool activateAttacking;
     public bool intermission;
+    public bool selectAttackStyle;
     public static bool isAttacking;
 
     private void Start()
@@ -33,6 +37,7 @@ public class Phase : MonoBehaviour
         ////animatorOverrideController = new AnimatorOverrideController(anim.runtimeAnimatorController);
         distance = GetComponent<Distance>();
         coolDown = GetComponent<CoolDown>();
+        attackCombo = GetComponent<AttackCombo>();
     }
 
     private void Update()
@@ -46,6 +51,10 @@ public class Phase : MonoBehaviour
         {
             SelectPhase();
         }
+        else
+        {
+            currentPhase = null;
+        }
     }
 
     private void SelectPhase()
@@ -54,7 +63,6 @@ public class Phase : MonoBehaviour
         {
             currentPhase = phaseValues.Find(x => x.min >= bossHealth.health && x.max <= bossHealth.health);
             GetAttackAnimations();
-            comboChance = currentPhase.comboChance;
             coolDown.CoolDownTimer();
 
             activateAttacking = true;
@@ -90,6 +98,25 @@ public class Phase : MonoBehaviour
         }
     }
 
+    public void AttackManagement()
+    {
+        if (selectAttackStyle == false)
+        {
+            Debug.Log(comboChance);
+            comboChance = Random.Range(0.0f, 1.0f);
+            if (comboChance < currentPhase.comboChance)
+            {
+                attackCombo.SelectComboAnimations();
+                selectAttackStyle = true;
+            }
+            else
+            {
+                ChooseAttackAnimation();
+                selectAttackStyle = true;
+            }
+        }
+    }
+
     public void ChooseAttackAnimation()
     {
         {
@@ -114,6 +141,7 @@ public class Phase : MonoBehaviour
         anim.SetBool("Attack", false);
         lastIndex = animationIndex;
         isAttacking = false;
+        selectAttackStyle = false;
     }
 
     private void SelectNewIndex()
