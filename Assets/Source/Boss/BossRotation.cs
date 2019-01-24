@@ -30,7 +30,7 @@ public class BossRotation : MonoBehaviour
         {
             //BossAnim.Anim.SetBool("RightRotation",true) , this is the old code just for reference
             RandomRightRotation();
-            bossRotation *= Quaternion.AngleAxis(10, Vector3.up);
+            bossRotation *= Quaternion.AngleAxis(20, Vector3.up);
 
             rightRotation = false;
             StartCoroutine(NoRotation());
@@ -39,7 +39,7 @@ public class BossRotation : MonoBehaviour
         {
             //BossAnim.Anim.SetBool("LeftRotation",true) , this is the old code just for reference
             RandomLeftRotation();
-            bossRotation *= Quaternion.AngleAxis(-10, Vector3.up);
+            bossRotation *= Quaternion.AngleAxis(-20, Vector3.up);
 
             leftRotation = false;
             StartCoroutine(NoRotation());

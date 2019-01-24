@@ -46,6 +46,10 @@ public class Phase : MonoBehaviour
         {
             SelectPhase();
         }
+        else
+        {
+            currentPhase = null;
+        }
     }
 
     private void SelectPhase()
