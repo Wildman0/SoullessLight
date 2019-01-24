@@ -20521,6 +20521,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 353794192}
   m_Mesh: {fileID: 4300000, guid: 02c67e1744fa6334492af6c3db22a10a, type: 3}
+--- !u!1 &356536072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 356536073}
+  m_Layer: 0
+  m_Name: ParticleAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &356536073
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 356536072}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 481892012}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &364773704
 GameObject:
   m_ObjectHideFlags: 0
@@ -25308,6 +25336,7 @@ Transform:
   - {fileID: 1790118078}
   - {fileID: 1798443959}
   - {fileID: 1327031095}
+  - {fileID: 356536073}
   m_Father: {fileID: 1502540842}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 9.394104, y: -5.773842, z: -5.7021832}
@@ -56952,13 +56981,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 1475239395}
-  character1: {fileID: 0}
+  character1: {fileID: 356536072}
   boss: {fileID: 550409432}
   bossSword: {fileID: 2075843167}
   playerAnim: {fileID: 98601827}
   playerParticles:
   - {fileID: 1411855599500768, guid: 4a4db2f8bdf2cc94c9a0bb935f111c7e, type: 2}
   - {fileID: 1838407379677288, guid: 17bed76a337ed704c8121750dc20c2ed, type: 2}
+  - {fileID: 1097175511397846, guid: 4d31802d03366134bace2f177af08c62, type: 2}
   bossAnim: {fileID: 18233226}
   bossParticles:
   - {fileID: 1017125743485730, guid: f162c74b03a7b7b43a2019c22e95ecb3, type: 2}
