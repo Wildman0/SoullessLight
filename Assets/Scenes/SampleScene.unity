@@ -2696,7 +2696,7 @@ MonoBehaviour:
   useOldInspector: 0
   featuresFoldout: 1
   showAdditionalSettings: 1
-  displayLightIntensity: 0.9
+  displayLightIntensity: 0.75
   displayAreaLightEmissiveMesh: 0
 --- !u!108 &91682420
 Light:
@@ -2709,7 +2709,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 0.6564169, g: 0.9128043, b: 0.9339623, a: 1}
-  m_Intensity: 0.9
+  m_Intensity: 0.75
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -62493,7 +62493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameters:
-    albedo: {r: 0.014684939, g: 0.6226415, b: 0.3204526, a: 1}
+    albedo: {r: 0.0020024967, g: 0.4245283, b: 0.0148110315, a: 1}
     meanFreePath: 5
     asymmetry: 0
     volumeMask: {fileID: 0}
@@ -62507,7 +62507,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1144303435}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.7199364, y: 0.37, z: 0.09854126}
+  m_LocalPosition: {x: -5.7199364, y: 1.34, z: 0.09854126}
   m_LocalScale: {x: 61.43259, y: 2.2571905, z: 66.568825}
   m_Children: []
   m_Father: {fileID: 1595504103}
@@ -98186,7 +98186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameters:
-    albedo: {r: 0, g: 0, b: 0, a: 1}
+    albedo: {r: 0.0020024967, g: 0.4245283, b: 0.0148110315, a: 1}
     meanFreePath: 7
     asymmetry: 0
     volumeMask: {fileID: 0}
@@ -98200,8 +98200,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1824911901}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.7199364, y: 0.11, z: -4.11}
-  m_LocalScale: {x: 97.702644, y: 2.4916005, z: 70.125305}
+  m_LocalPosition: {x: -5.7199364, y: 1.0799993, z: -4.11}
+  m_LocalScale: {x: 61.297665, y: 2.4916005, z: 70.125305}
   m_Children: []
   m_Father: {fileID: 1595504103}
   m_RootOrder: 0
