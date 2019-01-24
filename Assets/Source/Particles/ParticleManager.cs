@@ -8,6 +8,7 @@ public class ParticleManager : MonoBehaviour {
     public GameObject character;
     public GameObject character1;
     public GameObject boss;
+    public GameObject boss1;
     public GameObject bossSword;
 
     [Header("Character Particles")]
@@ -90,6 +91,10 @@ public class ParticleManager : MonoBehaviour {
             GameObject NewObject;
             NewObject = Instantiate(playerParticles[1], character.transform.position, transform.rotation);
             NewObject.transform.parent = character.transform;
+
+            GameObject NewObject1;
+            NewObject1 = Instantiate(bossParticles[2], boss1.transform.position, transform.rotation);
+            NewObject1.transform.parent = boss1.transform;
 
             Destroy(NewObject, 10);
 
