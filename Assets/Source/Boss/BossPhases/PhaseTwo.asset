@@ -18,8 +18,12 @@ MonoBehaviour:
   comboChance: 0
   damage: []
   closeAttacks:
-    leftAttacks: []
-    rightAttacks: []
+    leftAttacks:
+    - {fileID: 7400002, guid: 54e681bb30039214bbbdd467acec064e, type: 3}
+    - {fileID: 7400000, guid: b236dc97cdf5da34284eb9f7a2a55cfe, type: 3}
+    rightAttacks:
+    - {fileID: 7400002, guid: 54e681bb30039214bbbdd467acec064e, type: 3}
+    - {fileID: 7400000, guid: 54e681bb30039214bbbdd467acec064e, type: 3}
   midAttacks:
     leftAttacks: []
     rightAttacks: []
