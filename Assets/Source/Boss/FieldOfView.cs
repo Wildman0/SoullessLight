@@ -79,8 +79,6 @@ public class FieldOfView : MonoBehaviour
             //Boss.isInRange = false;
             Conditions.inRange = false;
         }
-
-        Debug.Log(noVisibleTargets.Count);
     }
 
     public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
@@ -93,8 +91,7 @@ public class FieldOfView : MonoBehaviour
     }
 
     public void NoTargetsVisible()
-    {
-        Debug.Log("In");
+    { 
         rotationDelay -= 1f * Time.deltaTime;
         if(rotationDelay <= 0)
         {
