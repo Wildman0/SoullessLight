@@ -12,7 +12,7 @@ public class BossHealth : MonoBehaviour
     [Range(0, 1)]
     public float health = 0;
 
-    bool active ;
+    bool active;
 
     public UI ui;
     public AudioSource audioSource;
@@ -41,7 +41,7 @@ public class BossHealth : MonoBehaviour
     {
         if (health <= 0 && active == false)
         {
-            phase.anim.SetTrigger("IsDead");
+            phase.anim.SetBool("IsDead", true);
             ui.BossDefeated.GetComponent<Image>().enabled = true;
             ui.BossDefeated.GetComponent<Animator>().SetTrigger("IsDefeated");
             audioSource.Stop();
@@ -49,7 +49,6 @@ public class BossHealth : MonoBehaviour
             StartCoroutine(Conclusion());
 
             active = true;
-
         }
     }
     //New Audio After Boss Dies (Isaac)
@@ -58,19 +57,5 @@ public class BossHealth : MonoBehaviour
         yield return new WaitForSecondsRealtime(5f);
         audioSource2.Play();
         Debug.Log("Conclusion");
-        
     }
-
-
-    //private void PhaseChangeOnHealth()
-    //{
-    //    if(health <= 0.65f && health >= 0.35)
-    //    {
-    //        Boss.currentPhase = "PhaseTwo";
-    //    }
-    //    else if (health <= 0.35 && health >= 0.01f)
-    //    {
-    //        Boss.currentPhase = "PhaseThree";
-    //    }
-    //}
 }
