@@ -24,18 +24,17 @@ public class PlayerHealth : MonoBehaviour
 		if (health < 0.25f && !playerController.audioSource.isPlaying && health > 0f) //Heartbeat Effect Activate
 		{
 			playerController.audioSource.Play();
-			playerController.NearDeath.GetComponent<Animator>().SetBool("NearDeath", true);
 		}
 		else if (health <= 0)
 		{
 			playerController.audioSource.Stop();
 			playerController.audioSource1.Stop();
-			StartCoroutine(playerController.Retry());
+			//StartCoroutine(playerController.Retry());
 
 		}
 		else if (health > 0.25f) //Heartbeat Effect Cancel (Isaac)
 		{
-			playerController.NearDeath.GetComponent<Animator>().SetBool("NearDeath", false);
+			
 		}
 	}
 	
@@ -43,10 +42,10 @@ public class PlayerHealth : MonoBehaviour
 	void Heal()
 	{
 		playerController.playerAnim.Heal();
-		playerController.DisableMovement(healTime);
+		//playerController.DisableMovement(healTime);
 		
-		playerController.ui.Healing.GetComponent<Image>().enabled = true;
-		playerController.ui.Healing.GetComponent<Animator>().SetTrigger("IsDamaged");
+		UI.instance.Healing.GetComponent<Image>().enabled = true;
+		UI.instance.Healing.GetComponent<Animator>().SetTrigger("IsDamaged");
 		
 		health += healAmount;
 		healCount -= 1;
@@ -63,12 +62,12 @@ public class PlayerHealth : MonoBehaviour
 
 		if (health < 0.01f)
 		{
-			playerController.Death();
+			Death();
 		}
 		else
 		{
 			playerController.playerAnim.Flinch();
-			playerController.DisableMovement(0.3f);
+			//playerController.DisableMovement(0.3f);
 			playerController.mainCamera.GetComponent<RFX4_CameraShake>().PlayShake();
 		}
 	}
@@ -85,6 +84,16 @@ public class PlayerHealth : MonoBehaviour
 	bool CanHeal()
 	{
 		return (!playerController.playerAnim.anim.GetBool("IsHealing") &&
-		        (!playerController.isRolling) && healCount > 0);
+		        /*(!playerController.isRolling) &&*/ healCount > 0);
+	}
+
+	void Death()
+	{
+		//Play player death anim
+		//Disable player movement
+		//Set the player to invincible
+		
+		UI.instance.deathImage.GetComponent<Image>().enabled = true;
+		UI.instance.deathImage.GetComponent<Animator>().SetTrigger("isEnd");
 	}
 }

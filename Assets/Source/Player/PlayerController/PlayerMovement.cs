@@ -7,17 +7,38 @@ public class PlayerMovement : MonoBehaviour
 {
 	public PlayerController playerController;
 
+	private int movementDisablers = 0;
+	private bool movementDisabled;
+	
 	private float maxMoveDistance = 3.0f;
-	private float gravity = 9.8f;
+	private const float gravity = 9.8f;
 	private Vector3 movementTarget;
 
 	public Vector3 directionVector;
+	public float velocity;
 
 	void Update()
 	{
 		SetMovement();
 		Move();
 		ApplyGravity();
+	}
+
+	public void DisableMovement(float seconds)
+	{
+		StartCoroutine(DisableMovementIEnum(seconds));
+	}
+
+	IEnumerator DisableMovementIEnum(float seconds)
+	{
+		movementDisabled = true;
+		movementDisablers++;
+		yield return new WaitForSeconds(seconds);
+		movementDisablers--;
+
+		if (movementDisablers < 1)
+			movementDisabled = false;
+
 	}
 	
 	void SetMovement()
@@ -33,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
 	void Move()
 	{
 		playerController.characterController.Move(Vector3.MoveTowards(Vector3.zero, movementTarget, maxMoveDistance * Time.deltaTime));
+		
 		playerController.playerAnim.Jog();
 	}
 

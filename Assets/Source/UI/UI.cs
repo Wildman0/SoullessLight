@@ -8,6 +8,8 @@ using UnityEngine.UI;
 [System.Serializable]
 public class UI : MonoBehaviour
 {
+    public static UI instance;
+    
     private BossHealth bossHealth;
     private PlayerController playerController;
 
@@ -45,6 +47,8 @@ public class UI : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
+        
         bossHealth = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHealth>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }

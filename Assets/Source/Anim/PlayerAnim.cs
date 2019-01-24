@@ -119,7 +119,7 @@ public class PlayerAnim : MonoBehaviour
     //Player jog animation
     public void Jog()
     {
-        anim.SetFloat("MoveSpeed", playerController.totalMoveSpeed);
+        //anim.SetFloat("MoveSpeed", playerController.playerMovement.);
     }
 
     //Player flinch animation

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    private bool canAttack = true;
+    
     private GameObject bossGameObject;
     private BossHealth bossHealth;
 
@@ -37,9 +39,9 @@ public class PlayerAttack : MonoBehaviour
         hitReg.ToggleHitreg();
         playerAnim.LightAttack();
         
-        playerController.canAttack = false;
+        canAttack = false;
         yield return new WaitForSeconds(lightAttackMovementLockTime);
-        playerController.canAttack = true;
+        canAttack = true;
     }
 
     //Takes a given amount of health away from the boss
