@@ -15,7 +15,8 @@ public enum PlayerActions
     Rolling,
     Sprinting,
     Attacking,
-    Blocking
+    Blocking,
+    Invincible
 }
 
 [RequireComponent(typeof(CharacterController))]
@@ -25,6 +26,9 @@ public class PlayerController : MonoBehaviour
     public PlayerMovement playerMovement;
     public CharacterController characterController;
 
+    public delegate void SetPlayerStateHandler(PlayerActions index, bool b);
+    public event SetPlayerStateHandler SetPlayerState;
+    
     public bool[] playerState = new bool[Enum.GetNames(typeof(PlayerActions)).Length];
     
     public float stamina = 1f;
@@ -68,5 +72,10 @@ public class PlayerController : MonoBehaviour
     public void OnSetPlayerState(PlayerActions index, bool b)
     {
         playerState[(int) index] = b;
+    }
+
+    public bool GetPlayerState(PlayerActions index)
+    {
+        return playerState[(int) index];
     }
 }

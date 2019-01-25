@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
 	private const float gravity = 9.8f;
 	private Vector3 movementTarget;
 
+	private float rollTime = 1.0f;
+	private float rollSpeed = 4.5f;
+	
 	public Vector3 directionVector;
 	public float velocity;
 
@@ -27,9 +30,15 @@ public class PlayerMovement : MonoBehaviour
 		SetPlayerState += playerController.OnSetPlayerState;
 	}
 
-	void Update()
+	private void Update()
 	{
-		SetMovement();
+		RollChecks();
+
+		if (!playerController.GetPlayerState(PlayerActions.Rolling))
+			SetMovement();
+		else
+			SetRollMovement();
+		
 		Move();
 		ApplyGravity();
 	}
@@ -39,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 		StartCoroutine(DisableMovementIEnum(seconds));
 	}
 
-	IEnumerator DisableMovementIEnum(float seconds)
+	private IEnumerator DisableMovementIEnum(float seconds)
 	{
 		movementDisabled = true;
 		movementDisablers++;
@@ -51,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
 	}
 	
-	void SetMovement()
+	private void SetMovement()
 	{
 		movementTarget = new Vector3(playerController.inputController.right - playerController.inputController.left,
 			0,
@@ -63,29 +72,58 @@ public class PlayerMovement : MonoBehaviour
 		SetPlayerState(PlayerActions.Moving, velocity > 0);
 	}
 
-	void Move()
+	void SetRollMovement()
 	{
-		Vector3 v = Vector3.MoveTowards(Vector3.zero, movementTarget, maxMoveDistance * Time.deltaTime);
+		movementTarget = directionVector;
+	}
+	
+	private void Move()
+	{
+		Vector3 v = Vector3.zero;
+		
+		if (!playerController.GetPlayerState(PlayerActions.Rolling))
+			v = Vector3.MoveTowards(Vector3.zero, movementTarget, maxMoveDistance * Time.deltaTime);
+
+		if (playerController.GetPlayerState(PlayerActions.Rolling))
+			v = Vector3.MoveTowards(Vector3.zero, movementTarget, rollSpeed * Time.deltaTime);
+			
 
 		playerController.characterController.Move(v);
 		
 		playerController.playerAnim.Jog();
 	}
 
-	void SetVelocity()
+	private void SetVelocity()
 	{
 		velocity = (Mathf.Abs(directionVector.x) + Mathf.Abs(directionVector.z)) / directionVectorModifier * 30;
 	}
 	
 	//Sets the direction the player is moving towards
-	void SetDirectionVector()
+	private void SetDirectionVector()
 	{
 		directionVector = movementTarget * directionVectorModifier;
 	}
 
-	void ApplyGravity()
+	private void ApplyGravity()
 	{
 		playerController.characterController.Move(new Vector3(0, -gravity * Time.deltaTime, 0));
+	}
+
+	private void RollChecks()
+	{
+		if (!FloatMath.IsZero(playerController.inputController.rollDown) &&
+		    !playerController.playerState[(int) PlayerActions.Rolling])
+		{
+			StartCoroutine(RollIEnum());
+		}
+	}
+	
+	private IEnumerator RollIEnum()
+	{
+		SetPlayerState(PlayerActions.Rolling, true);
+		playerController.playerAnim.Roll();
+		yield return new WaitForSeconds(rollTime);
+		SetPlayerState(PlayerActions.Rolling, false);
 	}
 	
 	private void OnDestroy()
