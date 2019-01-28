@@ -9,8 +9,6 @@ public class PlayerAttack : MonoBehaviour
     private GameObject bossGameObject;
     private BossHealth bossHealth;
 
-    public Collider hitZone;    //TODO: THIS IS ONLY TEMPORARY BEFORE RAYCASTS ARE USED
-
     public float lightAttackDamage = 0.02f;
     private float lightAttackMovementLockTime = 0.4f;
 
