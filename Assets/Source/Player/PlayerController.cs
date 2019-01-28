@@ -22,6 +22,8 @@ public enum PlayerActions
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public PlayerController instance;
+    
     public PlayerHealth playerHealth;
     public PlayerMovement playerMovement;
     public CharacterController characterController;
@@ -53,6 +55,11 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        if (!instance)
+            instance = this;
+        else
+            Debug.LogError("More than one PlayerController in the scene");
+        
         mainCamera = Camera.main;
         characterController = gameObject.GetComponent<CharacterController>();
         inputController = GameManager.inputController;
