@@ -22,7 +22,7 @@ public class PlayerStamina : MonoBehaviour
 
 	void Update()
 	{
-		if (!isUsingStaminaActions())
+		if (!IsUsingStaminaActions())
 		{
 			ReplenishStamina();
 		}
