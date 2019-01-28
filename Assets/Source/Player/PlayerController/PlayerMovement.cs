@@ -15,7 +15,11 @@ public class PlayerMovement : MonoBehaviour
 	private bool movementDisabled;
 
 	private const float directionVectorModifier = 10000f;
-	private float maxMoveDistance = 3.0f;
+	
+	private float currentMovementSpeed;
+	private const float jogSpeed = 3.0f;
+	private const float sprintSpeed = 4.5f;
+	
 	private const float gravity = 9.8f;
 	private Vector3 movementTarget;
 
@@ -67,27 +71,34 @@ public class PlayerMovement : MonoBehaviour
 			playerController.inputController.forward - playerController.inputController.back);
 
 		movementTarget = transform.TransformDirection(movementTarget);
+		
 		SetDirectionVector();
 		SetVelocity();
+		
 		SetPlayerState(PlayerActions.Moving, velocity > 0);
+		SetPlayerState(PlayerActions.Sprinting, FloatCasting.ToBool(playerController.inputController.sprint));
 	}
 
 	void SetRollMovement()
 	{
 		movementTarget = directionVector;
 	}
+
+	float GetMovementSpeed()
+	{
+		if (playerController.GetPlayerState(PlayerActions.Rolling))
+			return rollSpeed;
+		
+		if (playerController.GetPlayerState(PlayerActions.Sprinting))
+			return sprintSpeed;
+		
+		return jogSpeed;
+	}
 	
 	private void Move()
 	{
-		Vector3 v = Vector3.zero;
+		Vector3 v = Vector3.MoveTowards(Vector3.zero, movementTarget, GetMovementSpeed() * Time.deltaTime);
 		
-		if (!playerController.GetPlayerState(PlayerActions.Rolling))
-			v = Vector3.MoveTowards(Vector3.zero, movementTarget, maxMoveDistance * Time.deltaTime);
-
-		if (playerController.GetPlayerState(PlayerActions.Rolling))
-			v = Vector3.MoveTowards(Vector3.zero, movementTarget, rollSpeed * Time.deltaTime);
-			
-
 		playerController.characterController.Move(v);
 		
 		playerController.playerAnim.Jog();
