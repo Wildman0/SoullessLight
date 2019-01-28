@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NDA.FloatUtil;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -24,6 +25,14 @@ public class PlayerAttack : MonoBehaviour
         attackHitDetection = GetComponentInChildren<AttackHitDetection>();
         playerController = GetComponentInParent<PlayerController>();
         hitReg = gameObject.GetComponent<HitReg>();
+    }
+
+    void Update()
+    {
+        if (FloatCasting.ToBool(playerController.inputController.lightAttackDown) && canAttack)
+        {
+            LightAttack();
+        }
     }
 
     //Performs a light attack

@@ -24,7 +24,6 @@ public class UI : MonoBehaviour
     public Image bossAttacked;
     public Image playerAttacked;
     public Image BossDefeated;
-    public Image healReady;
 
     public Color playerHealthBarFull = Color.red;
     public Color playerHealthBarEmpty = new Color(120, 50, 50);
@@ -58,7 +57,6 @@ public class UI : MonoBehaviour
         BossHealthBar();
         PlayerHealthBar();
         PlayerStaminaBar();
-        healCoolDown();
     }
     
     //TODO: TEMPORARILY CHANGED TO MAKE THE HEALTH SMOOTHED
@@ -100,13 +98,5 @@ public class UI : MonoBehaviour
         bossHealthBar.color = Color.Lerp(playerHealthBarEmpty,
                                          playerHealthBarFull,
                                          playerController.playerHealth.health);
-    }
-
-    private void healCoolDown()
-    {
-        healReady.fillAmount = playerController.playerHealth.healCount;
-        healReady.color = Color.Lerp(healCoolDownStart,
-                                     healCoolDownDone,
-                                     playerController.playerHealth.healCount);
     }
 }
