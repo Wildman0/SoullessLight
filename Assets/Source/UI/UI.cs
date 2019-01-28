@@ -58,7 +58,7 @@ public class UI : MonoBehaviour
         BossHealthBar();
         PlayerHealthBar();
         PlayerStaminaBar();
-        //healCoolDown();
+        HealCoolDown();
     }
     
     //TODO: TEMPORARILY CHANGED TO MAKE THE HEALTH SMOOTHED
@@ -102,7 +102,7 @@ public class UI : MonoBehaviour
                                          playerController.playerHealth.health);
     }
 
-    private void healCoolDown()
+    private void HealCoolDown()
     {
         healReady.fillAmount = playerController.playerHealth.healCount;
         healReady.color = Color.Lerp(healCoolDownStart,
