@@ -14,12 +14,22 @@ public class PlayerStamina : MonoBehaviour
 
 	private void Start()
 	{
-		instance = this;
+		if (!instance)
+			instance = this;
+		else
+			Debug.LogError("More than one instance of PlayerStamina");
 	}
 
 	void Update()
 	{
-		
+		if (!isUsingStaminaActions())
+		{
+			ReplenishStamina();
+		}
+		else
+		{
+			ReduceStamina();
+		}
 	}
 
 	void ReplenishStamina()
@@ -30,5 +40,12 @@ public class PlayerStamina : MonoBehaviour
 	void ReduceStamina()
 	{
 		
+	}
+
+	//Returns whether or not the player is using actions that require stamina
+	bool IsUsingStaminaActions()
+	{
+		return PlayerController.instance.GetPlayerState(PlayerActions.Rolling) ||
+		       PlayerController.instance.GetPlayerState(PlayerActions.Sprinting);
 	}
 }

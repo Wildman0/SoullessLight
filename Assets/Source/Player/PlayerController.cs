@@ -22,7 +22,7 @@ public enum PlayerActions
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    public PlayerController instance;
+    public static PlayerController instance;
     
     public PlayerHealth playerHealth;
     public PlayerMovement playerMovement;
