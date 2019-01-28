@@ -58,7 +58,7 @@ public class UI : MonoBehaviour
         BossHealthBar();
         PlayerHealthBar();
         PlayerStaminaBar();
-        healCoolDown();
+        //healCoolDown();
     }
     
     //TODO: TEMPORARILY CHANGED TO MAKE THE HEALTH SMOOTHED

@@ -33,10 +33,10 @@ public class ParticleManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        GetBossAnimInfo();
+        //GetBossAnimInfo();
         Explosion();
-        Flinch();
-        PlayerDamage();
+        //Flinch();
+        //PlayerDamage();
 	}
 
     public void GetBossAnimInfo()

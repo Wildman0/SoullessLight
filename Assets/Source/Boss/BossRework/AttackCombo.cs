@@ -41,7 +41,7 @@ public class AttackCombo : MonoBehaviour
 
     private void SelectNewIndex()
     {
-        phase.animationIndex = Random.Range(0, phase.currentAttackAnimationClips.Count);
+        phase.animationIndex = Random.Range(0, phase.currentAttackAnimationClips.Count);    //TODO: STACKOVERFLOW EXCEPTION HERE (FPS ISSUE)        HAPPENS WHEN PLAYER IS LOW ON HEALTH
         SelectComboAnimations();
     }
 }
