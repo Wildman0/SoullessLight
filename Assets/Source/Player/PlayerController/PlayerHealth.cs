@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
 	[SerializeField] private PlayerController playerController;
+    [SerializeField] private Animator NearDeath;
 	
 	public float health = 1.0f;
+
 	private const float maxHealth = 1.0f;
 
 	private float healAmount = 0.2f;
@@ -24,7 +26,8 @@ public class PlayerHealth : MonoBehaviour
 		if (health < 0.25f && !playerController.audioSource.isPlaying && health > 0f) //Heartbeat Effect Activate
 		{
 			playerController.audioSource.Play();
-		}
+            NearDeath.SetBool("NearDeath", true);
+        }
 		else if (health <= 0)
 		{
 			playerController.audioSource.Stop();
@@ -34,8 +37,8 @@ public class PlayerHealth : MonoBehaviour
 		}
 		else if (health > 0.25f) //Heartbeat Effect Cancel (Isaac)
 		{
-			
-		}
+            NearDeath.SetBool("NearDeath", false);
+        }
 	}
 	
 	//Heals the player

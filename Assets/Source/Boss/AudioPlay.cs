@@ -6,12 +6,20 @@ public class AudioPlay : MonoBehaviour
 {
 
 
-    public AudioSource audioData;
-  
+    [SerializeField] private GameObject audioData;
+    private bool isPlayed;
+
+
     // Use this for initialization
     void Start()
     {
-        audioData.Play();
+            audioData.SetActive(true);
+            isPlayed = true;  
+    }
 
+    private void Update()
+    {
+        Start();
     }
 }
+ 
