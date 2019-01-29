@@ -370,6 +370,7 @@ ModelImporter:
     7400050: A_Clap
     7400052: A_Flinch
     7400054: A_Death
+    7400056: A_QuickSlam (1)
     9500000: //RootNode
     13700000: Body_low1
   externalObjects: {}
@@ -1161,6 +1162,34 @@ ModelImporter:
       takeName: A_Death
       firstFrame: 2040
       lastFrame: 2165
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: A_QuickSlam (1)
+      takeName: A_QuickSlam
+      firstFrame: 1425
+      lastFrame: 1480
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
