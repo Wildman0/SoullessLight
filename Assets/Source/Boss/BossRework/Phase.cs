@@ -9,7 +9,7 @@ using UnityEngine.Profiling;
 public class Phase : MonoBehaviour
 {
     public List<PhaseValues> phaseValues = new List<PhaseValues>();
-    public BossHealth bossHealth;
+    private BossHealth bossHealth;
     public PhaseValues currentPhase;
     public AttackAnimations attackAnimations;
     public List<AnimationClip> currentAttackAnimationClips = new List<AnimationClip>();
@@ -18,6 +18,7 @@ public class Phase : MonoBehaviour
     private CoolDown coolDown;
     public Animator anim;
     private AttackCombo attackCombo;
+    private Intermission intermission;
 
     [HideInInspector]
     public int animationIndex;
@@ -25,11 +26,15 @@ public class Phase : MonoBehaviour
     public int lastIndex;
 
     public float comboChance;
+    private float timer;
 
     public bool activateAttacking;
-    public bool intermission;
+    public bool intermissionCheck;
     public bool selectAttackStyle;
     public static bool isAttacking;
+    public bool retrievedPhase;
+
+    public string phaseSwitchingCheck;
 
     private void Start()
     {
@@ -39,16 +44,55 @@ public class Phase : MonoBehaviour
         distance = GetComponent<Distance>();
         coolDown = GetComponent<CoolDown>();
         attackCombo = GetComponent<AttackCombo>();
+        intermission = GetComponent<Intermission>();
+        bossHealth = GetComponent<BossHealth>();
+
+        timer = 0.4f;
+
     }
 
     private void Update()
     {
         Intermission();
+        HasPhaseChanged();
+    }
+
+
+    private void HasPhaseChanged()
+    {
+        timer -= 1f * Time.deltaTime;
+        if (timer <= 0)
+        {
+            if (currentPhase != null)
+            {
+                if (retrievedPhase == false)
+                {
+                    phaseSwitchingCheck = currentPhase.phaseName;
+                    retrievedPhase = true;
+                    timer = .4f;
+                    Debug.Log("in 1");
+                }
+                else if (phaseSwitchingCheck != currentPhase.phaseName)
+                {
+                    intermissionCheck = true;
+                    timer = .4f;
+                    Debug.Log("in 2");
+                }
+                else
+                {
+                    timer = 0.4f;
+                }
+            }
+            else
+            {
+                timer = .4f;
+            }
+        }
     }
 
     private void Intermission()
     {
-        if(intermission == false)
+        if(intermissionCheck == false)
         {
             SelectPhase();
         }
@@ -60,7 +104,6 @@ public class Phase : MonoBehaviour
 
     private void SelectPhase()
     {
-        Profiler.BeginSample("Phase Script");
         if(anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
             currentPhase = phaseValues.Find(x => x.min >= bossHealth.health && x.max <= bossHealth.health);
@@ -68,12 +111,13 @@ public class Phase : MonoBehaviour
             coolDown.CoolDownTimer();
 
             activateAttacking = true;
+
+            Debug.Log(currentPhase.phaseName);
         }
         else
         {
             activateAttacking = false;
         }
-        Profiler.EndSample();
     }
 
     private void GetAttackAnimations()
