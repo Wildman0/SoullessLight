@@ -6,8 +6,8 @@ public class AttackCombo : MonoBehaviour
 {
     Phase phase;
 
-    private int animationIndex;
-    private int lastIndex;
+    public int animationIndex;
+    public int lastIndex;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class AttackCombo : MonoBehaviour
         {
             SelectNewIndex();
         }
-        else
+        else if (lastIndex != animationIndex)
         {
             Debug.Log("In");
             phase.animatorOverrideController["ATTACK"] = phase.currentAttackAnimationClips[animationIndex];
@@ -43,6 +43,11 @@ public class AttackCombo : MonoBehaviour
     private void SelectNewIndex()
     {
         animationIndex = Random.Range(0, phase.currentAttackAnimationClips.Count);
-        SelectComboAnimations();//TODO: STACKOVERFLOW EXCEPTION HERE (FPS ISSUE)        HAPPENS WHEN PLAYER IS LOW ON HEALTH
+
+        phase.animatorOverrideController["ATTACK"] = phase.currentAttackAnimationClips[animationIndex];
+        Phase.isAttacking = true;
+        phase.anim.SetBool("Combo", true);
+
+        StartCoroutine(Wait());
     }
 }

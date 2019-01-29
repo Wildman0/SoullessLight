@@ -20,13 +20,12 @@ public class Phase : MonoBehaviour
     private AttackCombo attackCombo;
     private Intermission intermission;
 
-    [HideInInspector]
+   
     public int animationIndex;
-    [HideInInspector]
     public int lastIndex;
 
     public float comboChance;
-    private float timer;
+    public float timer;
 
     public bool activateAttacking;
     public bool intermissionCheck;
@@ -48,13 +47,14 @@ public class Phase : MonoBehaviour
         bossHealth = GetComponent<BossHealth>();
 
         timer = 0.4f;
-
     }
 
     private void Update()
     {
         Intermission();
         HasPhaseChanged();
+
+        Debug.Log(currentPhase.phaseName);
     }
 
 
@@ -71,6 +71,8 @@ public class Phase : MonoBehaviour
                     retrievedPhase = true;
                     timer = .4f;
                     Debug.Log("in 1");
+
+                    anim.SetBool("IntermissionOut", false);
                 }
                 else if (phaseSwitchingCheck != currentPhase.phaseName)
                 {
@@ -80,7 +82,7 @@ public class Phase : MonoBehaviour
                 }
                 else
                 {
-                    timer = 0.4f;
+                    timer = .4f;
                 }
             }
             else
@@ -98,6 +100,7 @@ public class Phase : MonoBehaviour
         }
         else
         {
+            intermission.PlayerAnimation();
             currentPhase = null;
         }
     }
@@ -111,8 +114,6 @@ public class Phase : MonoBehaviour
             coolDown.CoolDownTimer();
 
             activateAttacking = true;
-
-            Debug.Log(currentPhase.phaseName);
         }
         else
         {
@@ -142,7 +143,7 @@ public class Phase : MonoBehaviour
         if (selectAttackStyle == false)
         {
             comboChance = Random.Range(0.0f, 1.0f);
-            if (comboChance < currentPhase.comboChance)
+            if (comboChance > currentPhase.comboChance)
             {
                 attackCombo.SelectComboAnimations();
                 selectAttackStyle = true;
@@ -157,7 +158,7 @@ public class Phase : MonoBehaviour
 
     public void ChooseAttackAnimation()
     {
-        if (lastIndex == animationIndex)
+        if (animationIndex == lastIndex)
         {
             SelectNewIndex();
         }
@@ -183,7 +184,12 @@ public class Phase : MonoBehaviour
     public void SelectNewIndex()
     {
         animationIndex = Random.Range(0, currentAttackAnimationClips.Count);
-        ChooseAttackAnimation();
+
+        animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
+        isAttacking = true;
+        anim.SetBool("Attack", true);
+
+        StartCoroutine(Wait());
     }
 
     private IEnumerator test()
