@@ -14,7 +14,7 @@ MonoBehaviour:
   phaseName: PhaseOne
   min: 1
   max: 0.65
-  coolDownTimer: 8.93
+  coolDownTimer: 4
   comboChance: 0.7
   damage: []
   closeAttacks:
@@ -37,8 +37,7 @@ MonoBehaviour:
     rightAttacks:
     - {fileID: 7400002, guid: 64019636f98b297489559047c4bbf4e6, type: 3}
     - {fileID: 7400008, guid: c3b157466117004489d126e3decf9d68, type: 3}
-    - {fileID: 7400006, guid: acbcbbb1824d8324ea60e84198090c1b, type: 3}
-    - {fileID: 7400008, guid: acbcbbb1824d8324ea60e84198090c1b, type: 3}
+    - {fileID: 7400002, guid: 780c724cadeb87548b4888f371d628f6, type: 3}
   longAttacks:
     leftAttacks:
     - {fileID: 7400000, guid: 54e681bb30039214bbbdd467acec064e, type: 3}
