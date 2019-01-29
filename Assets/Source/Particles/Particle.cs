@@ -5,13 +5,14 @@ using UnityEngine;
 public class Particle : MonoBehaviour {
 
     public GameObject animator;
+    public GameObject holder;
 
     // Use this for initialization
     public void ParticleEffect()
     {
-        animator = Instantiate(animator, transform.position, Quaternion.identity) as GameObject;
-        //animator.gameObject.SetActive(true);
-       //Destroy(gameObject);
+        animator.SetActive(true);
+        animator = Instantiate(animator, holder.transform.position, Quaternion.identity) as GameObject;
+      
     }
     
 	
