@@ -14,12 +14,9 @@ public class AudioPlay : MonoBehaviour
     void Start()
     {
             audioData.SetActive(true);
-            isPlayed = true;  
+            audioData.SetActive(false);
     }
 
-    private void Update()
-    {
-        Start();
-    }
+ 
 }
  

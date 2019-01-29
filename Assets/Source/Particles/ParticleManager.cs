@@ -96,7 +96,7 @@ public class ParticleManager : MonoBehaviour {
             NewObject1 = Instantiate(bossParticles[2], boss1.transform.position, transform.rotation);
             NewObject1.transform.parent = boss1.transform;
 
-            Destroy(NewObject, 10);
+            Destroy(NewObject, 4);
 
         }
     }

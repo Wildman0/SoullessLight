@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
 	private const float maxHealth = 1.0f;
 
-	private float healAmount = 0.2f;
+	private float healAmount = 0.3f;
 	private float healTime = 2.2f;
 	private float healCool = 3f;
 	
