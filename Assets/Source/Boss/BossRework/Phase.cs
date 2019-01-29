@@ -98,7 +98,7 @@ public class Phase : MonoBehaviour
         if (selectAttackStyle == false)
         {
             comboChance = Random.Range(0.0f, 1.0f);
-            if (comboChance > currentPhase.comboChance)
+            if (comboChance < currentPhase.comboChance)
             {
                 attackCombo.SelectComboAnimations();
                 selectAttackStyle = true;
@@ -136,7 +136,7 @@ public class Phase : MonoBehaviour
         selectAttackStyle = false;
     }
 
-    private void SelectNewIndex()
+    public void SelectNewIndex()
     {
         animationIndex = Random.Range(0, currentAttackAnimationClips.Count);
         ChooseAttackAnimation();

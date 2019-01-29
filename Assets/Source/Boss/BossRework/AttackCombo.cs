@@ -6,8 +6,8 @@ public class AttackCombo : MonoBehaviour
 {
     Phase phase;
 
-    public int index;
-    public int lastIndex;
+    private int animationIndex;
+    private int lastIndex;
 
     private void Start()
     {
@@ -16,13 +16,14 @@ public class AttackCombo : MonoBehaviour
 
     public void SelectComboAnimations()
     {
-        if(phase.lastIndex == phase.animationIndex)
+        if(lastIndex == animationIndex)
         {
-            SelectNewIndex(); 
+            SelectNewIndex();
         }
         else
         {
-            phase.animatorOverrideController["ATTACK"] = phase.currentAttackAnimationClips[phase.animationIndex];
+            Debug.Log("In");
+            phase.animatorOverrideController["ATTACK"] = phase.currentAttackAnimationClips[animationIndex];
             Phase.isAttacking = true;
             phase.anim.SetBool("Combo", true);
 
@@ -34,14 +35,14 @@ public class AttackCombo : MonoBehaviour
     {
         yield return new WaitForSeconds(1.4f);
         phase.anim.SetBool("Combo", false);
-        phase.lastIndex = phase.animationIndex;
+        lastIndex = animationIndex;
         Phase.isAttacking = false;
         phase.selectAttackStyle = false;
     }
 
     private void SelectNewIndex()
     {
-        phase.animationIndex = Random.Range(0, phase.currentAttackAnimationClips.Count);    //TODO: STACKOVERFLOW EXCEPTION HERE (FPS ISSUE)        HAPPENS WHEN PLAYER IS LOW ON HEALTH
-        SelectComboAnimations();
+        animationIndex = Random.Range(0, phase.currentAttackAnimationClips.Count);
+        SelectComboAnimations();//TODO: STACKOVERFLOW EXCEPTION HERE (FPS ISSUE)        HAPPENS WHEN PLAYER IS LOW ON HEALTH
     }
 }
