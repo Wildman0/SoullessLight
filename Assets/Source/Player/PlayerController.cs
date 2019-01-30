@@ -42,9 +42,6 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioSource1;
     public AudioSource audioSource2;
 
-    //Animation
-    public PlayerAnim playerAnim;
-
     //InputControllers
     public InputController inputController;
     
