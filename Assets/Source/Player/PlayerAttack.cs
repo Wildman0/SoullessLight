@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public static PlayerAttack instance;
+    
     private bool canAttack = true;
     
     private GameObject bossGameObject;
@@ -14,22 +16,26 @@ public class PlayerAttack : MonoBehaviour
     private float lightAttackMovementLockTime = 0.4f;
 
     private AttackHitDetection attackHitDetection;
-    private PlayerController playerController;
-    public PlayerAnim playerAnim;
     public HitReg hitReg;
-    
-    //Runs on instantiation
+
+    private void Awake()
+    {
+        if (!instance)
+            instance = this;
+        else
+            Debug.LogError("More than one instance of PlayerAttack");
+    }
+
     private void Start()
     {
         SetBossValues();
         attackHitDetection = GetComponentInChildren<AttackHitDetection>();
-        playerController = GetComponentInParent<PlayerController>();
         hitReg = gameObject.GetComponent<HitReg>();
     }
 
     void Update()
     {
-        if (FloatCasting.ToBool(playerController.inputController.lightAttackDown) && canAttack)
+        if (FloatCasting.ToBool(PlayerController.instance.inputController.lightAttackDown) && canAttack)
         {
             LightAttack();
         }
@@ -44,7 +50,7 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator LightAttackIEnumerator()
     {
         hitReg.ToggleHitreg();
-        playerAnim.LightAttack();
+        PlayerAnim.instance.LightAttack();
         
         canAttack = false;
         yield return new WaitForSeconds(lightAttackMovementLockTime);

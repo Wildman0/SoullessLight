@@ -24,8 +24,6 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
     
-    public PlayerHealth playerHealth;
-    public PlayerMovement playerMovement;
     public CharacterController characterController;
 
     public delegate void SetPlayerStateHandler(PlayerActions index, bool b);

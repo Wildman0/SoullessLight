@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class PlayerRotation : MonoBehaviour
 {
-	public PlayerController playerController;
 	private GameObject boss;
 	private Vector3 lockOnPosition;
 
 	void Start()
 	{
 		boss = GameObject.FindWithTag("Boss");
-
 	}
 	
 	// Update is called once per frame
