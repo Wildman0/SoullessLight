@@ -57,7 +57,7 @@ public class Distance : MonoBehaviour
 
     private void ActivateBoss()
     {
-        if (distance <= 20.5f)
+        if (distance <= 6.5f)
         {
             //Boss.start = true;
             Intro.activateBoss = true;
