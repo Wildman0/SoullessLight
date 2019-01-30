@@ -8,6 +8,7 @@ public class PlayerStamina : MonoBehaviour
 	
 	public float stamina = 1.0f;
 
+	public const float maxStamina = 1.0f;
 	public const float staminaReplenishPerSecond = 0.3f;
 	public const float runningStaminaReductionPerSecond = 0.3f;
 	public const float rollingStaminaReduction = 0.2f;
@@ -34,12 +35,23 @@ public class PlayerStamina : MonoBehaviour
 
 	void ReplenishStamina()
 	{
-		
+		stamina += staminaReplenishPerSecond * Time.deltaTime;
+
+		if (stamina > maxStamina)
+			stamina = maxStamina;
 	}
 
+	//Reduces stamina over time (for things like running)
 	void ReduceStamina()
 	{
-		
+		stamina -= runningStaminaReductionPerSecond * Time.deltaTime;
+		Debug.Log(stamina);
+	}
+
+	//Reduces stamina by a specified amount
+	void ReduceStamina(float f)
+	{
+		stamina -= f;
 	}
 
 	//Returns whether or not the player is using actions that require stamina
