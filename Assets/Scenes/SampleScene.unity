@@ -49513,7 +49513,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 3037b05822211954db17a65e53541d01, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.52
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -92499,6 +92499,10 @@ Prefab:
     - target: {fileID: 4767942155713136, guid: ef70586f0e176104ba58405c5b0a6bd3, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615851546097398, guid: ef70586f0e176104ba58405c5b0a6bd3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef70586f0e176104ba58405c5b0a6bd3, type: 2}
