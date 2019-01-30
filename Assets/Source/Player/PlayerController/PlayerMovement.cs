@@ -126,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
 		    !playerController.playerState[(int) PlayerActions.Rolling])
 		{
 			StartCoroutine(RollIEnum());
+			PlayerStamina.instance.ReduceStamina(PlayerStamina.rollingStaminaReduction);
 		}
 	}
 	
