@@ -11,9 +11,9 @@ public class PlayerStamina : MonoBehaviour
 	public const float maxStamina = 1.0f;
 	public const float staminaReplenishPerSecond = 0.3f;
 	public const float runningStaminaReductionPerSecond = 0.3f;
-	private const float rollingStaminaReduction = 0.2f;
+	public const float rollingStaminaReduction = 0.2f;
 
-	private void Awake()
+	private void Start()
 	{
 		if (!instance)
 			instance = this;
@@ -62,10 +62,5 @@ public class PlayerStamina : MonoBehaviour
 	{
 		return PlayerController.instance.GetPlayerState(PlayerActions.Rolling) ||
 		       PlayerController.instance.GetPlayerState(PlayerActions.Sprinting);
-	}
-
-	public float GetRollCost()
-	{
-		return rollingStaminaReduction;
 	}
 }

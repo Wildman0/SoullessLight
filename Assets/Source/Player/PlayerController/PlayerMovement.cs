@@ -122,12 +122,11 @@ public class PlayerMovement : MonoBehaviour
 
 	private void RollChecks()
 	{
-		if (!FloatMath.IsZero(PlayerController.instance.inputController.rollDown) &&
-		    !playerController.playerState[(int) PlayerActions.Rolling] &&
-		    PlayerStamina.instance.stamina > PlayerStamina.instance.GetRollCost())
+		if (!FloatMath.IsZero(playerController.inputController.rollDown) &&
+		    !playerController.playerState[(int) PlayerActions.Rolling])
 		{
 			StartCoroutine(RollIEnum());
-			PlayerStamina.instance.ReduceStamina(PlayerStamina.instance.GetRollCost());
+			PlayerStamina.instance.ReduceStamina(PlayerStamina.rollingStaminaReduction);
 		}
 	}
 	

@@ -43,16 +43,16 @@ public class PlayerController : MonoBehaviour
     
     public Camera mainCamera;
 
-    void Awake()
+    /// <summary>
+    /// Runs on initialization
+    /// </summary>
+    private void Start()
     {
         if (!instance)
             instance = this;
         else
             Debug.LogError("More than one instance of PlayerController in the scene");
-    }
-    
-    private void Start()
-    {
+        
         mainCamera = Camera.main;
         characterController = gameObject.GetComponent<CharacterController>();
         inputController = GameManager.inputController;
