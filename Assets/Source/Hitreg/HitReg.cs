@@ -106,7 +106,7 @@ public class HitReg : MonoBehaviour
                 ui.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
                 StartCoroutine(HitBoss());
 
-                //if (!playerController.isInvincible)
+                // TODO if (!playerController.isInvincible)
                 //{
                     PlayerHealth.instance.TakeDamage(0.3f);                 
 
