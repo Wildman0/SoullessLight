@@ -9,8 +9,6 @@ public class PlayerMovement : MonoBehaviour
 	public delegate void SetPlayerStateHandler(PlayerActions index, bool b);
 	public event SetPlayerStateHandler SetPlayerState;
 	
-	public PlayerController playerController;
-	
 	private int movementDisablers = 0;
 	private bool movementDisabled;
 
@@ -31,14 +29,14 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Awake()
 	{
-		SetPlayerState += playerController.OnSetPlayerState;
+		SetPlayerState += PlayerController.instance.OnSetPlayerState;
 	}
 
 	private void Update()
 	{
 		RollChecks();
 
-		if (!playerController.GetPlayerState(PlayerActions.Rolling))
+		if (!PlayerController.instance.GetPlayerState(PlayerActions.Rolling))
 			SetMovement();
 		else
 			SetRollMovement();
@@ -66,9 +64,9 @@ public class PlayerMovement : MonoBehaviour
 	
 	private void SetMovement()
 	{
-		movementTarget = new Vector3(playerController.inputController.right - playerController.inputController.left,
+		movementTarget = new Vector3(PlayerController.instance.inputController.right - PlayerController.instance.inputController.left,
 			0,
-			playerController.inputController.forward - playerController.inputController.back);
+			PlayerController.instance.inputController.forward - PlayerController.instance.inputController.back);
 
 		movementTarget = transform.TransformDirection(movementTarget);
 		
@@ -77,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 		
 		SetPlayerState(PlayerActions.Moving, velocity > 0);
 		SetPlayerState(PlayerActions.Sprinting,
-			FloatCasting.ToBool(playerController.inputController.sprint) && Math.Abs(PlayerStamina.instance.stamina) >= 0.01f);
+			FloatCasting.ToBool(PlayerController.instance.inputController.sprint) && Math.Abs(PlayerStamina.instance.stamina) >= 0.01f);
 	}
 
 	void SetRollMovement()
@@ -87,10 +85,10 @@ public class PlayerMovement : MonoBehaviour
 
 	float GetMovementSpeed()
 	{
-		if (playerController.GetPlayerState(PlayerActions.Rolling))
+		if (PlayerController.instance.GetPlayerState(PlayerActions.Rolling))
 			return rollSpeed;
 		
-		if (playerController.GetPlayerState(PlayerActions.Sprinting))
+		if (PlayerController.instance.GetPlayerState(PlayerActions.Sprinting))
 			return sprintSpeed;
 		
 		return jogSpeed;
@@ -100,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		Vector3 v = Vector3.MoveTowards(Vector3.zero, movementTarget, GetMovementSpeed() * Time.deltaTime);
 		
-		playerController.characterController.Move(v);
+		PlayerController.instance.characterController.Move(v);
 		
 		PlayerAnim.instance.Jog();
 	}
@@ -118,13 +116,13 @@ public class PlayerMovement : MonoBehaviour
 
 	private void ApplyGravity()
 	{
-		playerController.characterController.Move(new Vector3(0, -gravity * Time.deltaTime, 0));
+		PlayerController.instance.characterController.Move(new Vector3(0, -gravity * Time.deltaTime, 0));
 	}
 
 	private void RollChecks()
 	{
-		if (!FloatMath.IsZero(playerController.inputController.rollDown) &&
-		    !playerController.playerState[(int) PlayerActions.Rolling]
+		if (!FloatMath.IsZero(PlayerController.instance.inputController.rollDown) &&
+		    !PlayerController.instance.playerState[(int) PlayerActions.Rolling]
 		    && PlayerStamina.instance.stamina > PlayerStamina.rollingStaminaReduction)
 		{
 			StartCoroutine(RollIEnum());
@@ -142,6 +140,6 @@ public class PlayerMovement : MonoBehaviour
 	
 	private void OnDestroy()
 	{
-		SetPlayerState -= playerController.OnSetPlayerState;
+		SetPlayerState -= PlayerController.instance.OnSetPlayerState;
 	}
 }
