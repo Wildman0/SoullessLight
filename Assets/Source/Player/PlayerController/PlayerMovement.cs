@@ -76,7 +76,8 @@ public class PlayerMovement : MonoBehaviour
 		SetVelocity();
 		
 		SetPlayerState(PlayerActions.Moving, velocity > 0);
-		SetPlayerState(PlayerActions.Sprinting, FloatCasting.ToBool(playerController.inputController.sprint));
+		SetPlayerState(PlayerActions.Sprinting,
+			FloatCasting.ToBool(playerController.inputController.sprint) && Math.Abs(PlayerStamina.instance.stamina) >= 0.01f);
 	}
 
 	void SetRollMovement()

@@ -48,6 +48,7 @@ public class PlayerStamina : MonoBehaviour
 	void ReduceStamina()
 	{
 		stamina -= runningStaminaReductionPerSecond * Time.deltaTime;
+		
 		Debug.Log(stamina);
 	}
 
