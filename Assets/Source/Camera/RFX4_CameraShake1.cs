@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class RFX4_CameraShake1 : MonoBehaviour
+public class RFX4_CameraShake2 : MonoBehaviour
 {
     public AnimationCurve ShakeCurve = AnimationCurve.EaseInOut(0, 1, 1, 0);
     public float Duration = 2;

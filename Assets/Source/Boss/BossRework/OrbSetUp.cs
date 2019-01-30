@@ -28,7 +28,7 @@ public class OrbSetUp : MonoBehaviour
     {
         if (spawnOrb == true)
         {
-            GameObject orbPrefab = (GameObject)Instantiate(Resources.Load("projectile_Test"), new Vector3(-61.82f, 31.8f, 4.77f), Quaternion.identity);
+            GameObject orbPrefab = (GameObject)Instantiate(Resources.Load("projectile_Test"), new Vector3(-61.82f, 35.8f, 4.77f), Quaternion.identity);
             Debug.Log(orbPrefab);
 
             spawnOrb = false;
