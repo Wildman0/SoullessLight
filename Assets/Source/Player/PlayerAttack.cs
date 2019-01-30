@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public static PlayerAttack instance;
+    
     private bool canAttack = true;
     
     private GameObject bossGameObject;
@@ -15,8 +17,15 @@ public class PlayerAttack : MonoBehaviour
 
     private AttackHitDetection attackHitDetection;
     public HitReg hitReg;
-    
-    //Runs on instantiation
+
+    private void Awake()
+    {
+        if (!instance)
+            instance = this;
+        else
+            Debug.LogError("More than one instance of PlayerAttack");
+    }
+
     private void Start()
     {
         SetBossValues();
