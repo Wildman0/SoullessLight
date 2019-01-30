@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
 		
 		playerController.characterController.Move(v);
 		
-		playerController.playerAnim.Jog();
+		PlayerAnim.instance.Jog();
 	}
 
 	private void SetVelocity()
@@ -126,13 +126,14 @@ public class PlayerMovement : MonoBehaviour
 		    !playerController.playerState[(int) PlayerActions.Rolling])
 		{
 			StartCoroutine(RollIEnum());
+			PlayerStamina.instance.ReduceStamina(PlayerStamina.rollingStaminaReduction);
 		}
 	}
 	
 	private IEnumerator RollIEnum()
 	{
 		SetPlayerState(PlayerActions.Rolling, true);
-		playerController.playerAnim.Roll();
+		PlayerAnim.instance.Roll();
 		yield return new WaitForSeconds(rollTime);
 		SetPlayerState(PlayerActions.Rolling, false);
 	}
