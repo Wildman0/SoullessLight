@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+	public static PlayerMovement instance;
+	
 	public delegate void SetPlayerStateHandler(PlayerActions index, bool b);
 	public event SetPlayerStateHandler SetPlayerState;
 	
@@ -30,6 +32,11 @@ public class PlayerMovement : MonoBehaviour
 	private void Awake()
 	{
 		SetPlayerState += PlayerController.instance.OnSetPlayerState;
+
+		if (!instance)
+			instance = this;
+		else
+			Debug.LogError("More than one instance of PlayerMovement");
 	}
 
 	private void Update()
