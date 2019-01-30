@@ -46,7 +46,10 @@ public class UI : MonoBehaviour
 
     private void Start()
     {
-        instance = this;
+        if (!instance)
+            instance = this;
+        else
+            Debug.LogError("More than one instance of UI in the scene");
         
         bossHealth = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHealth>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -86,10 +89,10 @@ public class UI : MonoBehaviour
 
     private void PlayerStaminaBar()
     {
-        playerStaminaBar.fillAmount = playerController.stamina;
+        playerStaminaBar.fillAmount = PlayerStamina.instance.stamina;
         playerStaminaBar.color = Color.Lerp(playerStaminaBarEmpty,
                                             playerStaminaBarFull,
-                                            playerController.stamina);
+                                            PlayerStamina.instance.stamina);
     }
 
     private void BossHealthBar()

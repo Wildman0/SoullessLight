@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         if (!instance)
             instance = this;
         else
-            Debug.LogError("More than one PlayerController in the scene");
+            Debug.LogError("More than one instance of PlayerController in the scene");
         
         mainCamera = Camera.main;
         characterController = gameObject.GetComponent<CharacterController>();
