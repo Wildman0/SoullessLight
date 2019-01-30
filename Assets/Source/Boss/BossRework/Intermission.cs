@@ -5,13 +5,16 @@ using UnityEngine;
 public class Intermission : MonoBehaviour
 {
     Phase phase;
+
     public List<float> intermissionTime = new List<float>();
+    public int listNumber;
 
     public bool activated;
 
     private void Start()
     {
         phase = GetComponent<Phase>();
+        listNumber = -1;
     }
 
     public void PlayerAnimation()
@@ -31,10 +34,9 @@ public class Intermission : MonoBehaviour
 
     private void IntermissionTime()
     {
-        intermissionTime[0] -= 1f * Time.deltaTime;
-        if(intermissionTime[0] <= 0)
+        intermissionTime[listNumber] -= 1f * Time.deltaTime;
+        if(intermissionTime[listNumber] <= 0)
         {
-            intermissionTime.Remove(intermissionTime[0]);
             phase.anim.SetBool("IntermissionOut", true);
             phase.intermissionCheck = false;
             phase.retrievedPhase = false;
