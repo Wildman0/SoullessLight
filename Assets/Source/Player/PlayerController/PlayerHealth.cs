@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+	public static PlayerHealth instance;
+	
     [SerializeField] private Animator NearDeath;
 	
 	public float health = 1.0f;
@@ -18,6 +20,14 @@ public class PlayerHealth : MonoBehaviour
 	
 	public int healCount = 3;
 
+	void Awake()
+	{
+		if (!instance)
+			instance = this;
+		else 
+			Debug.LogError("More than one instance of PlayerHealth");
+	}
+	
 	void FixedUpdate()
 	{
 		HealInputCheck();
