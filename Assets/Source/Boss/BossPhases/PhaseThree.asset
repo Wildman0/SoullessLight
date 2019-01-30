@@ -14,19 +14,26 @@ MonoBehaviour:
   phaseName: PhaseThree
   min: 0.35
   max: 0.001
-  coolDownTimer: 0
+  coolDownTimer: 0.1
   comboChance: 0
   damage: []
   closeAttacks:
     leftAttacks:
-    - {fileID: 7400002, guid: 54e681bb30039214bbbdd467acec064e, type: 3}
-    - {fileID: 7400000, guid: 54e681bb30039214bbbdd467acec064e, type: 3}
+    - {fileID: 7400000, guid: 86965f716fdc24d4ca81c210ab6aed1d, type: 2}
+    - {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
+    - {fileID: 7400000, guid: 01a6b453e5e3b6744928e08832889a29, type: 2}
+    - {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
     rightAttacks:
-    - {fileID: 7400050, guid: 0123a06f9b025bc4795d18454456a18f, type: 3}
-    - {fileID: 7400048, guid: 0123a06f9b025bc4795d18454456a18f, type: 3}
+    - {fileID: 7400000, guid: 86965f716fdc24d4ca81c210ab6aed1d, type: 2}
+    - {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
+    - {fileID: 7400000, guid: 0872fb048ebec704e82826c0d0a2649c, type: 2}
+    - {fileID: 7400000, guid: 01a6b453e5e3b6744928e08832889a29, type: 2}
+    - {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
   midAttacks:
-    leftAttacks: []
-    rightAttacks: []
+    leftAttacks:
+    - {fileID: 7400000, guid: c274be62fb938e349aed31b8d8f48b24, type: 2}
+    rightAttacks:
+    - {fileID: 7400000, guid: 9fda829628012a4409c76120b972f439, type: 2}
   longAttacks:
     leftAttacks: []
     rightAttacks: []
