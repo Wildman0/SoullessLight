@@ -25,7 +25,7 @@ public class Phase : MonoBehaviour
     public int lastIndex;
 
     public float comboChance;
-    public float timer;
+    private float timer;
 
     public bool activateAttacking;
     public bool intermissionCheck;
@@ -51,7 +51,7 @@ public class Phase : MonoBehaviour
 
     private void Update()
     {
-        Intermission();
+        //Intermission();
         HasPhaseChanged();
 
         Debug.Log(currentPhase.phaseName);
@@ -69,6 +69,9 @@ public class Phase : MonoBehaviour
                 {
                     phaseSwitchingCheck = currentPhase.phaseName;
                     retrievedPhase = true;
+                    intermission.activated = false;
+                    intermission.listNumber += 1;
+
                     timer = .4f;
                     Debug.Log("in 1");
 
@@ -90,6 +93,8 @@ public class Phase : MonoBehaviour
                 timer = .4f;
             }
         }
+
+        Intermission();
     }
 
     private void Intermission()
@@ -98,10 +103,9 @@ public class Phase : MonoBehaviour
         {
             SelectPhase();
         }
-        else
+        if(intermissionCheck == true)
         {
             intermission.PlayerAnimation();
-            currentPhase = null;
         }
     }
 
