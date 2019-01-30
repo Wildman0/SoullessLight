@@ -29,10 +29,7 @@ public class PlayerStamina : MonoBehaviour
 		}
 		else
 		{
-			if (PlayerController.instance.GetPlayerState(PlayerActions.Sprinting))
-			{
-				ReduceStamina();
-			}
+			ReduceStamina();
 		}
 	}
 
@@ -52,7 +49,7 @@ public class PlayerStamina : MonoBehaviour
 	}
 
 	//Reduces stamina by a specified amount
-	public void ReduceStamina(float f)
+	void ReduceStamina(float f)
 	{
 		stamina -= f;
 	}

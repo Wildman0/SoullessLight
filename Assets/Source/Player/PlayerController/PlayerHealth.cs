@@ -44,8 +44,8 @@ public class PlayerHealth : MonoBehaviour
 	//Heals the player
 	void Heal()
 	{
-		PlayerAnim.instance.Heal();
-		//TODO playerController.DisableMovement(healTime);
+		playerController.playerAnim.Heal();
+		//playerController.DisableMovement(healTime);
 		
 		UI.instance.Healing.GetComponent<Image>().enabled = true;
 		UI.instance.Healing.GetComponent<Animator>().SetTrigger("IsDamaged");
@@ -69,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
 		}
 		else
 		{
-			PlayerAnim.instance.Flinch();
+			playerController.playerAnim.Flinch();
 			//playerController.DisableMovement(0.3f);
 			playerController.mainCamera.GetComponent<RFX4_CameraShake>().PlayShake();
 		}
@@ -86,7 +86,7 @@ public class PlayerHealth : MonoBehaviour
 
 	bool CanHeal()
 	{
-		return (!PlayerAnim.instance.anim.GetBool("IsHealing") &&
+		return (!playerController.playerAnim.anim.GetBool("IsHealing") &&
 		        /*(!playerController.isRolling) &&*/ healCount > 0);
 	}
 

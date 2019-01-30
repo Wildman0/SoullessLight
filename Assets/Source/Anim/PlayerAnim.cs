@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
 {
-    public static PlayerAnim instance;
-    
     public Animator anim;
+    public PlayerController playerController;
     public ParticleManager particleManager;
+    
 
     public AudioSource MusicSource;
     public AudioSource MusicSource1;
@@ -25,13 +25,10 @@ public class PlayerAnim : MonoBehaviour
 
     void Awake()
     {
-        if (!instance)
-            instance = this;
-        else 
-            Debug.LogError("More than one instance of PlayerAnim in the scene");
-        
+        playerController = transform.parent.gameObject.GetComponent<PlayerController>();
         go = FindObjectOfType<GameManager>().gameObject;
         particleManager = go.GetComponent<ParticleManager>();
+        Debug.Log(particleManager);
     }
 
     //Runs on instantiation
@@ -122,7 +119,7 @@ public class PlayerAnim : MonoBehaviour
     //Player jog animation
     public void Jog()
     {
-        anim.SetFloat("MoveSpeed", PlayerController.instance.playerMovement.velocity);
+        anim.SetFloat("MoveSpeed", playerController.playerMovement.velocity);
     }
 
     //Player flinch animation

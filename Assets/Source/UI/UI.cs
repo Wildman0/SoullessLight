@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     public static UI instance;
     
     private BossHealth bossHealth;
+    private PlayerController playerController;
 
 	private Canvas canvas;
     public Image deathImage;
@@ -45,12 +46,10 @@ public class UI : MonoBehaviour
 
     private void Start()
     {
-        if (!instance)
-            instance = this;
-        else
-            Debug.LogError("More than one instance of UI in the scene");
+        instance = this;
         
         bossHealth = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHealth>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     public void Update()
@@ -67,13 +66,13 @@ public class UI : MonoBehaviour
 
         float f = playerHealthBar.fillAmount;
 
-        if (f < PlayerController.instance.playerHealth.health + 0.01f &&
-            Mathf.Abs(PlayerController.instance.playerHealth.health - playerHealthBar.fillAmount) > 0.015f)
+        if (f < playerController.playerHealth.health + 0.01f &&
+            Mathf.Abs(playerController.playerHealth.health - playerHealthBar.fillAmount) > 0.015f)
         {
             f += 0.01f;
         }
-        else if (f > PlayerController.instance.playerHealth.health &&
-                 Mathf.Abs(PlayerController.instance.playerHealth.health - playerHealthBar.fillAmount) > 0.015f)
+        else if (f > playerController.playerHealth.health &&
+                 Mathf.Abs(playerController.playerHealth.health - playerHealthBar.fillAmount) > 0.015f)
         {
             f -= 0.01f;
         }
@@ -82,15 +81,15 @@ public class UI : MonoBehaviour
         
         playerHealthBar.color = Color.Lerp(playerHealthBarEmpty,
                                            playerHealthBarFull,
-                                           PlayerController.instance.playerHealth.health);
+                                           playerController.playerHealth.health);
     }
 
     private void PlayerStaminaBar()
     {
-        playerStaminaBar.fillAmount = PlayerStamina.instance.stamina;
+        playerStaminaBar.fillAmount = playerController.stamina;
         playerStaminaBar.color = Color.Lerp(playerStaminaBarEmpty,
                                             playerStaminaBarFull,
-                                            PlayerStamina.instance.stamina);
+                                            playerController.stamina);
     }
 
     private void BossHealthBar()
@@ -98,6 +97,6 @@ public class UI : MonoBehaviour
         bossHealthBar.fillAmount = bossHealth.health;
         bossHealthBar.color = Color.Lerp(playerHealthBarEmpty,
                                          playerHealthBarFull,
-                                         PlayerController.instance.playerHealth.health);
+                                         playerController.playerHealth.health);
     }
 }

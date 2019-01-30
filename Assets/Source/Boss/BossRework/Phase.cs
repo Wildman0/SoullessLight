@@ -51,7 +51,10 @@ public class Phase : MonoBehaviour
 
     private void Update()
     {
+        //Intermission();
         HasPhaseChanged();
+
+        Debug.Log(currentPhase.phaseName);
     }
 
 
@@ -70,6 +73,7 @@ public class Phase : MonoBehaviour
                     intermission.listNumber += 1;
 
                     timer = .4f;
+                    Debug.Log("in 1");
 
                     anim.SetBool("IntermissionOut", false);
                 }
@@ -77,6 +81,7 @@ public class Phase : MonoBehaviour
                 {
                     intermissionCheck = true;
                     timer = .4f;
+                    Debug.Log("in 2");
                 }
                 else
                 {
