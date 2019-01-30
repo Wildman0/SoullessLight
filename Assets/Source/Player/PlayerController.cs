@@ -32,10 +32,6 @@ public class PlayerController : MonoBehaviour
     public event SetPlayerStateHandler SetPlayerState;
     
     public bool[] playerState = new bool[Enum.GetNames(typeof(PlayerActions)).Length];
-    
-    public float stamina = 1f;
-    private float staminaReplenishPerSecond = 0.25f;
-    private float maxStamina = 1f;
 
     //Audio
     public AudioSource audioSource;
