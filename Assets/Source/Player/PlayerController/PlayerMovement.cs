@@ -31,12 +31,15 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Awake()
 	{
-		SetPlayerState += PlayerController.instance.OnSetPlayerState;
-
 		if (!instance)
 			instance = this;
 		else
 			Debug.LogError("More than one instance of PlayerMovement");
+	}
+
+	void Start()
+	{
+		SetPlayerState += PlayerController.instance.OnSetPlayerState;
 	}
 
 	private void Update()
