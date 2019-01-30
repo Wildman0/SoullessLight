@@ -63,7 +63,7 @@ public class UI : MonoBehaviour
     //TODO: TEMPORARILY CHANGED TO MAKE THE HEALTH SMOOTHED
     private void PlayerHealthBar()
     {
-        //playerHealthBar.fillAmount = playerController.health;
+        playerHealthBar.fillAmount = PlayerHealth.instance.health;
 
         float f = playerHealthBar.fillAmount;
 
