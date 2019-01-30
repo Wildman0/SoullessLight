@@ -123,7 +123,8 @@ public class PlayerMovement : MonoBehaviour
 	private void RollChecks()
 	{
 		if (!FloatMath.IsZero(playerController.inputController.rollDown) &&
-		    !playerController.playerState[(int) PlayerActions.Rolling])
+		    !playerController.playerState[(int) PlayerActions.Rolling]
+		    && PlayerStamina.instance.stamina > PlayerStamina.rollingStaminaReduction)
 		{
 			StartCoroutine(RollIEnum());
 			PlayerStamina.instance.ReduceStamina(PlayerStamina.rollingStaminaReduction);
