@@ -108,7 +108,7 @@ public class HitReg : MonoBehaviour
 
                 //if (!playerController.isInvincible)
                 //{
-                    playerController.playerHealth.TakeDamage(0.3f);                 
+                    PlayerHealth.instance.TakeDamage(0.3f);                 
 
                 //}
             }

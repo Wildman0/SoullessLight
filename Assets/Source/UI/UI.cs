@@ -63,17 +63,17 @@ public class UI : MonoBehaviour
     //TODO: TEMPORARILY CHANGED TO MAKE THE HEALTH SMOOTHED
     private void PlayerHealthBar()
     {
-        //playerHealthBar.fillAmount = playerController.health;
+        playerHealthBar.fillAmount = PlayerHealth.instance.health;
 
         float f = playerHealthBar.fillAmount;
 
-        if (f < PlayerController.instance.playerHealth.health + 0.01f &&
-            Mathf.Abs(PlayerController.instance.playerHealth.health - playerHealthBar.fillAmount) > 0.015f)
+        if (f < PlayerHealth.instance.health + 0.01f &&
+            Mathf.Abs(PlayerHealth.instance.health - playerHealthBar.fillAmount) > 0.015f)
         {
             f += 0.01f;
         }
-        else if (f > PlayerController.instance.playerHealth.health &&
-                 Mathf.Abs(PlayerController.instance.playerHealth.health - playerHealthBar.fillAmount) > 0.015f)
+        else if (f > PlayerHealth.instance.health &&
+                 Mathf.Abs(PlayerHealth.instance.health - playerHealthBar.fillAmount) > 0.015f)
         {
             f -= 0.01f;
         }
@@ -82,7 +82,7 @@ public class UI : MonoBehaviour
         
         playerHealthBar.color = Color.Lerp(playerHealthBarEmpty,
                                            playerHealthBarFull,
-                                           PlayerController.instance.playerHealth.health);
+                                           PlayerHealth.instance.health);
     }
 
     private void PlayerStaminaBar()
@@ -98,6 +98,6 @@ public class UI : MonoBehaviour
         bossHealthBar.fillAmount = bossHealth.health;
         bossHealthBar.color = Color.Lerp(playerHealthBarEmpty,
                                          playerHealthBarFull,
-                                         PlayerController.instance.playerHealth.health);
+                                         PlayerHealth.instance.health);
     }
 }

@@ -24,8 +24,6 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
     
-    public PlayerHealth playerHealth;
-    public PlayerMovement playerMovement;
     public CharacterController characterController;
 
     public delegate void SetPlayerStateHandler(PlayerActions index, bool b);
@@ -43,16 +41,16 @@ public class PlayerController : MonoBehaviour
     
     public Camera mainCamera;
 
-    /// <summary>
-    /// Runs on initialization
-    /// </summary>
-    private void Start()
+    private void Awake()
     {
         if (!instance)
             instance = this;
         else
             Debug.LogError("More than one instance of PlayerController in the scene");
-        
+    }
+
+    private void Start()
+    {
         mainCamera = Camera.main;
         characterController = gameObject.GetComponent<CharacterController>();
         inputController = GameManager.inputController;

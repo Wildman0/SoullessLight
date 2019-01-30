@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-	[SerializeField] private PlayerController playerController;
+	public static PlayerHealth instance;
+	
     [SerializeField] private Animator NearDeath;
 	
 	public float health = 1.0f;
@@ -19,19 +20,27 @@ public class PlayerHealth : MonoBehaviour
 	
 	public int healCount = 3;
 
+	void Awake()
+	{
+		if (!instance)
+			instance = this;
+		else 
+			Debug.LogError("More than one instance of PlayerHealth");
+	}
+	
 	void FixedUpdate()
 	{
 		HealInputCheck();
 		
-		if (health < 0.25f && !playerController.audioSource.isPlaying && health > 0f) //Heartbeat Effect Activate
+		if (health < 0.25f && !PlayerController.instance.audioSource.isPlaying && health > 0f) //Heartbeat Effect Activate
 		{
-			playerController.audioSource.Play();
+			PlayerController.instance.audioSource.Play();
             NearDeath.SetBool("NearDeath", true);
         }
 		else if (health <= 0)
 		{
-			playerController.audioSource.Stop();
-			playerController.audioSource1.Stop();
+			PlayerController.instance.audioSource.Stop();
+			PlayerController.instance.audioSource1.Stop();
 			//StartCoroutine(playerController.Retry());
 
 		}
@@ -71,13 +80,13 @@ public class PlayerHealth : MonoBehaviour
 		{
 			PlayerAnim.instance.Flinch();
 			//playerController.DisableMovement(0.3f);
-			playerController.mainCamera.GetComponent<RFX4_CameraShake>().PlayShake();
+			PlayerController.instance.mainCamera.GetComponent<RFX4_CameraShake>().PlayShake();
 		}
 	}
 	
 	void HealInputCheck()
 	{
-		if (FloatCasting.ToBool(playerController.inputController.healDown) && CanHeal())
+		if (FloatCasting.ToBool(PlayerController.instance.inputController.healDown) && CanHeal())
 		{
 			Heal();
 			Debug.Log("Heal");
