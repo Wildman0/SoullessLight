@@ -5,13 +5,6 @@ using UnityEngine;
 
 public class PlayerCharacterRotation : MonoBehaviour
 {
-    private PlayerMovement playerMovement;
-
-    void Awake()
-    {
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-    }
-
     void Update()
     {
         //If the player isn't moving (Uses some large number as a check because this
@@ -19,7 +12,7 @@ public class PlayerCharacterRotation : MonoBehaviour
         if (Vector3.Distance(transform.position, playerMovement.directionVector) > 500)
         {
             transform.LookAt(
-                (playerMovement.directionVector));
+                (PlayerMovement.instance.directionVector));
         }
     }
 }
