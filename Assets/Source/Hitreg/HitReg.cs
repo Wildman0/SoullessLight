@@ -181,13 +181,3 @@ public class HitReg : MonoBehaviour
         }
     }
 }
-
-internal class WaitforSecondsRealtime
-{
-    private float v;
-
-    public WaitforSecondsRealtime(float v)
-    {
-        this.v = v;
-    }
-}
