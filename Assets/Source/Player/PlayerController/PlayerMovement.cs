@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 	public event SetPlayerStateHandler SetPlayerState;
 	
 	private int movementDisablers = 0;
-	private bool movementDisabled;
+	public bool movementDisabled;
 
 	private const float directionVectorModifier = 10000f;
 	
@@ -106,11 +106,14 @@ public class PlayerMovement : MonoBehaviour
 	
 	private void Move()
 	{
-		Vector3 v = Vector3.MoveTowards(Vector3.zero, movementTarget, GetMovementSpeed() * Time.deltaTime);
-		
-		PlayerController.instance.characterController.Move(v);
-		
-		PlayerAnim.instance.Jog();
+		if (!movementDisabled)
+		{
+			Vector3 v = Vector3.MoveTowards(Vector3.zero, movementTarget, GetMovementSpeed() * Time.deltaTime);
+
+			PlayerController.instance.characterController.Move(v);
+
+			PlayerAnim.instance.Jog();
+		}
 	}
 
 	private void SetVelocity()
