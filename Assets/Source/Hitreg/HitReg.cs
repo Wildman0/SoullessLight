@@ -18,7 +18,6 @@ public class HitReg : MonoBehaviour
     //Isaac's shitty audio implement, fix later
     public AudioClip MusicClip;
     public AudioSource MusicSource;
-    public UI ui;
 
     private RaycastHit hit;
 
@@ -39,7 +38,6 @@ public class HitReg : MonoBehaviour
         SetAttack();
         hasHit = true;
         MusicSource.clip = MusicClip;
-        ui = GameObject.FindGameObjectWithTag("Canvas").GetComponent<UI>();
     }
     
     //Runs at start
@@ -88,8 +86,8 @@ public class HitReg : MonoBehaviour
                 playerAttack.DamageBoss(playerAttack.lightAttackDamage);
                 hasHit = true;
                 MusicSource.Play();
-                ui.bossAttacked.GetComponent<Image>().enabled = true;
-                ui.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
+                UI.instance.bossAttacked.GetComponent<Image>().enabled = true;
+                UI.instance.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
                 StartCoroutine(HitBoss());
               
             }
@@ -101,20 +99,17 @@ public class HitReg : MonoBehaviour
 
             if (tag == "Player")
             {
-                hasHit = true;
-                ui.playerAttacked.GetComponent<Image>().enabled = true;
-                ui.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
-                StartCoroutine(HitBoss());
+                if (!PlayerHealth.instance.isInvincible)
+                {
+                    hasHit = true;
+                    UI.instance.playerAttacked.GetComponent<Image>().enabled = true;
+                    UI.instance.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
+                    StartCoroutine(HitBoss());
 
-                // TODO if (!playerController.isInvincible)
-                //{
-                    PlayerHealth.instance.TakeDamage(0.3f);                 
-
-                //}
+                    PlayerHealth.instance.TakeDamage(0.3f);
+                }
             }
         }
-
-        //hasHit = true;
     }
 
     //HitStop (Isaac)
@@ -184,15 +179,5 @@ public class HitReg : MonoBehaviour
                         0.5f);
             }
         }
-    }
-}
-
-internal class WaitforSecondsRealtime
-{
-    private float v;
-
-    public WaitforSecondsRealtime(float v)
-    {
-        this.v = v;
     }
 }

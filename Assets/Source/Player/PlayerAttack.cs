@@ -62,6 +62,7 @@ public class PlayerAttack : MonoBehaviour
     {
         Debug.Log("Damage");
         bossHealth.Damage(damage); 
+        Controller.Vibrate(0, 0.5f, 0.5f);
     }
 
     //Sets bossGameObject values, including checks for whether or not the Boss component is nested

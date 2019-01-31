@@ -6,7 +6,7 @@ using XInputDotNetPure;
 public class Controller : MonoBehaviour
 {
     private static int queuedOrders;
-    private static Controller instance;
+    public static Controller instance;
 
     void Awake()
     {
