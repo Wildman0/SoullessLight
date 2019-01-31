@@ -11,8 +11,10 @@ public class PlayerCharacterRotation : MonoBehaviour
         //Occasionally returns the player position when the player isn't moving
         if (Vector3.Distance(transform.position, PlayerMovement.instance.directionVector) > 500)
         {
-            transform.LookAt(
-                (PlayerMovement.instance.directionVector));
+            if (!PlayerMovement.instance.movementDisabled)
+            {
+                transform.LookAt(PlayerMovement.instance.directionVector);
+            }
         }
     }
 }
