@@ -15,10 +15,12 @@ public class PlayerHealth : MonoBehaviour
 	private const float maxHealth = 1.0f;
 
 	private float healAmount = 0.3f;
-	private float healTime = 2.2f;
+	private float healTime = 2.7f;
 	private float healCool = 3f;
 	
 	public int healCount = 3;
+
+	public bool isInvincible;
 
 	void Awake()
 	{
@@ -35,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
 		if (health < 0.25f && !PlayerController.instance.audioSource.isPlaying && health > 0f) //Heartbeat Effect Activate
 		{
 			PlayerController.instance.audioSource.Play();
+            NearDeath.SetBool("NearDeath", true);
             NearDeath.SetBool("NearDeath", true);
         }
 		else if (health <= 0)
@@ -54,7 +57,7 @@ public class PlayerHealth : MonoBehaviour
 	void Heal()
 	{
 		PlayerAnim.instance.Heal();
-		//TODO playerController.DisableMovement(healTime);
+		PlayerMovement.instance.DisableMovement(healTime);
 		
 		UI.instance.Healing.GetComponent<Image>().enabled = true;
 		UI.instance.Healing.GetComponent<Animator>().SetTrigger("IsDamaged");
@@ -70,17 +73,20 @@ public class PlayerHealth : MonoBehaviour
 	
 	public void TakeDamage(float f)
 	{
-		health -= f;
+		if (!isInvincible)
+		{
+			health -= f;
 
-		if (health < 0.01f)
-		{
-			Death();
-		}
-		else
-		{
-			PlayerAnim.instance.Flinch();
-			//playerController.DisableMovement(0.3f);
-			PlayerController.instance.mainCamera.GetComponent<RFX4_CameraShake>().PlayShake();
+			if (health < 0.01f)
+			{
+				Death();
+			}
+			else
+			{
+				PlayerAnim.instance.Flinch();
+				PlayerMovement.instance.DisableMovement(0.3f);
+				PlayerController.instance.mainCamera.GetComponent<RFX4_CameraShake>().PlayShake();
+			}
 		}
 	}
 	
@@ -101,9 +107,9 @@ public class PlayerHealth : MonoBehaviour
 
 	void Death()
 	{
-		//Play player death anim
-		//Disable player movement
-		//Set the player to invincible
+		PlayerAnim.instance.Death();
+		PlayerMovement.instance.DisableMovement(99999f);
+		isInvincible = true;
 		
 		UI.instance.deathImage.GetComponent<Image>().enabled = true;
 		UI.instance.deathImage.GetComponent<Animator>().SetTrigger("isEnd");
