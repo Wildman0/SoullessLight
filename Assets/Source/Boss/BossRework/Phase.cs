@@ -157,6 +157,8 @@ public class Phase : MonoBehaviour
 
     public void ChooseAttackAnimation()
     {
+        Debug.Log("Choose Attack Animation");
+
         if (animationIndex == lastIndex)
         {
             SelectNewIndex();
@@ -184,11 +186,11 @@ public class Phase : MonoBehaviour
     {
         animationIndex = Random.Range(0, currentAttackAnimationClips.Count);
 
-        animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
-        isAttacking = true;
-        anim.SetBool("Attack", true);
+        //animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
+        //isAttacking = true;
+        //anim.SetBool("Attack", true);
 
-        StartCoroutine(Wait());
+        //StartCoroutine(Wait());
     }
 
     private IEnumerator test()

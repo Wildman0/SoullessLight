@@ -20,8 +20,6 @@ public class OrbSetUp : MonoBehaviour
     private void Update()
     {
         SpawnOrb();
-
-        Debug.Log(spawnOrb);
     }
 
     private void SpawnOrb()
