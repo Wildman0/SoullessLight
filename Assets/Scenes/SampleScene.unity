@@ -59131,6 +59131,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1711930812587818, guid: c6e9d089bce1ac84a8142c3ada55a9d5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6e9d089bce1ac84a8142c3ada55a9d5, type: 2}
   m_IsPrefabAsset: 0
@@ -130474,7 +130478,6 @@ MonoBehaviour:
   - {fileID: 483119467}
   MusicClip: {fileID: 8300000, guid: 398ddb0bbaab7634a8f185ea331f8a97, type: 3}
   MusicSource: {fileID: 2051090427}
-  ui: {fileID: 244723713}
   hitRegStartDelay: 0.3
   hitRegActiveTime: 0.8
 --- !u!114 &2051090441
@@ -131281,7 +131284,6 @@ MonoBehaviour:
   - {fileID: 483119467}
   MusicClip: {fileID: 8300000, guid: 398ddb0bbaab7634a8f185ea331f8a97, type: 3}
   MusicSource: {fileID: 2051090427}
-  ui: {fileID: 244723713}
   hitRegStartDelay: 0.2
   hitRegActiveTime: 0.8
 --- !u!114 &2072947592
