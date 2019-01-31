@@ -101,20 +101,17 @@ public class HitReg : MonoBehaviour
 
             if (tag == "Player")
             {
-                hasHit = true;
-                ui.playerAttacked.GetComponent<Image>().enabled = true;
-                ui.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
-                StartCoroutine(HitBoss());
+                if (!PlayerHealth.instance.isInvincible)
+                {
+                    hasHit = true;
+                    ui.playerAttacked.GetComponent<Image>().enabled = true;
+                    ui.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
+                    StartCoroutine(HitBoss());
 
-                // TODO if (!playerController.isInvincible)
-                //{
-                    PlayerHealth.instance.TakeDamage(0.3f);                 
-
-                //}
+                    PlayerHealth.instance.TakeDamage(0.3f);
+                }
             }
         }
-
-        //hasHit = true;
     }
 
     //HitStop (Isaac)
