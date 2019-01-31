@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 	private Vector3 movementTarget;
 
 	private float rollTime = 1.0f;
+	private float rollInvincibilityTime = 0.4f;
 	private float rollSpeed = 4.5f;
 	
 	public Vector3 directionVector;
@@ -139,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
 		    && PlayerStamina.instance.stamina > PlayerStamina.rollingStaminaReduction)
 		{
 			StartCoroutine(RollIEnum());
+			StartCoroutine(RollInvincibilityIEnum());
 			PlayerStamina.instance.ReduceStamina(PlayerStamina.rollingStaminaReduction);
 		}
 	}
@@ -149,6 +151,13 @@ public class PlayerMovement : MonoBehaviour
 		PlayerAnim.instance.Roll();
 		yield return new WaitForSeconds(rollTime);
 		SetPlayerState(PlayerActions.Rolling, false);
+	}
+
+	private IEnumerator RollInvincibilityIEnum()
+	{
+		PlayerHealth.instance.isInvincible = true;
+		yield return new WaitForSeconds(rollInvincibilityTime);
+		PlayerHealth.instance.isInvincible = false;
 	}
 	
 	private void OnDestroy()
