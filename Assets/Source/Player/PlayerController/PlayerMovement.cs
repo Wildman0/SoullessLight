@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 	public event SetPlayerStateHandler SetPlayerState;
 	
 	private int movementDisablers = 0;
-	private bool movementDisabled;
+	public bool movementDisabled;
 
 	private const float directionVectorModifier = 10000f;
 	
@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 	private Vector3 movementTarget;
 
 	private float rollTime = 1.0f;
+	private float rollInvincibilityTime = 0.4f;
 	private float rollSpeed = 4.5f;
 	
 	public Vector3 directionVector;
@@ -106,11 +107,14 @@ public class PlayerMovement : MonoBehaviour
 	
 	private void Move()
 	{
-		Vector3 v = Vector3.MoveTowards(Vector3.zero, movementTarget, GetMovementSpeed() * Time.deltaTime);
-		
-		PlayerController.instance.characterController.Move(v);
-		
-		PlayerAnim.instance.Jog();
+		if (!movementDisabled)
+		{
+			Vector3 v = Vector3.MoveTowards(Vector3.zero, movementTarget, GetMovementSpeed() * Time.deltaTime);
+
+			PlayerController.instance.characterController.Move(v);
+
+			PlayerAnim.instance.Jog();
+		}
 	}
 
 	private void SetVelocity()
@@ -136,6 +140,7 @@ public class PlayerMovement : MonoBehaviour
 		    && PlayerStamina.instance.stamina > PlayerStamina.rollingStaminaReduction)
 		{
 			StartCoroutine(RollIEnum());
+			StartCoroutine(RollInvincibilityIEnum());
 			PlayerStamina.instance.ReduceStamina(PlayerStamina.rollingStaminaReduction);
 		}
 	}
@@ -146,6 +151,13 @@ public class PlayerMovement : MonoBehaviour
 		PlayerAnim.instance.Roll();
 		yield return new WaitForSeconds(rollTime);
 		SetPlayerState(PlayerActions.Rolling, false);
+	}
+
+	private IEnumerator RollInvincibilityIEnum()
+	{
+		PlayerHealth.instance.isInvincible = true;
+		yield return new WaitForSeconds(rollInvincibilityTime);
+		PlayerHealth.instance.isInvincible = false;
 	}
 	
 	private void OnDestroy()
