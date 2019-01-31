@@ -22,6 +22,8 @@ public class PlayerHealth : MonoBehaviour
 
 	public bool isInvincible;
 
+	private bool heartBeatEffect;
+
 	void Awake()
 	{
 		if (!instance)
@@ -39,17 +41,22 @@ public class PlayerHealth : MonoBehaviour
 			PlayerController.instance.audioSource.Play();
             NearDeath.SetBool("NearDeath", true);
             NearDeath.SetBool("NearDeath", true);
-        }
+            heartBeatEffect = true;
+            LowHealthVibration.instance.SetVibration(true);
+		}
 		else if (health <= 0)
 		{
 			PlayerController.instance.audioSource.Stop();
 			PlayerController.instance.audioSource1.Stop();
 			//StartCoroutine(playerController.Retry());
-
+			heartBeatEffect = false;
+			LowHealthVibration.instance.SetVibration(false);
 		}
 		else if (health > 0.25f) //Heartbeat Effect Cancel (Isaac)
 		{
             NearDeath.SetBool("NearDeath", false);
+            heartBeatEffect = false;
+            LowHealthVibration.instance.SetVibration(false);
         }
 	}
 	
@@ -76,7 +83,8 @@ public class PlayerHealth : MonoBehaviour
 		if (!isInvincible)
 		{
 			health -= f;
-
+			Controller.Vibrate(0, 0.5f, 0.5f);
+			
 			if (health < 0.01f)
 			{
 				Death();
