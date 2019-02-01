@@ -13,12 +13,14 @@ public class PlayerMovement : MonoBehaviour
 	
 	private int movementDisablers = 0;
 	public bool movementDisabled;
-
-	private const float directionVectorModifier = 10000f;
+	
+	private const float directionVectorModifier = 100000f;
 	
 	private float currentMovementSpeed;
 	private const float jogSpeed = 3.0f;
 	private const float sprintSpeed = 4.5f;
+
+	[SerializeField] private float directionChangeSpeed = 0.15f;
 	
 	private const float gravity = 9.8f;
 	private Vector3 movementTarget;
@@ -82,11 +84,11 @@ public class PlayerMovement : MonoBehaviour
 			0,
 			PlayerController.instance.inputController.forward - PlayerController.instance.inputController.back);
 
-		movementTarget = Vector3.Lerp(vec, movementTarget, 0.15f);
-		
+		movementTarget = Vector3.Lerp(vec, movementTarget, directionChangeSpeed);
 		movementVector = transform.TransformDirection(movementTarget);
-		//movementTarget = transform.TransformDirection(movementTarget);
 		
+		//Clamps the magnitude of the vector, otherwise going too far in one direction for too long results in the 
+		//character going in that way for a long time
 		movementTarget = Vector3.ClampMagnitude(movementTarget, 2.0f);
 		
 		SetDirectionVector();
