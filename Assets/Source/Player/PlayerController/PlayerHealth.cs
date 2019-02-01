@@ -21,7 +21,8 @@ public class PlayerHealth : MonoBehaviour
 	public int healCount = 3;
 
 	public bool isInvincible;
-
+	private bool isHealing;
+	
 	private bool heartBeatEffect;
 
 	void Awake()
@@ -76,6 +77,15 @@ public class PlayerHealth : MonoBehaviour
 		{
 			health = maxHealth;
 		}
+
+		StartCoroutine(DisableHealing(healTime));
+	}
+
+	private IEnumerator DisableHealing(float time)
+	{
+		isHealing = true;
+		yield return new WaitForSeconds(time);
+		isHealing = false;
 	}
 	
 	public void TakeDamage(float f)
@@ -110,7 +120,7 @@ public class PlayerHealth : MonoBehaviour
 	bool CanHeal()
 	{
 		return (!PlayerAnim.instance.anim.GetBool("IsHealing") &&
-		        /*(!playerController.isRolling) &&*/ healCount > 0);
+		        !isHealing && healCount > 0);
 	}
 
 	void Death()
