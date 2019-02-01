@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour
 	private const float directionVectorModifier = 100000f;
 	
 	private float currentMovementSpeed;
-	private const float jogSpeed = 3.0f;
-	private const float sprintSpeed = 4.5f;
+	[SerializeField] private float jogSpeed = 3.0f;
+	[SerializeField] private float sprintSpeed = 5.5f;
 
 	[SerializeField] private float directionChangeSpeed = 0.15f;
 	
@@ -26,9 +26,9 @@ public class PlayerMovement : MonoBehaviour
 	private Vector3 movementTarget;
 	private Vector3 movementVector;
 
-	private float rollTime = 1.0f;
-	private float rollInvincibilityTime = 0.4f;
-	private float rollSpeed = 4.5f;
+	[SerializeField] private float rollTime = 1.0f;
+	[SerializeField] private float rollInvincibilityTime = 0.4f;
+	[SerializeField] private float rollSpeed = 4.5f;
 	
 	public Vector3 directionVector;
 	public float velocity;
@@ -123,7 +123,10 @@ public class PlayerMovement : MonoBehaviour
 
 			PlayerController.instance.characterController.Move(v);
 
-			PlayerAnim.instance.Jog();
+			if (PlayerController.instance.GetPlayerState(PlayerActions.Sprinting))
+				PlayerAnim.instance.Run();
+			else
+				PlayerAnim.instance.Jog();
 		}
 	}
 
