@@ -18,7 +18,7 @@ public class AttackSwitch : StateMachineBehaviour
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         AttackCombo attackCombo = animator.GetComponent<AttackCombo>();
-        attackCombo.SelectComboAnimations();
+        attackCombo.selectAttack = true;
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
