@@ -9,6 +9,7 @@ public class PhaseInspector : Editor
 {
     public override void OnInspectorGUI()
     {
+
         PhaseName();
 
         EditorGUILayout.Space();
@@ -109,8 +110,13 @@ public class PhaseInspector : Editor
 
         SerializedObject closeAttacks = new SerializedObject(phaseValues);
         SerializedProperty closeProperty = closeAttacks.FindProperty("closeAttacks");
-        EditorGUILayout.PropertyField(closeProperty, true);
+        EditorGUILayout.PropertyField(closeProperty, true, GUILayout.Width(250));
         closeAttacks.ApplyModifiedProperties();
+
+        //SerializedObject closeDamage = new SerializedObject(phaseValues);
+        //SerializedProperty closeDamageProperty = closeDamage.FindProperty("closeDamage");
+        //EditorGUILayout.PropertyField(closeDamageProperty, true, GUILayout.Width(250));
+        //closeDamage.ApplyModifiedProperties(); 
     }
 
     private void MidAttacks()
@@ -119,7 +125,7 @@ public class PhaseInspector : Editor
 
         SerializedObject midAttacks = new SerializedObject(phaseValues);
         SerializedProperty midProperty = midAttacks.FindProperty("midAttacks");
-        EditorGUILayout.PropertyField(midProperty, true);
+        EditorGUILayout.PropertyField(midProperty, true, GUILayout.Width(250));
         midAttacks.ApplyModifiedProperties();
     }
 
@@ -129,7 +135,7 @@ public class PhaseInspector : Editor
 
         SerializedObject longAttacks = new SerializedObject(phaseValues);
         SerializedProperty longProperty = longAttacks.FindProperty("longAttacks");
-        EditorGUILayout.PropertyField(longProperty, true);
+        EditorGUILayout.PropertyField(longProperty, true, GUILayout.Width(250));
         longAttacks.ApplyModifiedProperties();
     }
 }

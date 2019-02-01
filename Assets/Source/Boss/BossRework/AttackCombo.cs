@@ -9,25 +9,37 @@ public class AttackCombo : MonoBehaviour
     public int animationIndex;
     public int lastIndex;
 
+    public bool selectAttack;
+
     private void Start()
     {
         phase = GetComponent<Phase>();
     }
 
+    private void Update()
+    {
+        SelectComboAnimations();
+    }
+
     public void SelectComboAnimations()
     {
-        if(lastIndex == animationIndex)
-        {
-            SelectNewIndex();
-        }
-        else if (lastIndex != animationIndex)
+        if (selectAttack == true)
         {
             Debug.Log("In");
-            phase.animatorOverrideController["ATTACK"] = phase.currentAttackAnimationClips[animationIndex];
-            Phase.isAttacking = true;
-            phase.anim.SetBool("Combo", true);
+            if (lastIndex == animationIndex)
+            {
+                SelectNewIndex();
+            }
+            else
+            {
+                phase.animatorOverrideController["ATTACK"] = phase.currentAttackAnimationClips[animationIndex];
+                Phase.isAttacking = true;
+                phase.anim.SetBool("Combo", true);
 
-            StartCoroutine(Wait());
+                StartCoroutine(Wait());
+
+                selectAttack = false;
+            }
         }
     }
 
@@ -37,17 +49,10 @@ public class AttackCombo : MonoBehaviour
         phase.anim.SetBool("Combo", false);
         lastIndex = animationIndex;
         Phase.isAttacking = false;
-        phase.selectAttackStyle = false;
     }
 
     private void SelectNewIndex()
     {
         animationIndex = Random.Range(0, phase.currentAttackAnimationClips.Count);
-
-        phase.animatorOverrideController["ATTACK"] = phase.currentAttackAnimationClips[animationIndex];
-        Phase.isAttacking = true;
-        phase.anim.SetBool("Combo", true);
-
-        StartCoroutine(Wait());
     }
 }

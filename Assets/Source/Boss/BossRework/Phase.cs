@@ -97,6 +97,7 @@ public class Phase : MonoBehaviour
         if(intermissionCheck == false)
         {
             SelectPhase();
+            AttackManagement();
         }
         if(intermissionCheck == true)
         {
@@ -139,27 +140,24 @@ public class Phase : MonoBehaviour
 
     public void AttackManagement()
     {
-        if (selectAttackStyle == false)
+        if (selectAttackStyle == true)
         {
             comboChance = Random.Range(0.0f, 1.0f);
             if (comboChance > currentPhase.comboChance)
             {
-                attackCombo.SelectComboAnimations();
-                selectAttackStyle = true;
+                attackCombo.selectAttack = true;
+                selectAttackStyle = false;
             }
             else
             {
-                ChooseAttackAnimation();
-                selectAttackStyle = true;
+                ChooseAttackAnimation();;
             }
         }
     }
 
     public void ChooseAttackAnimation()
     {
-        Debug.Log("Choose Attack Animation");
-
-        if (animationIndex == lastIndex)
+        if (lastIndex == animationIndex)
         {
             SelectNewIndex();
         }
@@ -168,6 +166,7 @@ public class Phase : MonoBehaviour
             animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
             isAttacking = true;
             anim.SetBool("Attack", true);
+            selectAttackStyle = false;
 
             StartCoroutine(Wait());
         }
@@ -179,23 +178,10 @@ public class Phase : MonoBehaviour
         anim.SetBool("Attack", false);
         lastIndex = animationIndex;
         isAttacking = false;
-        selectAttackStyle = false;
     }
 
     public void SelectNewIndex()
     {
         animationIndex = Random.Range(0, currentAttackAnimationClips.Count);
-
-        animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
-        isAttacking = true;
-        anim.SetBool("Attack", true);
-
-        StartCoroutine(Wait());
-    }
-
-    private IEnumerator test()
-    {
-        yield return new WaitForSeconds(0.3f);
-        anim.SetBool("Combo", false);
     }
 }

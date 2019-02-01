@@ -19,4 +19,6 @@ public class PhaseValues : ScriptableObject
     public AttackAnimations midAttacks;
     [Header("Long Attacks")]
     public AttackAnimations longAttacks;
+
+    public AttackDamage closeDamage;
 }

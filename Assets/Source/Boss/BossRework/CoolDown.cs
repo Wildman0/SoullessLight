@@ -23,7 +23,7 @@ public class CoolDown : MonoBehaviour
             countUpTimer += 1f * Time.deltaTime;
             if(countUpTimer >= timer)
             {
-                phase.AttackManagement();
+                phase.selectAttackStyle = true;
                 phase.activateAttacking = false;
                 countUpTimer = 0f;
             }
