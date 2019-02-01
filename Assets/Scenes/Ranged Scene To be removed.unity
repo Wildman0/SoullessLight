@@ -19676,6 +19676,48 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 313376687}
   m_CullTransparentMesh: 0
+--- !u!1001 &313769332
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4929154183053050, guid: 505e344e20a13f84497af39ddba52459, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -62.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929154183053050, guid: 505e344e20a13f84497af39ddba52459, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 26.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929154183053050, guid: 505e344e20a13f84497af39ddba52459, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929154183053050, guid: 505e344e20a13f84497af39ddba52459, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929154183053050, guid: 505e344e20a13f84497af39ddba52459, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929154183053050, guid: 505e344e20a13f84497af39ddba52459, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929154183053050, guid: 505e344e20a13f84497af39ddba52459, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929154183053050, guid: 505e344e20a13f84497af39ddba52459, type: 2}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 505e344e20a13f84497af39ddba52459, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &314249944
 GameObject:
   m_ObjectHideFlags: 0
@@ -57215,7 +57257,6 @@ MonoBehaviour:
   - {fileID: 1355090164}
   MusicClip: {fileID: 8300000, guid: 398ddb0bbaab7634a8f185ea331f8a97, type: 3}
   MusicSource: {fileID: 951420493}
-  ui: {fileID: 0}
   hitRegStartDelay: 0.1
   hitRegActiveTime: 0.005
 --- !u!114 &951420497
@@ -57290,6 +57331,7 @@ MonoBehaviour:
   NearDeath: {fileID: 0}
   health: 1
   healCount: 3
+  isInvincible: 0
 --- !u!114 &951420501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57312,6 +57354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a302efd4f89fb47ae34b88b3efb4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementDisabled: 0
   directionVector: {x: 0, y: 0, z: 0}
   velocity: 0
 --- !u!1 &958956588
