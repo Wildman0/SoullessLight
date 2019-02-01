@@ -122,6 +122,8 @@ public class PlayerAnim : MonoBehaviour
     //Player jog animation
     public void Jog()
     {
+        anim.SetBool("IsRunning", false);
+        
         anim.SetFloat("MoveSpeed", PlayerMovement.instance.velocity);
     }
 
