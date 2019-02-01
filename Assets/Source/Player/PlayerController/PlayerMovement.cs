@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 	
 	private const float gravity = 9.8f;
 	private Vector3 movementTarget;
+	private Vector3 movementVector;
 
 	private float rollTime = 1.0f;
 	private float rollInvincibilityTime = 0.4f;
@@ -75,11 +76,18 @@ public class PlayerMovement : MonoBehaviour
 	
 	private void SetMovement()
 	{
+		Vector3 vec = movementTarget;
+		
 		movementTarget = new Vector3(PlayerController.instance.inputController.right - PlayerController.instance.inputController.left,
 			0,
 			PlayerController.instance.inputController.forward - PlayerController.instance.inputController.back);
 
-		movementTarget = transform.TransformDirection(movementTarget);
+		movementTarget = Vector3.Lerp(vec, movementTarget, 0.15f);
+		
+		movementVector = transform.TransformDirection(movementTarget);
+		//movementTarget = transform.TransformDirection(movementTarget);
+		
+		movementTarget = Vector3.ClampMagnitude(movementTarget, 2.0f);
 		
 		SetDirectionVector();
 		SetVelocity();
@@ -109,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (!movementDisabled)
 		{
-			Vector3 v = Vector3.MoveTowards(Vector3.zero, movementTarget, GetMovementSpeed() * Time.deltaTime);
+			Vector3 v = Vector3.MoveTowards(Vector3.zero, movementVector, GetMovementSpeed() * Time.deltaTime);
 
 			PlayerController.instance.characterController.Move(v);
 
@@ -125,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
 	//Sets the direction the player is moving towards
 	private void SetDirectionVector()
 	{
-		directionVector = movementTarget * directionVectorModifier;
+		directionVector = movementVector * directionVectorModifier;
 	}
 
 	private void ApplyGravity()
