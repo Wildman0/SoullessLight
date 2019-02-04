@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class HitReg : MonoBehaviour
 {
+    public enum PlayerAttackTypes
+    {
+        LightAttack,
+        HeavyAttack
+    }
+
+    private PlayerAttackTypes lastPlayerAttackType;
+    
     [SerializeField] private bool debug;
 
     [SerializeField] private string tag;
@@ -62,6 +70,12 @@ public class HitReg : MonoBehaviour
     {
         StartCoroutine(ToggleHitRegCoroutine());
     }
+    
+    public void ToggleHitreg(PlayerAttackTypes attack)
+    {
+        lastPlayerAttackType = attack;
+        StartCoroutine(ToggleHitRegCoroutine());
+    }
 
     private IEnumerator ToggleHitRegCoroutine()
     {
@@ -83,13 +97,22 @@ public class HitReg : MonoBehaviour
         {
             if (tag == "Boss")
             {
-                playerAttack.DamageBoss(playerAttack.lightAttackDamage);
+                switch (lastPlayerAttackType)
+                {
+                    case PlayerAttackTypes.LightAttack:
+                        playerAttack.DamageBoss(playerAttack.lightAttackDamage);
+                        break;
+                    
+                    case PlayerAttackTypes.HeavyAttack:
+                        playerAttack.DamageBoss(playerAttack.heavyAttackDamage);
+                        break;
+                }
+                
                 hasHit = true;
                 MusicSource.Play();
                 UI.instance.bossAttacked.GetComponent<Image>().enabled = true;
                 UI.instance.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
-                StartCoroutine(HitBoss());
-              
+                StartCoroutine(HitBoss()); 
             }
 
             if (tag == "Player")
