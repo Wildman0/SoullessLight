@@ -7,6 +7,7 @@ public class Particle : MonoBehaviour {
     public GameObject animator;
     public GameObject animators;
     public GameObject animators1;
+    public GameObject animators2;
     public GameObject holder;
 
     // Use this for initialization
@@ -28,6 +29,13 @@ public class Particle : MonoBehaviour {
     {
         animators1.SetActive(true);
         animators1 = Instantiate(animators1, holder.transform.position, Quaternion.identity) as GameObject;
+
+    }
+
+    public void ParticleEffects2()
+    {
+        animators2.SetActive(true);
+        animators2 = Instantiate(animators2, holder.transform.position, Quaternion.identity) as GameObject;
 
     }
 
