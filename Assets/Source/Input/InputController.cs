@@ -135,6 +135,8 @@ namespace NDA.PlayerInput
             rollDown = BoolCasting.ToFloat(Input.GetButtonDown("Fire2"));
             lightAttackDown = BoolCasting.ToFloat(Input.GetButtonDown("Joystick 5"));
             healDown = BoolCasting.ToFloat(Input.GetButtonDown("Fire3"));
+            heavyAttackDown = Input.GetAxis("Right Trigger");
+            
             //ryan
             jumpDown = BoolCasting.ToFloat(Input.GetButtonDown("Fire1"));
         }
