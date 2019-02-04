@@ -22,6 +22,8 @@ public class PlayerAnim : MonoBehaviour
     public AudioClip MusicClip4;
 
     private GameObject go;
+    private static readonly int IsHeavyAtt = Animator.StringToHash("IsHeavyAtt");
+    private static readonly int IsWeakAtt = Animator.StringToHash("IsWeakAtt");
 
     void Awake()
     {
@@ -53,7 +55,7 @@ public class PlayerAnim : MonoBehaviour
     //Player light attack animation
     public void LightAttack()
     {
-        anim.SetBool("IsWeakAtt", true);
+        anim.SetBool(IsWeakAtt, true);
         MusicSource.clip = MusicClip;
         MusicSource.Play();
     }
@@ -61,6 +63,7 @@ public class PlayerAnim : MonoBehaviour
     public void HeavyAttack()
     {
         anim.SetTrigger("IsHeavyAtt");
+        Debug.Log("Attack");
     }
 
     //Player idle animation

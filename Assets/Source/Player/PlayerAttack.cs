@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using NDA.FloatUtil;
+using NDA.PlayerInput;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -40,6 +41,10 @@ public class PlayerAttack : MonoBehaviour
         {
             LightAttack();
         }
+        else if (FloatCasting.ToBool(PlayerController.instance.inputController.heavyAttackDown) && canAttack)
+        {
+            HeavyAttack();
+        }
     }
 
     //Performs a light attack
@@ -60,7 +65,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void HeavyAttack()
     {
-        
+        StartCoroutine(HeavyAttackIEnum());
     }
 
     private IEnumerator HeavyAttackIEnum()
