@@ -14,7 +14,8 @@ public class PlayerAttack : MonoBehaviour
 
     public float lightAttackDamage = 0.02f;
     private float lightAttackMovementLockTime = 0.4f;
-
+    private float heavyAttackMovementLockTime = 0.6f;
+    
     private AttackHitDetection attackHitDetection;
     public HitReg hitReg;
 
@@ -54,6 +55,21 @@ public class PlayerAttack : MonoBehaviour
         
         canAttack = false;
         yield return new WaitForSeconds(lightAttackMovementLockTime);
+        canAttack = true;
+    }
+
+    public void HeavyAttack()
+    {
+        
+    }
+
+    private IEnumerator HeavyAttackIEnum()
+    {
+        hitReg.ToggleHitreg();
+        PlayerAnim.instance.HeavyAttack();
+
+        canAttack = false;
+        yield return new WaitForSeconds(heavyAttackMovementLockTime);
         canAttack = true;
     }
 

@@ -58,6 +58,11 @@ public class PlayerAnim : MonoBehaviour
         MusicSource.Play();
     }
 
+    public void HeavyAttack()
+    {
+        anim.SetTrigger("IsHeavyAtt");
+    }
+
     //Player idle animation
     public void Idle()
     {
