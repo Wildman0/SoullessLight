@@ -16,7 +16,7 @@ public class PlayerAttack : MonoBehaviour
     public float lightAttackDamage = 0.02f;
     public float heavyAttackDamage = 0.04f;
     private float lightAttackMovementLockTime = 0.4f;
-    private float heavyAttackMovementLockTime = 0.6f;
+    private float heavyAttackMovementLockTime = 2.0f;
     
     private AttackHitDetection attackHitDetection;
     public HitReg hitReg;
@@ -74,9 +74,14 @@ public class PlayerAttack : MonoBehaviour
         hitReg.ToggleHitreg(HitReg.PlayerAttackTypes.HeavyAttack);
         PlayerAnim.instance.HeavyAttack();
 
+        PlayerController.instance.playerState[(int)PlayerActions.HeavyAttacking] = true;
+        PlayerMovement.instance.LockMovement(heavyAttackMovementLockTime);
+        
         canAttack = false;
         yield return new WaitForSeconds(heavyAttackMovementLockTime);
         canAttack = true;
+        
+        PlayerController.instance.playerState[(int)PlayerActions.HeavyAttacking] = false;
     }
 
     //Takes a given amount of health away from the boss

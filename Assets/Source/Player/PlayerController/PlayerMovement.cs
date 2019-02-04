@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
 	
 	private int movementDisablers = 0;
 	public bool movementDisabled;
+
+	private int movementLockers = 0;
+	public bool movementLocked;
 	
 	private const float directionVectorModifier = 100000f;
 	
@@ -29,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float rollTime = 1.0f;
 	[SerializeField] private float rollInvincibilityTime = 0.4f;
 	[SerializeField] private float rollSpeed = 4.5f;
+
+	[SerializeField] private float heavyAttackSpeed = 1.0f;
 	
 	public Vector3 directionVector;
 	public float velocity;
@@ -50,10 +55,10 @@ public class PlayerMovement : MonoBehaviour
 	{
 		RollChecks();
 
-		if (!PlayerController.instance.GetPlayerState(PlayerActions.Rolling))
+		if (!movementLocked)
 			SetMovement();
 		else
-			SetRollMovement();
+			KeepCurrentMovement();
 		
 		Move();
 		ApplyGravity();
@@ -74,6 +79,22 @@ public class PlayerMovement : MonoBehaviour
 		if (movementDisablers < 1)
 			movementDisabled = false;
 
+	}
+
+	public void LockMovement(float time)
+	{
+		StartCoroutine(LockMovementIEnum(time));
+	}
+
+	private IEnumerator LockMovementIEnum(float time)
+	{
+		movementLocked = true;
+		movementLockers++;
+		yield return new WaitForSeconds(time);
+		movementLockers--;
+
+		if (movementLockers < 1)
+			movementLocked = false;
 	}
 	
 	private void SetMovement()
@@ -99,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
 			FloatCasting.ToBool(PlayerController.instance.inputController.sprint) && Math.Abs(PlayerStamina.instance.stamina) >= 0.01f);
 	}
 
-	void SetRollMovement()
+	void KeepCurrentMovement()
 	{
 		movementTarget = directionVector;
 	}
@@ -111,7 +132,10 @@ public class PlayerMovement : MonoBehaviour
 		
 		if (PlayerController.instance.GetPlayerState(PlayerActions.Sprinting))
 			return sprintSpeed;
-		
+
+		if (PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking))
+			return heavyAttackSpeed;
+			
 		return jogSpeed;
 	}
 	
@@ -162,6 +186,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		SetPlayerState(PlayerActions.Rolling, true);
 		PlayerAnim.instance.Roll();
+		LockMovement(rollTime);
 		yield return new WaitForSeconds(rollTime);
 		SetPlayerState(PlayerActions.Rolling, false);
 	}
