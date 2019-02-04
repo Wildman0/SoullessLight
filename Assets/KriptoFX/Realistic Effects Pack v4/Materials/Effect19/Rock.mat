@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Rock
-  m_Shader: {fileID: 4800000, guid: 473ebb28ae3415742808a0b0b04f40c0, type: 3}
-  m_ShaderKeywords: _ALPHATEST_ON _NORMALMAP
-  m_LightmapFlags: 5
+  m_Shader: {fileID: 4800000, guid: 0d2c1495cc4085546833ebd5c47f3da4, type: 3}
+  m_ShaderKeywords: _ALPHATEST_ON _EMISSION _NORMALMAP
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -66,8 +66,40 @@ Material:
         m_Texture: {fileID: 2800000, guid: e4dd0573cead68b4da38ae691887ab95, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_26B6AB03_Texture:
+        m_Texture: {fileID: 2800000, guid: 3d4f353851398694c861e0625ffe092c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3726CABF_Texture:
+        m_Texture: {fileID: 2800000, guid: 3354cbb32a2d1a54aa9937424d92456a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_3F62D799_Texture:
+        m_Texture: {fileID: 2800000, guid: ee7178b470490024abf60ac50d175b5e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_4D6F7C5_Texture:
+        m_Texture: {fileID: 2800000, guid: e217c9db60984fc40b3b7b7ac7dae9bc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_6F5FFFC8_Texture:
+        m_Texture: {fileID: 2800000, guid: a1cb496512490784d9768c578aff04d4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_77220A80_Texture:
+        m_Texture: {fileID: 2800000, guid: 37fec7e88be2fc84bb36654cde4cab88, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_7BB195AF_Texture:
         m_Texture: {fileID: 2800000, guid: a97b1023f4a1cdc4dafe087b7708607a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_7F7D294F_Texture:
+        m_Texture: {fileID: 2800000, guid: bf1539a233d8c2b4ab9990ce3575ab0f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_A5AB0631_Texture:
+        m_Texture: {fileID: 2800000, guid: d3cc5dc9b4c0d9940a555b63f8f8de5a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_AD308A8D_Texture:
@@ -78,12 +110,24 @@ Material:
         m_Texture: {fileID: 2800000, guid: 6a384051e8af7214a8d488825f6e5793, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_B2A53E48_Texture:
+        m_Texture: {fileID: 2800000, guid: 63fb617c71735714e9134a7e80c2f88d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_CEE4FFB5_Texture:
+        m_Texture: {fileID: 2800000, guid: 5e14d869756c5974ebafcc1b1369a94d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_E296E51E_Texture:
         m_Texture: {fileID: 2800000, guid: c331a4cf9720c0b4e9f2c82b734c1e0a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_F0BA4F03_Texture:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_FF0B072B_Texture:
+        m_Texture: {fileID: 2800000, guid: 2350b0c24f19ec84681bf254ced0350e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -98,11 +142,15 @@ Material:
     - _CutoutThickness: 0.02
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _GlossMapScale: 1
     - _Glossiness: 0.36
+    - _GlossyReflections: 1
     - _Metallic: 0.695
     - _Mode: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
