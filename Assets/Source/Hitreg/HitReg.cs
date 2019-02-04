@@ -91,11 +91,6 @@ public class HitReg : MonoBehaviour
                 StartCoroutine(HitBoss());
               
             }
-            else
-            {
-                //TODO: TEMP 0.1 VARAIBLE, CHANGE IN FUTURE
-                //playerController.Damage(0.1f);
-            }
 
             if (tag == "Player")
             {
