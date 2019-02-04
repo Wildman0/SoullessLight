@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     private BossHealth bossHealth;
 
     public float lightAttackDamage = 0.02f;
+    public float heavyAttackDamage = 0.04f;
     private float lightAttackMovementLockTime = 0.4f;
     private float heavyAttackMovementLockTime = 0.6f;
     
@@ -55,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator LightAttackIEnumerator()
     {
-        hitReg.ToggleHitreg();
+        hitReg.ToggleHitreg(HitReg.PlayerAttackTypes.LightAttack);
         PlayerAnim.instance.LightAttack();
         
         canAttack = false;
@@ -70,7 +71,7 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator HeavyAttackIEnum()
     {
-        hitReg.ToggleHitreg();
+        hitReg.ToggleHitreg(HitReg.PlayerAttackTypes.HeavyAttack);
         PlayerAnim.instance.HeavyAttack();
 
         canAttack = false;
