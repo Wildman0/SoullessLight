@@ -63,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1268388163881540
 GameObject:
   m_ObjectHideFlags: 1
@@ -645,7 +645,7 @@ Light:
   m_ShadowAngle: 0
 --- !u!114 &114015744251137426
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1189762028630648}
@@ -704,14 +704,14 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.955
-      value: 1
-      inSlope: 0.19031052
-      outSlope: 0.19031052
+      time: 0.64897496
+      value: 0.15749809
+      inSlope: 0.9849328
+      outSlope: 0.9849328
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.39047563
     - serializedVersion: 3
       time: 1
       value: 0
@@ -724,8 +724,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  GraphTimeMultiplier: 3
-  GraphIntensityMultiplier: 2
+  GraphTimeMultiplier: 1.5
+  GraphIntensityMultiplier: 1
   IsLoop: 0
   canUpdate: 0
 --- !u!114 &114110309391869442
@@ -742,7 +742,7 @@ MonoBehaviour:
   Color: {r: 0.990566, g: 0.837376, b: 0.126157, a: 1}
 --- !u!114 &114222818418157276
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1189762028630648}
@@ -5647,7 +5647,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1831072698041506}
   serializedVersion: 5
   lengthInSec: 1.4
-  simulationSpeed: 2
+  simulationSpeed: 2.5
   stopAction: 0
   looping: 0
   prewarm: 0
