@@ -15,6 +15,7 @@ public enum PlayerActions
     Rolling,
     Sprinting,
     Attacking,
+    HeavyAttacking,
     Blocking,
     Invincible
 }
