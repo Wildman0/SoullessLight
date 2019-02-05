@@ -1,8 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackDamage
+[Serializable]
+public class AttackDamage 
 {
-    public List<float> attackDamage = new List<float>();
+    public List<float> leftDamage = new List<float>();
+    public List<float> rightDamage = new List<float>();
 }

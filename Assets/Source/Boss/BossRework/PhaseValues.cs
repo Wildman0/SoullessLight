@@ -11,7 +11,6 @@ public class PhaseValues : ScriptableObject
     public float max; //phase Activation max
     public float coolDownTimer;
     public float comboChance;
-    public float[] damage;
 
     [Header("Close Attacks")]
     public AttackAnimations closeAttacks;
@@ -20,5 +19,6 @@ public class PhaseValues : ScriptableObject
     [Header("Long Attacks")]
     public AttackAnimations longAttacks;
 
+    [Header("Close Damage")]
     public AttackDamage closeDamage;
 }

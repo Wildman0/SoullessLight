@@ -9,7 +9,6 @@ public class PhaseInspector : Editor
 {
     public override void OnInspectorGUI()
     {
-
         PhaseName();
 
         EditorGUILayout.Space();
@@ -40,9 +39,13 @@ public class PhaseInspector : Editor
     private void PhaseName()
     {
         var phaseValues = (PhaseValues)target;
-        
-        //Shows phase name field
-        phaseValues.phaseName = EditorGUILayout.TextField("Phase Name", phaseValues.phaseName, GUILayout.Width(250), GUILayout.Height(16));
+
+        EditorGUILayout.BeginHorizontal();
+
+        EditorGUILayout.LabelField("Phase Name:", GUILayout.Width(130), GUILayout.Height(16));
+        phaseValues.phaseName = EditorGUILayout.TextField("Phase Name", GUILayout.Width(150), GUILayout.Height(16));
+
+        EditorGUILayout.EndHorizontal();
     }
 
     private void PhaseActivation()
@@ -52,16 +55,9 @@ public class PhaseInspector : Editor
         EditorGUILayout.BeginHorizontal();
 
         EditorGUILayout.LabelField("Phase Activation: Max", GUILayout.Width(130), GUILayout.Height(16));
-        phaseValues.min = EditorGUILayout.FloatField(phaseValues.min, GUILayout.Width(75), GUILayout.Height(16));
-        EditorGUILayout.LabelField("Min", GUILayout.Width(30), GUILayout.Height(16));
-        phaseValues.max = EditorGUILayout.FloatField(phaseValues.max, GUILayout.Width(75), GUILayout.Height(16));
-
-        EditorGUILayout.Space();
-
-        if (GUILayout.Button("i", GUILayout.Width(15), GUILayout.Height(14)))
-        {
-            
-        }
+        phaseValues.min = EditorGUILayout.FloatField(phaseValues.min, GUILayout.Width(58), GUILayout.Height(16));
+        EditorGUILayout.LabelField("Min", GUILayout.Width(25), GUILayout.Height(16));
+        phaseValues.max = EditorGUILayout.FloatField(phaseValues.max, GUILayout.Width(58), GUILayout.Height(16));
 
         EditorGUILayout.EndHorizontal();
     }
@@ -72,15 +68,8 @@ public class PhaseInspector : Editor
 
         EditorGUILayout.BeginHorizontal();
 
-        //Shows cool down timer float field
-        phaseValues.coolDownTimer = EditorGUILayout.FloatField("Cool Down Timer", phaseValues.coolDownTimer, GUILayout.Width(200), GUILayout.Height(16));
-
-        EditorGUILayout.Space();
-
-        if (GUILayout.Button("i", GUILayout.Width(15), GUILayout.Height(14)))
-        {
-
-        }
+        EditorGUILayout.LabelField("Cool Down Timer", GUILayout.Width(130), GUILayout.Height(16));
+        phaseValues.coolDownTimer = EditorGUILayout.FloatField(phaseValues.coolDownTimer, GUILayout.Width(58), GUILayout.Height(16));
 
         EditorGUILayout.EndHorizontal();
     }
@@ -91,15 +80,8 @@ public class PhaseInspector : Editor
 
         EditorGUILayout.BeginHorizontal();
 
-        //Shows combo chance float field
-        phaseValues.comboChance = EditorGUILayout.FloatField("Combo Chance", phaseValues.comboChance, GUILayout.Width(200), GUILayout.Height(16));
-
-        EditorGUILayout.Space();
-
-        if (GUILayout.Button("i", GUILayout.Width(15), GUILayout.Height(14)))
-        {
-
-        }
+        EditorGUILayout.LabelField("Combo Chance", GUILayout.Width(130), GUILayout.Height(16));
+        phaseValues.comboChance = EditorGUILayout.FloatField(phaseValues.comboChance, GUILayout.Width(58), GUILayout.Height(16));
 
         EditorGUILayout.EndHorizontal();
     }
@@ -108,15 +90,22 @@ public class PhaseInspector : Editor
     {
         var phaseValues = (PhaseValues)target;
 
-        SerializedObject closeAttacks = new SerializedObject(phaseValues);
-        SerializedProperty closeProperty = closeAttacks.FindProperty("closeAttacks");
-        EditorGUILayout.PropertyField(closeProperty, true, GUILayout.Width(250));
-        closeAttacks.ApplyModifiedProperties();
+        //SerializedObject closeAttacks = new SerializedObject(phaseValues);
+        //SerializedProperty closeProperty = closeAttacks.FindProperty("closeAttacks");
+        //EditorGUILayout.PropertyField(closeProperty, true, GUILayout.Width(200));
+        //closeAttacks.ApplyModifiedProperties();
 
         //SerializedObject closeDamage = new SerializedObject(phaseValues);
         //SerializedProperty closeDamageProperty = closeDamage.FindProperty("closeDamage");
-        //EditorGUILayout.PropertyField(closeDamageProperty, true, GUILayout.Width(250));
-        //closeDamage.ApplyModifiedProperties(); 
+        //EditorGUILayout.PropertyField(closeDamageProperty, true, GUILayout.Width(200));
+        //closeDamage.ApplyModifiedProperties();
+
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("closeAttacks"), true);
+
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("closeDamage"), true);
+
+        serializedObject.ApplyModifiedProperties();
+
     }
 
     private void MidAttacks()
@@ -126,6 +115,7 @@ public class PhaseInspector : Editor
         SerializedObject midAttacks = new SerializedObject(phaseValues);
         SerializedProperty midProperty = midAttacks.FindProperty("midAttacks");
         EditorGUILayout.PropertyField(midProperty, true, GUILayout.Width(250));
+
         midAttacks.ApplyModifiedProperties();
     }
 

@@ -123,9 +123,9 @@ public class Phase : MonoBehaviour
 
     private void GetAttackAnimations()
     {
-        attackAnimations = distance.showDesignersDistance == "Close"? attackAnimations = currentPhase.closeAttacks :
-                           distance.showDesignersDistance == "Mid"?   attackAnimations = currentPhase.midAttacks :
-                           distance.showDesignersDistance == "Long"?  attackAnimations = currentPhase.longAttacks :
+        attackAnimations = distance.showDesignersDistance == "Close"? attackAnimations = currentPhase.closeAttacks:
+                           distance.showDesignersDistance == "Mid"? attackAnimations = currentPhase.midAttacks :
+                           distance.showDesignersDistance == "Long"? attackAnimations = currentPhase.longAttacks :
                                                                       attackAnimations = null;
 
         if (PlayerDirection.direction == "Left")
