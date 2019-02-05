@@ -8,9 +8,15 @@ public class OrbSetUp : MonoBehaviour
 
     [Range(0, 1)]
     public float health;
+
+    public int amountOfOrbs;
+
     public GameObject orbObject;
+    public GameObject inSceneOrb;
 
     public static bool spawnOrb;
+
+    public string[] animationPath = new string[] { "Path 1", "Path 2", "Path 3", "Path 4" };
 
     private void Start()
     {
@@ -27,7 +33,8 @@ public class OrbSetUp : MonoBehaviour
         if (spawnOrb == true)
         {
             GameObject orbPrefab = (GameObject)Instantiate(Resources.Load("projectile_Test"), new Vector3(-61.82f, 35.8f, 4.77f), Quaternion.identity);
-            Debug.Log(orbPrefab);
+            inSceneOrb = GameObject.FindGameObjectWithTag("Orb");
+            amountOfOrbs -= 1;
 
             spawnOrb = false;
         }
@@ -35,7 +42,7 @@ public class OrbSetUp : MonoBehaviour
 
     private void OrbHealth()
     {
-        if (health <= 0.001f)
+        if (health <= 0.001f && amountOfOrbs > 0)
         {
             spawnOrb = true;
             health = 1f;
