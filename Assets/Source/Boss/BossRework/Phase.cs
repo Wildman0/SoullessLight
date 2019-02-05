@@ -20,8 +20,6 @@ public class Phase : MonoBehaviour
     private AttackCombo attackCombo;
     private Intermission intermission;
 
-    public List<AnimationClip> gatherLeftAnim = new List<AnimationClip>();
-
     public int animationIndex;
     public int lastIndex;
 
