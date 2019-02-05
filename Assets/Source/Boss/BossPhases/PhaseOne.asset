@@ -11,23 +11,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b7aa227c6996247a00822c954e24da, type: 3}
   m_Name: PhaseOne
   m_EditorClassIdentifier: 
-  phaseName: PhaseOne
+  phaseName: Phase One
   min: 1
   max: 0.65
   coolDownTimer: 4
   comboChance: 0.7
-  damage: []
   closeAttacks:
-    leftAttacks:
-    - {fileID: 7400000, guid: 739fd9b6f20a173488203df8c81eb1ac, type: 2}
-    - {fileID: 7400000, guid: 01a6b453e5e3b6744928e08832889a29, type: 2}
-    - {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
-    - {fileID: 7400000, guid: 86965f716fdc24d4ca81c210ab6aed1d, type: 2}
-    - {fileID: 7400000, guid: a681dc45d94a0ab4da60b120c6921eb5, type: 2}
-    rightAttacks:
-    - {fileID: 7400000, guid: 739fd9b6f20a173488203df8c81eb1ac, type: 2}
-    - {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
-    - {fileID: 7400000, guid: 86965f716fdc24d4ca81c210ab6aed1d, type: 2}
+    leftAttacks: []
+    rightAttacks: []
   midAttacks:
     leftAttacks:
     - {fileID: 7400000, guid: 01a6b453e5e3b6744928e08832889a29, type: 2}
