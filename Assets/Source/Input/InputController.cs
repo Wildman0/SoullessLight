@@ -34,6 +34,7 @@ namespace NDA.PlayerInput
         public float heavyAttack;
         public float raiseCamera;
         public float lowerCamera;
+        public float rotateCamera;
         //ryan
         public float jump;
 
@@ -88,6 +89,7 @@ namespace NDA.PlayerInput
             block = BoolCasting.ToFloat(Input.GetKey(inputBlock));
             raiseCamera = FloatMath.GetAmountAboveZero(Input.GetAxis("Vertical"));
             lowerCamera = FloatMath.GetAmountBelowZero(Input.GetAxis("Vertical"));
+            rotateCamera = Input.GetAxis("Horizontal");
             //ryan
             jump = BoolCasting.ToFloat(Input.GetKey(inputJump));
 
@@ -131,7 +133,8 @@ namespace NDA.PlayerInput
             sprint = BoolCasting.ToFloat(Input.GetButton("Joystick 4"));
             raiseCamera = FloatMath.GetAmountBelowZero(Input.GetAxis("Right Stick Vertical"));
             lowerCamera = FloatMath.GetAmountAboveZero(Input.GetAxis("Right Stick Vertical"));
-
+            rotateCamera = Input.GetAxis("Right Stick Horizontal");
+            
             rollDown = BoolCasting.ToFloat(Input.GetButtonDown("Fire2"));
             lightAttackDown = BoolCasting.ToFloat(Input.GetButtonDown("Joystick 5"));
             healDown = BoolCasting.ToFloat(Input.GetButtonDown("Fire3"));

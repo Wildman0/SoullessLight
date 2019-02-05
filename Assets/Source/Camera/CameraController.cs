@@ -1,22 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NDA.PlayerInput;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class CameraController : MonoBehaviour
 {
+    public static CameraController instance;
+    
     public Transform playerEmpty;
     public Transform target;
     public Transform secondaryTarget;
 
     public float smoothing = 0.125f;
     public Vector3 offset;
+    private Vector3 desiredPosition = Vector3.zero;
 
     float verticalSens = 1.75f;
 
     public float maxCamHeight = 0f;
     public float minCamHeight = -1.5f;
-    
-    void FixedUpdate () {
+
+    public bool isLocked = false;
+
+    private void Awake()
+    {
+        if (!instance)
+            instance = this;
+        else
+            Debug.LogError("More than one instance of CameraController in the scene");
+    }
+
+    void Update () {
         //Makes the camera look at the midpoint of the player and the boss
         transform.LookAt(Midpoint(target, secondaryTarget));
 
@@ -34,17 +49,48 @@ public class CameraController : MonoBehaviour
     //Moves the camera to the desired position
     void MoveCamera()
     {
-        Vector3 desiredPosition = (playerEmpty.position + playerEmpty.TransformDirection(offset));
+        if (isLocked)
+            LockedCameraMovement();
+        else
+            UnlockedCameraMovement();
+    }
+
+    void LockedCameraMovement()
+    {
+        desiredPosition = (playerEmpty.position + playerEmpty.TransformDirection(offset));
+        
+        desiredPosition = ApplyVerticalCameraMovement(desiredPosition);
+        
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothing);
         transform.position = smoothedPosition;
 
-        float v = verticalSens * (GameManager.inputController.raiseCamera -
-                                  GameManager.inputController.lowerCamera) *
-                                  Time.fixedDeltaTime;
-
-        offset = new Vector3(offset.x, offset.y + v, offset.z);
+        offset = new Vector3(offset.x, offset.y, offset.z);
     }
 
+    void UnlockedCameraMovement()
+    {
+        desiredPosition = Quaternion.AngleAxis (PlayerController.instance.inputController.rotateCamera * 2, Vector3.up) * offset;
+        
+        desiredPosition = ApplyVerticalCameraMovement(desiredPosition);
+        
+        //TODO: ISN'T CURRENT SMOOTHED, COME BACK TO AND CHANGE LATER
+        Vector3 smoothedPosition = Vector3.Lerp(Vector3.zero, desiredPosition, 0.1f);
+        
+        offset = desiredPosition;
+            
+        transform.position = playerEmpty.position + playerEmpty.TransformDirection(desiredPosition); 
+        transform.LookAt(playerEmpty.position);
+    }
+
+    Vector3 ApplyVerticalCameraMovement(Vector3 v)
+    {
+        float f = verticalSens * (GameManager.inputController.raiseCamera -
+                                  GameManager.inputController.lowerCamera) *
+                  Time.fixedDeltaTime;
+
+        return new Vector3(v.x, v.y += f, v.z);
+    }
+    
     //Returns the midpoint between the boss and the player to feed to the camera
     Vector3 Midpoint(Transform pointA, Transform pointB)
     {

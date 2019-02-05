@@ -13,6 +13,9 @@ public class CameraEmptyMovement : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		transform.LookAt((bossGameObject.transform.position));
+		if (CameraController.instance.isLocked)
+			transform.LookAt((bossGameObject.transform.position));
+		else
+			transform.LookAt(GameObject.Find("CharEmpty").transform.position);
 	}
 }

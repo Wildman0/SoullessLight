@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using NDA.FloatUtil;
 using UnityEngine;
 
@@ -38,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
 	public Vector3 directionVector;
 	public float velocity;
 
+	public Vector3 dirVector;
+	
 	private void Awake()
 	{
 		if (!instance)
@@ -106,8 +109,18 @@ public class PlayerMovement : MonoBehaviour
 			PlayerController.instance.inputController.forward - PlayerController.instance.inputController.back);
 
 		movementTarget = Vector3.Lerp(vec, movementTarget, directionChangeSpeed);
-		movementVector = transform.TransformDirection(movementTarget);
-		
+
+		if (CameraController.instance.isLocked)
+		{
+			movementVector = transform.TransformDirection(movementTarget);
+			dirVector = movementVector;
+		}
+		else
+		{
+			dirVector = transform.TransformDirection(movementTarget);
+			movementVector = Camera.main.transform.TransformDirection(movementTarget);
+		}
+
 		//Clamps the magnitude of the vector, otherwise going too far in one direction for too long results in the 
 		//character going in that way for a long time
 		movementTarget = Vector3.ClampMagnitude(movementTarget, 2.0f);
@@ -162,7 +175,7 @@ public class PlayerMovement : MonoBehaviour
 	//Sets the direction the player is moving towards
 	private void SetDirectionVector()
 	{
-		directionVector = movementVector * directionVectorModifier;
+		directionVector = dirVector * directionVectorModifier;
 	}
 
 	private void ApplyGravity()
