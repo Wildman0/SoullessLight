@@ -17,8 +17,14 @@ MonoBehaviour:
   coolDownTimer: 4
   comboChance: 0.7
   closeAttacks:
-    leftAttacks: []
-    rightAttacks: []
+    leftAttacks:
+    - {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
+    - {fileID: 7400000, guid: 739fd9b6f20a173488203df8c81eb1ac, type: 2}
+    - {fileID: 7400000, guid: 0872fb048ebec704e82826c0d0a2649c, type: 2}
+    rightAttacks:
+    - {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
+    - {fileID: 7400000, guid: 739fd9b6f20a173488203df8c81eb1ac, type: 2}
+    - {fileID: 7400000, guid: 01a6b453e5e3b6744928e08832889a29, type: 2}
   midAttacks:
     leftAttacks:
     - {fileID: 7400000, guid: 01a6b453e5e3b6744928e08832889a29, type: 2}
