@@ -43,7 +43,7 @@ public class PhaseInspector : Editor
         EditorGUILayout.BeginHorizontal();
 
         EditorGUILayout.LabelField("Phase Name:", GUILayout.Width(130), GUILayout.Height(16));
-        phaseValues.phaseName = EditorGUILayout.TextField("Phase Name", GUILayout.Width(150), GUILayout.Height(16));
+        phaseValues.phaseName = EditorGUILayout.TextField(phaseValues.phaseName, GUILayout.Width(150), GUILayout.Height(16));
 
         EditorGUILayout.EndHorizontal();
     }
@@ -101,8 +101,6 @@ public class PhaseInspector : Editor
         //closeDamage.ApplyModifiedProperties();
 
         EditorGUILayout.PropertyField(serializedObject.FindProperty("closeAttacks"), true);
-
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("closeDamage"), true);
 
         serializedObject.ApplyModifiedProperties();
 
