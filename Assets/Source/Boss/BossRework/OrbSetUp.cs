@@ -12,11 +12,11 @@ public class OrbSetUp : MonoBehaviour
     public int amountOfOrbs;
 
     public GameObject orbObject;
-    public GameObject inSceneOrb;
+    public Animator orbAnim;
 
     public static bool spawnOrb;
 
-    public int animationPath;
+    public int index;
 
     private void Start()
     {
@@ -32,12 +32,21 @@ public class OrbSetUp : MonoBehaviour
     {
         if (spawnOrb == true)
         {
-            GameObject orbPrefab = (GameObject)Instantiate(Resources.Load("projectile_Test"), new Vector3(-61.82f, 35.8f, 4.77f), Quaternion.identity);
-            inSceneOrb = GameObject.FindGameObjectWithTag("Orb");
-            amountOfOrbs -= 1;
-
+            StartCoroutine(SpawnDelay());
             spawnOrb = false;
         }
+    }
+
+    private IEnumerator SpawnDelay()
+    {
+        yield return new WaitForSeconds(7f);
+
+        GameObject orbPrefab = (GameObject)Instantiate(Resources.Load("projectile_Test"), new Vector3(-61.82f, 35.8f, 4.77f), Quaternion.identity);
+        amountOfOrbs -= 1;
+
+        orbAnim = GameObject.FindGameObjectWithTag("Orb").GetComponent<Animator>();
+        index = Random.Range(1, 4);
+        orbAnim.SetInteger("PathIndex", index);
     }
 
     private void OrbHealth()
