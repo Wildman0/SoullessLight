@@ -16,7 +16,7 @@ public class OrbSetUp : MonoBehaviour
 
     public static bool spawnOrb;
 
-    public string[] animationPath = new string[] { "Path 1", "Path 2", "Path 3", "Path 4" };
+    public int animationPath;
 
     private void Start()
     {
