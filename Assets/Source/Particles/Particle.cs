@@ -9,6 +9,7 @@ public class Particle : MonoBehaviour {
     public GameObject animators1;
     public GameObject animators2;
     public GameObject animators3;
+    public GameObject animators4;
     public GameObject holder;
 
     // Use this for initialization
@@ -47,6 +48,12 @@ public class Particle : MonoBehaviour {
 
     }
 
+    public void ParticleEffects4()
+    {
+        animators4.SetActive(true);
+        animators4 = Instantiate(animators4, holder.transform.position, Quaternion.identity) as GameObject;
+
+    }
     // Update is called once per frame
     void Update () {
 		
