@@ -14,29 +14,42 @@ MonoBehaviour:
   phaseName: Phase One
   min: 1
   max: 0.65
-  coolDownTimer: 4
-  comboChance: 0.7
+  coolDownTimer: 5
+  comboChance: 0.9
   closeAttacks:
     leftAttacks:
-    - {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
-    - {fileID: 7400000, guid: 739fd9b6f20a173488203df8c81eb1ac, type: 2}
-    - {fileID: 7400000, guid: 0872fb048ebec704e82826c0d0a2649c, type: 2}
+    - animationClip: {fileID: 7400000, guid: 739fd9b6f20a173488203df8c81eb1ac, type: 2}
+      attackDamage: 0
+    - animationClip: {fileID: 7400006, guid: de8e96ac21b10f144882a5b4595c220b, type: 3}
+      attackDamage: 0
+    - animationClip: {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
+      attackDamage: 0
+    - animationClip: {fileID: 7400000, guid: a681dc45d94a0ab4da60b120c6921eb5, type: 2}
+      attackDamage: 0
+    - animationClip: {fileID: 7400000, guid: a681dc45d94a0ab4da60b120c6921eb5, type: 2}
+      attackDamage: 0
+    - animationClip: {fileID: 7400000, guid: 01a6b453e5e3b6744928e08832889a29, type: 2}
+      attackDamage: 0
+    - animationClip: {fileID: 7400000, guid: 0872fb048ebec704e82826c0d0a2649c, type: 2}
+      attackDamage: 0
     rightAttacks:
-    - {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
-    - {fileID: 7400000, guid: 739fd9b6f20a173488203df8c81eb1ac, type: 2}
-    - {fileID: 7400000, guid: 01a6b453e5e3b6744928e08832889a29, type: 2}
+    - animationClip: {fileID: 7400000, guid: 739fd9b6f20a173488203df8c81eb1ac, type: 2}
+      attackDamage: 0
+    - animationClip: {fileID: 7400000, guid: 3a4c52907cc1477498ba0e048c1cf208, type: 2}
+      attackDamage: 0
   midAttacks:
     leftAttacks:
-    - {fileID: 7400000, guid: 01a6b453e5e3b6744928e08832889a29, type: 2}
-    - {fileID: 7400000, guid: 84466df09375c374eb6a5c8a2d98fe4e, type: 2}
+    - animationClip: {fileID: 7400000, guid: 01a6b453e5e3b6744928e08832889a29, type: 2}
+      attackDamage: 0
+    - animationClip: {fileID: 7400000, guid: 84466df09375c374eb6a5c8a2d98fe4e, type: 2}
+      attackDamage: 0
     rightAttacks:
-    - {fileID: 7400000, guid: 9fda829628012a4409c76120b972f439, type: 2}
-    - {fileID: 7400000, guid: 84466df09375c374eb6a5c8a2d98fe4e, type: 2}
-    - {fileID: 7400000, guid: c274be62fb938e349aed31b8d8f48b24, type: 2}
+    - animationClip: {fileID: 7400000, guid: 9fda829628012a4409c76120b972f439, type: 2}
+      attackDamage: 0
+    - animationClip: {fileID: 7400000, guid: 84466df09375c374eb6a5c8a2d98fe4e, type: 2}
+      attackDamage: 0
+    - animationClip: {fileID: 7400000, guid: c274be62fb938e349aed31b8d8f48b24, type: 2}
+      attackDamage: 0
   longAttacks:
-    leftAttacks:
-    - {fileID: 7400000, guid: b3f2e66aa07faab4d9caf74ef23474ea, type: 2}
-    - {fileID: 7400042, guid: 0123a06f9b025bc4795d18454456a18f, type: 3}
-    rightAttacks:
-    - {fileID: 7400000, guid: b3f2e66aa07faab4d9caf74ef23474ea, type: 2}
-    - {fileID: 7400042, guid: 0123a06f9b025bc4795d18454456a18f, type: 3}
+    leftAttacks: []
+    rightAttacks: []
