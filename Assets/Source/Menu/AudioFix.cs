@@ -6,6 +6,8 @@ public class AudioFix : MonoBehaviour
 {
 
     public float delay = 1f;
+    public GameObject gameObject;
+
     void Start()
     {
         if (gameObject.activeInHierarchy)
