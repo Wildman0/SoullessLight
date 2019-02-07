@@ -74419,7 +74419,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1653156713}
-  m_LocalRotation: {x: 0.28020144, y: -9.313226e-10, z: 2.3283064e-10, w: 0.95994127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
@@ -131378,7 +131378,7 @@ MonoBehaviour:
   animatorOverrideController: {fileID: 22100000, guid: f5d6cf712a9d90a418ed5f67df1b3709,
     type: 2}
   anim: {fileID: 0}
-  animationIndex: 0
+  attackIndex: 0
   lastIndex: 0
   comboChance: 0
   activateAttacking: 0
@@ -131426,8 +131426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0526f13bca6c35148a8193e9fc136200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationIndex: 0
-  lastIndex: 0
   selectAttack: 0
 --- !u!114 &2101110987
 MonoBehaviour:
