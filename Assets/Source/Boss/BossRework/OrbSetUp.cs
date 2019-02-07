@@ -7,54 +7,92 @@ public class OrbSetUp : MonoBehaviour
     public Phase phase;
 
     [Range(0, 1)]
-    public float health;
+    public float orbHealth;
 
     public int amountOfOrbs;
 
     public GameObject orbObject;
+    public GameObject inSceneOrb;
+
     public Animator orbAnim;
 
     public static bool spawnOrb;
+    private bool firstOrb;
 
-    private int index;
+    private int orbIndex;
 
     private void Start()
     {
         orbObject = Resources.Load<GameObject>("projectile");
+        firstOrb = true;
     }
 
     private void Update()
     {
-        SpawnOrb();
+        SpawnCheck();
+        OrbHealth();
+        EndIntermission();
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            orbHealth = 0f;
+        }
     }
 
-    private void SpawnOrb()
+    private void SpawnCheck()
     {
-        if (spawnOrb == true)
+        if(spawnOrb == true)
         {
             StartCoroutine(SpawnDelay());
-            spawnOrb = false;
         }
     }
 
     private IEnumerator SpawnDelay()
     {
-        yield return new WaitForSeconds(7f);
+        spawnOrb = false;
 
+        if(firstOrb == true)
+        {
+            yield return new WaitForSeconds(7);
+            firstOrb = false;
+
+            SpawnOrb();
+        }
+        else
+        {
+            yield return new WaitForSeconds(2);
+
+            SpawnOrb();
+        }
+    }
+
+    private void SpawnOrb()
+    {
         GameObject orbPrefab = (GameObject)Instantiate(Resources.Load("projectile_Test"), new Vector3(-61.82f, 35.8f, 4.77f), Quaternion.identity);
         amountOfOrbs -= 1;
 
         orbAnim = GameObject.FindGameObjectWithTag("Orb").GetComponent<Animator>();
-        index = Random.Range(1, 4);
-        orbAnim.SetInteger("PathIndex", index);
+        orbIndex = Random.Range(1, 4);
+        orbAnim.SetInteger("PathIndex", orbIndex);
     }
 
     private void OrbHealth()
     {
-        if (health <= 0.001f && amountOfOrbs > 0)
+        if(orbHealth <= 0.001f && amountOfOrbs > 0)
         {
+            orbHealth = 1f;
+            inSceneOrb = GameObject.FindGameObjectWithTag("Orb");
+            Destroy(inSceneOrb);
+
             spawnOrb = true;
-            health = 1f;
+        }
+    }
+
+    private void EndIntermission()
+    {
+        if(amountOfOrbs <= 0)
+        {
+            //End Intermission phase
         }
     }
 }
