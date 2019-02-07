@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 135092144132451554}
   m_Layer: 0
   m_Name: Mesh
-  m_TagString: Untagged
+  m_TagString: projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1954112205817532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -53.411125, y: 19.91278, z: 41.157364}
+  m_LocalPosition: {x: -62.44, y: 44.76, z: -16.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4743965677753290}
@@ -134,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 1980668655535138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1378, y: 2.1378, z: 2.1378}
+  m_LocalScale: {x: 1.6709816, y: 1.6709816, z: 1.6709816}
   m_Children: []
   m_Father: {fileID: 4391586521308186}
   m_RootOrder: 1
@@ -5425,7 +5425,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 500
     size3D: 0
     rotation3D: 0
     gravityModifier:
