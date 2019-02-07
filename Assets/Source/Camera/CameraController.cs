@@ -14,14 +14,18 @@ public class CameraController : MonoBehaviour
 
     public float smoothing = 0.125f;
     public Vector3 offset;
+    private Vector3 originalOffset;
     private Vector3 desiredPosition = Vector3.zero;
 
     float verticalSens = 1.75f;
-
+    private float horizontalSens = 4.0f;
+    
     public float maxCamHeight = 0f;
     public float minCamHeight = -1.5f;
 
     public bool isLocked = false;
+
+    public Camera currentCamera;
 
     private void Awake()
     {
@@ -29,9 +33,15 @@ public class CameraController : MonoBehaviour
             instance = this;
         else
             Debug.LogError("More than one instance of CameraController in the scene");
+
+        originalOffset = offset;
+        currentCamera = gameObject.GetComponent<Camera>();
     }
 
-    void Update () {
+    void Update ()
+    {
+        CheckForCameraLockToggle();
+        
         //Makes the camera look at the midpoint of the player and the boss
         transform.LookAt(Midpoint(target, secondaryTarget));
 
@@ -39,6 +49,18 @@ public class CameraController : MonoBehaviour
         ImposeVerticalCameraLimits();
     }
 
+    void CheckForCameraLockToggle()
+    {
+        if (PlayerController.instance.inputController.cameraLockToggle)
+            ToggleCameraLock();
+    }
+
+    void ToggleCameraLock()
+    {
+        offset = originalOffset;
+        isLocked = !isLocked;
+    }
+    
     //Stops the camera from going too high or too low
     void ImposeVerticalCameraLimits()
     {
@@ -69,10 +91,10 @@ public class CameraController : MonoBehaviour
 
     void UnlockedCameraMovement()
     {
-        desiredPosition = Quaternion.AngleAxis (PlayerController.instance.inputController.rotateCamera * 2, Vector3.up) * offset;
+        desiredPosition = Quaternion.AngleAxis (PlayerController.instance.inputController.rotateCamera * horizontalSens, Vector3.up) * offset;
         
         desiredPosition = ApplyVerticalCameraMovement(desiredPosition);
-        
+
         //TODO: ISN'T CURRENT SMOOTHED, COME BACK TO AND CHANGE LATER
         Vector3 smoothedPosition = Vector3.Lerp(Vector3.zero, desiredPosition, 0.1f);
         
