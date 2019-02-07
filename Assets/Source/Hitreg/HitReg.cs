@@ -16,7 +16,7 @@ public class HitReg : MonoBehaviour
     
     [SerializeField] private bool debug;
 
-    [SerializeField] private string[] tag;
+    [SerializeField] private string tag;
 
     [SerializeField] private GameObject[] hitRegNodes;
 
@@ -59,7 +59,7 @@ public class HitReg : MonoBehaviour
     //Sets the relevant attack method
     void SetAttack()
     {
-        if (System.Array.IndexOf(tag, "Boss") != 1) //tag == "Boss"
+        if (tag == "Boss") //System.Array.IndexOf(tag, "Boss") != 1
             playerAttack = gameObject.GetComponent<PlayerAttack>();
         else
             playerController = gameObject.GetComponent<BossCollider>().playerController;
@@ -95,7 +95,7 @@ public class HitReg : MonoBehaviour
     {
         if (!hasHit)
         {
-            if (System.Array.IndexOf(tag, "Boss") != 1) //tag == "Boss"
+            if (tag == "Boss")
             {
                 switch (lastPlayerAttackType)
                 {
@@ -115,7 +115,7 @@ public class HitReg : MonoBehaviour
                 StartCoroutine(HitBoss());
             }
 
-            if (System.Array.IndexOf(tag, "Player") != 1) //tag == "Player"
+            if (tag == "Player")
             {
                 if (!PlayerHealth.instance.isInvincible)
                 {
@@ -177,7 +177,7 @@ public class HitReg : MonoBehaviour
         {
             if (Physics.Linecast(hitRegNodeOldPositions[i], hitRegNodeCurrentPositions[i], out hit))
             {
-                if (hit.transform.tag.Length == tag.Length) // remove length if it fucks up
+                if (hit.transform.tag == tag) // remove length if it fucks up
                 {
                     Hit();
 
