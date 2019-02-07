@@ -16,7 +16,7 @@ public class HitReg : MonoBehaviour
     
     [SerializeField] private bool debug;
 
-    [SerializeField] private string tag;
+    [SerializeField] private string[] tag;
 
     [SerializeField] private GameObject[] hitRegNodes;
 
@@ -59,7 +59,7 @@ public class HitReg : MonoBehaviour
     //Sets the relevant attack method
     void SetAttack()
     {
-        if (tag == "Boss")
+        if (System.Array.IndexOf(tag, "Boss") != 1) //tag == "Boss"
             playerAttack = gameObject.GetComponent<PlayerAttack>();
         else
             playerController = gameObject.GetComponent<BossCollider>().playerController;
@@ -95,27 +95,27 @@ public class HitReg : MonoBehaviour
     {
         if (!hasHit)
         {
-            if (tag == "Boss")
+            if (System.Array.IndexOf(tag, "Boss") != 1) //tag == "Boss"
             {
                 switch (lastPlayerAttackType)
                 {
                     case PlayerAttackTypes.LightAttack:
                         playerAttack.DamageBoss(playerAttack.lightAttackDamage);
                         break;
-                    
+
                     case PlayerAttackTypes.HeavyAttack:
                         playerAttack.DamageBoss(playerAttack.heavyAttackDamage);
                         break;
                 }
-                
+
                 hasHit = true;
                 MusicSource.Play();
                 UI.instance.bossAttacked.GetComponent<Image>().enabled = true;
                 UI.instance.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
-                StartCoroutine(HitBoss()); 
+                StartCoroutine(HitBoss());
             }
 
-            if (tag == "Player")
+            if (System.Array.IndexOf(tag, "Player") != 1) //tag == "Player"
             {
                 if (!PlayerHealth.instance.isInvincible)
                 {
@@ -177,7 +177,7 @@ public class HitReg : MonoBehaviour
         {
             if (Physics.Linecast(hitRegNodeOldPositions[i], hitRegNodeCurrentPositions[i], out hit))
             {
-                if (hit.transform.tag == tag)
+                if (hit.transform.tag.Length == tag.Length) // remove length if it fucks up
                 {
                     Hit();
 
