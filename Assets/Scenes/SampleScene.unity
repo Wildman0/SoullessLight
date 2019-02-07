@@ -23697,6 +23697,7 @@ MonoBehaviour:
   maxCamHeight: -1.8
   minCamHeight: -2.5
   isLocked: 1
+  currentCamera: {fileID: 0}
 --- !u!114 &370983025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65826,7 +65827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e19afc5838776e4c8d1e912257cf9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: 1
+  controller: 0
 --- !u!4 &1003506078
 Transform:
   m_ObjectHideFlags: 0
@@ -127190,9 +127191,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phase: {fileID: 0}
-  health: 0
+  orbHealth: 0
   amountOfOrbs: 0
   orbObject: {fileID: 1683543379909330, guid: 7ea3e59c83fb0b74fad5fa5d7b90e314, type: 2}
+  inSceneOrb: {fileID: 0}
   orbAnim: {fileID: 0}
 --- !u!114 &2101110974
 MonoBehaviour:
