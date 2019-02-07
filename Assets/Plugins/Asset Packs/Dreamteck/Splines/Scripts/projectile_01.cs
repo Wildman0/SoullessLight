@@ -14,18 +14,15 @@ public class projectile_01 : MonoBehaviour{
     // destroys the projectile if colliding with something else (this is where the different types of projectiles will differ.)
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "projectile"){
-            return;
-        }
-        if (other.tag == "Boss")
-        {
-            return;
-        }
-        else
+      
+        if (other.tag == "Player")
         {
             Destroy(gameObject);
         }
-     
+        else
+        {
+            return;
+        }
     }
 
 

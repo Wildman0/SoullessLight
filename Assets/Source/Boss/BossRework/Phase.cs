@@ -12,7 +12,7 @@ public class Phase : MonoBehaviour
     private BossHealth bossHealth;
     public PhaseValues currentPhase;
     public AttackAnimations attackAnimations;
-    public List<AnimationClip> currentAttackAnimationClips = new List<AnimationClip>();
+    public List<AnimationAttackData> currentAttackAnimationClips = new List<AnimationAttackData>();
     public AnimatorOverrideController animatorOverrideController;
     private Distance distance;
     private CoolDown coolDown;
@@ -20,7 +20,7 @@ public class Phase : MonoBehaviour
     private AttackCombo attackCombo;
     private Intermission intermission;
 
-    public int animationIndex;
+    public int attackIndex;
     public int lastIndex;
 
     public float comboChance;
@@ -129,6 +129,7 @@ public class Phase : MonoBehaviour
 
         if (PlayerDirection.direction == "Left")
         {
+            
             currentAttackAnimationClips = attackAnimations.leftAttacks;
         }
         else if (PlayerDirection.direction == "Right")
@@ -156,13 +157,13 @@ public class Phase : MonoBehaviour
 
     public void ChooseAttackAnimation()
     {
-        if (lastIndex == animationIndex)
+        if (lastIndex == attackIndex)
         {
             SelectNewIndex();
         }
         else
         {
-            animatorOverrideController["ATTACK"] = currentAttackAnimationClips[animationIndex];
+            animatorOverrideController["ATTACK"] = currentAttackAnimationClips[attackIndex].animationClip;
             isAttacking = true;
             anim.SetBool("Attack", true);
             selectAttackStyle = false;
@@ -175,12 +176,12 @@ public class Phase : MonoBehaviour
     {
         yield return new WaitForSeconds(0.6f);
         anim.SetBool("Attack", false);
-        lastIndex = animationIndex;
+        lastIndex = attackIndex;
         isAttacking = false;
     }
 
     public void SelectNewIndex()
     {
-        animationIndex = Random.Range(0, currentAttackAnimationClips.Count);
+        attackIndex = Random.Range(0, currentAttackAnimationClips.Count);
     }
 }
