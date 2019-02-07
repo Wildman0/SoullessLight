@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 1080526471165226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -60.94, y: 42.28, z: -11.64}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4788825459615568}
   - {fileID: 4692921064030212}
@@ -302,7 +302,7 @@ MonoBehaviour:
   followMode: 0
   autoStartPosition: 0
   autoFollow: 1
-  _followSpeed: 1
+  _followSpeed: 6
   _followDuration: 1
 --- !u!114 &114691525339014000
 MonoBehaviour:

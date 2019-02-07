@@ -20,7 +20,8 @@ namespace NDA.PlayerInput
         };
 
         public bool canVibrate = true;
-
+        public bool cameraLockToggle;
+        
         public float deadZone;
         public float forward;
         public float back;
@@ -134,6 +135,7 @@ namespace NDA.PlayerInput
             raiseCamera = FloatMath.GetAmountBelowZero(Input.GetAxis("Right Stick Vertical"));
             lowerCamera = FloatMath.GetAmountAboveZero(Input.GetAxis("Right Stick Vertical"));
             rotateCamera = Input.GetAxis("Right Stick Horizontal");
+            cameraLockToggle = Input.GetKeyDown(KeyCode.JoystickButton3);
             
             rollDown = BoolCasting.ToFloat(Input.GetButtonDown("Fire2"));
             lightAttackDown = BoolCasting.ToFloat(Input.GetButtonDown("Joystick 5"));

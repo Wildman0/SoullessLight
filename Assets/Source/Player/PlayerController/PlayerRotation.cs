@@ -13,7 +13,7 @@ public class PlayerRotation : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate ()
+	void Update ()
 	{
 		if (CameraController.instance.isLocked)
 			LookAtBoss();
@@ -30,8 +30,6 @@ public class PlayerRotation : MonoBehaviour
 
 	private void LookForward()
 	{
-		transform.LookAt(new Vector3(-Camera.main.transform.position.x,
-			transform.position.y,
-			- Camera.main.transform.position.z));
+		transform.rotation = Quaternion.Euler(0, 0, 0);
 	}
 }
