@@ -13,7 +13,10 @@ public class PlayerCharacterRotation : MonoBehaviour
         {
             if (!PlayerMovement.instance.movementDisabled)
             {
-                transform.LookAt(PlayerMovement.instance.directionVector);
+                if (CameraController.instance.isLocked)
+                    transform.LookAt(PlayerMovement.instance.directionVector);
+                else
+                    transform.LookAt(CameraController.instance.currentCamera.transform.TransformDirection(PlayerMovement.instance.directionVector));
             }
         }
     }
