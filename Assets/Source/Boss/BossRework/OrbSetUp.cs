@@ -16,7 +16,7 @@ public class OrbSetUp : MonoBehaviour
 
     public static bool spawnOrb;
 
-    public int index;
+    private int index;
 
     private void Start()
     {

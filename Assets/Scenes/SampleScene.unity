@@ -45684,68 +45684,6 @@ Transform:
   m_Father: {fileID: 541669790}
   m_RootOrder: 186
   m_LocalEulerAnglesHint: {x: 0, y: 66.755005, z: 0}
---- !u!1001 &674348176
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4391586521308186, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -62.44
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391586521308186, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 44.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391586521308186, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -16.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391586521308186, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391586521308186, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391586521308186, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391586521308186, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4391586521308186, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688637421773646, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.3871167
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688637421773646, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2.3871167
-      objectReference: {fileID: 0}
-    - target: {fileID: 4688637421773646, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2.3871167
-      objectReference: {fileID: 0}
-    - target: {fileID: 1980668655535138, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_TagString
-      value: projectile
-      objectReference: {fileID: 0}
-    - target: {fileID: 1657780686870186, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &674920241
 GameObject:
   m_ObjectHideFlags: 0
@@ -65679,7 +65617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e19afc5838776e4c8d1e912257cf9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: 0
+  controller: 1
 --- !u!4 &1003506078
 Transform:
   m_ObjectHideFlags: 0
@@ -74481,7 +74419,7 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1653156713}
-  m_LocalRotation: {x: 0.28020144, y: -9.313226e-10, z: 2.3283064e-10, w: 0.95994127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
@@ -117863,7 +117801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d90f47791abb940b5577594e1c9e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 1
+  debug: 0
   tag: Boss
   hitRegNodes:
   - {fileID: 620484568}
@@ -131144,7 +131082,6 @@ MonoBehaviour:
   amountOfOrbs: 0
   orbObject: {fileID: 1683543379909330, guid: 7ea3e59c83fb0b74fad5fa5d7b90e314, type: 2}
   orbAnim: {fileID: 0}
-  index: 0
 --- !u!114 &2101110974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131441,7 +131378,7 @@ MonoBehaviour:
   animatorOverrideController: {fileID: 22100000, guid: f5d6cf712a9d90a418ed5f67df1b3709,
     type: 2}
   anim: {fileID: 0}
-  animationIndex: 0
+  attackIndex: 0
   lastIndex: 0
   comboChance: 0
   activateAttacking: 0
@@ -131489,8 +131426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0526f13bca6c35148a8193e9fc136200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationIndex: 0
-  lastIndex: 0
   selectAttack: 0
 --- !u!114 &2101110987
 MonoBehaviour:

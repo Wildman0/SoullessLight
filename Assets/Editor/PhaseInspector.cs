@@ -110,20 +110,25 @@ public class PhaseInspector : Editor
     {
         var phaseValues = (PhaseValues)target;
 
-        SerializedObject midAttacks = new SerializedObject(phaseValues);
-        SerializedProperty midProperty = midAttacks.FindProperty("midAttacks");
-        EditorGUILayout.PropertyField(midProperty, true, GUILayout.Width(250));
+        //SerializedObject midAttacks = new SerializedObject(phaseValues);
+        //SerializedProperty midProperty = midAttacks.FindProperty("midAttacks");
+        //EditorGUILayout.PropertyField(midProperty, true, GUILayout.Width(250));
 
-        midAttacks.ApplyModifiedProperties();
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("midAttacks"), true);
+
+        serializedObject.ApplyModifiedProperties();
     }
 
     private void LongAttacks()
     {
         var phaseValues = (PhaseValues)target;
 
-        SerializedObject longAttacks = new SerializedObject(phaseValues);
-        SerializedProperty longProperty = longAttacks.FindProperty("longAttacks");
-        EditorGUILayout.PropertyField(longProperty, true, GUILayout.Width(250));
-        longAttacks.ApplyModifiedProperties();
+        //SerializedObject longAttacks = new SerializedObject(phaseValues);
+        //SerializedProperty longProperty = longAttacks.FindProperty("longAttacks");
+        //EditorGUILayout.PropertyField(longProperty, true, GUILayout.Width(250));
+
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("longAttacks"), true);
+
+        serializedObject.ApplyModifiedProperties();
     }
 }

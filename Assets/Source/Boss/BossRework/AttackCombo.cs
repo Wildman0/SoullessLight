@@ -6,9 +6,6 @@ public class AttackCombo : MonoBehaviour
 {
     Phase phase;
 
-    public int animationIndex;
-    public int lastIndex;
-
     public bool selectAttack;
 
     private void Start()
@@ -26,13 +23,13 @@ public class AttackCombo : MonoBehaviour
         if (selectAttack == true)
         {
             Debug.Log("In");
-            if (lastIndex == animationIndex)
+            if (phase.lastIndex == phase.attackIndex)
             {
-                SelectNewIndex();
+                phase.SelectNewIndex();
             }
             else
             {
-                phase.animatorOverrideController["ATTACK"] = phase.currentAttackAnimationClips[animationIndex];
+                phase.animatorOverrideController["ATTACK"] = phase.currentAttackAnimationClips[phase.attackIndex].animationClip;
                 Phase.isAttacking = true;
                 phase.anim.SetBool("Combo", true);
 
@@ -47,12 +44,7 @@ public class AttackCombo : MonoBehaviour
     {
         yield return new WaitForSeconds(1.4f);
         phase.anim.SetBool("Combo", false);
-        lastIndex = animationIndex;
+        phase.lastIndex = phase.attackIndex;
         Phase.isAttacking = false;
-    }
-
-    private void SelectNewIndex()
-    {
-        animationIndex = Random.Range(0, phase.currentAttackAnimationClips.Count);
     }
 }

@@ -4,8 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
+public struct AnimationAttackData
+{
+    public AnimationClip animationClip;
+    public float attackDamage;
+}
+
+
+[Serializable]
 public class AttackAnimations
 {
-    public List<AnimationClip> leftAttacks = new List<AnimationClip>();
-    public List<AnimationClip> rightAttacks = new List<AnimationClip>();
+    public List<AnimationAttackData> leftAttacks = new List<AnimationAttackData>();
+    public List<AnimationAttackData> rightAttacks = new List<AnimationAttackData>();
 }
