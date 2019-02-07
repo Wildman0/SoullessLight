@@ -58,6 +58,7 @@ public class CameraController : MonoBehaviour
     void ToggleCameraLock()
     {
         offset = originalOffset;
+        GameObject.Find("CameraEmpty").transform.rotation = Quaternion.Euler(0, 0, 0);
         isLocked = !isLocked;
     }
     
