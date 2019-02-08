@@ -7,7 +7,8 @@ public class PlayerStamina : MonoBehaviour
 	public static PlayerStamina instance;
 	
 	public float stamina = 1.0f;
-
+	public bool isUsingStaminaAction;
+	
 	public const float maxStamina = 1.0f;
 	public const float staminaReplenishPerSecond = 0.3f;
 	public const float runningStaminaReductionPerSecond = 0.3f;
@@ -23,7 +24,7 @@ public class PlayerStamina : MonoBehaviour
 
 	void Update()
 	{
-		if (!IsUsingStaminaActions())
+		if (!IsUsingStaminaActions() && !isUsingStaminaAction)
 		{
 			ReplenishStamina();
 		}
