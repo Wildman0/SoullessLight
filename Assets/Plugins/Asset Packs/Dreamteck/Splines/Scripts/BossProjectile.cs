@@ -3,28 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Dreamteck.Splines;
 
-
-public class projectile_01 : MonoBehaviour{
-
- 
-
+public class BossProjectile : MonoBehaviour
+{
     public SplineFollower follower;
   
-
     // destroys the projectile if colliding with something else (this is where the different types of projectiles will differ.)
     private void OnTriggerEnter(Collider other)
     {
-      
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
-        else
-        {
-            return;
-        }
     }
-
-
- 
 }
