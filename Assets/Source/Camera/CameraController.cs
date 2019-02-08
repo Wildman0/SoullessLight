@@ -24,6 +24,7 @@ public class CameraController : MonoBehaviour
     public float minCamHeight = -1.5f;
 
     public bool isLocked = false;
+    public Animator LockOn;
 
     public Camera currentCamera;
 
@@ -60,6 +61,8 @@ public class CameraController : MonoBehaviour
         offset = originalOffset;
         GameObject.Find("CameraEmpty").transform.rotation = Quaternion.Euler(0, 0, 0);
         isLocked = !isLocked;
+        LockOn.SetTrigger("LockOn");
+        
     }
     
     //Stops the camera from going too high or too low
