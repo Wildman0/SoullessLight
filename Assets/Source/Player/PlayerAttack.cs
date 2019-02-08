@@ -14,9 +14,13 @@ public class PlayerAttack : MonoBehaviour
     private BossHealth bossHealth;
 
     public float lightAttackDamage = 0.02f;
+    [SerializeField] private float lightAttackMovementLockTime = 0.4f;
+    [SerializeField] private float lightAttackStamina = 0.05f;
+    
     public float heavyAttackDamage = 0.04f;
-    private float lightAttackMovementLockTime = 0.4f;
-    private float heavyAttackMovementLockTime = 2.0f;
+    [SerializeField] private float heavyAttackMovementLockTime = 2.0f;
+    [SerializeField] private float heavyAttackStamina = 0.15f;
+    
     
     private AttackHitDetection attackHitDetection;
     public HitReg hitReg;
@@ -38,11 +42,13 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if (FloatCasting.ToBool(PlayerController.instance.inputController.lightAttackDown) && canAttack)
+        if (FloatCasting.ToBool(PlayerController.instance.inputController.lightAttackDown) && canAttack &&
+            PlayerStamina.instance.stamina > lightAttackStamina)
         {
             LightAttack();
         }
-        else if (FloatCasting.ToBool(PlayerController.instance.inputController.heavyAttackDown) && canAttack)
+        else if (FloatCasting.ToBool(PlayerController.instance.inputController.heavyAttackDown) && canAttack &&
+                 PlayerStamina.instance.stamina > heavyAttackStamina)
         {
             HeavyAttack();
         }
@@ -58,10 +64,14 @@ public class PlayerAttack : MonoBehaviour
     {
         hitReg.ToggleHitreg(HitReg.PlayerAttackTypes.LightAttack);
         PlayerAnim.instance.LightAttack();
+
+        PlayerStamina.instance.stamina -= lightAttackStamina;
         
+        PlayerStamina.instance.isUsingStaminaAction = true;
         canAttack = false;
         yield return new WaitForSeconds(lightAttackMovementLockTime);
         canAttack = true;
+        PlayerStamina.instance.isUsingStaminaAction = false;
     }
 
     public void HeavyAttack()
@@ -77,9 +87,13 @@ public class PlayerAttack : MonoBehaviour
         PlayerController.instance.playerState[(int)PlayerActions.HeavyAttacking] = true;
         PlayerMovement.instance.LockMovement(heavyAttackMovementLockTime);
         
+        PlayerStamina.instance.stamina -= heavyAttackStamina;
+        
+        PlayerStamina.instance.isUsingStaminaAction = true;
         canAttack = false;
         yield return new WaitForSeconds(heavyAttackMovementLockTime);
         canAttack = true;
+        PlayerStamina.instance.isUsingStaminaAction = false;
         
         PlayerController.instance.playerState[(int)PlayerActions.HeavyAttacking] = false;
     }
