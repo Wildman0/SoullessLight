@@ -15,44 +15,57 @@ public class Particle : MonoBehaviour {
     // Use this for initialization
     public void ParticleEffect()
     {
+        GameObject Clone;
         animator.SetActive(true);
-        animator = Instantiate(animator, holder.transform.position, Quaternion.identity) as GameObject;
-      
+        Clone = Instantiate(animator, holder.transform.position, Quaternion.identity) as GameObject;
+        Destroy(Clone, 5);
+
+
     }
     //My anims call functions to create events, I'm creating another one of these so I don't have to make another script e.g. "particle 1 hurr durr"
     public void ParticleEffects()
     {
+        GameObject Clone1;
         animators.SetActive(true);
-        animators = Instantiate(animators, holder.transform.position, Quaternion.identity) as GameObject;
+        Clone1 = Instantiate(animators, holder.transform.position, Quaternion.identity) as GameObject;
+        Destroy(Clone1, 5);
 
     }
 
     public void ParticleEffects1()
     {
+        GameObject Clone2;
         animators1.SetActive(true);
-        animators1 = Instantiate(animators1, holder.transform.position, Quaternion.identity) as GameObject;
+        Clone2 = Instantiate(animators1, holder.transform.position, Quaternion.identity) as GameObject;
+        Destroy(Clone2, 5);
 
     }
 
     public void ParticleEffects2()
     {
+        GameObject Clone3;
         animators2.SetActive(true);
-        animators2 = Instantiate(animators2, holder.transform.position, Quaternion.identity) as GameObject;
+        Clone3 = Instantiate(animators2, holder.transform.position, Quaternion.identity) as GameObject;
+        Destroy(Clone3, 5);
+
 
     }
 
     public void ParticleEffects3()
     {
+        GameObject Clone4;
         animators3.SetActive(true);
-        animators3 = Instantiate(animators3, holder.transform.position, Quaternion.identity) as GameObject;
+        Clone4 = Instantiate(animators3, holder.transform.position, Quaternion.identity) as GameObject;
+        Destroy(Clone4, 5);
 
     }
 
     public void ParticleEffects4()
     {
+        GameObject Clone5;
         animators4.SetActive(true);
-        animators4 = Instantiate(animators4, holder.transform.position, Quaternion.identity) as GameObject;
-
+        Clone5 = Instantiate(animators4, holder.transform.position, Quaternion.identity) as GameObject;
+        Destroy(Clone5, 5);
     }
     // Update is called once per frame
     void Update () {
