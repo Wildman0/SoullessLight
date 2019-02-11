@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioFix : MonoBehaviour
 {
 
-    public float delay = 1f;
+    public float delay = 0.1f;
     public GameObject gameObject;
 
     void Start()
