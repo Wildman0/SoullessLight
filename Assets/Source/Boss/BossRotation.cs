@@ -59,13 +59,13 @@ public class BossRotation : MonoBehaviour
     {
         if(rotateRight == true)
         {
-            bossRotation *= Quaternion.AngleAxis(5, Vector3.up);
+            bossRotation *= Quaternion.AngleAxis(10, Vector3.up);
 
             rotateRight = false;
         }
         else if(rotateLeft == true)
         {
-            bossRotation *= Quaternion.AngleAxis(-5, Vector3.up);
+            bossRotation *= Quaternion.AngleAxis(-10, Vector3.up);
 
             rotateLeft = false;
         }
