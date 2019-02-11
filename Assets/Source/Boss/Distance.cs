@@ -59,7 +59,6 @@ public class Distance : MonoBehaviour
     {
         if (distance <= 15.5f)
         {
-            //Boss.start = true;
             Intro.activateBoss = true;
             //Changing Audio for Trigger
             if (isOn == false)

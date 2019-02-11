@@ -7,19 +7,22 @@ public class FieldOfView : MonoBehaviour
     public float viewRadius;
     [Range(0, 360)]
     public float viewAngle;
-    public float rotationDelay = 0.04f;
 
     public LayerMask playerMask;
     [HideInInspector]
     public LayerMask obstacleMask;
 
-    [HideInInspector]
+    //[HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
-    [HideInInspector]
+    //[HideInInspector]
     public List<Transform> noVisibleTargets = new List<Transform>();
+
+    BossRotation bossRotation;
 
     private void Start()
     {
+        bossRotation = GetComponent<BossRotation>();
+
         StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
@@ -64,20 +67,13 @@ public class FieldOfView : MonoBehaviour
             }
         }
 
-        if(noVisibleTargets.Count == 1)
+        if(visibleTargets.Count == 1f)
         {
-            NoTargetsVisible();
+            bossRotation.noTargets = false ;
         }
-
-        if (visibleTargets.Count == 1)
+        else if(noVisibleTargets.Count == 1f)
         {
-            //Boss.isInRange = true;
-            Conditions.inRange = true;
-        }
-        else
-        {
-            //Boss.isInRange = false;
-            Conditions.inRange = false;
+            bossRotation.noTargets = true;
         }
     }
 
@@ -88,24 +84,5 @@ public class FieldOfView : MonoBehaviour
             angleInDegrees += transform.eulerAngles.y;
         }
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-    }
-
-    public void NoTargetsVisible()
-    { 
-        rotationDelay -= 1f * Time.deltaTime;
-        if(rotationDelay <= 0)
-        {
-            Conditions.isRotating = true;
-            if (PlayerDirection.direction == "Right")
-            {
-                BossRotation.rightRotation = true;
-                rotationDelay = 0.001f;
-            }
-            else if(PlayerDirection.direction == "Left")
-            {
-                BossRotation.leftRotation = true;
-                rotationDelay = 0.0001f;
-            }
-        }
     }
 }

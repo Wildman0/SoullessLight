@@ -59,7 +59,7 @@ public class HitReg : MonoBehaviour
     //Sets the relevant attack method
     void SetAttack()
     {
-        if (tag == "Boss") //System.Array.IndexOf(tag, "Boss") != 1
+        if (tag == "Boss") //System.Array.IndexOf(tag, "Boss") != 1 ... tag == "Boss"
             playerAttack = gameObject.GetComponent<PlayerAttack>();
         else
             playerController = gameObject.GetComponent<BossCollider>().playerController;
@@ -177,7 +177,7 @@ public class HitReg : MonoBehaviour
         {
             if (Physics.Linecast(hitRegNodeOldPositions[i], hitRegNodeCurrentPositions[i], out hit))
             {
-                if (hit.transform.tag == tag) // remove length if it fucks up
+                if (hit.transform.tag == tag) // remove length if it fucks up // create for loop to check string in the array
                 {
                     Hit();
 

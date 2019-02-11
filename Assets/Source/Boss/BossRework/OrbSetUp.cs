@@ -93,6 +93,8 @@ public class OrbSetUp : MonoBehaviour
         if(amountOfOrbs <= 0)
         {
             //End Intermission phase
+            orbHealth = 1f;
+
         }
     }
 }

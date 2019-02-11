@@ -4,88 +4,77 @@ using UnityEngine;
 
 public class BossRotation : MonoBehaviour
 {
-    public static bool rightRotation;
-    public static bool leftRotation;
+    public float rotationDelay;
+    public float delay;
+    public float smoothRotation;
 
-    public int index;
-    public int lastIndex;
-
-    private float smoothRotation = 0.2f;
+    private bool rotateRight;
+    private bool rotateLeft;
+    //[HideInInspector]
+    public bool noTargets;
+    private bool stopRotation;
 
     private Quaternion bossRotation;
 
     private void Start()
     {
         bossRotation = transform.rotation;
+
+        delay = rotationDelay;
     }
 
-    private void Update ()
+    private void Update()
     {
+        NoVisibleTargets();
         Rotate();
     }
 
-    public void Rotate()
+    private void NoVisibleTargets()
     {
-        if(rightRotation == true)
+        if(noTargets == true && stopRotation == false)
         {
-            //BossAnim.Anim.SetBool("RightRotation",true) , this is the old code just for reference
-            RandomRightRotation();
+            RotatingDirection();
+        }
+    }
+
+    private void RotatingDirection()
+    {
+        delay -= 1f * Time.deltaTime;
+        if (delay <= 0)
+        {
+            if (PlayerDirection.direction == "Right")
+            {
+                rotateRight = true;
+                delay = rotationDelay;
+            }
+            else if (PlayerDirection.direction == "Left")
+            {
+                rotateLeft = true;
+                delay = rotationDelay;
+            }
+        }
+    }
+
+    private void Rotate()
+    {
+        if(rotateRight == true)
+        {
             bossRotation *= Quaternion.AngleAxis(10, Vector3.up);
 
-            rightRotation = false;
-            StartCoroutine(NoRotation());
+            rotateRight = false;
         }
-        else if(leftRotation == true)
+        else if(rotateLeft == true)
         {
-            //BossAnim.Anim.SetBool("LeftRotation",true) , this is the old code just for reference
-            RandomLeftRotation();
             bossRotation *= Quaternion.AngleAxis(-10, Vector3.up);
 
-            leftRotation = false;
-            StartCoroutine(NoRotation());
+            rotateLeft = false;
         }
         transform.rotation = Quaternion.Lerp(transform.rotation, bossRotation, 10 * smoothRotation * Time.deltaTime);
     }
 
-    private void RandomLeftRotation()
+    private void StopRotation()
     {
-        if (index == lastIndex)
-        {
-            index = Random.Range(1, 2);
-        }
-        else
-        {
-            //BossAnim.anim.SetInteger("LeftRotation_Index", index);
-
-            BossCollider.isRotating = true;
-            Conditions.isRotating = true; 
-        }
-    }
-
-    private void RandomRightRotation()
-    {
-        if (index == lastIndex)
-        {
-            index = Random.Range(1, 3);
-        }
-        else
-        {
-            //BossAnim.anim.SetInteger("RightRotation_Index", index);
-
-            BossCollider.isRotating = true;
-            Conditions.isRotating = true;
-        }
-    }
-
-    private IEnumerator NoRotation()
-    {
-        yield return new WaitForSeconds(1f);
-        Conditions.isRotating = false;
-
-        //BossAnim.anim.SetInteger("LeftRotation_Index", 0);
-        //BossAnim.anim.SetInteger("RightRotation_Index", 0);
-        lastIndex = index;
-
-        BossCollider.isRotating = false;
+        stopRotation = true;
     }
 }
+
