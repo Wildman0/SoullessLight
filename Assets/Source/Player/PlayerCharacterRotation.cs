@@ -16,7 +16,13 @@ public class PlayerCharacterRotation : MonoBehaviour
                 if (CameraController.instance.isLocked)
                     transform.LookAt(PlayerMovement.instance.directionVector);
                 else
-                    transform.LookAt(CameraController.instance.currentCamera.transform.TransformDirection(PlayerMovement.instance.directionVector));
+                {
+                    Transform t = CameraController.instance.currentCamera.transform;
+                    t.eulerAngles = new Vector3(0, t.eulerAngles.y, t.eulerAngles.z);
+                    
+                    transform.LookAt(t.TransformDirection(PlayerMovement.instance.directionVector));
+                    transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);
+                }
             }
         }
     }
