@@ -177,7 +177,7 @@ public class HitReg : MonoBehaviour
         {
             if (Physics.Linecast(hitRegNodeOldPositions[i], hitRegNodeCurrentPositions[i], out hit))
             {
-                if (hit.transform.tag == tag) // remove length if it fucks up
+                if (hit.transform.tag == tag) // remove length if it fucks up // create for loop to check string in the array
                 {
                     Hit();
 
