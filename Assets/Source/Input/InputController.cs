@@ -36,6 +36,7 @@ namespace NDA.PlayerInput
         public float raiseCamera;
         public float lowerCamera;
         public float rotateCamera;
+        public float rotateCameraVertical;
         //ryan
         public float jump;
 
@@ -135,6 +136,7 @@ namespace NDA.PlayerInput
             raiseCamera = FloatMath.GetAmountBelowZero(Input.GetAxis("Right Stick Vertical"));
             lowerCamera = FloatMath.GetAmountAboveZero(Input.GetAxis("Right Stick Vertical"));
             rotateCamera = Input.GetAxis("Right Stick Horizontal");
+            rotateCameraVertical = Input.GetAxis("Right Stick Vertical");
             cameraLockToggle = Input.GetKeyDown(KeyCode.JoystickButton3);
             
             rollDown = BoolCasting.ToFloat(Input.GetButtonDown("Fire2"));
