@@ -119494,6 +119494,26 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 137175127236793060, guid: 205edb3d3e09fc246a4ac799db1d1075,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1f8d6b1d6c14084da9e8fd52b236cd5, type: 2}
+    - target: {fileID: 137847858554720728, guid: 205edb3d3e09fc246a4ac799db1d1075,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1f8d6b1d6c14084da9e8fd52b236cd5, type: 2}
+    - target: {fileID: 137786104852131574, guid: 205edb3d3e09fc246a4ac799db1d1075,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1f8d6b1d6c14084da9e8fd52b236cd5, type: 2}
+    - target: {fileID: 137602413215045552, guid: 205edb3d3e09fc246a4ac799db1d1075,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7ccbe74f01a67124088919377475f141, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 205edb3d3e09fc246a4ac799db1d1075, type: 2}
   m_IsPrefabAsset: 0
@@ -129507,8 +129527,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3f68131395f7f49bbfafff36250893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
-  lastIndex: 0
+  rotationDelay: 0.4
+  delay: 0
+  smoothRotation: 0.2
+  noTargets: 0
 --- !u!114 &2130851779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129523,7 +129545,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewRadius: 22.56
   viewAngle: 37
-  rotationDelay: 0.03
   playerMask:
     serializedVersion: 2
     m_Bits: 1024
