@@ -117,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 		else
 		{
+			//TODO: STOP THIS FROM BEING TIED DIRECTLY TO CAMERA (ONLY X AND Z)
 			dirVector = transform.TransformDirection(movementTarget);
 			movementVector = Camera.main.transform.TransformDirection(movementTarget);
 		}
