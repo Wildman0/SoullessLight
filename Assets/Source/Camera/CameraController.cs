@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
     private Vector3 originalOffset;
     private Vector3 desiredPosition = Vector3.zero;
 
-    float verticalSens = 1.75f;
+    float verticalSens = 4.0f;
     private float horizontalSens = 4.0f;
     
     public float maxCamHeight = 0f;
@@ -39,7 +39,7 @@ public class CameraController : MonoBehaviour
         currentCamera = gameObject.GetComponent<Camera>();
     }
 
-    void Update ()
+    void LateUpdate ()
     {
         CheckForCameraLockToggle();
         
@@ -104,7 +104,7 @@ public class CameraController : MonoBehaviour
         
         offset = desiredPosition;
             
-        transform.position = playerEmpty.position + playerEmpty.TransformDirection(desiredPosition); 
+        transform.position = playerEmpty.position + playerEmpty.TransformDirection(desiredPosition);
         transform.LookAt(playerEmpty.position);
     }
 
