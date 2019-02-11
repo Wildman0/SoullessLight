@@ -59,7 +59,7 @@ public class HitReg : MonoBehaviour
     //Sets the relevant attack method
     void SetAttack()
     {
-        if (tag == "Boss") //System.Array.IndexOf(tag, "Boss") != 1
+        if (tag == "Boss") //System.Array.IndexOf(tag, "Boss") != 1 ... tag == "Boss"
             playerAttack = gameObject.GetComponent<PlayerAttack>();
         else
             playerController = gameObject.GetComponent<BossCollider>().playerController;

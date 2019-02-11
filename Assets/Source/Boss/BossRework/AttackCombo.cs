@@ -22,7 +22,6 @@ public class AttackCombo : MonoBehaviour
     {
         if (selectAttack == true)
         {
-            Debug.Log("In");
             if (phase.lastIndex == phase.attackIndex)
             {
                 phase.SelectNewIndex();

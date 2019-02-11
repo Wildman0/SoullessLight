@@ -10,6 +10,7 @@ public class Intermission : MonoBehaviour
     public int listNumber;
 
     public bool activated;
+    private bool orbsDestroyed;
 
     private void Start()
     {
@@ -42,6 +43,16 @@ public class Intermission : MonoBehaviour
             phase.anim.SetBool("IntermissionOut", true);
             phase.intermissionCheck = false;
             phase.retrievedPhase = false;
+
+            //Send set damage to the player for taken to long !!
+        }
+        else if(orbsDestroyed == true)
+        {
+            phase.anim.SetBool("IntermissionOut", true);
+            phase.intermissionCheck = false;
+            phase.retrievedPhase = false;
+
+            orbsDestroyed = false;
         }
     }
 }
