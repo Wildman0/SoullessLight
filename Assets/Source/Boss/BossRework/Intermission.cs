@@ -44,7 +44,7 @@ public class Intermission : MonoBehaviour
             phase.intermissionCheck = false;
             phase.retrievedPhase = false;
 
-            //Send set damage to the player for taken to long !!
+            PlayerHealth.instance.TakeDamage(0.3f);
         }
         else if(orbsDestroyed == true)
         {

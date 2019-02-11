@@ -9,7 +9,6 @@ public class BossCollider : MonoBehaviour
 
     public int calledAmount;
     private float damage = 0.1f;
-    public static bool isRotating;
 
     private void Start()
     {
