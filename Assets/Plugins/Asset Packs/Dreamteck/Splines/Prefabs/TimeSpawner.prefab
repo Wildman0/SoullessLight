@@ -41,7 +41,8 @@ GameObject:
   - component: {fileID: 33556688371816060}
   - component: {fileID: 23193563596300384}
   - component: {fileID: 114117160019459288}
-  m_Layer: 0
+  - component: {fileID: 114265075501561222}
+  m_Layer: 1
   m_Name: TimeSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +55,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1590949841970492}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -144,7 +145,7 @@ MonoBehaviour:
   lineLength: 10
   maxSpawnAmount: 100
   spawnAmount: 0
-  sc: {fileID: 0}
+  sc: {fileID: 114265075501561222}
 --- !u!114 &114192112632401816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -600,6 +601,60 @@ MonoBehaviour:
   autoFollow: 1
   _followSpeed: 0
   _followDuration: 1
+--- !u!114 &114265075501561222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590949841970492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  alwaysDraw: 0
+  drawThinckness: 0
+  billboardThickness: 1
+  is2D: 0
+  spline:
+    points:
+    - _type: 0
+      position: {x: -5.3808975, y: -0.04571724, z: 0.3868413}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.3598691, y: 0.93206394, z: -0.0418455}
+      size: 1
+      tangent: {x: -5.3808975, y: -0.04571724, z: 0.3868413}
+      tangent2: {x: -5.3808975, y: -0.04571724, z: 0.3868413}
+    - _type: 0
+      position: {x: -38.108257, y: 0.010839462, z: 0.6388893}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.64292586, y: 0.76592207, z: 0.0031161308}
+      size: 1
+      tangent: {x: -38.108257, y: 0.010839462, z: 0.6388893}
+      tangent2: {x: -38.108257, y: 0.010839462, z: 0.6388893}
+    closed: 0
+    type: 0
+    customValueInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    customNormalInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    precision: 0.8999999761581421
+  _morph:
+    computer: {fileID: 0}
+    morphStates: []
+    initialized: 0
+  _space: 1
+  subscribers: []
+  _nodeLinks: []
 --- !u!114 &114387950093505612
 MonoBehaviour:
   m_ObjectHideFlags: 1

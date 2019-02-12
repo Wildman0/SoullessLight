@@ -298,7 +298,7 @@ MonoBehaviour:
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0
-  wrapMode: 1
+  wrapMode: 0
   followMode: 0
   autoStartPosition: 0
   autoFollow: 1
@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8324df19c93fa3b4192e1809ad685b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  implosion: {fileID: 0}
   follower: {fileID: 0}
   projectileDamage: 0.1
 --- !u!135 &135182705934810946

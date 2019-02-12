@@ -11,7 +11,6 @@ public class Timed_Spawner : MonoBehaviour {
     public float projectileSpeed = 20f;
     public float spawnTime;
     public float spawnDelay;
-    public float lineLength = 10f;
     public float maxSpawnAmount = 100f;
     public float spawnAmount = 0f;
     public SplineComputer sc;
@@ -32,7 +31,7 @@ public class Timed_Spawner : MonoBehaviour {
         if(repeatingSpawn == false)
         {
             spawnAmount = spawnAmount + 1;
-            Debug.Log("Added 1");
+            //Debug.Log("Added 1");
         }
         
         
@@ -60,12 +59,11 @@ public class Timed_Spawner : MonoBehaviour {
         if (spawnAmount == maxSpawnAmount)
         {
             CancelInvoke("SpawnObject");
-            //Debug.Log("Max Amount Reached");
+            Debug.Log("Max Amount Reached");
             Destroy(this.gameObject);
         }
 
-        Vector3 forward = transform.TransformDirection(Vector3.forward) * lineLength;
-        Debug.DrawLine(transform.position, forward, Color.blue);
+     
     }
 
 }
