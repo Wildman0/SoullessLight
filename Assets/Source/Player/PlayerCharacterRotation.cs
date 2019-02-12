@@ -14,7 +14,9 @@ public class PlayerCharacterRotation : MonoBehaviour
             if (!PlayerMovement.instance.movementDisabled)
             {
                 if (CameraController.instance.isLocked)
+                {
                     transform.LookAt(PlayerMovement.instance.directionVector);
+                }
                 else
                 {
                     Transform t = CameraController.instance.currentCamera.transform;

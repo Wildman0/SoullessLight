@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 		Move();
 		ApplyGravity();
 	}
-
+	
 	public void DisableMovement(float seconds)
 	{
 		StartCoroutine(DisableMovementIEnum(seconds));
@@ -97,7 +97,9 @@ public class PlayerMovement : MonoBehaviour
 		movementLockers--;
 
 		if (movementLockers < 1)
+		{
 			movementLocked = false;
+		}
 	}
 	
 	private void SetMovement()
@@ -176,6 +178,7 @@ public class PlayerMovement : MonoBehaviour
 	//Sets the direction the player is moving towards
 	private void SetDirectionVector()
 	{
+		Debug.Log(directionVector);
 		directionVector = dirVector * directionVectorModifier;
 	}
 
