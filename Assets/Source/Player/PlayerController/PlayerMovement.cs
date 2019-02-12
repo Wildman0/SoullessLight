@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
 		
 		SetPlayerState(PlayerActions.Moving, velocity > 0);
 		SetPlayerState(PlayerActions.Sprinting,
-			FloatCasting.ToBool(PlayerController.instance.inputController.sprint) && Math.Abs(PlayerStamina.instance.stamina) >= 0.01f);
+			FloatCasting.ToBool(PlayerController.instance.inputController.sprint) && Math.Abs(PlayerStamina.instance.stamina) >= 0.01f && PlayerMovement.instance.velocity > 5.0f);
 	}
 
 	void KeepCurrentMovement()
