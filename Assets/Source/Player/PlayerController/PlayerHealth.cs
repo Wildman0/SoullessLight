@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
 {
 	public static PlayerHealth instance;
 	
+	public delegate void SetPlayerStateHandler(PlayerActions index, bool b);
+	public event SetPlayerStateHandler SetPlayerState;
+	
     [SerializeField] private Animator NearDeath;
 	
 	public float health = 1.0f;
@@ -29,6 +32,11 @@ public class PlayerHealth : MonoBehaviour
 			instance = this;
 		else 
 			Debug.LogError("More than one instance of PlayerHealth");
+	}
+
+	void Start()
+	{
+		SetPlayerState += PlayerController.instance.OnSetPlayerState;
 	}
 	
 	void FixedUpdate()
@@ -78,9 +86,11 @@ public class PlayerHealth : MonoBehaviour
 
 	private IEnumerator DisableHealing(float time)
 	{
+		SetPlayerState(PlayerActions.Healing, true);
 		isHealing = true;
 		yield return new WaitForSeconds(time);
 		isHealing = false;
+		SetPlayerState(PlayerActions.Healing, false);
 	}
 	
 	public void TakeDamage(float f)

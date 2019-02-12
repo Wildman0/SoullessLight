@@ -17,7 +17,8 @@ public enum PlayerActions
     Attacking,
     HeavyAttacking,
     Blocking,
-    Invincible
+    Invincible,
+    Healing
 }
 
 [RequireComponent(typeof(CharacterController))]
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public delegate void SetPlayerStateHandler(PlayerActions index, bool b);
     public event SetPlayerStateHandler SetPlayerState;
     
-    public bool[] playerState = new bool[Enum.GetNames(typeof(PlayerActions)).Length];
+    [NonSerialized] public bool[] playerState = new bool[Enum.GetNames(typeof(PlayerActions)).Length];
 
     //Audio
     public AudioSource audioSource;
