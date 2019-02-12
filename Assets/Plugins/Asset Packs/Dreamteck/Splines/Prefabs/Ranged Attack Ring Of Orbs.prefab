@@ -1,0 +1,572 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1737243428303188}
+  m_IsPrefabAsset: 1
+--- !u!1 &1179859211086344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4551389907454978}
+  - component: {fileID: 33820314127677476}
+  - component: {fileID: 23563604474987714}
+  - component: {fileID: 114190595724782770}
+  - component: {fileID: 114611251094928300}
+  m_Layer: 0
+  m_Name: Ring Attack Med
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!1 &1311190866854498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4783489532284542}
+  - component: {fileID: 33745907933327758}
+  - component: {fileID: 23887928115711126}
+  - component: {fileID: 114554960669925828}
+  - component: {fileID: 114916135115702218}
+  m_Layer: 0
+  m_Name: Ring Attack Small
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!1 &1698469353967310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4484595655216238}
+  - component: {fileID: 33725843685089186}
+  - component: {fileID: 23877205129335736}
+  - component: {fileID: 114888075915790192}
+  - component: {fileID: 114876573175373774}
+  m_Layer: 0
+  m_Name: Ring Attack Big
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!1 &1737243428303188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4973012318969098}
+  m_Layer: 0
+  m_Name: Ranged Attack Ring Of Orbs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4484595655216238
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698469353967310}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1, y: 0.47999954, z: 0}
+  m_LocalScale: {x: 1.2000021, y: 1.2, z: 1.2000021}
+  m_Children: []
+  m_Father: {fileID: 4973012318969098}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!4 &4551389907454978
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179859211086344}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1, y: 0.47999954, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4973012318969098}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!4 &4783489532284542
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311190866854498}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1, y: 0.47999954, z: 0}
+  m_LocalScale: {x: 0.80000085, y: 0.8, z: 0.80000085}
+  m_Children: []
+  m_Father: {fileID: 4973012318969098}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!4 &4973012318969098
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737243428303188}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4783489532284542}
+  - {fileID: 4551389907454978}
+  - {fileID: 4484595655216238}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23563604474987714
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179859211086344}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23877205129335736
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698469353967310}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23887928115711126
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311190866854498}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33725843685089186
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698469353967310}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33745907933327758
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311190866854498}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33820314127677476
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179859211086344}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114190595724782770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179859211086344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2052d23e7454ca4cae3eb2fdc642969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1954112205817532, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
+  stopSpawning: 0
+  repeatingSpawn: 0
+  projectileSpeed: 15
+  spawnTime: 0
+  spawnDelay: 2
+  maxSpawnAmount: 8
+  spawnAmount: 0
+  sc: {fileID: 114611251094928300}
+--- !u!114 &114554960669925828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311190866854498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2052d23e7454ca4cae3eb2fdc642969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1954112205817532, guid: cddb19eefeb658b4da8f1f0ef9945273, type: 2}
+  stopSpawning: 0
+  repeatingSpawn: 0
+  projectileSpeed: 15
+  spawnTime: 0
+  spawnDelay: 2
+  maxSpawnAmount: 8
+  spawnAmount: 0
+  sc: {fileID: 114916135115702218}
+--- !u!114 &114611251094928300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179859211086344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  alwaysDraw: 0
+  drawThinckness: 0
+  billboardThickness: 1
+  is2D: 0
+  spline:
+    points:
+    - _type: 0
+      position: {x: -11.197063, y: 0.7794628, z: -10.419118}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 1, z: 0}
+      size: 1
+      tangent: {x: -11.197063, y: 0.7794628, z: -10.419118}
+      tangent2: {x: -11.197063, y: 0.7794628, z: -10.419118}
+    - _type: 0
+      position: {x: -14.695902, y: 1.9800587, z: 5.0226574}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.0044240966, y: 0.99999, z: 0.0007007057}
+      size: 1
+      tangent: {x: -14.695902, y: 1.9800587, z: 5.0226574}
+      tangent2: {x: -14.695902, y: 1.9800587, z: 5.0226574}
+    - _type: 0
+      position: {x: 0.19569972, y: 1.0952511, z: 18.64845}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.0007007104, y: 0.99999, z: -0.0044240956}
+      size: 1
+      tangent: {x: 0.19569972, y: 1.0952511, z: 18.64845}
+      tangent2: {x: 0.19569972, y: 1.0952511, z: 18.64845}
+    - _type: 0
+      position: {x: 18.716263, y: 1.5525494, z: 3.012125}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: -0.0047289506, y: 0.99998873, z: 4.656613e-10}
+      size: 1
+      tangent: {x: 18.716263, y: 1.5525494, z: 3.012125}
+      tangent2: {x: 18.716263, y: 1.5525494, z: 3.012125}
+    - _type: 0
+      position: {x: 6.408238, y: 0.9542866, z: -16.45918}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.00070070435, y: 0.9999899, z: 0.004424097}
+      size: 1
+      tangent: {x: 6.408238, y: 0.9542866, z: -16.45918}
+      tangent2: {x: 6.408238, y: 0.9542866, z: -16.45918}
+    - _type: 0
+      position: {x: -11.197063, y: 0.7794628, z: -10.419118}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 1, z: 0}
+      size: 1
+      tangent: {x: -11.197063, y: 0.7794628, z: -10.419118}
+      tangent2: {x: -11.197063, y: 0.7794628, z: -10.419118}
+    closed: 1
+    type: 1
+    customValueInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    customNormalInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    precision: 0.8999999761581421
+  _morph:
+    computer: {fileID: 0}
+    morphStates: []
+    initialized: 0
+  _space: 1
+  subscribers: []
+  _nodeLinks: []
+--- !u!114 &114876573175373774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698469353967310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  alwaysDraw: 0
+  drawThinckness: 0
+  billboardThickness: 1
+  is2D: 0
+  spline:
+    points:
+    - _type: 0
+      position: {x: -11.1971, y: 0.7794602, z: -10.354927}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 1, z: 0}
+      size: 1
+      tangent: {x: -11.1971, y: 0.7794602, z: -10.354927}
+      tangent2: {x: -11.1971, y: 0.7794602, z: -10.354927}
+    - _type: 0
+      position: {x: -14.69592, y: 1.9800582, z: 5.0868783}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.004424105, y: 0.99999, z: 0.0007007057}
+      size: 1
+      tangent: {x: -14.69592, y: 1.9800582, z: 5.0868783}
+      tangent2: {x: -14.69592, y: 1.9800582, z: 5.0868783}
+    - _type: 0
+      position: {x: 0.1956969, y: 1.0952535, z: 18.71269}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.0007007104, y: 0.99999, z: -0.004424104}
+      size: 1
+      tangent: {x: 0.1956969, y: 1.0952535, z: 18.71269}
+      tangent2: {x: 0.1956969, y: 1.0952535, z: 18.71269}
+    - _type: 0
+      position: {x: 18.716278, y: 1.5525466, z: 3.0763535}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: -0.004728959, y: 0.99998873, z: 4.656613e-10}
+      size: 1
+      tangent: {x: 18.716278, y: 1.5525466, z: 3.0763535}
+      tangent2: {x: 18.716278, y: 1.5525466, z: 3.0763535}
+    - _type: 0
+      position: {x: 6.408249, y: 0.95428616, z: -16.39496}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.00070070435, y: 0.9999899, z: 0.0044241054}
+      size: 1
+      tangent: {x: 6.408249, y: 0.95428616, z: -16.39496}
+      tangent2: {x: 6.408249, y: 0.95428616, z: -16.39496}
+    - _type: 0
+      position: {x: -11.1971, y: 0.7794602, z: -10.354927}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 1, z: 0}
+      size: 1
+      tangent: {x: -11.1971, y: 0.7794602, z: -10.354927}
+      tangent2: {x: -11.1971, y: 0.7794602, z: -10.354927}
+    closed: 1
+    type: 1
+    customValueInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    customNormalInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    precision: 0.8999999761581421
+  _morph:
+    computer: {fileID: 0}
+    morphStates: []
+    initialized: 0
+  _space: 1
+  subscribers: []
+  _nodeLinks: []
+--- !u!114 &114888075915790192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698469353967310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2052d23e7454ca4cae3eb2fdc642969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1954112205817532, guid: f300f50704d071a46a08a3aedc3873e2, type: 2}
+  stopSpawning: 0
+  repeatingSpawn: 0
+  projectileSpeed: 15
+  spawnTime: 0
+  spawnDelay: 2
+  maxSpawnAmount: 8
+  spawnAmount: 0
+  sc: {fileID: 114876573175373774}
+--- !u!114 &114916135115702218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311190866854498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  alwaysDraw: 0
+  drawThinckness: 0
+  billboardThickness: 1
+  is2D: 0
+  spline:
+    points:
+    - _type: 0
+      position: {x: -11.197073, y: 0.77946424, z: -10.419125}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 1, z: 0}
+      size: 1
+      tangent: {x: -11.197073, y: 0.77946424, z: -10.419125}
+      tangent2: {x: -11.197073, y: 0.77946424, z: -10.419125}
+    - _type: 0
+      position: {x: -14.695916, y: 1.9800591, z: 5.022654}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.0044240993, y: 0.99999, z: 0.0007007057}
+      size: 1
+      tangent: {x: -14.695916, y: 1.9800591, z: 5.022654}
+      tangent2: {x: -14.695916, y: 1.9800591, z: 5.022654}
+    - _type: 0
+      position: {x: 0.19569986, y: 1.0952497, z: 18.64847}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.0007007104, y: 0.99999, z: -0.0044240984}
+      size: 1
+      tangent: {x: 0.19569986, y: 1.0952497, z: 18.64847}
+      tangent2: {x: 0.19569986, y: 1.0952497, z: 18.64847}
+    - _type: 0
+      position: {x: 18.716276, y: 1.5525508, z: 3.012124}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: -0.0047289534, y: 0.99998873, z: 4.656613e-10}
+      size: 1
+      tangent: {x: 18.716276, y: 1.5525508, z: 3.012124}
+      tangent2: {x: 18.716276, y: 1.5525508, z: 3.012124}
+    - _type: 0
+      position: {x: 6.4082403, y: 0.95428705, z: -16.459198}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.00070070435, y: 0.9999899, z: 0.0044241}
+      size: 1
+      tangent: {x: 6.4082403, y: 0.95428705, z: -16.459198}
+      tangent2: {x: 6.4082403, y: 0.95428705, z: -16.459198}
+    - _type: 0
+      position: {x: -11.197073, y: 0.77946424, z: -10.419125}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 1, z: 0}
+      size: 1
+      tangent: {x: -11.197073, y: 0.77946424, z: -10.419125}
+      tangent2: {x: -11.197073, y: 0.77946424, z: -10.419125}
+    closed: 1
+    type: 1
+    customValueInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    customNormalInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    precision: 0.8999999761581421
+  _morph:
+    computer: {fileID: 0}
+    morphStates: []
+    initialized: 0
+  _space: 1
+  subscribers: []
+  _nodeLinks: []
