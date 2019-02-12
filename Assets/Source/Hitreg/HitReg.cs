@@ -16,7 +16,7 @@ public class HitReg : MonoBehaviour
     
     [SerializeField] private bool debug;
 
-    [SerializeField] private string tag;
+    [SerializeField] private string[] tag;
 
     [SerializeField] private GameObject[] hitRegNodes;
 
@@ -59,7 +59,7 @@ public class HitReg : MonoBehaviour
     //Sets the relevant attack method
     void SetAttack()
     {
-        if (tag == "Boss") //System.Array.IndexOf(tag, "Boss") != 1 ... tag == "Boss"
+        if (System.Array.IndexOf(tag, "Boss") != 1) //tag == "Boss"
             playerAttack = gameObject.GetComponent<PlayerAttack>();
         else
             playerController = gameObject.GetComponent<BossCollider>().playerController;
@@ -95,36 +95,39 @@ public class HitReg : MonoBehaviour
     {
         if (!hasHit)
         {
-            if (tag == "Boss")
+            for (int i = 0; i < tag.Length; i++)
             {
-                switch (lastPlayerAttackType)
+                if(tag[i] == "Boss")
                 {
-                    case PlayerAttackTypes.LightAttack:
-                        playerAttack.DamageBoss(playerAttack.lightAttackDamage);
-                        break;
+                    switch (lastPlayerAttackType)
+                    {
+                        case PlayerAttackTypes.LightAttack:
+                            playerAttack.DamageBoss(playerAttack.lightAttackDamage);
+                            break;
 
-                    case PlayerAttackTypes.HeavyAttack:
-                        playerAttack.DamageBoss(playerAttack.heavyAttackDamage);
-                        break;
+                        case PlayerAttackTypes.HeavyAttack:
+                            playerAttack.DamageBoss(playerAttack.heavyAttackDamage);
+                            break;
+                    }
+
+                    hasHit = true;
+                    MusicSource.Play();
+                    UI.instance.bossAttacked.GetComponent<Image>().enabled = true;
+                    UI.instance.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
+                    StartCoroutine(HitBoss());
                 }
 
-                hasHit = true;
-                MusicSource.Play();
-                UI.instance.bossAttacked.GetComponent<Image>().enabled = true;
-                UI.instance.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
-                StartCoroutine(HitBoss());
-            }
-
-            if (tag == "Player")
-            {
-                if (!PlayerHealth.instance.isInvincible)
+                if (tag[i] == "Player")
                 {
-                    hasHit = true;
-                    UI.instance.playerAttacked.GetComponent<Image>().enabled = true;
-                    UI.instance.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
-                    StartCoroutine(HitBoss());
+                    if (!PlayerHealth.instance.isInvincible)
+                    {
+                        hasHit = true;
+                        UI.instance.playerAttacked.GetComponent<Image>().enabled = true;
+                        UI.instance.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
+                        StartCoroutine(HitBoss());
 
-                    PlayerHealth.instance.TakeDamage(0.3f);
+                        PlayerHealth.instance.TakeDamage(0.3f);
+                    }
                 }
             }
         }
@@ -177,15 +180,36 @@ public class HitReg : MonoBehaviour
         {
             if (Physics.Linecast(hitRegNodeOldPositions[i], hitRegNodeCurrentPositions[i], out hit))
             {
-                if (hit.transform.tag == tag) // remove length if it fucks up // create for loop to check string in the array
-                {
-                    Hit();
+                //if (hit.transform.tag == tag) // remove length if it fucks up // create for loop to check string in the array
+                //{
+                //    Hit();
 
-                    if (debug)
-                        Debug.DrawLine(hitRegNodeOldPositions[i],
-                            hitRegNodeCurrentPositions[i],
-                            Color.red,
-                            0.5f);
+                //    if (debug)
+                //        Debug.DrawLine(hitRegNodeOldPositions[i],
+                //            hitRegNodeCurrentPositions[i],
+                //            Color.red,
+                //            0.5f);
+                //}
+
+                for (int s = 0; s < tag.Length; s++)
+                {
+                    if(hit.transform.tag == tag[s])
+                    {
+                        Hit();
+
+                        if (debug)
+                            Debug.DrawLine(hitRegNodeOldPositions[i],
+                                hitRegNodeCurrentPositions[i],
+                                Color.red,
+                                0.5f);
+
+                        Debug.Log(s);
+
+                        //if (hit.transform.tag == "Orb")
+                        //{
+                        //    OrbSetUp.orbHealth -= .2f;
+                        //}
+                    }
                 }
             }
             else

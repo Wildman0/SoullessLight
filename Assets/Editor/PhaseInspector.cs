@@ -25,6 +25,11 @@ public class PhaseInspector : Editor
 
         EditorGUILayout.Space();
 
+        var style = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter };
+        EditorGUILayout.LabelField("Range Attacks", style ,GUILayout.ExpandWidth(true), GUILayout.Height(25));
+
+        EditorGUILayout.Space();
+
         CloseAttacks();
 
         EditorGUILayout.Space();
@@ -34,6 +39,14 @@ public class PhaseInspector : Editor
         EditorGUILayout.Space();
 
         LongAttacks();
+
+        EditorGUILayout.Space();
+
+        EditorGUILayout.LabelField("Rotation Attacks", style, GUILayout.ExpandWidth(true), GUILayout.Height(25));
+
+        EditorGUILayout.Space();
+
+        RotationAttacks();
     }
 
     private void PhaseName()
@@ -95,11 +108,6 @@ public class PhaseInspector : Editor
         //EditorGUILayout.PropertyField(closeProperty, true, GUILayout.Width(200));
         //closeAttacks.ApplyModifiedProperties();
 
-        //SerializedObject closeDamage = new SerializedObject(phaseValues);
-        //SerializedProperty closeDamageProperty = closeDamage.FindProperty("closeDamage");
-        //EditorGUILayout.PropertyField(closeDamageProperty, true, GUILayout.Width(200));
-        //closeDamage.ApplyModifiedProperties();
-
         EditorGUILayout.PropertyField(serializedObject.FindProperty("closeAttacks"), true);
 
         serializedObject.ApplyModifiedProperties();
@@ -128,6 +136,16 @@ public class PhaseInspector : Editor
         //EditorGUILayout.PropertyField(longProperty, true, GUILayout.Width(250));
 
         EditorGUILayout.PropertyField(serializedObject.FindProperty("longAttacks"), true);
+
+        serializedObject.ApplyModifiedProperties();
+    }
+
+    private void RotationAttacks()
+    {
+
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("closeRotationAttacks"), true);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("midRotationAttacks"), true);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("longRotationAttacks"), true);
 
         serializedObject.ApplyModifiedProperties();
     }

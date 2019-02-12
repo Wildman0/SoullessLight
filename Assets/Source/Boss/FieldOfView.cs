@@ -69,7 +69,7 @@ public class FieldOfView : MonoBehaviour
 
         if(visibleTargets.Count == 1f)
         {
-            bossRotation.noTargets = false ;
+            bossRotation.noTargets = false;
         }
         else if(noVisibleTargets.Count == 1f)
         {

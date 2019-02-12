@@ -6,8 +6,8 @@ public class OrbSetUp : MonoBehaviour
 {
     public Phase phase;
 
-    [Range(0, 1)]
-    public float orbHealth;
+    public static float orbHealth;
+    public float showHealth;
 
     public int amountOfOrbs;
 
@@ -24,7 +24,9 @@ public class OrbSetUp : MonoBehaviour
     private void Start()
     {
         orbObject = Resources.Load<GameObject>("projectile");
+        phase = GetComponent<Phase>();
         firstOrb = true;
+        orbHealth = 1f;
     }
 
     private void Update()
@@ -33,10 +35,9 @@ public class OrbSetUp : MonoBehaviour
         OrbHealth();
         EndIntermission();
 
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            orbHealth = 0f;
-        }
+        showHealth = orbHealth;
+
+        Debug.Log(spawnOrb);
     }
 
     private void SpawnCheck()
