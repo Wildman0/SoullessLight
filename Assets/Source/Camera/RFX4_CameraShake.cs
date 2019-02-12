@@ -21,7 +21,7 @@ public class RFX4_CameraShake : MonoBehaviour
         StartCoroutine(Shake());
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (isPlaying && IsEnabled) {
             isPlaying = false;

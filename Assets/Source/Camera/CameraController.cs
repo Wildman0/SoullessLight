@@ -39,7 +39,7 @@ public class CameraController : MonoBehaviour
         currentCamera = gameObject.GetComponent<Camera>();
     }
 
-    void LateUpdate ()
+    void Update ()
     {
         CheckForCameraLockToggle();
         
