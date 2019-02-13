@@ -39,8 +39,8 @@ public class LowHealthVibration : MonoBehaviour
 
 	private IEnumerator VibrationIEnum()
 	{
-		Controller.Vibrate(0, 0.35f, 0.1f);
+		Controller.Vibrate(0, 0.75f, 0.1f);
 		yield return new WaitForSeconds(0.27f);
-		Controller.Vibrate(0, 0.35f, 0.1f);
+		Controller.Vibrate(0, 0.75f, 0.1f);
 	}
 }
