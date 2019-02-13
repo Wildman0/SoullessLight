@@ -82,7 +82,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4484595655216238
 Transform:
   m_ObjectHideFlags: 1
@@ -278,6 +278,7 @@ MonoBehaviour:
   projectile: {fileID: 1954112205817532, guid: f16abe4c6358a61448d576ddce43e558, type: 2}
   stopSpawning: 0
   repeatingSpawn: 0
+  destroyAfterXTime: 5
   projectileSpeed: 15
   spawnTime: 0
   spawnDelay: 2
@@ -298,6 +299,7 @@ MonoBehaviour:
   projectile: {fileID: 1954112205817532, guid: cddb19eefeb658b4da8f1f0ef9945273, type: 2}
   stopSpawning: 0
   repeatingSpawn: 0
+  destroyAfterXTime: 5
   projectileSpeed: 15
   spawnTime: 0
   spawnDelay: 2
@@ -482,6 +484,7 @@ MonoBehaviour:
   projectile: {fileID: 1954112205817532, guid: f300f50704d071a46a08a3aedc3873e2, type: 2}
   stopSpawning: 0
   repeatingSpawn: 0
+  destroyAfterXTime: 5
   projectileSpeed: 15
   spawnTime: 0
   spawnDelay: 2

@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1456443347446348}
+  m_IsPrefabAsset: 1
+--- !u!1 &1456443347446348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4053944007496696}
+  - component: {fileID: 33463244549810076}
+  - component: {fileID: 23471043544000120}
+  - component: {fileID: 114474925853135960}
+  - component: {fileID: 114889571298395428}
+  m_Layer: 0
+  m_Name: Ranged Attack Boss Orb Circle Second Circle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4053944007496696
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456443347446348}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1.3600006, y: 0.6000004, z: -0.42000008}
+  m_LocalScale: {x: 0.5760003, y: 0.57600003, z: 0.5760003}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!23 &23471043544000120
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456443347446348}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33463244549810076
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456443347446348}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114474925853135960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456443347446348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2052d23e7454ca4cae3eb2fdc642969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 1422847221571536, guid: a011ee06540fb0e488c1f3486bc36e1d, type: 2}
+  stopSpawning: 0
+  repeatingSpawn: 0
+  destroyAfterXTime: 5
+  projectileSpeed: 15
+  spawnTime: 0
+  spawnDelay: 4
+  maxSpawnAmount: 8
+  spawnAmount: 0
+  sc: {fileID: 114889571298395428}
+--- !u!114 &114889571298395428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1456443347446348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  alwaysDraw: 0
+  drawThinckness: 0
+  billboardThickness: 1
+  is2D: 0
+  spline:
+    points:
+    - _type: 0
+      position: {x: -11.197234, y: 0.7794664, z: -11.029659}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 1, z: 0}
+      size: 1
+      tangent: {x: -11.197234, y: 0.7794664, z: -11.029659}
+      tangent2: {x: -11.197234, y: 0.7794664, z: -11.029659}
+    - _type: 0
+      position: {x: -14.696106, y: 1.9800627, z: 4.4123096}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.0044241673, y: 0.99999, z: 0.0007007057}
+      size: 1
+      tangent: {x: -14.696106, y: 1.9800627, z: 4.4123096}
+      tangent2: {x: -14.696106, y: 1.9800627, z: 4.4123096}
+    - _type: 0
+      position: {x: 0.1957002, y: 1.0952451, z: 18.038206}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.0007007104, y: 0.99999, z: -0.0044241664}
+      size: 1
+      tangent: {x: 0.1957002, y: 1.0952451, z: 18.038206}
+      tangent2: {x: 0.1957002, y: 1.0952451, z: 18.038206}
+    - _type: 0
+      position: {x: 18.716574, y: 1.5525551, z: 2.40173}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: -0.0047290213, y: 0.99998873, z: 4.656613e-10}
+      size: 1
+      tangent: {x: 18.716574, y: 1.5525551, z: 2.40173}
+      tangent2: {x: 18.716574, y: 1.5525551, z: 2.40173}
+    - _type: 0
+      position: {x: 6.4083858, y: 0.95429343, z: -17.069815}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0.00070070435, y: 0.9999899, z: 0.004424168}
+      size: 1
+      tangent: {x: 6.4083858, y: 0.95429343, z: -17.069815}
+      tangent2: {x: 6.4083858, y: 0.95429343, z: -17.069815}
+    - _type: 0
+      position: {x: -11.197234, y: 0.7794664, z: -11.029659}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 1, z: 0}
+      size: 1
+      tangent: {x: -11.197234, y: 0.7794664, z: -11.029659}
+      tangent2: {x: -11.197234, y: 0.7794664, z: -11.029659}
+    closed: 1
+    type: 1
+    customValueInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    customNormalInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    precision: 0.8999999761581421
+  _morph:
+    computer: {fileID: 0}
+    morphStates: []
+    initialized: 0
+  _space: 1
+  subscribers: []
+  _nodeLinks: []

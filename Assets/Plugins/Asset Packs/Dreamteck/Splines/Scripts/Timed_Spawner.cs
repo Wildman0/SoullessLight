@@ -8,6 +8,7 @@ public class Timed_Spawner : MonoBehaviour {
     public GameObject projectile;
     public bool stopSpawning = false;
     public bool repeatingSpawn = true;
+    public float destroyAfterXTime = 5f;
     public float projectileSpeed = 20f;
     public float spawnTime;
     public float spawnDelay;
@@ -53,14 +54,14 @@ public class Timed_Spawner : MonoBehaviour {
         {
             CancelInvoke("SpawnObject");
             //Debug.Log("Spawning Has Ended");
-            Destroy(this.gameObject);
+            Object.Destroy(this.gameObject, destroyAfterXTime);
         }
 
         if (spawnAmount == maxSpawnAmount)
         {
             CancelInvoke("SpawnObject");
-            Debug.Log("Max Amount Reached");
-            Destroy(this.gameObject);
+            //Debug.Log("Max Amount Reached");
+            Object.Destroy(this.gameObject, destroyAfterXTime);
         }
 
      

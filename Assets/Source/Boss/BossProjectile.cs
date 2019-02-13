@@ -5,14 +5,18 @@ using Dreamteck.Splines;
 
 public class BossProjectile : MonoBehaviour
 {
-
+    public bool destroyAfterTime = false;
+    public float destroyAfterXTime = 20f;
     public GameObject implosion;
     public SplineFollower follower;
     [SerializeField] private float projectileDamage = 0.1f;
 
     private void Start()
     {
-        
+        if (destroyAfterTime == true)
+        {
+            Object.Destroy(this.gameObject, destroyAfterXTime);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +27,13 @@ public class BossProjectile : MonoBehaviour
             PlayerHealth.instance.TakeDamage(projectileDamage);
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("ProjectileStopper"))
+        {
+            Implode();
+            Destroy(gameObject);
+            Debug.Log("Boom");
+        }
     }
 
 
@@ -30,5 +41,10 @@ public class BossProjectile : MonoBehaviour
     {
         GameObject implo = Instantiate(implosion, transform.position, Quaternion.identity);
         implo.GetComponent<ParticleSystem>().Play();
+    }
+
+    private void OnDestroy()
+    {
+        Implode();
     }
 }
