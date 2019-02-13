@@ -34,7 +34,6 @@ public class BossRotation : MonoBehaviour
     {
         NoVisibleTargets();
         Rotate();
-        IsIdle();
     }
 
     private void NoVisibleTargets()
@@ -43,6 +42,7 @@ public class BossRotation : MonoBehaviour
         {
             RotatingDirection();
         }
+        SmoothRotation();
     }
 
     private void RotatingDirection()
@@ -61,8 +61,6 @@ public class BossRotation : MonoBehaviour
                 delay = rotationDelay;
             }
         }
-
-        SmoothRotation();
     }
 
     private void Rotate()
@@ -91,18 +89,6 @@ public class BossRotation : MonoBehaviour
     {
         smoothRot = noTargets == true ? smoothRot = smoothRotation :
                     noTargets == false ? smoothRot = smoothFinish : 0;
-    }
-
-    private void IsIdle()
-    {
-        if (phase.anim != phase.anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        {
-            stopRotation = true;
-        }
-        else
-        {
-            stopRotation = false;
-        }
     }
 }
 
