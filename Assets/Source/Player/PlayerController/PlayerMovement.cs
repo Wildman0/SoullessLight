@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using NDA.FloatUtil;
+using UnityEditor.Experimental.Rendering;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -18,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 	private int movementLockers = 0;
 	public bool movementLocked;
 	
-	private const float directionVectorModifier = 100000f;
+	private const float directionVectorModifier = 10000f;
 	
 	private float currentMovementSpeed;
 	[SerializeField] private float jogSpeed = 3.0f;
@@ -114,8 +115,14 @@ public class PlayerMovement : MonoBehaviour
 
 		if (CameraController.instance.isLocked)
 		{
-			movementVector = transform.TransformDirection(movementTarget);
-			dirVector = movementVector;
+			Debug.Log(movementTarget);
+			
+			//TODO:TEMPORARY FIX TO LESSEN THE IMPACT OF THE ROLL MOVEMENT BUG
+			if (Mathf.Abs(movementTarget.x) < 1.1)
+			{
+				movementVector = transform.TransformDirection(movementTarget);
+				dirVector = movementVector;	
+			}
 		}
 		else
 		{
@@ -178,8 +185,8 @@ public class PlayerMovement : MonoBehaviour
 	//Sets the direction the player is moving towards
 	private void SetDirectionVector()
 	{
-		Debug.Log(directionVector);
-		directionVector = dirVector * directionVectorModifier;
+		if (Mathf.Abs((dirVector * directionVectorModifier).magnitude) < 140000.0f)
+			directionVector = dirVector * directionVectorModifier;
 	}
 
 	private void ApplyGravity()
