@@ -104,7 +104,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1954112205817532}
-  m_LocalRotation: {x: 0, y: 1, z: -0, w: -0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
@@ -257,7 +257,7 @@ MonoBehaviour:
   multithreaded: 0
   buildOnAwake: 0
   applyDirectionRotation: 1
-  _direction: -1
+  _direction: 1
   _physicsMode: 0
   _motion:
     _offset: {x: 0, y: 0}
@@ -272,7 +272,7 @@ MonoBehaviour:
     applyPositionX: 1
     applyPositionY: 1
     applyPositionZ: 1
-    direction: -1
+    direction: 1
     applyRotationX: 1
     applyRotationY: 1
     applyRotationZ: 1
@@ -315,6 +315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8324df19c93fa3b4192e1809ad685b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyAfterTime: 0
+  destroyAfterXTime: 20
   implosion: {fileID: 1331178928495126, guid: 63db912f4ecc0c94c82e107b476ff0a6, type: 2}
   follower: {fileID: 0}
   projectileDamage: 0.1
