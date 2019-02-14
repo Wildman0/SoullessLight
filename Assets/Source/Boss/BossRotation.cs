@@ -4,91 +4,84 @@ using UnityEngine;
 
 public class BossRotation : MonoBehaviour
 {
-    public float rotationDelay;
-    private float delay;
-    public float smoothRotation;
-    public float smoothFinish;
-    [SerializeField]
-    private float smoothRot;
+    public static bool rightRotation;
+    public static bool leftRotation;
 
-    private bool rotateRight;
-    private bool rotateLeft;
-    //[HideInInspector]
-    public bool noTargets;
-    private bool stopRotation;
+    public int index;
+    public int lastIndex;
+
+    private float smoothRotation = 0.2f;
 
     private Quaternion bossRotation;
-
-    private Phase phase;
 
     private void Start()
     {
         bossRotation = transform.rotation;
-
-        delay = rotationDelay;
-
-        phase = GetComponentInChildren<Phase>();
     }
 
     private void Update()
     {
-        NoVisibleTargets();
         Rotate();
     }
 
-    private void NoVisibleTargets()
+    public void Rotate()
     {
-        if(noTargets == true && stopRotation == false)
+        if (rightRotation == true)
         {
-            RotatingDirection();
+            //BossAnim.Anim.SetBool("RightRotation",true) , this is the old code just for reference
+            RandomRightRotation();
+            bossRotation *= Quaternion.AngleAxis(10, Vector3.up);
+
+            rightRotation = false;
+            StartCoroutine(NoRotation());
         }
-        SmoothRotation();
+        else if (leftRotation == true)
+        {
+            //BossAnim.Anim.SetBool("LeftRotation",true) , this is the old code just for reference
+            RandomLeftRotation();
+            bossRotation *= Quaternion.AngleAxis(-10, Vector3.up);
+
+            leftRotation = false;
+            StartCoroutine(NoRotation());
+        }
+        transform.rotation = Quaternion.Lerp(transform.rotation, bossRotation, 10 * smoothRotation * Time.deltaTime);
     }
 
-    private void RotatingDirection()
+    private void RandomLeftRotation()
     {
-        delay -= 1f * Time.deltaTime;
-        if (delay <= 0)
+        if (index == lastIndex)
         {
-            if (PlayerDirection.direction == "Right")
-            {
-                rotateRight = true;
-                delay = rotationDelay;
-            }
-            else if (PlayerDirection.direction == "Left")
-            {
-                rotateLeft = true;
-                delay = rotationDelay;
-            }
+            index = Random.Range(1, 2);
+        }
+        else
+        {
+            //BossAnim.anim.SetInteger("LeftRotation_Index", index);
         }
     }
 
-    private void Rotate()
+    private void RandomRightRotation()
     {
-        if(rotateRight == true)
+        if (index == lastIndex)
         {
-            bossRotation *= Quaternion.AngleAxis(15, Vector3.up);
-
-            rotateRight = false;
+            index = Random.Range(1, 3);
         }
-        else if(rotateLeft == true)
+        else
         {
-            bossRotation *= Quaternion.AngleAxis(-15, Vector3.up);
+            //BossAnim.anim.SetInteger("RightRotation_Index", index);
 
-            rotateLeft = false;
+            
         }
-        transform.rotation = Quaternion.Lerp(transform.rotation, bossRotation, smoothRot * Time.deltaTime);
     }
 
-    private void StopRotation()
+    private IEnumerator NoRotation()
     {
-        stopRotation = true;
-    }
+        yield return new WaitForSeconds(1f);
 
-    private void SmoothRotation()
-    {
-        smoothRot = noTargets == true ? smoothRot = smoothRotation :
-                    noTargets == false ? smoothRot = smoothFinish : 0;
+        //BossAnim.anim.SetInteger("LeftRotation_Index", 0);
+        //BossAnim.anim.SetInteger("RightRotation_Index", 0);
+        lastIndex = index;
+
+        
     }
 }
 
