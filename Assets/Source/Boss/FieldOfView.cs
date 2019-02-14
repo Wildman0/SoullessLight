@@ -7,7 +7,8 @@ public class FieldOfView : MonoBehaviour
     public float viewRadius;
     [Range(0, 360)]
     public float viewAngle;
-    public float rotationDelay = 0.04f;
+    public float rotationDelay = 0.01f;
+    private float delay;
 
     public LayerMask playerMask;
     [HideInInspector]
@@ -21,6 +22,7 @@ public class FieldOfView : MonoBehaviour
     private void Start()
     {
         StartCoroutine("FindTargetsWithDelay", .2f);
+        delay = rotationDelay;
     }
 
     private IEnumerator FindTargetsWithDelay(float delay)
@@ -81,19 +83,18 @@ public class FieldOfView : MonoBehaviour
 
     public void NoTargetsVisible()
     {
-        rotationDelay -= 1f * Time.deltaTime;
-        if (rotationDelay <= 0)
+        delay -= 1f * Time.deltaTime;
+        if (delay <= 0)
         {
-            Conditions.isRotating = true;
             if (PlayerDirection.direction == "Right")
             {
                 BossRotation.rightRotation = true;
-                rotationDelay = 0.001f;
+                delay = rotationDelay;
             }
             else if (PlayerDirection.direction == "Left")
             {
                 BossRotation.leftRotation = true;
-                rotationDelay = 0.0001f;
+                delay = rotationDelay;
             }
         }
     }
