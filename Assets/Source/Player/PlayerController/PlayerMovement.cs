@@ -61,8 +61,6 @@ public class PlayerMovement : MonoBehaviour
 
 		if (!movementLocked)
 			SetMovement();
-		else
-			KeepCurrentMovement();
 		
 		Move();
 		ApplyGravity();
@@ -110,13 +108,14 @@ public class PlayerMovement : MonoBehaviour
 		movementTarget = new Vector3(PlayerController.instance.inputController.right - PlayerController.instance.inputController.left,
 			0,
 			PlayerController.instance.inputController.forward - PlayerController.instance.inputController.back);
-
+		
+		Debug.Log(vec);
+		Debug.Log(movementTarget);
+		
 		movementTarget = Vector3.Lerp(vec, movementTarget, directionChangeSpeed);
-
+		
 		if (CameraController.instance.isLocked)
 		{
-			Debug.Log(movementTarget);
-			
 			//TODO:TEMPORARY FIX TO LESSEN THE IMPACT OF THE ROLL MOVEMENT BUG
 			if (Mathf.Abs(movementTarget.x) < 1.1)
 			{
@@ -141,11 +140,6 @@ public class PlayerMovement : MonoBehaviour
 		SetPlayerState(PlayerActions.Moving, velocity > 0);
 		SetPlayerState(PlayerActions.Sprinting,
 			FloatCasting.ToBool(PlayerController.instance.inputController.sprint) && Math.Abs(PlayerStamina.instance.stamina) >= 0.01f && PlayerMovement.instance.velocity > 5.0f);
-	}
-
-	void KeepCurrentMovement()
-	{
-		movementTarget = directionVector;
 	}
 
 	float GetMovementSpeed()
