@@ -128076,7 +128076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1979862641
 RectTransform:
   m_ObjectHideFlags: 0
@@ -130074,6 +130074,36 @@ Prefab:
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 1815913898}
+    - target: {fileID: 114772706951554822, guid: 020d740e6e1041041bb5ae4ba7c15ec8,
+        type: 2}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772706951554822, guid: 020d740e6e1041041bb5ae4ba7c15ec8,
+        type: 2}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 1815913898}
+    - target: {fileID: 114772706951554822, guid: 020d740e6e1041041bb5ae4ba7c15ec8,
+        type: 2}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 947336690}
+    - target: {fileID: 114014182341499672, guid: 020d740e6e1041041bb5ae4ba7c15ec8,
+        type: 2}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014182341499672, guid: 020d740e6e1041041bb5ae4ba7c15ec8,
+        type: 2}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 1577591105}
+    - target: {fileID: 114014182341499672, guid: 020d740e6e1041041bb5ae4ba7c15ec8,
+        type: 2}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 235421829}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 020d740e6e1041041bb5ae4ba7c15ec8, type: 2}
   m_IsPrefabAsset: 0
