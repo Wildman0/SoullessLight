@@ -98,6 +98,8 @@ public class PlayerMovement : MonoBehaviour
 		if (movementLockers < 1)
 		{
 			movementLocked = false;
+
+			movementTarget = Vector3.zero;
 		}
 	}
 	
