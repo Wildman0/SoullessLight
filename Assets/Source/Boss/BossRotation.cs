@@ -69,7 +69,7 @@ public class BossRotation : MonoBehaviour
         {
             //BossAnim.anim.SetInteger("RightRotation_Index", index);
 
-            
+
         }
     }
 
@@ -81,7 +81,6 @@ public class BossRotation : MonoBehaviour
         //BossAnim.anim.SetInteger("RightRotation_Index", 0);
         lastIndex = index;
 
-        
+
     }
 }
-
