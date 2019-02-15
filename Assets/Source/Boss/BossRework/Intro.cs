@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Intro : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Intro : MonoBehaviour
 
     public static bool activateBoss;
     public bool cameraShake;
+    public GameObject bossUI;
 
     public float shakeLength;
 
@@ -28,6 +30,7 @@ public class Intro : MonoBehaviour
         {
             phase.anim.SetBool("Start", phase.anim.GetCurrentAnimatorStateInfo(0).IsName("Start"));
             cameraShake = true;
+            bossUI.SetActive(true);
         }
         else if (phase.anim != phase.anim.GetCurrentAnimatorStateInfo(0).IsName("Start"))
         {
