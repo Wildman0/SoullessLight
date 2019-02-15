@@ -8,9 +8,11 @@ public class Intermission : MonoBehaviour
 
     public List<float> intermissionTime = new List<float>();
     public int listNumber;
+    public Animator approaching;
 
     public bool activated;
     private bool orbsDestroyed;
+
 
     private void Start()
     {
@@ -43,6 +45,7 @@ public class Intermission : MonoBehaviour
             phase.anim.SetBool("IntermissionOut", true);
             phase.intermissionCheck = false;
             phase.retrievedPhase = false;
+            approaching.SetBool("Approaching", false);
 
             PlayerHealth.instance.TakeDamage(0.3f);
         }
@@ -50,9 +53,14 @@ public class Intermission : MonoBehaviour
         {
             phase.anim.SetBool("IntermissionOut", true);
             phase.intermissionCheck = false;
-            phase.retrievedPhase = false;
+            phase.retrievedPhase = false;;
+            approaching.SetBool("Approaching", false);
 
             orbsDestroyed = false;
+        }
+        else if(intermissionTime[listNumber] <= 25)
+        {
+            approaching.SetBool("Approaching",true);
         }
     }
 }

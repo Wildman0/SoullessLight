@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4809,7 +4809,7 @@ RectTransform:
   - {fileID: 1928589868}
   - {fileID: 567171453}
   m_Father: {fileID: 1556758320}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -29521,7 +29521,7 @@ RectTransform:
   m_LocalScale: {x: 0.10186444, y: 0.10186444, z: 0.10186444}
   m_Children: []
   m_Father: {fileID: 1556758320}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -87066,7 +87066,7 @@ RectTransform:
   - {fileID: 1593576942}
   - {fileID: 661939237}
   m_Father: {fileID: 1556758320}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -87314,6 +87314,7 @@ RectTransform:
   - {fileID: 482417619}
   - {fileID: 1937755490}
   - {fileID: 1351612539}
+  - {fileID: 1805988146}
   - {fileID: 189690185}
   - {fileID: 579623140}
   - {fileID: 1550208241}
@@ -93657,6 +93658,88 @@ Transform:
   m_Father: {fileID: 337416040}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -37.30769, y: 7.423057, z: -47.213573}
+--- !u!1 &1805988145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1168860769964878, guid: bf3e0dfae14960f48ab84e1749847df7,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1805988146}
+  - component: {fileID: 1805988149}
+  - component: {fileID: 1805988148}
+  - component: {fileID: 1805988147}
+  m_Layer: 0
+  m_Name: Intermission
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1805988146
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 224694727879524434, guid: bf3e0dfae14960f48ab84e1749847df7,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1805988145}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1556758320}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.00012207031, y: -2.5499268}
+  m_SizeDelta: {x: 1920, y: 1074.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1805988147
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 95102563419377988, guid: bf3e0dfae14960f48ab84e1749847df7,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1805988145}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d582d88bcb0f4a14aa604b15f8421228, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1805988148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114556687320268680, guid: bf3e0dfae14960f48ab84e1749847df7,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1805988145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 744e07e729529fc4eba42beca83b05b8, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 0
+  priority: 2
+--- !u!222 &1805988149
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 222838221136394948, guid: bf3e0dfae14960f48ab84e1749847df7,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1805988145}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1810098384
 Prefab:
   m_ObjectHideFlags: 0
@@ -94683,7 +94766,7 @@ Prefab:
     - target: {fileID: 114862741001875804, guid: 205edb3d3e09fc246a4ac799db1d1075,
         type: 2}
       propertyPath: intermissionTime.Array.data[0]
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 114862741001875804, guid: 205edb3d3e09fc246a4ac799db1d1075,
         type: 2}
@@ -95182,7 +95265,7 @@ Prefab:
     - target: {fileID: 82965288107301486, guid: 205edb3d3e09fc246a4ac799db1d1075,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4118183810965946, guid: 205edb3d3e09fc246a4ac799db1d1075, type: 2}
       propertyPath: m_LocalRotation.x
@@ -96393,6 +96476,16 @@ Prefab:
       propertyPath: bossUI
       value: 
       objectReference: {fileID: 1403565083}
+    - target: {fileID: 114862741001875804, guid: 205edb3d3e09fc246a4ac799db1d1075,
+        type: 2}
+      propertyPath: intermissionDanger
+      value: 
+      objectReference: {fileID: 244723713}
+    - target: {fileID: 114862741001875804, guid: 205edb3d3e09fc246a4ac799db1d1075,
+        type: 2}
+      propertyPath: approaching
+      value: 
+      objectReference: {fileID: 1805988147}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 205edb3d3e09fc246a4ac799db1d1075, type: 2}
   m_IsPrefabAsset: 0
@@ -101519,7 +101612,7 @@ RectTransform:
   - {fileID: 1642613367}
   - {fileID: 1993284330}
   m_Father: {fileID: 1556758320}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -103218,7 +103311,7 @@ Prefab:
     - target: {fileID: 224552532130975676, guid: 020d740e6e1041041bb5ae4ba7c15ec8,
         type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 224552532130975676, guid: 020d740e6e1041041bb5ae4ba7c15ec8,
         type: 2}
@@ -105032,6 +105125,7 @@ MonoBehaviour:
   - 120
   - 60
   listNumber: 0
+  approaching: {fileID: 0}
   activated: 0
 --- !u!114 &2101110977
 MonoBehaviour:
