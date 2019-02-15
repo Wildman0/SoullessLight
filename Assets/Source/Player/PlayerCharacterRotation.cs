@@ -19,11 +19,14 @@ public class PlayerCharacterRotation : MonoBehaviour
                 }
                 else
                 {
-                    Transform t = CameraController.instance.currentCamera.transform;
-                    t.eulerAngles = new Vector3(0, t.eulerAngles.y, t.eulerAngles.z);
-                    
-                    transform.LookAt(t.TransformDirection(PlayerMovement.instance.directionVector));
-                    transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);
+                    if (!PlayerMovement.instance.movementLocked)
+                    {
+                        Transform t = CameraController.instance.currentCamera.transform;
+                        t.eulerAngles = new Vector3(0, t.eulerAngles.y, t.eulerAngles.z);
+
+                        transform.LookAt(t.TransformDirection(PlayerMovement.instance.directionVector));
+                        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);
+                    }
                 }
             }
         }
