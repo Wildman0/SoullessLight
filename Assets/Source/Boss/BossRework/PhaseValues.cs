@@ -18,11 +18,4 @@ public class PhaseValues : ScriptableObject
     public AttackAnimations midAttacks;
     [Header("Long Attacks")]
     public AttackAnimations longAttacks;
-
-    [Header("Close Rotation Attacks")]
-    public AttackAnimations closeRotationAttacks;
-    [Header("Close Rotation Attacks")]
-    public AttackAnimations midRotationAttacks;
-    [Header("Close Rotation Attacks")]
-    public AttackAnimations longRotationAttacks;
 }
