@@ -36,8 +36,6 @@ public class OrbSetUp : MonoBehaviour
         EndIntermission();
 
         showHealth = orbHealth;
-
-        Debug.Log(spawnOrb);
     }
 
     private void SpawnCheck()

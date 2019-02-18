@@ -81,12 +81,12 @@ public class HitReg : MonoBehaviour
     {
         yield return new WaitForSeconds(hitRegStartDelay);
         isActive = true;
-        Debug.Log("Active");
+        //Debug.Log("Active");
         {
             yield return new WaitForSeconds(hitRegActiveTime);
             isActive = false;
             hasHit = false;
-            Debug.Log("Inactive");
+            //Debug.Log("Inactive");
         }
     }
 

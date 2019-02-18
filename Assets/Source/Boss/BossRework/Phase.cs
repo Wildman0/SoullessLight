@@ -31,6 +31,7 @@ public class Phase : MonoBehaviour
     public bool selectAttackStyle;
     public static bool isAttacking;
     public bool retrievedPhase;
+    public static bool trigger;
 
     public string phaseSwitchingCheck;
 
@@ -106,7 +107,7 @@ public class Phase : MonoBehaviour
 
     private void SelectPhase()
     {
-        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        if(trigger == true)
         {
             currentPhase = phaseValues.Find(x => x.min >= bossHealth.health && x.max <= bossHealth.health);
             GetAttackAnimations();

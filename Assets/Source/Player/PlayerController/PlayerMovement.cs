@@ -111,8 +111,8 @@ public class PlayerMovement : MonoBehaviour
 			0,
 			PlayerController.instance.inputController.forward - PlayerController.instance.inputController.back);
 		
-		Debug.Log(vec);
-		Debug.Log(movementTarget);
+		//Debug.Log(vec);
+		//Debug.Log(movementTarget);
 		
 		movementTarget = Vector3.Lerp(vec, movementTarget, directionChangeSpeed);
 		
