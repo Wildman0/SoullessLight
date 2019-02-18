@@ -116,6 +116,12 @@ public class HitReg : MonoBehaviour
                     UI.instance.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
                     StartCoroutine(HitBoss());
                 }
+                //else if (tag[i] == "Orb")
+                //{
+                //    OrbSetUp.orbHealth -= .2f;
+                //    hasHit = true;
+
+                //}
 
                 if (tag[i] == "Player")
                 {
@@ -128,6 +134,13 @@ public class HitReg : MonoBehaviour
 
                         PlayerHealth.instance.TakeDamage(0.3f);
                     }
+                }
+
+                if (tag[i] == "Orb")
+                {
+                    OrbSetUp.orbHealth -= .2f;
+                    hasHit = true;
+
                 }
             }
         }
@@ -207,7 +220,8 @@ public class HitReg : MonoBehaviour
 
                         //if (hit.transform.tag == "Orb")
                         //{
-                        //    OrbSetUp.orbHealth -= .2f;
+                        //    Debug.Log("Hit Orb");
+                        //    OrbSetUp.orbHealth -= .05f;
                         //}
                     }
                 }
