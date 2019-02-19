@@ -190,12 +190,18 @@ public class PlayerMovement : MonoBehaviour
 		PlayerController.instance.characterController.Move(new Vector3(0, -gravity * Time.deltaTime, 0));
 	}
 
+	bool CanRoll()
+	{
+		return !FloatMath.IsZero(PlayerController.instance.inputController.rollDown)
+		       && !PlayerController.instance.GetPlayerState(PlayerActions.Rolling)
+		       && !PlayerController.instance.GetPlayerState(PlayerActions.Healing)
+		       && !PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking)
+		       && PlayerStamina.instance.stamina > PlayerStamina.rollingStaminaReduction;
+	}
+	
 	private void RollChecks()
 	{
-		if (!FloatMath.IsZero(PlayerController.instance.inputController.rollDown) 
-		    && !PlayerController.instance.GetPlayerState(PlayerActions.Rolling)
-		    && !PlayerController.instance.GetPlayerState(PlayerActions.Healing)
-		    && PlayerStamina.instance.stamina > PlayerStamina.rollingStaminaReduction)
+		if (CanRoll())
 		{
 			StartCoroutine(RollIEnum());
 			StartCoroutine(RollInvincibilityIEnum());
