@@ -39,6 +39,8 @@ public class HitReg : MonoBehaviour
     public float hitRegStartDelay = 0.2f;
     public float hitRegActiveTime = 0.6f;
 
+    int s;
+
     //Runs on instantiation
     void Start()
     {
@@ -95,9 +97,7 @@ public class HitReg : MonoBehaviour
     {
         if (!hasHit)
         {
-            for (int i = 0; i < tag.Length; i++)
-            {
-                if(tag[i] == "Boss")
+                if(tag[s] == "Boss")
                 {
                     switch (lastPlayerAttackType)
                     {
@@ -116,14 +116,8 @@ public class HitReg : MonoBehaviour
                     UI.instance.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
                     StartCoroutine(HitBoss());
                 }
-                //else if (tag[i] == "Orb")
-                //{
-                //    OrbSetUp.orbHealth -= .2f;
-                //    hasHit = true;
 
-                //}
-
-                if (tag[i] == "Player")
+                if (tag[s] == "Player")
                 {
                     if (!PlayerHealth.instance.isInvincible)
                     {
@@ -136,13 +130,13 @@ public class HitReg : MonoBehaviour
                     }
                 }
 
-                if (tag[i] == "Orb")
+                if (tag[s] == "Orb")
                 {
                     OrbSetUp.orbHealth -= .2f;
                     hasHit = true;
 
                 }
-            }
+            
         }
     }
 
@@ -204,7 +198,7 @@ public class HitReg : MonoBehaviour
                 //            0.5f);
                 //}
 
-                for (int s = 0; s < tag.Length; s++)
+                for (s = 0; s < tag.Length; s++)
                 {
                     if(hit.transform.tag == tag[s])
                     {
@@ -217,12 +211,6 @@ public class HitReg : MonoBehaviour
                                 0.5f);
 
                         Debug.Log(s);
-
-                        //if (hit.transform.tag == "Orb")
-                        //{
-                        //    Debug.Log("Hit Orb");
-                        //    OrbSetUp.orbHealth -= .05f;
-                        //}
                     }
                 }
             }

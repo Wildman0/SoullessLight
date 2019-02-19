@@ -25,7 +25,7 @@ public class OrbSetUp : MonoBehaviour
 
     private void Start()
     {
-        orbObject = Resources.Load<GameObject>("projectile");
+        orbObject = Resources.Load<GameObject>(projectileName);
         phase = GetComponent<Phase>();
         firstOrb = true;
         orbHealth = 1f;
