@@ -21,7 +21,7 @@ public class BossProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
             Implode();
             PlayerHealth.instance.TakeDamage(projectileDamage);
