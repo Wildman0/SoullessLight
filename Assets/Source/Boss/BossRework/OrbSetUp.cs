@@ -10,16 +10,18 @@ public class OrbSetUp : MonoBehaviour
     public float showHealth;
 
     public int amountOfOrbs;
+    private int orbIndex;
+
+    public static bool spawnOrb;
+    private bool firstOrb;
+
+    [SerializeField]
+    private string projectileName;
 
     public GameObject orbObject;
     public GameObject inSceneOrb;
 
     public Animator orbAnim;
-
-    public static bool spawnOrb;
-    private bool firstOrb;
-
-    private int orbIndex;
 
     private void Start()
     {
@@ -36,8 +38,6 @@ public class OrbSetUp : MonoBehaviour
         EndIntermission();
 
         showHealth = orbHealth;
-
-        Debug.Log(spawnOrb);
     }
 
     private void SpawnCheck()
@@ -69,7 +69,7 @@ public class OrbSetUp : MonoBehaviour
 
     private void SpawnOrb()
     {
-        GameObject orbPrefab = (GameObject)Instantiate(Resources.Load("projectile_Test"), new Vector3(-61.82f, 35.8f, 4.77f), Quaternion.identity);
+        GameObject orbPrefab = (GameObject)Instantiate(Resources.Load(projectileName), new Vector3(-61.82f, 35.8f, 4.77f), Quaternion.identity);
         amountOfOrbs -= 1;
 
         orbAnim = GameObject.FindGameObjectWithTag("Orb").GetComponent<Animator>();

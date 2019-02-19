@@ -7,15 +7,16 @@ public class BossRotation : MonoBehaviour
     public static bool rightRotation;
     public static bool leftRotation;
 
-    public int index;
-    public int lastIndex;
-
     private float smoothRotation = 0.2f;
 
     private Quaternion bossRotation;
 
+    private Phase phase;
+
     private void Start()
     {
+        phase = GetComponentInChildren<Phase>();
+
         bossRotation = transform.rotation;
     }
 
@@ -26,49 +27,25 @@ public class BossRotation : MonoBehaviour
 
     public void Rotate()
     {
-        if (rightRotation == true)
+        if (Phase.trigger == true)
         {
-            //BossAnim.Anim.SetBool("RightRotation",true) , this is the old code just for reference
-            RandomRightRotation();
-            bossRotation *= Quaternion.AngleAxis(10, Vector3.up);
+            if (rightRotation == true)
+            {
+                phase.anim.SetBool("RotateRight", true);
+                bossRotation *= Quaternion.AngleAxis(10, Vector3.up);
 
-            rightRotation = false;
-            StartCoroutine(NoRotation());
-        }
-        else if (leftRotation == true)
-        {
-            //BossAnim.Anim.SetBool("LeftRotation",true) , this is the old code just for reference
-            RandomLeftRotation();
-            bossRotation *= Quaternion.AngleAxis(-10, Vector3.up);
+                rightRotation = false;
+                StartCoroutine(NoRotation());
+            }
+            else if (leftRotation == true)
+            {
+                phase.anim.SetBool("RotateLeft", true);
+                bossRotation *= Quaternion.AngleAxis(-10, Vector3.up);
 
-            leftRotation = false;
-            StartCoroutine(NoRotation());
-        }
-        transform.rotation = Quaternion.Lerp(transform.rotation, bossRotation, 10 * smoothRotation * Time.deltaTime);
-    }
-
-    private void RandomLeftRotation()
-    {
-        if (index == lastIndex)
-        {
-            index = Random.Range(1, 2);
-        }
-        else
-        {
-            //BossAnim.anim.SetInteger("LeftRotation_Index", index);
-        }
-    }
-
-    private void RandomRightRotation()
-    {
-        if (index == lastIndex)
-        {
-            index = Random.Range(1, 3);
-        }
-        else
-        {
-            //BossAnim.anim.SetInteger("RightRotation_Index", index);
-
+                leftRotation = false;
+                StartCoroutine(NoRotation());
+            }
+            transform.rotation = Quaternion.Lerp(transform.rotation, bossRotation, 10 * smoothRotation * Time.deltaTime);
 
         }
     }
@@ -76,11 +53,7 @@ public class BossRotation : MonoBehaviour
     private IEnumerator NoRotation()
     {
         yield return new WaitForSeconds(1f);
-
-        //BossAnim.anim.SetInteger("LeftRotation_Index", 0);
-        //BossAnim.anim.SetInteger("RightRotation_Index", 0);
-        lastIndex = index;
-
-
+        phase.anim.SetBool("RotateRight", false);
+        phase.anim.SetBool("RotateLeft", false);
     }
 }

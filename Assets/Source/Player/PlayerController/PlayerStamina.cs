@@ -13,6 +13,7 @@ public class PlayerStamina : MonoBehaviour
 	public const float staminaReplenishPerSecond = 0.3f;
 	public const float runningStaminaReductionPerSecond = 0.3f;
 	public const float rollingStaminaReduction = 0.2f;
+    public Animator staminaLow;
 
 	private void Start()
 	{
@@ -35,6 +36,15 @@ public class PlayerStamina : MonoBehaviour
 				ReduceStamina();
 			}
 		}
+
+        if (stamina <= 0.1)
+        {
+            staminaLow.SetTrigger("IsStaminaLow");
+        }
+        else if (stamina >= 0.1)
+        {
+            staminaLow.SetBool("IsStaminaLow", false);
+        }
 	}
 
 	void ReplenishStamina()
