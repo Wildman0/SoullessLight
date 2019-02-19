@@ -39,7 +39,7 @@ public class HitReg : MonoBehaviour
     public float hitRegStartDelay = 0.2f;
     public float hitRegActiveTime = 0.6f;
 
-    int s;
+    int tagIndex;
 
     //Runs on instantiation
     void Start()
@@ -97,46 +97,45 @@ public class HitReg : MonoBehaviour
     {
         if (!hasHit)
         {
-                if(tag[s] == "Boss")
+            if (tag[tagIndex] == "Boss")
+            {
+                switch (lastPlayerAttackType)
                 {
-                    switch (lastPlayerAttackType)
-                    {
-                        case PlayerAttackTypes.LightAttack:
-                            playerAttack.DamageBoss(playerAttack.lightAttackDamage);
-                            break;
+                    case PlayerAttackTypes.LightAttack:
+                        playerAttack.DamageBoss(playerAttack.lightAttackDamage);
+                        break;
 
-                        case PlayerAttackTypes.HeavyAttack:
-                            playerAttack.DamageBoss(playerAttack.heavyAttackDamage);
-                            break;
-                    }
+                    case PlayerAttackTypes.HeavyAttack:
+                        playerAttack.DamageBoss(playerAttack.heavyAttackDamage);
+                        break;
+                }
 
+                hasHit = true;
+                MusicSource.Play();
+                UI.instance.bossAttacked.GetComponent<Image>().enabled = true;
+                UI.instance.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
+                StartCoroutine(HitBoss());
+            }
+
+            if (tag[tagIndex] == "Player")
+            {
+                if (!PlayerHealth.instance.isInvincible)
+                {
                     hasHit = true;
-                    MusicSource.Play();
-                    UI.instance.bossAttacked.GetComponent<Image>().enabled = true;
-                    UI.instance.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
+                    UI.instance.playerAttacked.GetComponent<Image>().enabled = true;
+                    UI.instance.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
                     StartCoroutine(HitBoss());
+
+                    PlayerHealth.instance.TakeDamage(0.3f);
                 }
+            }
 
-                if (tag[s] == "Player")
-                {
-                    if (!PlayerHealth.instance.isInvincible)
-                    {
-                        hasHit = true;
-                        UI.instance.playerAttacked.GetComponent<Image>().enabled = true;
-                        UI.instance.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
-                        StartCoroutine(HitBoss());
+            if (tag[tagIndex] == "Orb")
+            {
+                OrbSetUp.orbHealth -= .2f;
+                hasHit = true;
 
-                        PlayerHealth.instance.TakeDamage(0.3f);
-                    }
-                }
-
-                if (tag[s] == "Orb")
-                {
-                    OrbSetUp.orbHealth -= .2f;
-                    hasHit = true;
-
-                }
-            
+            }
         }
     }
 
@@ -198,9 +197,9 @@ public class HitReg : MonoBehaviour
                 //            0.5f);
                 //}
 
-                for (s = 0; s < tag.Length; s++)
+                for (tagIndex = 0; tagIndex < tag.Length; tagIndex++)
                 {
-                    if(hit.transform.tag == tag[s])
+                    if(hit.transform.tag == tag[tagIndex])
                     {
                         Hit();
 
@@ -210,7 +209,7 @@ public class HitReg : MonoBehaviour
                                 Color.red,
                                 0.5f);
 
-                        Debug.Log(s);
+                        Debug.Log(tagIndex);
                     }
                 }
             }
