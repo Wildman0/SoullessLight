@@ -18,7 +18,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float lightAttackStamina = 0.05f;
     
     public float heavyAttackDamage = 0.04f;
-    [SerializeField] private float heavyAttackMovementLockTime = 2.0f;
+    [SerializeField] private float heavyAttackMovementLockTime = 2.5f;
+    [SerializeField] private float additionalTimeBetweenHeavyAttacks = 0.5f;
     [SerializeField] private float heavyAttackStamina = 0.15f;
     
     
@@ -48,7 +49,7 @@ public class PlayerAttack : MonoBehaviour
             LightAttack();
         }
         else if (FloatCasting.ToBool(PlayerController.instance.inputController.heavyAttackDown) && canAttack &&
-                 PlayerStamina.instance.stamina > heavyAttackStamina)
+                 CanHeavyAttack())
         {
             HeavyAttack();
         }
@@ -95,6 +96,7 @@ public class PlayerAttack : MonoBehaviour
         canAttack = true;
         PlayerStamina.instance.isUsingStaminaAction = false;
         
+        yield return new WaitForSeconds(additionalTimeBetweenHeavyAttacks);
         PlayerController.instance.playerState[(int)PlayerActions.HeavyAttacking] = false;
     }
 
@@ -131,5 +133,18 @@ public class PlayerAttack : MonoBehaviour
         }
 
         bossGameObject = bossHealth.gameObject;
+    }
+
+    bool CanHeavyAttack()
+    {
+        PlayerController p = PlayerController.instance;
+
+        return PlayerStamina.instance.stamina > heavyAttackStamina
+               && !p.GetPlayerState(PlayerActions.Healing)
+               && !p.GetPlayerState(PlayerActions.Blocking)
+               && !p.GetPlayerState(PlayerActions.Attacking)
+               && !p.GetPlayerState(PlayerActions.Sprinting)
+               && !p.GetPlayerState(PlayerActions.Rolling)
+               && !p.GetPlayerState(PlayerActions.HeavyAttacking);
     }
 }
