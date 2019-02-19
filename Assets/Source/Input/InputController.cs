@@ -138,6 +138,7 @@ namespace NDA.PlayerInput
             rotateCamera = Input.GetAxis("Right Stick Horizontal");
             rotateCameraVertical = Input.GetAxis("Right Stick Vertical");
             cameraLockToggle = Input.GetKeyDown(KeyCode.JoystickButton3);
+            block = Input.GetAxis("Left Trigger");
             
             rollDown = BoolCasting.ToFloat(Input.GetButtonDown("Fire2"));
             lightAttackDown = BoolCasting.ToFloat(Input.GetButtonDown("Joystick 5"));
