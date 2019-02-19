@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using NDA.FloatUtil;
 using UnityEditor.Experimental.Rendering;
 using UnityEngine;
@@ -34,7 +35,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float rollTime = 1.0f;
 	[SerializeField] private float rollInvincibilityTime = 0.4f;
 	[SerializeField] private float rollSpeed = 4.5f;
-
+	[SerializeField] private float additionalTimeBetweenRolls = 1.0f;
+	
 	[SerializeField] private float heavyAttackSpeed = 1.0f;
 	
 	public Vector3 directionVector;
@@ -196,6 +198,7 @@ public class PlayerMovement : MonoBehaviour
 		       && !PlayerController.instance.GetPlayerState(PlayerActions.Rolling)
 		       && !PlayerController.instance.GetPlayerState(PlayerActions.Healing)
 		       && !PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking)
+		       && !PlayerController.instance.GetPlayerState(PlayerActions.Sprinting)
 		       && PlayerStamina.instance.stamina > PlayerStamina.rollingStaminaReduction;
 	}
 	
@@ -214,7 +217,7 @@ public class PlayerMovement : MonoBehaviour
 		SetPlayerState(PlayerActions.Rolling, true);
 		PlayerAnim.instance.Roll();
 		LockMovement(rollTime);
-		yield return new WaitForSeconds(rollTime);
+		yield return new WaitForSeconds(additionalTimeBetweenRolls);
 		SetPlayerState(PlayerActions.Rolling, false);
 	}
 
