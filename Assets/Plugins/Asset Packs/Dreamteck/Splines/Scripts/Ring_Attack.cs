@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ring_Attack : MonoBehaviour {
 
-   Vector3 minScale;
+    public Vector3 minScale;
     public Vector3 maxScale;
     public bool repeatable;
     public float speed = 2f;
@@ -27,11 +27,11 @@ public class Ring_Attack : MonoBehaviour {
         }
 
     
-            if (transform.localScale == maxScale)
+           // if (transform.localScale == maxScale)
 
-            {
-                Destroy(this.gameObject);
-            }
+            //{
+            //    Destroy(this.gameObject);
+           // }
 
                     
         }
