@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NDA.FloatUtil;
 using NDA.PlayerInput;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class PlayerAttack : MonoBehaviour
     
     private AttackHitDetection attackHitDetection;
     public HitReg hitReg;
+    private static readonly int IsBlocking = Animator.StringToHash("IsBlocking");
 
     private void Awake()
     {
@@ -43,6 +45,9 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        //TODO: THIS NEEDS TO ME MOVED OUT INTO PLAYERANIM IF IT'S ACTUALLY BEING USED
+        BlockingChecks();
+        
         if (FloatCasting.ToBool(PlayerController.instance.inputController.lightAttackDown) && canAttack &&
             PlayerStamina.instance.stamina > lightAttackStamina)
         {
@@ -55,6 +60,14 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    void BlockingChecks()
+    {
+        if (FloatCasting.ToBool(PlayerController.instance.inputController.block))
+            PlayerAnim.instance.anim.SetBool(IsBlocking, true);
+        else 
+            PlayerAnim.instance.anim.SetBool(IsBlocking, false);
+    }
+    
     //Performs a light attack
     public void LightAttack()
     {
