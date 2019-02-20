@@ -18,7 +18,8 @@ public enum PlayerActions
     HeavyAttacking,
     Blocking,
     Invincible,
-    Healing
+    Healing,
+    InCinematic
 }
 
 [RequireComponent(typeof(CharacterController))]
