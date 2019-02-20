@@ -107410,6 +107410,11 @@ Prefab:
       propertyPath: approaching
       value: 
       objectReference: {fileID: 1805988147}
+    - target: {fileID: 114783915041892356, guid: 205edb3d3e09fc246a4ac799db1d1075,
+        type: 2}
+      propertyPath: orbName
+      value: Projectile_Test
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 205edb3d3e09fc246a4ac799db1d1075, type: 2}
   m_IsPrefabAsset: 0
@@ -121419,12 +121424,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phase: {fileID: 0}
-  showHealth: 0
-  amountOfOrbs: 0
-  projectileName: 
+  showHealth: []
+  animationIndex: 0
+  orbName: 
   orbObject: {fileID: 1683543379909330, guid: 7ea3e59c83fb0b74fad5fa5d7b90e314, type: 2}
-  inSceneOrb: {fileID: 0}
-  orbAnim: {fileID: 0}
 --- !u!114 &2101110974
 MonoBehaviour:
   m_ObjectHideFlags: 0
