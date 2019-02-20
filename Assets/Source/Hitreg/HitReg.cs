@@ -132,8 +132,8 @@ public class HitReg : MonoBehaviour
 
             if (tag[tagIndex] == "Orb")
             {
-                OrbSetUp.orbHealth -= .2f;
-                hasHit = true;
+                //OrbSetUp.orbHealth -= .2f;
+                //hasHit = true;
 
             }
         }
