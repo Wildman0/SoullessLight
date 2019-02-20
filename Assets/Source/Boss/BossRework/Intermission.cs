@@ -25,9 +25,9 @@ public class Intermission : MonoBehaviour
         if (activated == false)
         {
             phase.anim.SetBool("IntermissionIn", true);
-            activated = true;
-
             OrbSetUp.spawnOrb = true;
+
+            activated = true;
         }
         else if(activated == true)
         {

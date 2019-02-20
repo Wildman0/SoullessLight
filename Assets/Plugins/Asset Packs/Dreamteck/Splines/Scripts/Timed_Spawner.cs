@@ -9,7 +9,6 @@ public class Timed_Spawner : MonoBehaviour {
     public bool stopSpawning = false;
     public bool repeatingSpawn = true;
     public float destroyAfterXTime = 5f;
-    public float projectileSpeed = 20f;
     public float spawnTime;
     public float spawnDelay;
     public float maxSpawnAmount = 100f;
@@ -24,26 +23,23 @@ public class Timed_Spawner : MonoBehaviour {
     }
     
     public void SpawnObject()
-    {
-        GameObject projectile_01 = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
-        SplineFollower follower = projectile_01.GetComponent<SplineFollower>();
+    { 
 
+        GameObject projectile1 = Instantiate(projectile, transform.position, transform.rotation) as GameObject;
 
-        if(repeatingSpawn == false)
-        {
-            spawnAmount = spawnAmount + 1;
-            //Debug.Log("Added 1");
-        }
-        
-        
+        SplineFollower follower = projectile1.GetComponent<SplineFollower>();
+
         if (follower != null)
         {
             follower.computer = sc;
         }
 
-        Rigidbody rb = projectile_01.GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * projectileSpeed;
-        
+
+        if (repeatingSpawn == false)
+        {
+            spawnAmount = spawnAmount + 1;
+            //Debug.Log("Added 1");
+        }
       
     }
 
