@@ -67,7 +67,15 @@ public class PlayerMovement : MonoBehaviour
 		Move();
 		ApplyGravity();
 	}
-	
+
+	private void OnTriggerEnter(Collider coll)
+	{
+		if (coll.CompareTag("Cine"))
+		{
+			IntroCutscene();
+		}
+	}
+
 	public void DisableMovement(float seconds)
 	{
 		StartCoroutine(DisableMovementIEnum(seconds));
@@ -113,9 +121,6 @@ public class PlayerMovement : MonoBehaviour
 			0,
 			PlayerController.instance.inputController.forward - PlayerController.instance.inputController.back);
 		
-		//Debug.Log(vec);
-		//Debug.Log(movementTarget);
-		
 		movementTarget = Vector3.Lerp(vec, movementTarget, directionChangeSpeed);
 		
 		if (CameraController.instance.isLocked)
@@ -148,15 +153,15 @@ public class PlayerMovement : MonoBehaviour
 
 	float GetMovementSpeed()
 	{
+		if (PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking))
+			return heavyAttackSpeed;
+		
 		if (PlayerController.instance.GetPlayerState(PlayerActions.Rolling))
 			return rollSpeed;
 		
 		if (PlayerController.instance.GetPlayerState(PlayerActions.Sprinting))
 			return sprintSpeed;
 
-		if (PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking))
-			return heavyAttackSpeed;
-			
 		return jogSpeed;
 	}
 	
@@ -231,5 +236,21 @@ public class PlayerMovement : MonoBehaviour
 	private void OnDestroy()
 	{
 		SetPlayerState -= PlayerController.instance.OnSetPlayerState;
+	}
+
+	private void IntroCutscene()
+	{
+		StartCoroutine(IntroCutSceneIEnum());
+	}
+
+	private IEnumerator IntroCutSceneIEnum()
+	{
+		SetPlayerState(PlayerActions.InCinematic, true);
+		PlayerAnim.instance.Cinematic();
+		DisableMovement(2.8f);
+		yield return new WaitForSeconds(0.3f);
+		movementVector = Vector3.forward;
+		LockMovement(0.3f);
+		SetPlayerState(PlayerActions.InCinematic, false);
 	}
 }
