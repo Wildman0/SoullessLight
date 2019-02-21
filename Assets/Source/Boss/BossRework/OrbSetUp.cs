@@ -21,8 +21,12 @@ public class OrbSetUp : MonoBehaviour
 
     private Animator anim;
 
+    Intermission intermission;
+
     private void Start()
     {
+        intermission = GetComponent<Intermission>();
+
         orbObject = Resources.Load<GameObject>(orbName);
         phase = GetComponent<Phase>();
     }
@@ -38,7 +42,6 @@ public class OrbSetUp : MonoBehaviour
     {
         if(spawnOrb == true)
         {
-            Debug.Log("In");
             StartCoroutine(SpawnDelay());
         }
     }
@@ -88,6 +91,9 @@ public class OrbSetUp : MonoBehaviour
 
     private void EndIntermission()
     {
-
+        if(healthIndex == orbHealth.Length)
+        {
+            intermission.orbsDestroyed = true;
+        }
     }
 }

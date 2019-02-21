@@ -11,7 +11,7 @@ public class Intermission : MonoBehaviour
     public Animator approaching;
 
     public bool activated;
-    private bool orbsDestroyed;
+    public bool orbsDestroyed;
 
 
     private void Start()
