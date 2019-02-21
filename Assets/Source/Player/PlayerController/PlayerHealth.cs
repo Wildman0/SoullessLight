@@ -125,6 +125,8 @@ public class PlayerHealth : MonoBehaviour
 	bool CanHeal()
 	{
 		return (!PlayerAnim.instance.anim.GetBool("IsHealing") &&
+		        !PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking) &&
+		        !PlayerController.instance.GetPlayerState(PlayerActions.Rolling) &&
 		        !isHealing && healCount > 0);
 	}
 

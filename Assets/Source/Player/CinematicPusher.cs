@@ -25,7 +25,7 @@ public class CinematicPusher : MonoBehaviour
 	
 	void StartPush()
 	{
-		transform.position = new Vector3(-63.0f, 47.4f, -26.2f);
+		transform.position = new Vector3(-63.0f, 47.2f, -26.2f);
 		isMoving = true;
 	}
 
