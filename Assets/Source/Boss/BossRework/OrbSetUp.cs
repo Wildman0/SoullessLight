@@ -19,7 +19,7 @@ public class OrbSetUp : MonoBehaviour
     public GameObject orbObject;
     private GameObject inSceneOrb;
 
-    private Animator anim;
+    public static Animator anim;
 
     Intermission intermission;
 
