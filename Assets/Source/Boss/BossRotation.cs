@@ -46,7 +46,6 @@ public class BossRotation : MonoBehaviour
                 StartCoroutine(NoRotation());
             }
             transform.rotation = Quaternion.Lerp(transform.rotation, bossRotation, 10 * smoothRotation * Time.deltaTime);
-
         }
     }
 
