@@ -28,7 +28,7 @@ public class Particle : MonoBehaviour {
         GameObject Clone1;
         animators.SetActive(true);
         Clone1 = Instantiate(animators, holder.transform.position, Quaternion.identity) as GameObject;
-        Destroy(Clone1, 5);
+        Destroy(Clone1, 10);
 
     }
 
