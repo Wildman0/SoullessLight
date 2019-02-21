@@ -134,6 +134,9 @@ public class HitReg : MonoBehaviour
             {
                 OrbSetUp.orbHealth[OrbSetUp.healthIndex] -= .2f;
                 hasHit = true;
+                OrbSetUp.anim.SetTrigger("OrbDamaged");
+                StartCoroutine(HitBoss());
+               
             }
         }
     }
