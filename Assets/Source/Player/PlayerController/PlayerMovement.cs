@@ -73,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
 		if (coll.CompareTag("Cine"))
 		{
 			IntroCutscene();
+			CinematicPusher.Trigger();
 		}
 	}
 
