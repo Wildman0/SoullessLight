@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4126878619142658}
   - component: {fileID: 33921511382905362}
   - component: {fileID: 23600654045840140}
+  - component: {fileID: 136905152061266178}
   m_Layer: 0
   m_Name: Brazier_Final
   m_TagString: Untagged
@@ -144,8 +145,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1546240469643556}
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: 0.12, y: 0.24, z: 0.47}
-  m_LocalScale: {x: 3.910986, y: 3.9109879, z: 3.9109879}
+  m_LocalPosition: {x: 0.07, y: 0.12, z: 1.18}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 4142135866123568}
   m_RootOrder: 1
@@ -157,7 +158,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1428377406122898}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.400002, y: -1.2010002, z: -18.081001}
+  m_LocalPosition: {x: -16.63, y: 17.12, z: -71.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4142135866123568}
@@ -312,12 +313,12 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 0.6447368, b: 0, a: 1}
-  m_Intensity: 17.99
+  m_Intensity: 15
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -331,10 +332,10 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 3
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -376,12 +377,14 @@ MonoBehaviour:
   - 0.2
   - 0.2
   shadowAlgorithm: 0
-  shadowVariant: 0
+  shadowVariant: 2
   shadowPrecision: 0
   shadowData:
     format: 0
-    data: 
-  shadowDatas: []
+    data: 000000000000803f
+  shadowDatas:
+  - format: 0
+    data: 000000000000803f
 --- !u!114 &114809938273881166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -399,7 +402,7 @@ MonoBehaviour:
   areaIntensity: 200
   enableSpotReflector: 0
   m_InnerSpotPercent: 0
-  lightDimmer: 1
+  lightDimmer: 0.6
   volumetricDimmer: 1
   lightUnit: 1
   fadeDistance: 10000
@@ -416,9 +419,22 @@ MonoBehaviour:
   applyRangeAttenuation: 1
   useOldInspector: 0
   featuresFoldout: 1
-  showAdditionalSettings: 0
-  displayLightIntensity: 17.99
+  showAdditionalSettings: 1
+  displayLightIntensity: 15
   displayAreaLightEmissiveMesh: 0
+--- !u!136 &136905152061266178
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1180121869119104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.43183744
+  m_Height: 2.1140778
+  m_Direction: 1
+  m_Center: {x: -0.00000031292439, y: 1.1006943, z: 0.00000031292439}
 --- !u!198 &198444989542235154
 ParticleSystem:
   m_ObjectHideFlags: 1

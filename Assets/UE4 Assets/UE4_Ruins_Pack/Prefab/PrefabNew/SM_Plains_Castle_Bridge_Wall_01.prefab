@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4633737394304624}
   - component: {fileID: 33703833430176772}
   - component: {fileID: 23882738557034056}
+  - component: {fileID: 65374041258997772}
   m_Layer: 0
   m_Name: SM_Plains_Castle_Bridge_Wall_01
   m_TagString: Untagged
@@ -35,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1609362612881724}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 47.05993, y: 9.230511, z: -121.692154}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -64.99, y: 47.94406, z: -27.205}
+  m_LocalScale: {x: 1, y: 1.289, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,3 +85,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1609362612881724}
   m_Mesh: {fileID: 4300000, guid: 186124828004af2479dabaf90f1d3580, type: 3}
+--- !u!65 &65374041258997772
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1609362612881724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7970705, y: 6.042473, z: 3.022707}
+  m_Center: {x: -0.000000044703484, y: 2.4800007, z: -0.7026742}
