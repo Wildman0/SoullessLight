@@ -24,6 +24,8 @@ public class UI : MonoBehaviour
     public Image playerAttacked;
     public Image BossDefeated;
 
+    public Image[] orbHealth;
+
     public Color playerHealthBarFull = Color.red;
     public Color playerHealthBarEmpty = new Color(120, 50, 50);
 
@@ -58,6 +60,7 @@ public class UI : MonoBehaviour
         BossHealthBar();
         PlayerHealthBar();
         PlayerStaminaBar();
+        OrbHealth();
     }
     
     //TODO: TEMPORARILY CHANGED TO MAKE THE HEALTH SMOOTHED
@@ -99,5 +102,13 @@ public class UI : MonoBehaviour
         bossHealthBar.color = Color.Lerp(playerHealthBarEmpty,
                                          playerHealthBarFull,
                                          PlayerHealth.instance.health);
+    }
+
+    private void OrbHealth()
+    {
+        for (int i = 0; i < orbHealth.Length; i++)
+        {
+            orbHealth[i].fillAmount = OrbSetUp.orbHealth[i];
+        }
     }
 }
