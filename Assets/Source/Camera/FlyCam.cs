@@ -5,10 +5,7 @@ using UnityEngine;
 public class FlyCam : MonoBehaviour
 {
     public float sensitivity;
-    public float climbSpeed;
-    public float normalMoveSpeed;
-    public float slowMoveFactor;
-    public float fastMoveFactor;
+    public float movementSpeed;
 
     private float rotationX = 0.0f;
     private float rotationY = 0.0f;
@@ -36,7 +33,10 @@ public class FlyCam : MonoBehaviour
 
     private void CameraMovement()
     {
-
+        if(Input.GetKey(KeyCode.W))
+        {
+            transform.position += transform.forward * movementSpeed;
+        }
     }
 }
 
