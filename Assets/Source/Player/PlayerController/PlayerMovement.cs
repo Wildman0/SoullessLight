@@ -149,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
 		
 		SetPlayerState(PlayerActions.Moving, velocity > 0);
 		SetPlayerState(PlayerActions.Sprinting,
-			FloatCasting.ToBool(PlayerController.instance.inputController.sprint) && Math.Abs(PlayerStamina.instance.stamina) >= 0.01f && PlayerMovement.instance.velocity > 5.0f);
+			FloatCasting.ToBool(PlayerController.instance.inputController.sprint) && CanSprint());
 	}
 
 	float GetMovementSpeed()
@@ -198,6 +198,13 @@ public class PlayerMovement : MonoBehaviour
 		PlayerController.instance.characterController.Move(new Vector3(0, -gravity * Time.deltaTime, 0));
 	}
 
+	bool CanSprint()
+	{
+		return Math.Abs(PlayerStamina.instance.stamina) >= 0.01f && velocity > 5.0f &&
+		       !PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking) &&
+		       !PlayerController.instance.GetPlayerState(PlayerActions.Attacking);
+	}
+	
 	bool CanRoll()
 	{
 		return !FloatMath.IsZero(PlayerController.instance.inputController.rollDown)
