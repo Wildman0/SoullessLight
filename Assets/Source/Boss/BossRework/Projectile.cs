@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private GameObject ice;
+    [SerializeField]
+    private GameObject projectile;
+
+    [SerializeField]
+    private GameObject spawnPoint;
+
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
+    {
+        
+    }
 
 }

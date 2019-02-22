@@ -51,5 +51,9 @@ MonoBehaviour:
     - animationClip: {fileID: 7400000, guid: c274be62fb938e349aed31b8d8f48b24, type: 2}
       attackDamage: 0
   longAttacks:
-    leftAttacks: []
-    rightAttacks: []
+    leftAttacks:
+    - animationClip: {fileID: 7400042, guid: 0123a06f9b025bc4795d18454456a18f, type: 3}
+      attackDamage: 0
+    rightAttacks:
+    - animationClip: {fileID: 7400042, guid: 0123a06f9b025bc4795d18454456a18f, type: 3}
+      attackDamage: 0
