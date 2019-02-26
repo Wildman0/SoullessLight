@@ -16,10 +16,9 @@ public class PlayerHealth : MonoBehaviour
 	public float health = 1.0f;
 
 	private const float maxHealth = 1.0f;
-
-	private float healAmount = 0.3f;
-	private float healTime = 2.7f;
-	private float healCool = 3f;
+    [SerializeField] private float healAmount = 0.3f;
+    [SerializeField] private float healTime = 2.7f;
+    [SerializeField] private float healCool = 3f;
 	
 	public int healCount = 3;
 
