@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114347878981072096}
   - component: {fileID: 114691525339014000}
   m_Layer: 0
-  m_Name: Proj Ice looped(FS2)
+  m_Name: Ice Orb Proj
   m_TagString: projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,7 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyAfterTime: 1
-  destroyAfterXTime: 20
+  destroyAfterXTime: 10
   implosion: {fileID: 1331178928495126, guid: 9acfdad5f407bd746959f316c1b3046a, type: 2}
   enableMe: {fileID: 1164053737894552}
   spawn: {fileID: 1663457674212330}

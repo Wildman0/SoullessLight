@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 114048051599530608}
   - component: {fileID: 114888884645657406}
   m_Layer: 0
-  m_Name: Proj Red (FS5)
+  m_Name: Fire Orb Proj
   m_TagString: projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyAfterTime: 1
-  destroyAfterXTime: 20
+  destroyAfterXTime: 10
   implosion: {fileID: 1331178928495126, guid: 63db912f4ecc0c94c82e107b476ff0a6, type: 2}
   enableMe: {fileID: 1471340465291686}
   spawn: {fileID: 1115660076947990, guid: 4a58290e63ff03f43ace1b74f8592161, type: 2}

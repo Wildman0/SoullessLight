@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 114330010729415520}
   - component: {fileID: 114518145339475850}
   m_Layer: 0
-  m_Name: Proj Poison(FS5)
+  m_Name: Poison Orb Proj
   m_TagString: projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -280,8 +280,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1422847221571536}
-  m_LocalRotation: {x: 0, y: 1, z: -0, w: -0}
-  m_LocalPosition: {x: -65.81924, y: 47.04, z: -19.5624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
   - {fileID: 4859265341903584}
@@ -531,7 +531,7 @@ MonoBehaviour:
   multithreaded: 0
   buildOnAwake: 0
   applyDirectionRotation: 1
-  _direction: -1
+  _direction: 1
   _physicsMode: 0
   _motion:
     _offset: {x: 0, y: 0}
@@ -546,7 +546,7 @@ MonoBehaviour:
     applyPositionX: 1
     applyPositionY: 1
     applyPositionZ: 1
-    direction: -1
+    direction: 1
     applyRotationX: 1
     applyRotationY: 1
     applyRotationZ: 1
@@ -669,8 +669,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8324df19c93fa3b4192e1809ad685b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfterTime: 0
-  destroyAfterXTime: 20
+  destroyAfterTime: 1
+  destroyAfterXTime: 10
   implosion: {fileID: 1101409213023612, guid: 794624d2a5734af4ba9bcc67e48c998c, type: 2}
   enableMe: {fileID: 1309326744271918}
   spawn: {fileID: 1003736020815090}
