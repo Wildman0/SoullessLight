@@ -11,6 +11,7 @@ public class UITriggerBoxon : MonoBehaviour {
         {
             UiElement.SetActive(true);
             Destroy(this);
+
         }
     }
 
