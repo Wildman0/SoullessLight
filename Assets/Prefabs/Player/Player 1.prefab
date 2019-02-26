@@ -8892,6 +8892,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stamina: 1
   isUsingStaminaAction: 0
+  maxStamina: 1
+  staminaReplenishPerSecond: 0.15
+  runningStaminaReductionPerSecond: 0.2
+  rollingStaminaReduction: 0.1
   staminaLow: {fileID: 0}
 --- !u!114 &114762317116558844
 MonoBehaviour:
