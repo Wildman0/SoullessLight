@@ -212,7 +212,7 @@ public class PlayerMovement : MonoBehaviour
 		       && !PlayerController.instance.GetPlayerState(PlayerActions.Healing)
 		       && !PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking)
 		       && !PlayerController.instance.GetPlayerState(PlayerActions.Sprinting)
-		       && PlayerStamina.instance.stamina > PlayerStamina.rollingStaminaReduction;
+		       && PlayerStamina.instance.stamina > PlayerStamina.instance.rollingStaminaReduction;
 	}
 	
 	private void RollChecks()
@@ -221,7 +221,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			StartCoroutine(RollIEnum());
 			StartCoroutine(RollInvincibilityIEnum());
-			PlayerStamina.instance.ReduceStamina(PlayerStamina.rollingStaminaReduction);
+			PlayerStamina.instance.ReduceStamina(PlayerStamina.instance.rollingStaminaReduction);
 		}
 	}
 	
