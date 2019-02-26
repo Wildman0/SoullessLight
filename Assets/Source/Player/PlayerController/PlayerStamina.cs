@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class PlayerStamina : MonoBehaviour
@@ -9,10 +10,10 @@ public class PlayerStamina : MonoBehaviour
 	public float stamina = 1.0f;
 	public bool isUsingStaminaAction;
 	
-	public const float maxStamina = 1.0f;
-	public const float staminaReplenishPerSecond = 0.3f;
-	public const float runningStaminaReductionPerSecond = 0.3f;
-	public const float rollingStaminaReduction = 0.2f;
+	[SerializeField] float maxStamina = 1.0f;
+	[SerializeField] float staminaReplenishPerSecond = 0.3f;
+	[SerializeField] float runningStaminaReductionPerSecond = 0.3f;
+	public float rollingStaminaReduction = 0.2f;
     public Animator staminaLow;
 
 	private void Start()
