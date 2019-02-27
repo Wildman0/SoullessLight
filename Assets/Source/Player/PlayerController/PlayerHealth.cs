@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float healTime = 2.7f;
     [SerializeField] private float healCool = 3f;
 	
-	public int healCount = 3;
+	private int healCount = 3;
 
 	public bool isInvincible;
 	private bool isHealing;
@@ -74,6 +74,8 @@ public class PlayerHealth : MonoBehaviour
 		
 		health += healAmount;
 		healCount -= 1;
+		
+		UI.instance.SetPlayerHealthChargeCount(healCount);
 
 		if (health > maxHealth)
 		{

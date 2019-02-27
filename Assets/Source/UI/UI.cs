@@ -25,6 +25,7 @@ public class UI : MonoBehaviour
     public Image BossDefeated;
 
     public Image[] orbHealth;
+    [SerializeField] Image[] playerHealCharges;
 
     public Color playerHealthBarFull = Color.red;
     public Color playerHealthBarEmpty = new Color(120, 50, 50);
@@ -109,6 +110,14 @@ public class UI : MonoBehaviour
         for (int i = 0; i < orbHealth.Length; i++)
         {
             orbHealth[i].fillAmount = OrbSetUp.orbHealth[i];
+        }
+    }
+
+    public void SetPlayerHealthChargeCount(int count)
+    {
+        for (int i = count; i < playerHealCharges.Length; i++)
+        {
+            playerHealCharges[i].enabled = false;
         }
     }
 }
