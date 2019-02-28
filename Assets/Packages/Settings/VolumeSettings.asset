@@ -467,7 +467,7 @@ MonoBehaviour:
     min: 0
   albedo:
     m_OverrideState: 1
-    m_Value: {r: 0.5518868, g: 0.7759434, b: 1, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4910d90e50201484ba448b791a192696, type: 3}
   m_Name: VolumetricLightingController
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   depthRange:
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 65}
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df29e7cc05fbec4aa43e06ea875565d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   rotation:
     m_OverrideState: 1
     m_Value: 0
@@ -539,7 +539,7 @@ MonoBehaviour:
     m_Value: 0
     min: 0
   sunSize:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.04
     min: 0
     max: 1
@@ -561,7 +561,7 @@ MonoBehaviour:
     showEyeDropper: 1
   groundColor:
     m_OverrideState: 1
-    m_Value: {r: 0.59927905, g: 0.6172068, b: 0.6320754, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
     hdr: 0
     showAlpha: 1
     showEyeDropper: 1
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384c4d03a551c44448145f4093304119, type: 3}
   m_Name: ScreenSpaceReflection
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   rayLevel:
     m_OverrideState: 0
     m_Value: 2

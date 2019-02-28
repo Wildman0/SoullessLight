@@ -9,11 +9,17 @@ using UnityEditor;
 
 public class AnalyticsManager : MonoBehaviour
 {
-	public GameStatus gameStatus;
+	public static AnalyticsManager current;
+	public GameStatus gameStatus { private set; get; }
 	
-	void Start () 
+	void Awake () 
 	{
 		LoadGameStatusFromFile();
+
+		if (!current)
+			current = this;
+		else
+			Debug.LogError("More than one active AnalyticsManager");
 	}
 
 	//Provides a template game status file

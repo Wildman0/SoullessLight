@@ -34,7 +34,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb84e30e02715445aeb9959894e3b4d, type: 3}
   m_Name: ColorGrading
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -75,10 +75,10 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 42.6
+    value: 36
   tint:
     overrideState: 1
-    value: 7.65
+    value: 22
   colorFilter:
     overrideState: 0
     value: {r: 0.76862746, g: 0.92860943, b: 0.9529412, a: 1}
@@ -1380,7 +1380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 0
@@ -1489,7 +1489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
@@ -1525,7 +1525,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2.13
+    value: 1.42
   color:
     overrideState: 1
     value: {r: 1, g: 1, b: 1, a: 1}
