@@ -52453,7 +52453,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.1
   m_Text: These red orbs provide magic energy to sustain barriers, destroy them by
-    attacking them. Be carefull of other orbs as they are filled with unstable and
+    attacking them. Be careful of other orbs as they are filled with unstable and
     dangerous magic.
 --- !u!222 &1021798974
 CanvasRenderer:
@@ -54301,7 +54301,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 62874bd06ff26ab4ab205f4bf4c26f89, type: 2}
     - target: {fileID: 4362977804441152, guid: 606151cb8a168994986bb2e7a62dee22, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1122668235370990, guid: 606151cb8a168994986bb2e7a62dee22, type: 2}
       propertyPath: m_IsActive
@@ -60436,6 +60436,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114015346176761488, guid: e0c4179627b252044918b2f8342ed5a4,
+        type: 2}
+      propertyPath: tag.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4818171261101732, guid: e0c4179627b252044918b2f8342ed5a4, type: 2}
       propertyPath: m_LocalPosition.x
       value: -132.49
@@ -60500,6 +60505,11 @@ Prefab:
         type: 2}
       propertyPath: additionalTimeBetweenRolls
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114015346176761488, guid: e0c4179627b252044918b2f8342ed5a4,
+        type: 2}
+      propertyPath: tag.Array.data[2]
+      value: projectile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0c4179627b252044918b2f8342ed5a4, type: 2}
