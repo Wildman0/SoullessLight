@@ -138,6 +138,13 @@ public class HitReg : MonoBehaviour
                 StartCoroutine(HitBoss());
                
             }
+
+            if (tag[tagIndex] == "projectile")
+            {
+                TutorialProjectile.health -= 1;
+                hasHit = true;
+                StartCoroutine(HitBoss());
+            }
         }
     }
 

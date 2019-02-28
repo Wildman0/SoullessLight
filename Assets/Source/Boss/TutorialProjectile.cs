@@ -7,33 +7,26 @@ public class TutorialProjectile : MonoBehaviour
 {
     public GameObject implosion;
     public GameObject enableMe;
+    public GameObject doorBlocker;
     public GameObject spawn;
-    private int health = 3;
+    public static int health = 3;
     public SplineFollower follower;
 
     private void Start()
     {
         enableMe.SetActive(false);
-        
+        doorBlocker = GameObject.Find("DoorBlocker");
         StartCoroutine(SpawnComplete());
     
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.tag == "Player")
+        if (health <= 0)
         {
-            health = health - 1;
-
-            if (health == 0)
-            {
-                Destroy(this);
-            }
+            Destroy(gameObject);
         }
-
     }
-
-
 
     void Implode()
     {
@@ -45,12 +38,12 @@ public class TutorialProjectile : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         enableMe.SetActive(true);
-        //Debug.Log("It's working");
         Destroy(spawn);
     }
 
     private void OnDestroy()
     {
+        Destroy(doorBlocker);
         Implode();
     }
 }
