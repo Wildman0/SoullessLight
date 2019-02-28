@@ -126,24 +126,12 @@ public class PlayerAttack : MonoBehaviour
     {
         bossGameObject = bossGameObject ?? GameObject.FindGameObjectWithTag("Boss");
 
-        if (bossGameObject.GetComponent<Boss>() == null)
-        {
             bossHealth = bossGameObject.GetComponentInChildren<BossHealth>();
-            
-            if (bossHealth == null)
-            {
-                Debug.LogError("Was unable to find boss");
-            }
-        }
-        else
-        {
-            bossHealth = bossGameObject.GetComponent<BossHealth>();
 
             if (bossHealth == null)
             {
                 Debug.LogError("Was unable to find boss");
             }
-        }
 
         bossGameObject = bossHealth.gameObject;
     }

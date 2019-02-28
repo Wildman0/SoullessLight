@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Distance : MonoBehaviour
 {
-    private GameObject playerObj;
+    private GameObject target;
 
     public float distance;
 
@@ -26,7 +26,7 @@ public class Distance : MonoBehaviour
 
     void Start ()
     {
-        playerObj = GameObject.FindGameObjectWithTag("Player");
+        target = GameObject.FindGameObjectWithTag("Player");
         audioSource.clip = audioClip;
         CalculateDistanceFromBoss();
         SetDistance(closeMinDistance, closeMaxDistance, longMinDistance, longMaxDistance);
@@ -43,7 +43,7 @@ public class Distance : MonoBehaviour
     //Calculates the distance between the boss and the player
     public void CalculateDistanceFromBoss()
     {
-        distance = Vector3.Distance(transform.position, playerObj.transform.position);
+        distance = Vector3.Distance(transform.position, target.transform.position);
     }
 
     public void SetDistance(float closeMinDistance, float closeMaxDistance, float longMinDistance, float longMaxDistance)
