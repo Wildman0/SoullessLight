@@ -29,11 +29,6 @@ public class Intermission : MonoBehaviour
 
             activated = true;
         }
-        else if(activated == true)
-        {
-            //phase.anim.SetTrigger("IntermissionIn");
-        }
-
         IntermissionTime();
     }
 
@@ -42,7 +37,6 @@ public class Intermission : MonoBehaviour
         intermissionTime[listNumber] -= 1f * Time.deltaTime;
         if(intermissionTime[listNumber] <= 0)
         {
-            //phase.anim.SetBool("IntermissionIn", false);
             phase.anim.SetBool("IntermissionOut", true);
             phase.intermissionCheck = false;
             phase.retrievedPhase = false;
