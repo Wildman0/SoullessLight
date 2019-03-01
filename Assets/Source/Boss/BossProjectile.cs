@@ -29,9 +29,12 @@ public class BossProjectile : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Implode();
-            PlayerHealth.instance.TakeDamage(projectileDamage);
-            Destroy(gameObject);
+            if (!PlayerHealth.instance.isInvincible)
+            {
+                Implode();
+                PlayerHealth.instance.TakeDamage(projectileDamage);
+                Destroy(gameObject);
+            }
         }
 
         if (other.CompareTag("ProjectileStopper"))
