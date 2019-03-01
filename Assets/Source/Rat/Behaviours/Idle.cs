@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Idle : MonoBehaviour {
+public class Idle : MonoBehaviour
+{
+    private AnimHandler animHandler;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Start()
+    {
+        animHandler = GetComponent<AnimHandler>();
+    }
+
+    public void Pause()
+    {
+        animHandler.anim.SetBool("isIdle", true);
+    }
 }

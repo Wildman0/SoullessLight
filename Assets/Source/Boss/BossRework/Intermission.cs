@@ -24,14 +24,14 @@ public class Intermission : MonoBehaviour
     {
         if (activated == false)
         {
-            phase.anim.SetBool("IntermissionIn", true);
+            phase.anim.SetTrigger("IntermissionIn");
             OrbSetUp.spawnOrb = true;
 
             activated = true;
         }
         else if(activated == true)
         {
-            phase.anim.SetBool("IntermissionIn", false);
+            //phase.anim.SetTrigger("IntermissionIn");
         }
 
         IntermissionTime();
@@ -42,6 +42,7 @@ public class Intermission : MonoBehaviour
         intermissionTime[listNumber] -= 1f * Time.deltaTime;
         if(intermissionTime[listNumber] <= 0)
         {
+            //phase.anim.SetBool("IntermissionIn", false);
             phase.anim.SetBool("IntermissionOut", true);
             phase.intermissionCheck = false;
             phase.retrievedPhase = false;

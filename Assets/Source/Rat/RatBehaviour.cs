@@ -14,9 +14,13 @@ public class RatBehaviour : MonoBehaviour
     }
     public Behaviours behaviours;
 
+    Idle idle;
+    Wonder wonder;
+
     private void Start()
     {
-   
+        idle = GetComponent<Idle>();
+        wonder = GetComponent<Wonder>();
     }
 
     private void Update()
@@ -30,16 +34,18 @@ public class RatBehaviour : MonoBehaviour
         {
             case Behaviours.Idle:
 
-                Debug.Log("Idle");
+                idle.Pause();
 
                 break;
 
             case Behaviours.wonder:
 
+                wonder.GoToDestination();
 
                 break;
 
             case Behaviours.chase:
+
 
 
                 break;
@@ -47,9 +53,11 @@ public class RatBehaviour : MonoBehaviour
             case Behaviours.attack:
 
 
+
                 break;
 
             case Behaviours.rotate:
+
 
 
                 break;
