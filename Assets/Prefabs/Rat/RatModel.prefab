@@ -1201,9 +1201,12 @@ GameObject:
   - component: {fileID: 114131662309594098}
   - component: {fileID: 195726660589705176}
   - component: {fileID: 114842293607798720}
+  - component: {fileID: 114864214206082640}
+  - component: {fileID: 114219456122559472}
+  - component: {fileID: 114646252074120898}
   m_Layer: 0
   m_Name: RatModel
-  m_TagString: Untagged
+  m_TagString: Rat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1368,6 +1371,21 @@ GameObject:
   - component: {fileID: 4748221431564448}
   m_Layer: 0
   m_Name: BigToe3_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1541107887919360
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4456263945558054}
+  m_Layer: 0
+  m_Name: RightHand_Node
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2396,6 +2414,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1944006831279464
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4999895631431168}
+  m_Layer: 0
+  m_Name: LeftHand_Nide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1946722425476320
 GameObject:
   m_ObjectHideFlags: 1
@@ -2929,7 +2962,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1489034727876438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -76.33, y: 60.898, z: -129.83}
+  m_LocalPosition: {x: -18.78, y: 64.024, z: -94.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4105914594517930}
@@ -3634,6 +3667,19 @@ Transform:
   m_Father: {fileID: 4308058997952722}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4456263945558054
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1541107887919360}
+  m_LocalRotation: {x: 0.33625636, y: -0.3342385, z: -0.6076089, w: 0.6372031}
+  m_LocalPosition: {x: -0.22524138, y: -0.014603697, z: -0.044630643}
+  m_LocalScale: {x: 0.15635239, y: 0.11840949, z: 0.08088287}
+  m_Children: []
+  m_Father: {fileID: 4765001562284382}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 28.635002, y: 0, z: 0}
 --- !u!4 &4464609909164064
 Transform:
   m_ObjectHideFlags: 1
@@ -4369,6 +4415,8 @@ Transform:
   - {fileID: 4333457713205770}
   - {fileID: 4868529740672472}
   - {fileID: 4494698312625140}
+  - {fileID: 4999895631431168}
+  - {fileID: 4456263945558054}
   m_Father: {fileID: 4540090558922212}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4897,6 +4945,19 @@ Transform:
   m_Father: {fileID: 4161720327200214}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4999895631431168
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944006831279464}
+  m_LocalRotation: {x: 0.33625636, y: -0.3342385, z: -0.6076089, w: 0.6372031}
+  m_LocalPosition: {x: -0.25781962, y: 0.8376467, z: -0.05941391}
+  m_LocalScale: {x: 0.15635239, y: 0.11840949, z: 0.08088287}
+  m_Children: []
+  m_Father: {fileID: 4765001562284382}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 28.635002, y: 0, z: 0}
 --- !u!54 &54089197006452360
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -4907,8 +4968,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -4922,8 +4983,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.88}
-  m_Center: {x: 0, y: 0.47, z: 0}
+  m_Size: {x: 1, y: 1.94, z: 0.88}
+  m_Center: {x: 0, y: 0.89, z: 0}
 --- !u!95 &95436055096104404
 Animator:
   serializedVersion: 3
@@ -4953,7 +5014,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b6b7f7ca005314eb7a23765f3191e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+--- !u!114 &114219456122559472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489034727876438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a128c8c1857344c940830a701b3a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 0
 --- !u!114 &114371666839565488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4965,6 +5037,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c816a874dda4aa4babbbe910f202bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPath: {fileID: 0}
+  index: 0
+  lastIndex: 0
+  distance: 0
 --- !u!114 &114512924061620188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4977,6 +5053,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   behaviours: 1
+--- !u!114 &114646252074120898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489034727876438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d878459ff150c4cab8b111fdd62a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114842293607798720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4989,6 +5076,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
+--- !u!114 &114864214206082640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489034727876438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d90f47791abb940b5577594e1c9e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  tag:
+  - Player
+  hitRegNodes:
+  - {fileID: 1944006831279464}
+  - {fileID: 1541107887919360}
+  MusicClip: {fileID: 0}
+  MusicSource: {fileID: 0}
+  hitRegStartDelay: 0.2
+  hitRegActiveTime: 0.6
 --- !u!114 &114974690680768640
 MonoBehaviour:
   m_ObjectHideFlags: 1

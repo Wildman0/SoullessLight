@@ -33,6 +33,8 @@ public class HitReg : MonoBehaviour
     private PlayerAttack playerAttack;
     private PlayerController playerController;
 
+    RatHealth ratHealth;
+
     private bool isActive;
     private bool hasHit;
 
@@ -145,6 +147,13 @@ public class HitReg : MonoBehaviour
                 hasHit = true;
                 StartCoroutine(HitBoss());
             }
+
+            if(tag[tagIndex] == "Rat")
+            {
+                ratHealth.health -= 0.1f;
+                hasHit = true;
+                StartCoroutine(HitBoss());
+            }
         }
     }
 
@@ -195,17 +204,6 @@ public class HitReg : MonoBehaviour
         {
             if (Physics.Linecast(hitRegNodeOldPositions[i], hitRegNodeCurrentPositions[i], out hit))
             {
-                //if (hit.transform.tag == tag) // remove length if it fucks up // create for loop to check string in the array
-                //{
-                //    Hit();
-
-                //    if (debug)
-                //        Debug.DrawLine(hitRegNodeOldPositions[i],
-                //            hitRegNodeCurrentPositions[i],
-                //            Color.red,
-                //            0.5f);
-                //}
-
                 for (tagIndex = 0; tagIndex < tag.Length; tagIndex++)
                 {
                     if(hit.transform.tag == tag[tagIndex])
@@ -217,8 +215,11 @@ public class HitReg : MonoBehaviour
                                 hitRegNodeCurrentPositions[i],
                                 Color.red,
                                 0.5f);
+                    }
 
-                        Debug.Log(tagIndex);
+                    if (hit.transform.tag == "Rat")
+                    {
+                       ratHealth = hit.transform.GetComponent<RatHealth>();
                     }
                 }
             }

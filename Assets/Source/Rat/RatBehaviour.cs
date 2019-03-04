@@ -16,11 +16,17 @@ public class RatBehaviour : MonoBehaviour
 
     Idle idle;
     Wonder wonder;
+    Chase chase;
+
+    AnimHandler animHandler;
 
     private void Start()
     {
         idle = GetComponent<Idle>();
         wonder = GetComponent<Wonder>();
+        chase = GetComponent<Chase>();
+
+        animHandler = GetComponent<AnimHandler>();
     }
 
     private void Update()
@@ -34,7 +40,7 @@ public class RatBehaviour : MonoBehaviour
         {
             case Behaviours.Idle:
 
-                idle.Pause();
+                animHandler.IdleAnimation();
 
                 break;
 
@@ -42,23 +48,21 @@ public class RatBehaviour : MonoBehaviour
 
                 wonder.GoToDestination();
 
+                animHandler.WalkAnimation();
+
                 break;
 
             case Behaviours.chase:
 
+                chase.ChaseTarget();
 
+                animHandler.ChaseAnimation();
 
                 break;
 
             case Behaviours.attack:
 
-
-
-                break;
-
-            case Behaviours.rotate:
-
-
+                animHandler.AttackAnimation();
 
                 break;
         }

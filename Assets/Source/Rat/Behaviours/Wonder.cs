@@ -5,18 +5,18 @@ using UnityEngine;
 public class Wonder : MonoBehaviour
 {
     private NavMeshHandler navHandler;
-    private AnimHandler animHandler;
 
     private GameObject[] paths;
-    private GameObject currentPath;
+    public GameObject currentPath;
 
-    private int index;
-    private int lastIndex;
+    public int index;
+    public int lastIndex;
+
+    public float distance;
 
     private void Start()
     {
         navHandler = GetComponent<NavMeshHandler>();
-        animHandler = GetComponent<AnimHandler>();
 
         paths = GameObject.FindGameObjectsWithTag("Path");
 
@@ -24,22 +24,27 @@ public class Wonder : MonoBehaviour
         currentPath = paths[index];
     }
 
+    private void Update()
+    {
+        ChangeDestination();
+    }
+
     public void GoToDestination()
     {
-        animHandler.anim.SetBool("isWalking", true);
-
         navHandler.agent.destination = currentPath.transform.position;
 
         RandomDestination();
     }
 
-    void OnTriggerEnter(Collider other)
+    private void ChangeDestination()
     {
-        if (other.tag == "Path")
+        distance = Vector3.Distance(transform.position, paths[index].transform.position);
+        if(distance <= 0.42f)
         {
             lastIndex = index;
             RandomDestination();
         }
+
     }
 
     void RandomDestination()

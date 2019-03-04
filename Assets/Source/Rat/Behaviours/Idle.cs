@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Idle : MonoBehaviour
 {
-    private AnimHandler animHandler;
+    private NavMeshHandler navHandler;
 
     private void Start()
     {
-        animHandler = GetComponent<AnimHandler>();
-    }
-
-    public void Pause()
-    {
-        animHandler.anim.SetBool("isIdle", true);
+        navHandler = GetComponent<NavMeshHandler>();
     }
 }

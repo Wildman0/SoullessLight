@@ -28,20 +28,20 @@ public class Distance : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player");
         audioSource.clip = audioClip;
-        CalculateDistanceFromBoss();
+        CalculateDistanceFromPlayer();
         SetDistance(closeMinDistance, closeMaxDistance, longMinDistance, longMaxDistance);
     }
 	
 	void Update ()
     {
-        CalculateDistanceFromBoss();
+        CalculateDistanceFromPlayer();
         SetDistance(closeMinDistance, closeMaxDistance, longMinDistance, longMaxDistance);
 
         ActivateBoss();
     }
 
     //Calculates the distance between the boss and the player
-    public void CalculateDistanceFromBoss()
+    public void CalculateDistanceFromPlayer()
     {
         distance = Vector3.Distance(transform.position, target.transform.position);
     }
@@ -68,7 +68,6 @@ public class Distance : MonoBehaviour
                 isOn = true;
             }
         }
-
     }
     
 }
