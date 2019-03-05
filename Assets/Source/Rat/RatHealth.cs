@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class RatHealth : MonoBehaviour
 {
-    AnimHandler animHandler;
 
     [Range(0, 1)]
     public float health;
 
     private void Start()
     {
-        animHandler = GetComponent<AnimHandler>();
+
     }
 
     void Update ()
@@ -28,7 +27,7 @@ public class RatHealth : MonoBehaviour
     {
         if(health <= 0)
         {
-            animHandler.DeathAnimation();
+            
         }
     }
 }
