@@ -6,6 +6,8 @@ public class AnimController : MonoBehaviour
 {
     public Animator anim;
 
+    private bool isDead;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -35,6 +37,10 @@ public class AnimController : MonoBehaviour
 
     public void IsDead()
     {
-
+        if(isDead == false)
+        {
+            anim.SetTrigger("isDead");
+            isDead = true;
+        }
     }
 }

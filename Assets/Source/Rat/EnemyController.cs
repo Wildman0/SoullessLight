@@ -8,6 +8,8 @@ public class EnemyController : MonoBehaviour
     [Range(0, 10)]
     public float lookRadius = 10f;
     public float attackDamage;
+    public float stoppingDistance;
+    public float approxStoppingDistance;
 
     public bool isAttacking;
 
@@ -27,6 +29,9 @@ public class EnemyController : MonoBehaviour
         animController = GetComponentInChildren<AnimController>();
         attack = GetComponent<Attack>();
         hitReg = GetComponent<HitReg>();
+
+        agent.stoppingDistance = stoppingDistance;
+        approxStoppingDistance = agent.stoppingDistance + 0.2f;
 	}
 	
 	void Update ()
@@ -43,12 +48,12 @@ public class EnemyController : MonoBehaviour
             agent.SetDestination(target.position);
             animController.IsWalking();
 
-            if (distance <= agent.stoppingDistance)
+            if (distance < approxStoppingDistance)
             {
                 FaceTarget();
                 attack.CoolDownTimer();
 
-                if(isAttacking == true)
+                if (isAttacking == true)
                 {
                     animController.IsAttacking();
                     hitReg.ToggleHitreg();
@@ -59,6 +64,11 @@ public class EnemyController : MonoBehaviour
                     animController.IsIdle();
                 }
             }
+        }
+        else
+        {
+            agent.SetDestination(transform.position);
+            animController.IsIdle();
         }
     }
 
