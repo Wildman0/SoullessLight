@@ -43,4 +43,9 @@ public class AnimController : MonoBehaviour
             isDead = true;
         }
     }
+
+    public void Flinch()
+    {
+        anim.SetTrigger("isFlinched");
+    }
 }

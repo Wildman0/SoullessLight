@@ -34,6 +34,7 @@ public class HitReg : MonoBehaviour
     private PlayerController playerController;
 
     RatHealth ratHealth;
+    public AnimController animController;
 
     private bool isActive;
     private bool hasHit;
@@ -151,6 +152,7 @@ public class HitReg : MonoBehaviour
             if(tag[tagIndex] == "Rat")
             {
                 ratHealth.health -= 0.1f;
+                animController.Flinch();
                 hasHit = true;
                 StartCoroutine(HitBoss());
             }
