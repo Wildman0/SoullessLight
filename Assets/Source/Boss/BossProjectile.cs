@@ -5,24 +5,22 @@ using Dreamteck.Splines;
 
 public class BossProjectile : MonoBehaviour
 {
-    public bool destroyAfterTime = false;
-    public float destroyAfterXTime = 20f;
-    public GameObject implosion;
-    public GameObject enableMe;
-    public GameObject spawn;
-    public SplineFollower follower;
+    public float destroyAfter = 2;
+    public GameObject spawner;
     [SerializeField] private float projectileDamage = 0.1f;
+    public static SplineComputer sc;
+    private SplineFollower follower;
 
     private void Start()
     {
-        enableMe.SetActive(false);
-        
-        StartCoroutine(SpawnComplete());
+        sc = spawner.GetComponent<SplineComputer>();
+        follower = GetComponent<SplineFollower>();
+        follower.computer = sc; 
+    }
 
-        if (destroyAfterTime == true)
-        {
-            Object.Destroy(this.gameObject, destroyAfterXTime);
-        }
+    private void OnEnable()
+    {
+        Invoke("Destroy", destroyAfter);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,37 +29,19 @@ public class BossProjectile : MonoBehaviour
         {
             if (!PlayerHealth.instance.isInvincible)
             {
-                Implode();
                 PlayerHealth.instance.TakeDamage(projectileDamage);
-                Destroy(gameObject);
             }
         }
-
-        if (other.CompareTag("ProjectileStopper"))
-        {
-            Implode();
-            Destroy(gameObject);
-            Debug.Log("Boom");
-        }
     }
 
-
-    void Implode()
+    private void Destroy()
     {
-        GameObject implo = Instantiate(implosion, transform.position, Quaternion.identity);
-        implo.GetComponent<ParticleSystem>().Play();
+        gameObject.SetActive(false);
+        follower.Restart(0);
     }
 
-    IEnumerator SpawnComplete()
+    private void OnDisable()
     {
-        yield return new WaitForSeconds(1.5f);
-        enableMe.SetActive(true);
-        //Debug.Log("It's working");
-        Destroy(spawn);
-    }
-
-    private void OnDestroy()
-    {
-        Implode();
+        CancelInvoke();
     }
 }

@@ -24,13 +24,14 @@ GameObject:
   - component: {fileID: 95782777992104012}
   - component: {fileID: 114872444540646366}
   - component: {fileID: 135496873890652252}
+  - component: {fileID: 114429787268823460}
   m_Layer: 0
   m_Name: OrbV3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4269985687394630
 Transform:
   m_ObjectHideFlags: 1
@@ -104,6 +105,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114429787268823460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651341650974530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8324df19c93fa3b4192e1809ad685b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfter: 2
+  spawner: {fileID: 0}
+  projectileDamage: 0.1
+  sc: {fileID: 0}
 --- !u!114 &114872444540646366
 MonoBehaviour:
   m_ObjectHideFlags: 1
