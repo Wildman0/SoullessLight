@@ -63,7 +63,7 @@ public class CameraController : MonoBehaviour
     {
         isLocked = !isLocked;
         LockOn.SetTrigger("LockOn");
-
+        
         if (isLocked)
         {
             cinemachineBrain.enabled = false;
