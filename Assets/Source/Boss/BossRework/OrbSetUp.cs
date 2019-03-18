@@ -4,96 +4,193 @@ using UnityEngine;
 
 public class OrbSetUp : MonoBehaviour
 {
-    public Phase phase;
+    private Intermission intermission;
 
-    public static float[] orbHealth = new float[2] { 1, 1 };
+    public static bool activateOrb;
+    public bool firstOrb;
+
+    public static float health;
 
     public int animationIndex;
-    public static int healthIndex;
-
-    public static bool spawnOrb;
-    private bool firstOrb = true;
+    public int orbAmount;
+    public int amountCheck;
 
     public string orbName;
 
-    public GameObject orbObject;
-    private GameObject inSceneOrb;
+    public GameObject orb;
 
     public static Animator anim;
 
-    Intermission intermission;
 
     private void Start()
     {
         intermission = GetComponent<Intermission>();
 
-        orbObject = Resources.Load<GameObject>(orbName);
-        phase = GetComponent<Phase>();
+        GameObject orbPrefab = (GameObject)Instantiate(Resources.Load(orbName), new Vector3(-61.82f, 35.8f, 4.77f), Quaternion.identity);
+        orb = GameObject.FindGameObjectWithTag("Orb");
+        orb.SetActive(false);
+
+        health = 1f;
     }
 
     private void Update()
     {
-        SpawnCheck();
-        OrbHealth();
+        ActivationCheck();
+        orbHealth();
         EndIntermission();
     }
 
-    private void SpawnCheck()
+    private void ActivationCheck()
     {
-        if(spawnOrb == true)
+        if(activateOrb == true)
         {
-            StartCoroutine(SpawnDelay());
+            StartCoroutine(ActivationDelay());
         }
     }
 
-    private void SpawnOrb()
+    private void ActivateOrb()
     {
-        if (healthIndex != orbHealth.Length)
+        if(amountCheck != orbAmount)
         {
-            GameObject orbPrefab = (GameObject)Instantiate(Resources.Load(orbName), new Vector3(-61.82f, 35.8f, 4.77f), Quaternion.identity);
-
-            anim = GameObject.FindGameObjectWithTag("Orb").GetComponent<Animator>();
+            orb.SetActive(true);
+            anim = orb.GetComponent<Animator>();
             animationIndex = Random.Range(1, 4);
             anim.SetInteger("PathIndex", animationIndex);
         }
     }
 
-    private void OrbHealth()
+    private void orbHealth()
     {
-        if(orbHealth[healthIndex] <= 0.001f)
+        if(health <= 0)
         {
-            inSceneOrb = GameObject.FindGameObjectWithTag("Orb");
-            Destroy(inSceneOrb);
-            healthIndex += 1;
+            orb.SetActive(false);
+            orb.transform.position = new Vector3(-61.82f, 35.8f, 4.77f);
+            health = 1f;
 
-            spawnOrb = true;
+            amountCheck += 1;
         }
     }
 
-    private IEnumerator SpawnDelay()
+    private IEnumerator ActivationDelay()
     {
-        spawnOrb = false;
-
-        if (firstOrb == true)
+        if(firstOrb == false)
         {
             yield return new WaitForSeconds(7);
-            firstOrb = false;
+            ActivateOrb();
 
-            SpawnOrb();
+            firstOrb = true;
         }
         else
         {
             yield return new WaitForSeconds(2);
-
-            SpawnOrb();
+            ActivateOrb();
         }
     }
 
     private void EndIntermission()
     {
-        if(healthIndex == orbHealth.Length)
+        if(amountCheck == orbAmount)
         {
             intermission.orbsDestroyed = true;
+            activateOrb = false;
+
+            health = 1f;
+            amountCheck = 0;
+
         }
     }
 }
+
+//{
+//    public Phase phase;
+
+//public static float[] orbHealth = new float[2] { 1, 1 };
+
+//public int animationIndex;
+//public static int healthIndex;
+
+//public static bool spawnOrb;
+//private bool firstOrb = true;
+
+//public string orbName;
+
+//public GameObject orbObject;
+//private GameObject inSceneOrb;
+
+//public static Animator anim;
+
+//Intermission intermission;
+
+//private void Start()
+//{
+//    intermission = GetComponent<Intermission>();
+
+//    orbObject = Resources.Load<GameObject>(orbName);
+//    phase = GetComponent<Phase>();
+//}
+
+//private void Update()
+//{
+//    SpawnCheck();
+//    OrbHealth();
+//    EndIntermission();
+//}
+
+//private void SpawnCheck()
+//{
+//    if (spawnOrb == true)
+//    {
+//        StartCoroutine(SpawnDelay());
+//    }
+//}
+
+//private void SpawnOrb()
+//{
+//    if (healthIndex != orbHealth.Length)
+//    {
+//        GameObject orbPrefab = (GameObject)Instantiate(Resources.Load(orbName), new Vector3(-61.82f, 35.8f, 4.77f), Quaternion.identity);
+
+//        anim = GameObject.FindGameObjectWithTag("Orb").GetComponent<Animator>();
+//        animationIndex = Random.Range(1, 4);
+//        anim.SetInteger("PathIndex", animationIndex);
+//    }
+//}
+
+//private void OrbHealth()
+//{
+//    if (orbHealth[healthIndex] <= 0.001f)
+//    {
+//        inSceneOrb = GameObject.FindGameObjectWithTag("Orb");
+//        Destroy(inSceneOrb);
+//        healthIndex += 1;
+
+//        spawnOrb = true;
+//    }
+//}
+
+//private IEnumerator SpawnDelay()
+//{
+//    spawnOrb = false;
+
+//    if (firstOrb == true)
+//    {
+//        yield return new WaitForSeconds(7);
+//        firstOrb = false;
+
+//        SpawnOrb();
+//    }
+//    else
+//    {
+//        yield return new WaitForSeconds(2);
+
+//        SpawnOrb();
+//    }
+//}
+
+//private void EndIntermission()
+//{
+//    if (healthIndex == orbHealth.Length)
+//    {
+//        intermission.orbsDestroyed = true;
+//    }
+//}

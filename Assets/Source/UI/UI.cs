@@ -109,7 +109,7 @@ public class UI : MonoBehaviour
     {
         for (int i = 0; i < orbHealth.Length; i++)
         {
-            orbHealth[i].fillAmount = OrbSetUp.orbHealth[i];
+            //orbHealth.fillAmount = OrbSetUp.health;
         }
     }
 
