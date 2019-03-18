@@ -30,11 +30,10 @@ public class BossProjectile : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Destroy();
-
             if (!PlayerHealth.instance.isInvincible)
             {
                 PlayerHealth.instance.TakeDamage(projectileDamage);
+                Destroy();
             }
         }
     }
