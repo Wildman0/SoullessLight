@@ -51,12 +51,14 @@ public class CameraController : MonoBehaviour
             LockedCameraMovement();
     }
 
+    //Checks for camera lock toggle input
     void CheckForCameraLockToggle()
     {
         if (PlayerController.instance.inputController.cameraLockToggle)
             ToggleCameraLock();
     }
 
+    //Toggles whether or not the camera is locked to a target or is free looking
     void ToggleCameraLock()
     {
         isLocked = !isLocked;
@@ -73,6 +75,7 @@ public class CameraController : MonoBehaviour
         }
     }
     
+    //Movement the camera while locked onto a target
     void LockedCameraMovement()	
     {	
         desiredPosition = (playerEmpty.position + playerEmpty.TransformDirection(offset));	
@@ -85,6 +88,7 @@ public class CameraController : MonoBehaviour
         offset = new Vector3(offset.x, offset.y, offset.z);	
     }
     
+    //Applies vertical camera movement according to relevant input
     Vector3 ApplyVerticalCameraMovement(Vector3 v)	
     {	
         float f = verticalSens * (GameManager.inputController.raiseCamera -	
