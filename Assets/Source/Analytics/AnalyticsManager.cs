@@ -29,7 +29,7 @@ public class AnalyticsManager : MonoBehaviour
 	}
 
 	//To be used manually when you don't have an XML file to read from
-	[MenuItem("NDA/Analytics/Generate Game Status File")]
+	//[MenuItem("NDA/Analytics/Generate Game Status File")]
 	public static void SaveGeneratedGameStatusFile()
 	{
 		var path = Path.Combine(Application.dataPath, "Xml/GameStatus.xml");
