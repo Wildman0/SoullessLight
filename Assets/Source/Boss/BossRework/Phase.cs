@@ -25,6 +25,7 @@ public class Phase : MonoBehaviour
 
     public float comboChance;
     private float timer;
+    public static float attackDamage;
 
     public bool activateAttacking;
     public bool intermissionCheck;
@@ -107,7 +108,7 @@ public class Phase : MonoBehaviour
 
     private void SelectPhase()
     {
-        if(trigger == true)
+        if(trigger == true) // change trigger name
         {
             currentPhase = phaseValues.Find(x => x.min >= bossHealth.health && x.max <= bossHealth.health);
             GetAttackAnimations();
@@ -165,6 +166,7 @@ public class Phase : MonoBehaviour
         else
         {
             animatorOverrideController["ATTACK"] = currentAttackAnimationClips[attackIndex].animationClip;
+            attackDamage = currentAttackAnimationClips[attackIndex].attackDamage;
             isAttacking = true;
             anim.SetBool("Attack", true);
             selectAttackStyle = false;

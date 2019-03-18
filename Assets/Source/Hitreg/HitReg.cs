@@ -129,13 +129,13 @@ public class HitReg : MonoBehaviour
                     UI.instance.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
                     StartCoroutine(HitBoss());
 
-                    PlayerHealth.instance.TakeDamage(0.3f);
+                    PlayerHealth.instance.TakeDamage(Phase.attackDamage);
                 }
             }
 
             if (tag[tagIndex] == "Orb")
             {
-                OrbSetUp.orbHealth[OrbSetUp.healthIndex] -= .2f;
+                OrbSetUp.health -= .2f;
                 hasHit = true;
                 OrbSetUp.anim.SetTrigger("OrbDamaged");
                 StartCoroutine(HitBoss());
