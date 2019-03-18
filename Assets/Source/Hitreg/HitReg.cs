@@ -96,7 +96,7 @@ public class HitReg : MonoBehaviour
     }
 
     //Called when the gameObject the hitreg is looking for is first hit
-    private void Hit()
+    private void Hit(RaycastHit hit)
     {
         if (!hasHit)
         {
@@ -152,7 +152,7 @@ public class HitReg : MonoBehaviour
             if(tag[tagIndex] == "Rat")
             {
                 ratHealth.health -= 0.1f;
-                animController.Flinch();
+                hit.transform.gameObject.GetComponent<AnimController>().Flinch();
                 hasHit = true;
                 StartCoroutine(HitBoss());
             }
@@ -210,7 +210,7 @@ public class HitReg : MonoBehaviour
                 {
                     if(hit.transform.tag == tag[tagIndex])
                     {
-                        Hit();
+                        Hit(hit);
 
                         if (debug)
                             Debug.DrawLine(hitRegNodeOldPositions[i],
