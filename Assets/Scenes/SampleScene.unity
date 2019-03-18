@@ -20935,7 +20935,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 370983023}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 773f9af1abf9c74488870290f20bb76b, type: 3}
   m_Name: 
@@ -20950,6 +20950,7 @@ MonoBehaviour:
   isLocked: 0
   LockOn: {fileID: 1997358471}
   currentCamera: {fileID: 370983027}
+  cineMachine: {fileID: 276575898}
 --- !u!114 &370983025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51114,7 +51115,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 827145765}
-  m_LocalRotation: {x: -0.22975294, y: 0.0000000037018584, z: -0.00000013170164, w: -0.973249}
+  m_LocalRotation: {x: -0.22975291, y: 0.000000032706946, z: -0.00000013854881, w: -0.973249}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -52050,7 +52051,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 891285047}
-  m_LocalRotation: {x: -0.17346148, y: -0.000000015442714, z: -0.000000053790714,
+  m_LocalRotation: {x: -0.17346147, y: 0.0000000141664085, z: -0.000000059014322,
     w: -0.9848407}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
