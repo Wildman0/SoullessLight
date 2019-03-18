@@ -338,11 +338,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368bd34f1a97a1247ae623fc9c9964cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireTime: 0.1
-  fireDelay: 0.1
-  toSpawn: {fileID: 1316431786507242}
+  infiniteSpawn: 1
   pooledAmount: 5
-  speed: 20
+  speed: 5
+  maxSpawnAmount: 5
+  fireTime: 0
+  fireDelay: 1
+  toSpawn: {fileID: 1316431786507242}
 --- !u!114 &114647228216275634
 MonoBehaviour:
   m_ObjectHideFlags: 1
