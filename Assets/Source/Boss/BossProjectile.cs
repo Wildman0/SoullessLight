@@ -5,24 +5,29 @@ using Dreamteck.Splines;
 
 public class BossProjectile : MonoBehaviour
 {
-    public float destroyAfter = 2;
     public GameObject spawner;
     [SerializeField] private float projectileDamage = 0.1f;
     public static SplineComputer sc;
     private SplineFollower follower;
+    [SerializeField] private Animator anim;
 
+    //this will take place at the start of the game even when not loaded in. finds the spline computer
     private void Start()
     {
-        sc = spawner.GetComponent<SplineComputer>();
-        follower = GetComponent<SplineFollower>();
-        follower.computer = sc; 
+       sc = spawner.GetComponent<SplineComputer>();
+       follower = GetComponent<SplineFollower>();
+       follower.computer = sc;
+
     }
 
+    // considered as OnStart(), ensures the spawn animation will play correctly
     private void OnEnable()
     {
-        Invoke("Destroy", destroyAfter);
+        transform.localScale = new Vector3(0,0,0);
+        anim.SetTrigger("StartSpawn");
     }
 
+    // when colliding with player and they are not rolling run destroy()
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -30,16 +35,19 @@ public class BossProjectile : MonoBehaviour
             if (!PlayerHealth.instance.isInvincible)
             {
                 PlayerHealth.instance.TakeDamage(projectileDamage);
+                Destroy();
             }
         }
     }
 
-    private void Destroy()
+    // disable when reached end (done via triggers in the follower), and reset position
+    public void Destroy()
     {
         gameObject.SetActive(false);
         follower.Restart(0);
     }
 
+    //makes sure nothing is running when disabled
     private void OnDisable()
     {
         CancelInvoke();

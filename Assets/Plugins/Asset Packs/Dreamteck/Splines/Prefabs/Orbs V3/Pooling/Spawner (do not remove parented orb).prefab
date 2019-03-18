@@ -41,8 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4089514037406478}
   - component: {fileID: 33225277565960152}
-  - component: {fileID: 23618703879437726}
-  - component: {fileID: 65974008331086960}
   - component: {fileID: 114578486069306388}
   - component: {fileID: 114390995211693272}
   m_Layer: 0
@@ -58,8 +56,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1627954336711582}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70.807, y: 27.615, z: -2.5485642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4123178099355408}
@@ -72,8 +70,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1316431786507242}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -66.67763, y: 28.97, z: -1.9557618}
+  m_LocalRotation: {x: -0, y: 0, z: 0.001604222, w: -0.99999875}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 0.36360002, y: 0.36360002, z: 0.36360002}
   m_Children: []
   m_Father: {fileID: 4089514037406478}
@@ -114,41 +112,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23618703879437726
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1627954336711582}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!33 &33225277565960152
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -163,18 +126,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1316431786507242}
   m_Mesh: {fileID: 4300000, guid: 310c86db1ef969440bbee616ce551ab9, type: 3}
---- !u!65 &65974008331086960
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1627954336711582}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95810645527204800
 Animator:
   serializedVersion: 3
@@ -212,19 +163,19 @@ MonoBehaviour:
   spline:
     points:
     - _type: 0
-      position: {x: -0.12060547, y: -0.5675068, z: 1.8736327}
+      position: {x: 0, y: 0, z: 5}
       color: {r: 1, g: 1, b: 1, a: 1}
       normal: {x: 0.0031672898, y: 0.99999, z: 0.003167292}
       size: 1
-      tangent: {x: -0.12060547, y: -0.5675068, z: 1.8736327}
-      tangent2: {x: -0.12060547, y: -0.5675068, z: 1.8736327}
+      tangent: {x: 0, y: 0, z: 5}
+      tangent2: {x: 0, y: 0, z: 5}
     - _type: 0
-      position: {x: 0.027664185, y: -0.57206917, z: 12.410674}
+      position: {x: 0, y: 0, z: 25}
       color: {r: 1, g: 1, b: 1, a: 1}
       normal: {x: 0.0039910194, y: 0.99998987, z: -0.0020335237}
       size: 1
-      tangent: {x: 0.027664185, y: -0.57206917, z: 12.410674}
-      tangent2: {x: 0.027664185, y: -0.57206917, z: 12.410674}
+      tangent: {x: 0, y: 0, z: 25}
+      tangent2: {x: 0, y: 0, z: 25}
     closed: 0
     type: 0
     customValueInterpolation:
@@ -245,7 +196,8 @@ MonoBehaviour:
     morphStates: []
     initialized: 0
   _space: 1
-  subscribers: []
+  subscribers:
+  - {fileID: 114394298841445888}
   _nodeLinks: []
 --- !u!114 &114394298841445888
 MonoBehaviour:
@@ -259,7 +211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _address:
-    _elements: []
+    _elements:
+    - computer: {fileID: 114390995211693272}
+      _startPoint: 0
+      _endPoint: -1
   subscribers: []
   updateMethod: 0
   _user: {fileID: 0}
@@ -271,8 +226,140 @@ MonoBehaviour:
   _averageResultVectors: 1
   _uniformSample: 0
   _uniformPreserveClipRange: 0
-  _samples: []
-  _clippedSamples: []
+  _samples:
+  - position: {x: -61.73, y: 27.38, z: 0.5799999}
+    normal: {x: -0.003208426, y: 0.99999064, z: -0.0029075828}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0
+  - position: {x: -61.73, y: 27.38, z: -1.4200001}
+    normal: {x: -0.0032906984, y: 0.9999918, z: -0.0023881637}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.1
+  - position: {x: -61.73, y: 27.38, z: -3.42}
+    normal: {x: -0.0033729698, y: 0.9999926, z: -0.001868744}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.2
+  - position: {x: -61.73, y: 27.38, z: -5.42}
+    normal: {x: -0.00345524, y: 0.99999315, z: -0.0013493238}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.3
+  - position: {x: -61.73, y: 27.38, z: -7.42}
+    normal: {x: -0.0035375094, y: 0.9999934, z: -0.0008299031}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.4
+  - position: {x: -61.73, y: 27.38, z: -9.42}
+    normal: {x: -0.0036197775, y: 0.99999344, z: -0.000310482}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.5
+  - position: {x: -61.73, y: 27.38, z: -11.42}
+    normal: {x: -0.003702045, y: 0.99999315, z: 0.00020893921}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.6
+  - position: {x: -61.73, y: 27.38, z: -13.42}
+    normal: {x: -0.0037843115, y: 0.9999926, z: 0.00072836014}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.7
+  - position: {x: -61.73, y: 27.38, z: -15.42}
+    normal: {x: -0.0038665764, y: 0.9999918, z: 0.0012477807}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.8
+  - position: {x: -61.73, y: 27.38, z: -17.42}
+    normal: {x: -0.0039488412, y: 0.99999064, z: 0.0017672011}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.9
+  - position: {x: -61.73, y: 27.38, z: -19.42}
+    normal: {x: -0.003989972, y: 0.99998987, z: 0.002026911}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 1
+  _clippedSamples:
+  - position: {x: -61.73, y: 27.38, z: 0.5799999}
+    normal: {x: -0.003208426, y: 0.99999064, z: -0.0029075828}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0
+  - position: {x: -61.73, y: 27.38, z: -1.4200001}
+    normal: {x: -0.0032906984, y: 0.9999918, z: -0.0023881637}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.1
+  - position: {x: -61.73, y: 27.38, z: -3.42}
+    normal: {x: -0.0033729698, y: 0.9999926, z: -0.001868744}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.2
+  - position: {x: -61.73, y: 27.38, z: -5.42}
+    normal: {x: -0.00345524, y: 0.99999315, z: -0.0013493238}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.3
+  - position: {x: -61.73, y: 27.38, z: -7.42}
+    normal: {x: -0.0035375094, y: 0.9999934, z: -0.0008299031}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.4
+  - position: {x: -61.73, y: 27.38, z: -9.42}
+    normal: {x: -0.0036197775, y: 0.99999344, z: -0.000310482}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.5
+  - position: {x: -61.73, y: 27.38, z: -11.42}
+    normal: {x: -0.003702045, y: 0.99999315, z: 0.00020893921}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.6
+  - position: {x: -61.73, y: 27.38, z: -13.42}
+    normal: {x: -0.0037843115, y: 0.9999926, z: 0.00072836014}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.7
+  - position: {x: -61.73, y: 27.38, z: -15.42}
+    normal: {x: -0.0038665764, y: 0.9999918, z: 0.0012477807}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.8
+  - position: {x: -61.73, y: 27.38, z: -17.42}
+    normal: {x: -0.0039488412, y: 0.99999064, z: 0.0017672011}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.9
+  - position: {x: -61.73, y: 27.38, z: -19.42}
+    normal: {x: -0.003989972, y: 0.99998987, z: 0.002026911}
+    direction: {x: 0, y: 0, z: -1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 1
   animClipFrom: 0
   animClipTo: 1
   animResolution: 1
@@ -302,9 +389,27 @@ MonoBehaviour:
     applyScaleX: 0
     applyScaleY: 0
     applyScaleZ: 0
-    targetUser: {fileID: 0}
+    targetUser: {fileID: 114394298841445888}
   triggers_old: []
-  triggers: []
+  triggers:
+  - name: End
+    type: 1
+    workOnce: 0
+    position: 1
+    enabled: 1
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    actions:
+    - target: {fileID: 114647228216275634}
+      intValue: 0
+      floatValue: 0
+      doubleValue: 0
+      stringValue: 
+      boolValue: 0
+      goValue: {fileID: 0}
+      transformValue: {fileID: 0}
+      methodName: Destroy
+      paramType: 0
+    gameObjects: []
   _customRotations:
     keys: []
     _blend: 1
@@ -315,9 +420,9 @@ MonoBehaviour:
   targetRigidbody2D: {fileID: 0}
   targetTransform: {fileID: 4123178099355408}
   _result:
-    position: {x: 0, y: 0, z: 0}
-    normal: {x: 0, y: 1, z: 0}
-    direction: {x: 0, y: 0, z: 1}
+    position: {x: -61.73, y: 27.38, z: 0.5799999}
+    normal: {x: -0.003208426, y: 0.99999064, z: -0.0029075828}
+    direction: {x: 0, y: 0, z: -1}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
     percent: 0
@@ -356,9 +461,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8324df19c93fa3b4192e1809ad685b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfter: 2
   spawner: {fileID: 1627954336711582}
   projectileDamage: 0.1
+  anim: {fileID: 0}
 --- !u!135 &135626734825761592
 SphereCollider:
   m_ObjectHideFlags: 1
