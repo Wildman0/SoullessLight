@@ -61,6 +61,7 @@ public class SpawnerIntermission : MonoBehaviour {
                 break;
             }                
         }
+
     }
 
 }
