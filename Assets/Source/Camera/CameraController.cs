@@ -43,7 +43,7 @@ public class CameraController : MonoBehaviour
         cinemachineBrain = gameObject.GetComponent<CinemachineBrain>();
     }
 
-    void Update ()
+    void LateUpdate ()
     {
         CheckForCameraLockToggle();
 
@@ -84,8 +84,10 @@ public class CameraController : MonoBehaviour
 
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothing);	
         transform.position = smoothedPosition;	
-
+        
         offset = new Vector3(offset.x, offset.y, offset.z);	
+        
+        transform.LookAt(secondaryTarget);
     }
     
     //Applies vertical camera movement according to relevant input
