@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.CodeDom;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Cinemachine;
 using NDA.PlayerInput;
 using UnityEditor.Experimental.Animations;
@@ -51,14 +54,14 @@ public class CameraController : MonoBehaviour
             LockedCameraMovement();
     }
 
-    //Checks for camera lock toggle input
+    // Checks for camera lock toggle input
     void CheckForCameraLockToggle()
     {
         if (PlayerController.instance.inputController.cameraLockToggle)
             ToggleCameraLock();
     }
 
-    //Toggles whether or not the camera is locked to a target or is free looking
+    // Toggles whether or not the camera is locked to a target or is free looking
     void ToggleCameraLock()
     {
         isLocked = !isLocked;
@@ -75,7 +78,7 @@ public class CameraController : MonoBehaviour
         }
     }
     
-    //Movement the camera while locked onto a target
+    // Movement the camera while locked onto a target
     void LockedCameraMovement()	
     {	
         desiredPosition = (playerEmpty.position + playerEmpty.TransformDirection(offset));	
@@ -90,7 +93,7 @@ public class CameraController : MonoBehaviour
         transform.LookAt(secondaryTarget);
     }
     
-    //Applies vertical camera movement according to relevant input
+    // Applies vertical camera movement according to relevant input
     Vector3 ApplyVerticalCameraMovement(Vector3 v)	
     {	
         float f = verticalSens * (GameManager.inputController.raiseCamera -	
@@ -100,11 +103,28 @@ public class CameraController : MonoBehaviour
         return new Vector3(v.x, v.y += f, v.z);	
     }
     
-    //Returns the midpoint between the boss and the player to feed to the camera	
+    // Returns the midpoint between the boss and the player to feed to the camera	
     Vector3 Midpoint(Transform pointA, Transform pointB)	
     {	
         return new Vector3((pointA.position.x + pointB.position.x) / 2,	
             (pointA.position.y + pointB.position.y) / 2,	
             (pointA.position.z + pointB.position.z) / 2);	
+    }
+
+    // Returns the nearest boss/rat enemy to the camera
+    GameObject FindNearestEnemy()
+    {
+        List<GameObject> go = new List<GameObject>();
+        go.AddRange(GameObject.FindGameObjectsWithTag("Rat"));
+        go.AddRange(GameObject.FindGameObjectsWithTag("Boss"));
+
+        float[] distances = new float[go.Count];
+
+        for (int i = 0; i < distances.Length; i++)
+        {
+            distances[i] = Vector3.Distance(gameObject.transform.position, go[i].transform.position);
+        }
+
+        return go[Array.IndexOf(distances, distances.Min())];
     }
 }
