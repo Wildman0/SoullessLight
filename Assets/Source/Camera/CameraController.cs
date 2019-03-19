@@ -70,6 +70,7 @@ public class CameraController : MonoBehaviour
         if (isLocked)
         {
             cinemachineBrain.enabled = false;
+            secondaryTarget = FindNearestEnemy().transform;
         }
         else
         {
