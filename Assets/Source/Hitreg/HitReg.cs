@@ -26,6 +26,8 @@ public class HitReg : MonoBehaviour
     //Isaac's shitty audio implement, fix later
     public AudioClip MusicClip;
     public AudioSource MusicSource;
+    public AudioClip RatHit;
+    public AudioSource RatSource;
 
     private RaycastHit hit;
 
@@ -181,6 +183,7 @@ public class HitReg : MonoBehaviour
                 hit.transform.gameObject.GetComponent<AnimController>().Flinch();
                 hasHit = true;
                 StartCoroutine(HitBoss());
+                RatSource.Play();
             }
         }
     }
