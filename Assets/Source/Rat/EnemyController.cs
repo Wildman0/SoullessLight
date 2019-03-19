@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     AnimController animController;
     Attack attack;
     HitReg hitReg;
+    RatHealth ratHealth;
 
 	void Start ()
     {
@@ -29,6 +30,7 @@ public class EnemyController : MonoBehaviour
         animController = GetComponentInChildren<AnimController>();
         attack = GetComponent<Attack>();
         hitReg = GetComponent<HitReg>();
+        ratHealth = GetComponent<RatHealth>();
 
         agent.stoppingDistance = stoppingDistance;
         approxStoppingDistance = agent.stoppingDistance + 0.2f;
@@ -36,8 +38,16 @@ public class EnemyController : MonoBehaviour
 	
 	void Update ()
     {
-        LookRadius();
+        HealthCheck();
 	}
+
+    private void HealthCheck()
+    {
+        if(ratHealth.health >= 0)
+        {
+            LookRadius();
+        }
+    }
 
     private void LookRadius()
     {

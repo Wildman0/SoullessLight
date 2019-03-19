@@ -65,9 +65,8 @@ public class OrbSetUp : MonoBehaviour
         {
             orb.SetActive(false);
             orb.transform.position = new Vector3(-61.82f, 35.8f, 4.77f);
-            health = 1f;
-
             amountCheck += 1;
+            health = 1f;
         }
     }
 
@@ -94,10 +93,15 @@ public class OrbSetUp : MonoBehaviour
             intermission.orbsDestroyed = true;
             activateOrb = false;
 
-            health = 1f;
-            amountCheck = 0;
-
+            StartCoroutine(ResetValues());
         }
+    }
+
+    private IEnumerator ResetValues()
+    {
+        yield return new WaitForSeconds(2f);
+        health = 1f;
+        amountCheck = 0;
     }
 }
 
