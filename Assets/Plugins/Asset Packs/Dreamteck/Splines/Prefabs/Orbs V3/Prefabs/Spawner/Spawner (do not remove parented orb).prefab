@@ -56,8 +56,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1627954336711582}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -61.818, y: 27.767, z: 10.257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4123178099355408}
@@ -191,19 +191,19 @@ MonoBehaviour:
   spline:
     points:
     - _type: 0
-      position: {x: 0, y: 0, z: 0}
+      position: {x: 0, y: 0, z: 5.74255}
       color: {r: 1, g: 1, b: 1, a: 1}
       normal: {x: 0.0031672898, y: 0.99999, z: 0.003167292}
       size: 1
-      tangent: {x: 0, y: 0, z: 0}
-      tangent2: {x: 0, y: 0, z: 0}
+      tangent: {x: 0, y: 0, z: 5.74255}
+      tangent2: {x: 0, y: 0, z: 5.74255}
     - _type: 0
-      position: {x: 0, y: 0, z: 20}
+      position: {x: 0, y: 0, z: 35.205345}
       color: {r: 1, g: 1, b: 1, a: 1}
       normal: {x: 0.0039910194, y: 0.99998987, z: -0.0020335237}
       size: 1
-      tangent: {x: 0, y: 0, z: 20}
-      tangent2: {x: 0, y: 0, z: 20}
+      tangent: {x: 0, y: 0, z: 35.205345}
+      tangent2: {x: 0, y: 0, z: 35.205345}
     closed: 0
     type: 0
     customValueInterpolation:
@@ -283,7 +283,25 @@ MonoBehaviour:
     applyScaleZ: 0
     targetUser: {fileID: 0}
   triggers_old: []
-  triggers: []
+  triggers:
+  - name: End
+    type: 1
+    workOnce: 0
+    position: 1
+    enabled: 1
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    actions:
+    - target: {fileID: 114647228216275634}
+      intValue: 0
+      floatValue: 0
+      doubleValue: 0
+      stringValue: 
+      boolValue: 0
+      goValue: {fileID: 0}
+      transformValue: {fileID: 0}
+      methodName: Destroy
+      paramType: 0
+    gameObjects: []
   _customRotations:
     keys: []
     _blend: 1
@@ -318,11 +336,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infiniteSpawn: 1
-  pooledAmount: 5
+  pooledAmount: 20
   speed: 5
-  maxSpawnAmount: 5
+  maxSpawnAmount: 0
   fireTime: 0
-  fireDelay: 1
+  fireDelay: 0.7
   toSpawn: {fileID: 1316431786507242}
 --- !u!114 &114647228216275634
 MonoBehaviour:
@@ -335,7 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8324df19c93fa3b4192e1809ad685b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfter: 4
   spawner: {fileID: 1627954336711582}
   projectileDamage: 0.1
   anim: {fileID: 95810645527204800}
