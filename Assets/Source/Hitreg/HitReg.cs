@@ -120,7 +120,20 @@ public class HitReg : MonoBehaviour
                 StartCoroutine(HitBoss());
             }
 
-            if (tag[tagIndex] == "Player")
+            //if (tag[tagIndex] == "Player")
+            //{
+            //    if (!PlayerHealth.instance.isInvincible)
+            //    {
+            //        hasHit = true;
+            //        UI.instance.playerAttacked.GetComponent<Image>().enabled = true;
+            //        UI.instance.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
+            //        StartCoroutine(HitBoss());
+
+            //        PlayerHealth.instance.TakeDamage(Phase.attackDamage);
+            //    }
+            //}
+
+            if(tag[tagIndex] == "Player" && this.gameObject.name == "The_Sunken_New")
             {
                 if (!PlayerHealth.instance.isInvincible)
                 {
@@ -130,6 +143,19 @@ public class HitReg : MonoBehaviour
                     StartCoroutine(HitBoss());
 
                     PlayerHealth.instance.TakeDamage(Phase.attackDamage);
+                }
+            }
+
+            if(tag[tagIndex] == "Player" && this.gameObject.name == "Rat") // Rat name needs editing maybe !!!
+            {
+                if (!PlayerHealth.instance.isInvincible)
+                {
+                    hasHit = true;
+                    UI.instance.playerAttacked.GetComponent<Image>().enabled = true;
+                    UI.instance.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
+                    StartCoroutine(HitBoss());
+
+                    PlayerHealth.instance.TakeDamage(0.1f);
                 }
             }
 
