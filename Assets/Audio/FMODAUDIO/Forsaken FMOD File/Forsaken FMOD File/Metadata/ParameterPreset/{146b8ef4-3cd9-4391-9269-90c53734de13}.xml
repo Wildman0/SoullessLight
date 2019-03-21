@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{146b8ef4-3cd9-4391-9269-90c53734de13}">
+        <property name="name">
+            <value>bossDead</value>
+        </property>
+        <relationship name="folder">
+            <destination>{7edb63bc-81bb-423f-95ca-8c143a85d701}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{08ce4ed0-e431-4d1b-aa81-7fbd7d5ce691}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{08ce4ed0-e431-4d1b-aa81-7fbd7d5ce691}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

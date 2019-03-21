@@ -1,0 +1,1012 @@
+[LOG] System::create                           : Header version = 1.10.02. Current version = 1.10.02.
+[LOG] SystemI::setOutputInternal               : Setting output to type 0
+[LOG] Manager::init                            : maxchannels = 1024 studioflags = 00000009 flags 00000000 extradriverdata 0000000000000000.
+[LOG] SystemI::init                            : FMOD Studio Version: 00011002 (92217)
+[LOG] SystemI::init                            : maxchannels = 1024, flags = 00030000, extradriverdata = 0000000000000000
+[LOG] SystemI::setOutputInternal               : Setting output to type 8
+[LOG] SystemI::setOutputInternal               : Setting output to type 8
+[LOG] SystemI::setOutputInternal               : Setting output to type 8
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] SystemI::init                            : Create master channel group and master sound group.
+[LOG] SystemI::init                            : Set up emulated output.  1024 channels
+[LOG] SystemI::init                            : create the channel pool
+[LOG] SystemI::init                            : create the stream thread
+[LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 0000000041AC1118 isAsync 1 updatePeriod 0.02
+[LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
+[LOG] AsyncManager::init                       : done
+[LOG] PlaybackSystem::init                     : 
+[LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
+[LOG] PlaybackSystem::init                     : done
+[LOG] LiveUpdate::init                         : 
+[LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
+[LOG] Manager::init                            : done.
+[LOG] Profile::init                            : Profiler listening on port: 9264
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : setdata soundi = 00000000EFD8AFB8 : node = 00000000EFA7E0D0
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000EFD8AFB8
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000EFA7E1E8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] Thread::initThread                       :         Init FMOD file thread. Priority: 1, Stack Size: 16384, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000EFD8AFB8
+[LOG] SoundI::getSubSound                      : sound 00000000EFD8AFB8.  Subsound index 0 / 1
+[LOG] Thread::initThread                       : Init FMOD profiler thread (recv). Priority: 0, Stack Size: 131072, Semaphore: No, Sleep Time: 0, Looping: No.
+[LOG] Thread::initThread                       : Init FMOD profiler thread (send). Priority: 0, Stack Size: 131072, Semaphore: No, Sleep Time: 0, Looping: No.
+[LOG] LiveUpdate::clientConnected              : client = 00000000DD537098
+[LOG] LiveUpdate::readPacket                   : Accepting init message for client 00000000DD537098
+[LOG] LiveUpdate::transitionToConnected        : 
+[LOG] Manager::sendConnectTimeHash             : 
+[LOG] LiveUpdate::sendBankHash                 : 
+[LOG] LiveUpdate::sendBankHash                 : 
+[LOG] LiveUpdate::sendBankHash                 : 
+[LOG] LiveUpdate::acceptInitPacket             : Client 00000000DD537098 connected, entering connected state
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_0.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_0.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_1.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_1.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_2.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_2.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_3.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_3.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_4.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_4.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_5.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_5.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_6.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_6.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_7.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_7.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_8.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_8.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_9.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_9.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_10.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_10.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_11.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_11.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_12.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_12.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_13.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_13.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_14.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_14.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_15.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_15.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_16.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_16.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_17.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_17.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_18.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_18.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_19.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_19.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_20.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_20.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_21.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_21.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_22.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_22.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_23.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_23.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_24.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_24.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_25.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_25.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_26.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_26.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_27.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_27.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_28.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_28.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_29.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_29.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_30.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_30.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_31.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_31.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_32.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_32.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_33.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_33.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_34.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_34.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_35.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_35.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_36.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_36.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_37.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_37.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_38.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_38.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_39.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_39.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_40.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_40.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_41.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_41.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_42.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_42.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_43.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_43.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_44.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_44.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_45.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_45.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_46.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_46.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_47.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_47.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_48.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_48.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_49.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_49.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_50.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_50.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_51.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_51.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_52.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_52.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_53.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_53.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_54.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_54.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_55.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_55.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_56.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_56.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_57.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_57.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_58.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_58.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_59.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_59.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_60.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_60.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_61.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_61.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_62.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_62.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_63.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_63.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_64.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_64.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_65.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_65.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_66.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_66.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_67.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_67.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_68.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_68.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_69.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_69.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_70.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_70.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_71.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_71.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_72.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_72.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_73.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_73.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000001E5ABA38 : node = 000000005F691450
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000001E5ABA38
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000005F691568
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000001E5ABA38
+[LOG] SoundI::getSubSound                      : sound 000000001E5ABA38.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000EFD8AFB8)
+[LOG] SoundI::release                          : remove stream samples. (00000000EFD8AFB8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003CC8D238)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000EFD8AFB8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000EFD8CAB8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000EFD8AFB8)
+[LOG] SoundI::release                          : done
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_74.bank
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_75.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_74.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_75.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000001E5AC608 : node = 000000005F691060
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000001E5AC608
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000005F691178
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000001E5AC608
+[LOG] SoundI::getSubSound                      : sound 000000001E5AC608.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (000000001E5ABA38)
+[LOG] SoundI::release                          : remove stream samples. (000000001E5ABA38)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C97B158)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000001E5ABA38)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000001E5ABF48)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000001E5ABA38)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000EFD8C248 : node = 00000000EFA7E760
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000EFD8C248
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000EFA7E878
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000EFD8C248
+[LOG] SoundI::getSubSound                      : sound 00000000EFD8C248.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (000000001E5AC608)
+[LOG] SoundI::release                          : remove stream samples. (000000001E5AC608)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C97B638)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000001E5AC608)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000001E5AC2A8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000001E5AC608)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000EFD8AC58 : node = 00000000EFA7E8B0
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000EFD8AC58
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000EFA7E9C8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000EFD8AC58
+[LOG] SoundI::getSubSound                      : sound 00000000EFD8AC58.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000EFD8C248)
+[LOG] SoundI::release                          : remove stream samples. (00000000EFD8C248)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C97A118)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000EFD8C248)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000EFD8D178)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000EFD8C248)
+[LOG] SoundI::release                          : done
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_76.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_76.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_77.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_77.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_78.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_78.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_79.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_79.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_80.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_80.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_81.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_81.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_82.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_82.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_83.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_83.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000EFD8CAB8 : node = 000000005E9D7AC0
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000EFD8CAB8
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000005E9D7BD8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000EFD8CAB8
+[LOG] SoundI::getSubSound                      : sound 00000000EFD8CAB8.  Subsound index 0 / 1
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_84.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_84.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_85.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_85.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_86.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_86.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_87.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_87.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000EFD8AC58)
+[LOG] SoundI::release                          : remove stream samples. (00000000EFD8AC58)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C9798F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000EFD8AC58)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000EFD8A8F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000EFD8AC58)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000EFD8C248 : node = 000000005E9D7820
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000EFD8C248
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000005E9D7938
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000EFD8C248
+[LOG] SoundI::getSubSound                      : sound 00000000EFD8C248.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000EFD8CAB8)
+[LOG] SoundI::release                          : remove stream samples. (00000000EFD8CAB8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C97B158)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000EFD8CAB8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000EFD8AFB8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000EFD8CAB8)
+[LOG] SoundI::release                          : done
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_88.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_88.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_89.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_89.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_90.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_90.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_91.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_91.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_92.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_92.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_93.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_93.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_94.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_94.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_95.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_95.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000EFD8D178
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000EFD8D178
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_96.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_96.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_97.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_97.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_98.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_98.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_99.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_99.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_100.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_100.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_101.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_101.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_102.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_102.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_103.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_103.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_104.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_104.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_105.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_105.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_106.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_106.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000EFD8D328 : node = 00000000EEA2C660
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000EFD8D328
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000EEA2C778
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000EFD8D328
+[LOG] SoundI::getSubSound                      : sound 00000000EFD8D328.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000EFD8C248)
+[LOG] SoundI::release                          : remove stream samples. (00000000EFD8C248)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C9798F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000EFD8C248)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000EFD8D178)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000EFD8C248)
+[LOG] SoundI::release                          : done
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_107.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_107.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_108.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_108.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_109.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_109.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_110.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_110.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_111.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_111.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_112.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_112.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_113.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_113.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_114.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_114.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_115.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_115.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000EFD8DD48 : node = 0000000072F8E660
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000EFD8DD48
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000072F8E778
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000EFD8DD48
+[LOG] SoundI::getSubSound                      : sound 00000000EFD8DD48.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000EFD8D328)
+[LOG] SoundI::release                          : remove stream samples. (00000000EFD8D328)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C97A798)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000EFD8D328)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000EFD8DB98)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000EFD8D328)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000001E5AC2A8 : node = 00000000EFB7D730
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000001E5AC2A8
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000EFB7D848
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000001E5AC2A8
+[LOG] SoundI::getSubSound                      : sound 000000001E5AC2A8.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000EFD8DD48)
+[LOG] SoundI::release                          : remove stream samples. (00000000EFD8DD48)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C97A118)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000EFD8DD48)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000EFD8A8F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000EFD8DD48)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000001E5AC7B8 : node = 00000000EFB7D490
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000001E5AC7B8
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000EFB7D5A8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000001E5AC7B8
+[LOG] SoundI::getSubSound                      : sound 000000001E5AC7B8.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (000000001E5AC2A8)
+[LOG] SoundI::release                          : remove stream samples. (000000001E5AC2A8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C97A798)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000001E5AC2A8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000001E5AD028)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000001E5AC2A8)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000001E5ABF48 : node = 00000000EFB7D730
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000001E5ABF48
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000EFB7D848
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000001E5ABF48
+[LOG] SoundI::getSubSound                      : sound 000000001E5ABF48.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (000000001E5AC7B8)
+[LOG] SoundI::release                          : remove stream samples. (000000001E5AC7B8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C97A938)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000001E5AC7B8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000001E5AC968)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000001E5AC7B8)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000001E5AC968 : node = 00000000EFB7D490
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000001E5AC968
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000EFB7D5A8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000001E5AC968
+[LOG] SoundI::getSubSound                      : sound 000000001E5AC968.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (000000001E5ABF48)
+[LOG] SoundI::release                          : remove stream samples. (000000001E5ABF48)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C97A118)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000001E5ABF48)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000001E5ABA38)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000001E5ABF48)
+[LOG] SoundI::release                          : done
+[ERR] ProfileClient::recvThreadLoopFunction    : Recv thread loop returned 16
+[LOG] ProfileClient::markForDead               : Closing client connection
+[LOG] Thread::callback                         : FMOD profiler thread (recv) finished.
+[LOG] Thread::callback                         : FMOD profiler thread (send) finished.
+[LOG] LiveUpdate::clientDisconnected           : client = 00000000DD537098
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::initThread                       : Init FMOD profiler thread (recv). Priority: 0, Stack Size: 131072, Semaphore: No, Sleep Time: 0, Looping: No.
+[LOG] Thread::initThread                       : Init FMOD profiler thread (send). Priority: 0, Stack Size: 131072, Semaphore: No, Sleep Time: 0, Looping: No.
+[LOG] LiveUpdate::clientConnected              : client = 00000000E904A408
+[LOG] LiveUpdate::readPacket                   : Accepting init message for client 00000000E904A408
+[LOG] LiveUpdate::transitionToConnected        : 
+[LOG] Manager::sendConnectTimeHash             : 
+[LOG] LiveUpdate::sendBankHash                 : 
+[LOG] LiveUpdate::sendBankHash                 : 
+[LOG] LiveUpdate::sendBankHash                 : 
+[LOG] LiveUpdate::acceptInitPacket             : Client 00000000E904A408 connected, entering connected state
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000001E5ABA38 : node = 00000000EFB7D730
+[LOG] SystemI::createSound                     : add node to async list : head = 000000003CC8DBA8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000001E5ABA38
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 5670048
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 14912
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000EFB7D848
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 131320
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911232
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000DB00AC28
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911232, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000001E5ABA38
+[LOG] SoundI::getSubSound                      : sound 000000001E5ABA38.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (000000001E5AC968)
+[LOG] SoundI::release                          : remove stream samples. (000000001E5AC968)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C97A798)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000001E5AC968)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000001E5AC0F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000001E5AC968)
+[LOG] SoundI::release                          : done
+[ERR] ProfileClient::recvThreadLoopFunction    : Recv thread loop returned 16
+[LOG] ProfileClient::markForDead               : Closing client connection
+[LOG] Thread::callback                         : FMOD profiler thread (recv) finished.
+[LOG] Thread::callback                         : FMOD profiler thread (send) finished.
+[LOG] LiveUpdate::clientDisconnected           : client = 00000000E904A408
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::initThread                       : Init FMOD profiler thread (recv). Priority: 0, Stack Size: 131072, Semaphore: No, Sleep Time: 0, Looping: No.
+[LOG] Thread::initThread                       : Init FMOD profiler thread (send). Priority: 0, Stack Size: 131072, Semaphore: No, Sleep Time: 0, Looping: No.
+[LOG] LiveUpdate::clientConnected              : client = 00000000E904A408
+[LOG] LiveUpdate::readPacket                   : Accepting init message for client 00000000E904A408
+[LOG] LiveUpdate::transitionToConnected        : 
+[LOG] Manager::sendConnectTimeHash             : 
+[LOG] LiveUpdate::sendBankHash                 : 
+[LOG] LiveUpdate::sendBankHash                 : 
+[LOG] LiveUpdate::sendBankHash                 : 
+[LOG] LiveUpdate::acceptInitPacket             : Client 00000000E904A408 connected, entering connected state
+[LOG] Manager::receiveLiveUpdateBank           : Received live update bank path: fmod:///remote/C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_116.bank
+[LOG] ProfileRemoteFile::fileOpen              : Attemping to open remote file 'C:/Users/IO190314/AppData/Local/FMOD Studio/UnsavedProjects/Hotswap-vBQBt3/hotswap_116.bank'
+[LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (000000001E5ABA38)
+[LOG] SoundI::release                          : remove stream samples. (000000001E5ABA38)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000003C97A118)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000001E5ABA38)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000001E5ACB18)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000001E5ABA38)
+[LOG] SoundI::release                          : done
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] ProfileClient::markForDead               : Closing client connection
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] FMOD_OS_Net_Read                         : Interrupted.[LOG] Thread::callback                         : FMOD profiler thread (send) finished.
+[ERR] ProfileClient::recvThreadLoopFunction    : Recv thread loop returned 16
+[LOG] Thread::callback                         : FMOD profiler thread (recv) finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] SystemI::close                           : 
+[LOG] SystemI::close                           : Stop all sounds
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] SystemI::close                           : Stream thread destroyed
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Free master channel group.
+[LOG] SystemI::close                           : Remove 'master' sound group.
+[LOG] SystemI::close                           : Free software output.
+[LOG] SystemI::close                           : Free emulated output.
+[LOG] SystemI::close                           : Free channel pool.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
+[LOG] SystemI::close                           : done.
+
