@@ -5,20 +5,24 @@ using UnityEngine;
 public class FlyCam : MonoBehaviour
 {
     public float sensitivity;
-    public float movementSpeed;
+    public float normalSpeed;
+    public float climbSpeed;
+    public float slowMove;
+    public float fastMove;
 
     private float rotationX = 0.0f;
     private float rotationY = 0.0f;
 
     private void Start()
     {
-        Screen.lockCursor = true; 
+        //Screen.lockCursor = true; 
     }
 
     private void Update()
     {
         MouseMovement();
         CameraMovement();
+        CameraSpin();
     }
 
     private void MouseMovement()
@@ -33,10 +37,31 @@ public class FlyCam : MonoBehaviour
 
     private void CameraMovement()
     {
-        if(Input.GetKey(KeyCode.W))
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
-            transform.position += transform.forward * movementSpeed;
+            transform.position += transform.forward * (normalSpeed * fastMove) * Input.GetAxis("Vertical") * Time.deltaTime;
+            transform.position += transform.right * (normalSpeed * fastMove) * Input.GetAxis("Horizontal") * Time.deltaTime;
+        }
+        else if(Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+        {
+            transform.position += transform.forward * (normalSpeed * slowMove) * Input.GetAxis("Vertical") * Time.deltaTime;
+            transform.position += transform.right * (normalSpeed * slowMove) * Input.GetAxis("Horizontal") * Time.deltaTime;
+        }
+        else
+        {
+            transform.position += transform.forward * normalSpeed * Input.GetAxis("Vertical") * Time.deltaTime;
+            transform.position += transform.right * normalSpeed * Input.GetAxis("Horizontal") * Time.deltaTime;
         }
     }
+
+    private void CameraSpin()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+ 
+        }
+    }
+
+
 }
 
