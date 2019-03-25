@@ -51,8 +51,6 @@ public class Intermission : MonoBehaviour
             phase.intermissionCheck = false;
             phase.retrievedPhase = false;;
             approaching.SetBool("Approaching", false);
-
-            orbsDestroyed = false;
         }
         else if(intermissionTime[listNumber] <= 25)
         {
