@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
 	public bool isInvincible;
 	private bool isHealing;
 
+	//Creates a singleton instance
 	void Awake()
 	{
 		if (!instance)
@@ -42,7 +43,8 @@ public class PlayerHealth : MonoBehaviour
 	{
 		HealInputCheck();
 		
-		if (health < 0.25f && !PlayerController.instance.audioSource.isPlaying && health > 0f) //Heartbeat Effect Activate
+		//Heartbeat Effect Activate
+		if (health < 0.25f && !PlayerController.instance.audioSource.isPlaying && health > 0f)
 		{
 			PlayerController.instance.audioSource.Play();
             NearDeath.SetBool("NearDeath", true);
@@ -53,10 +55,10 @@ public class PlayerHealth : MonoBehaviour
 		{
 			PlayerController.instance.audioSource.Stop();
 			PlayerController.instance.audioSource1.Stop();
-			//StartCoroutine(playerController.Retry());
 			LowHealthVibration.instance.SetVibration(false);
 		}
-		else if (health > 0.25f) //Heartbeat Effect Cancel (Isaac)
+		//Cancels the heartbeat effect
+		else if (health > 0.25f) 
 		{
             NearDeath.SetBool("NearDeath", false);
             LowHealthVibration.instance.SetVibration(false);
@@ -85,6 +87,7 @@ public class PlayerHealth : MonoBehaviour
 		StartCoroutine(DisableHealing(healTime));
 	}
 
+	//Disallows the player from healing for a given amount of time
 	private IEnumerator DisableHealing(float time)
 	{
 		SetPlayerState(PlayerActions.Healing, true);
@@ -94,6 +97,7 @@ public class PlayerHealth : MonoBehaviour
 		SetPlayerState(PlayerActions.Healing, false);
 	}
 	
+	//Damages the player by a given amount
 	public void TakeDamage(float f)
 	{
 		if (!isInvincible)
@@ -114,6 +118,7 @@ public class PlayerHealth : MonoBehaviour
 		}
 	}
 	
+	//Checks whether or not the heal input is active
 	void HealInputCheck()
 	{
 		if (FloatCasting.ToBool(PlayerController.instance.inputController.healDown) && CanHeal())
@@ -122,7 +127,8 @@ public class PlayerHealth : MonoBehaviour
 			Debug.Log("Heal");
 		}
 	}
-
+ 
+	//Returns whether or not the player is able to heal
 	bool CanHeal()
 	{
 		return (!PlayerAnim.instance.anim.GetBool("IsHealing") &&
@@ -131,6 +137,7 @@ public class PlayerHealth : MonoBehaviour
 		        !isHealing && healCount > 0);
 	}
 
+	//Activates animations and UI elements associated with the player's death
 	void Death()
 	{
 		PlayerAnim.instance.Death();
