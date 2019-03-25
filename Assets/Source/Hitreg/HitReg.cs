@@ -13,8 +13,8 @@ public class HitReg : MonoBehaviour
     }
 
     private PlayerAttackTypes lastPlayerAttackType;
-    
-    [SerializeField] private bool debug;
+
+    private bool debug = false;
 
     [SerializeField] private string[] tag;
 
