@@ -78,6 +78,7 @@ public class HitReg : MonoBehaviour
         StartCoroutine(ToggleHitRegCoroutine());
     }
     
+    //Toggles the hitreg with a given player attack type
     public void ToggleHitreg(PlayerAttackTypes attack)
     {
         lastPlayerAttackType = attack;
@@ -188,7 +189,7 @@ public class HitReg : MonoBehaviour
         }
     }
 
-    //HitStop (Isaac)
+    //Creates a hitstop effect
     private IEnumerator HitBoss() 
     {
         Time.timeScale = 0f;
