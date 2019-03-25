@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 135496873890652252}
   - component: {fileID: 114429787268823460}
   m_Layer: 0
-  m_Name: OrbV3
+  m_Name: OrbV3 Spline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,11 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8324df19c93fa3b4192e1809ad685b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfter: 2
   spawner: {fileID: 0}
   projectileDamage: 0.1
   anim: {fileID: 95782777992104012}
-  scale: {x: 0, y: 0, z: 0}
 --- !u!114 &114872444540646366
 MonoBehaviour:
   m_ObjectHideFlags: 1

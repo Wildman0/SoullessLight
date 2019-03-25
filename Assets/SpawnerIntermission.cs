@@ -12,10 +12,14 @@ public class SpawnerIntermission : MonoBehaviour
     public int maxSpawnAmount = 10;
     public string id = "orb";
     public float speed = 5f;
+    public bool velocityOrb = false;
 
     private void Awake()
     {
-        splineC = GetComponent<SplineComputer>();
+        if (velocityOrb)
+        {
+            splineC = GetComponent<SplineComputer>();
+        }
     }
 
     private void Start()
@@ -30,9 +34,12 @@ public class SpawnerIntermission : MonoBehaviour
         {
             yield return waitDelay;
             GameObject clone = ObjectPoolManager.instance.CallObject(id, null, Vector3.zero, Quaternion.identity);
-            SplineFollower follower = clone.GetComponent<SplineFollower>();
-            follower.followSpeed = speed;
-            follower.computer = splineC;
+            if (velocityOrb)
+            {
+                SplineFollower follower = clone.GetComponent<SplineFollower>();
+                follower.followSpeed = speed;
+                follower.computer = splineC;
+            }
             spawnAmount++;
         }
     }
