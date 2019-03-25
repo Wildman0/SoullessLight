@@ -68,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
 		ApplyGravity();
 	}
 
+	//Checks for collision entering in order to play the jumpdown cinematic
 	private void OnTriggerEnter(Collider coll)
 	{
 		if (coll.CompareTag("Cine"))
@@ -77,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
+	//Disables movement for a given amount of time
 	public void DisableMovement(float seconds)
 	{
 		StartCoroutine(DisableMovementIEnum(seconds));
@@ -94,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
 	}
 
+	//Locks the players movement direction and speed for a given amount of time
 	public void LockMovement(float time)
 	{
 		StartCoroutine(LockMovementIEnum(time));
@@ -114,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 	
+	//Sets the player's movement direction and speed based on current circumstances and input
 	private void SetMovement()
 	{
 		Vector3 vec = movementTarget;
@@ -152,6 +156,7 @@ public class PlayerMovement : MonoBehaviour
 			FloatCasting.ToBool(PlayerController.instance.inputController.sprint) && CanSprint());
 	}
 
+	//Returns the speed the player should be moving at
 	float GetMovementSpeed()
 	{
 		if (PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking))
@@ -166,6 +171,7 @@ public class PlayerMovement : MonoBehaviour
 		return jogSpeed;
 	}
 	
+	//Moves the character controller a given amount
 	private void Move()
 	{
 		if (!movementDisabled)
@@ -181,6 +187,7 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
+	//Sets the current velocity of the player
 	private void SetVelocity()
 	{
 		velocity = (Mathf.Abs(directionVector.x) + Mathf.Abs(directionVector.z)) / directionVectorModifier * 30;
@@ -193,11 +200,13 @@ public class PlayerMovement : MonoBehaviour
 			directionVector = dirVector * directionVectorModifier;
 	}
 
+	//Applies gravity to the character controller
 	private void ApplyGravity()
 	{
 		PlayerController.instance.characterController.Move(new Vector3(0, -gravity * Time.deltaTime, 0));
 	}
 
+	//Returns whether or not the player is able to sprint based on their current action
 	bool CanSprint()
 	{
 		return Math.Abs(PlayerStamina.instance.stamina) >= 0.01f && velocity > 5.0f &&
@@ -205,6 +214,7 @@ public class PlayerMovement : MonoBehaviour
 		       !PlayerController.instance.GetPlayerState(PlayerActions.Attacking);
 	}
 	
+	//Returns whether or not the player is able to roll based on their current action
 	bool CanRoll()
 	{
 		return !FloatMath.IsZero(PlayerController.instance.inputController.rollDown)
@@ -215,6 +225,7 @@ public class PlayerMovement : MonoBehaviour
 		       && PlayerStamina.instance.stamina > PlayerStamina.instance.rollingStaminaReduction;
 	}
 	
+	//Checks if the player is able to roll, if so then rolls
 	private void RollChecks()
 	{
 		if (CanRoll())
@@ -234,6 +245,7 @@ public class PlayerMovement : MonoBehaviour
 		SetPlayerState(PlayerActions.Rolling, false);
 	}
 
+	//Makes the player invincible for a given amount of time when they roll
 	private IEnumerator RollInvincibilityIEnum()
 	{
 		PlayerHealth.instance.isInvincible = true;
@@ -241,6 +253,7 @@ public class PlayerMovement : MonoBehaviour
 		PlayerHealth.instance.isInvincible = false;
 	}
 	
+	//Unsubscribes from delegates whenever destroyed
 	private void OnDestroy()
 	{
 		SetPlayerState -= PlayerController.instance.OnSetPlayerState;
