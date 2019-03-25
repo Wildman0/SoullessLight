@@ -3,65 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using Dreamteck.Splines;
 
-public class SpawnerIntermission : MonoBehaviour {
-
-    public bool infiniteSpawn = false;
-
-    public int pooledAmount = 20;
-
+public class SpawnerIntermission : MonoBehaviour
+{
+    private SplineComputer splineC;
+    public float spawnDelay = 1f;
+    private WaitForSeconds waitDelay;
+    public int spawnAmount = 0;
+    public int maxSpawnAmount = 10;
+    public string id = "orb";
     public float speed = 5f;
-    public float maxSpawnAmount = 10f;
-    private float spawnAmount = 0f;
-    public float fireTime = 1;
-    public float fireDelay = 1;
 
-    public GameObject toSpawn;
-    List<GameObject> orbs;
-
-    // sets the pool size and the object then creates pool. then starts firing whilst setting span delay and time.
-    private void Start()
+    private void Awake()
     {
-        SplineFollower follower = toSpawn.GetComponent<SplineFollower>();
-        follower.followSpeed = speed;
-      
-        orbs = new List<GameObject>();
-        for (int i = 0; i < pooledAmount; i++)
-        {
-            GameObject obj = (GameObject)Instantiate(toSpawn);
-            obj.SetActive(false);
-            orbs.Add(obj);
-        }
-
-        InvokeRepeating("Fire", fireTime, fireDelay);
-
+        splineC = GetComponent<SplineComputer>();
     }
 
-    // removes orb from pool and disables it when maxSpawnAmount reached.
-    void Fire()
+    private void Start()
     {
-        if (!infiniteSpawn)
-        {
+        waitDelay = new WaitForSeconds(spawnDelay);
+        StartCoroutine(Spawn());
+    }
 
-            if (spawnAmount == maxSpawnAmount)
-            {
-                CancelInvoke("Fire");
-            }
-            else
-            {
-                spawnAmount += 1;
-            }
-        }
-        for (int i = 0; i < orbs.Count; i++)
+    IEnumerator Spawn()
+    {
+        while (spawnAmount < maxSpawnAmount)
         {
-            if (!orbs[i].activeInHierarchy)
-            {
-                orbs[i].transform.position = transform.position;
-                orbs[i].transform.rotation = transform.rotation;
-                orbs[i].SetActive(true);
-                break;
-            }                
+            yield return waitDelay;
+            GameObject clone = ObjectPoolManager.instance.CallObject(id, null, Vector3.zero, Quaternion.identity);
+            SplineFollower follower = clone.GetComponent<SplineFollower>();
+            follower.followSpeed = speed;
+            follower.computer = splineC;
+            spawnAmount++;
         }
-
     }
 
 }
