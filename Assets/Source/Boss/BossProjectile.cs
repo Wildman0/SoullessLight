@@ -11,14 +11,7 @@ public class BossProjectile : MonoBehaviour
     private SplineFollower follower;
     [SerializeField] private Animator anim;
 
-    //this will take place at the start of the game even when not loaded in. finds the spline computer
-    private void Start()
-    {
-       sc = spawner.GetComponent<SplineComputer>();
-       follower = GetComponent<SplineFollower>();
-       follower.computer = sc;
 
-    }
 
     // considered as OnStart(), ensures the spawn animation will play correctly
     private void OnEnable()
@@ -43,7 +36,6 @@ public class BossProjectile : MonoBehaviour
     // disable when reached end (done via triggers in the follower), and reset position
     public void Destroy()
     {
-        //follower.Restart(0);
         ObjectPoolManager.instance.RecallObject(gameObject);
     }
 
