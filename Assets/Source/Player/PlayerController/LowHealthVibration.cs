@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Controls controller vibration whenever the player is low on health
 public class LowHealthVibration : MonoBehaviour
 {
 	public static LowHealthVibration instance;
@@ -19,6 +20,7 @@ public class LowHealthVibration : MonoBehaviour
 			Debug.LogError("More than one instance of LowHealth Vibration in the scene");
 	}
 
+	//Toggles the vibration on/off
 	public void SetVibration(bool b)
 	{
 		isEnabled = b;
@@ -37,6 +39,7 @@ public class LowHealthVibration : MonoBehaviour
 		}
 	}
 
+	//makes the controller vibrate with time gaps between 'beats'
 	private IEnumerator VibrationIEnum()
 	{
 		Controller.Vibrate(0, 0.75f, 0.1f);
