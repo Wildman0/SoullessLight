@@ -56,6 +56,7 @@ public class UI : MonoBehaviour
         bossHealth = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHealth>();
     }
 
+    //Runs every frame
     public void Update()
     {
         BossHealthBar();
@@ -89,6 +90,7 @@ public class UI : MonoBehaviour
                                            PlayerHealth.instance.health);
     }
 
+    //Manages the fill level of the stamina UI bar
     private void PlayerStaminaBar()
     {
         playerStaminaBar.fillAmount = PlayerStamina.instance.stamina;
@@ -97,6 +99,7 @@ public class UI : MonoBehaviour
                                             PlayerStamina.instance.stamina);
     }
 
+    //Manages the fill level of the boss health UI bar
     private void BossHealthBar()
     {
         bossHealthBar.fillAmount = bossHealth.health;
@@ -113,6 +116,7 @@ public class UI : MonoBehaviour
         }
     }
 
+    //Manages the heal charge UI elements
     public void SetPlayerHealthChargeCount(int count)
     {
         for (int i = count; i < playerHealCharges.Length; i++)
