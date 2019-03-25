@@ -43,8 +43,8 @@ public class BossProjectile : MonoBehaviour
     // disable when reached end (done via triggers in the follower), and reset position
     public void Destroy()
     {
-        gameObject.SetActive(false);
-        follower.Restart(0);
+        //follower.Restart(0);
+        ObjectPoolManager.instance.RecallObject(gameObject);
     }
 
     //makes sure nothing is running when disabled
