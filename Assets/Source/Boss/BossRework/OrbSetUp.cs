@@ -8,6 +8,8 @@ public class OrbSetUp : MonoBehaviour
 
     public static bool activateOrb;
     public bool firstOrb;
+    private bool selectPath;
+    public static bool endIntermission;
 
     public static float health;
 
@@ -38,6 +40,8 @@ public class OrbSetUp : MonoBehaviour
         ActivationCheck();
         orbHealth();
         EndIntermission();
+
+        Debug.Log(endIntermission);
     }
 
     private void ActivationCheck()
@@ -50,12 +54,17 @@ public class OrbSetUp : MonoBehaviour
 
     private void ActivateOrb()
     {
-        if(amountCheck != orbAmount)
+        if (amountCheck != orbAmount)
         {
-            orb.SetActive(true);
-            anim = orb.GetComponent<Animator>();
-            animationIndex = Random.Range(1, 4);
-            anim.SetInteger("PathIndex", animationIndex);
+            if (selectPath == false)
+            {
+                orb.SetActive(true);
+                anim = orb.GetComponent<Animator>();
+                animationIndex = Random.Range(1, 4);
+                anim.SetInteger("PathIndex", animationIndex);
+
+                selectPath = true;
+            }
         }
     }
 
@@ -66,6 +75,7 @@ public class OrbSetUp : MonoBehaviour
             orb.SetActive(false);
             orb.transform.position = new Vector3(-61.82f, 35.8f, 4.77f);
             amountCheck += 1;
+            selectPath = false;
             health = 1f;
         }
     }
@@ -88,8 +98,9 @@ public class OrbSetUp : MonoBehaviour
 
     private void EndIntermission()
     {
-        if(amountCheck == orbAmount)
+        if (amountCheck == orbAmount || endIntermission == true)
         {
+            orb.SetActive(false);
             intermission.orbsDestroyed = true;
             activateOrb = false;
 
@@ -102,6 +113,8 @@ public class OrbSetUp : MonoBehaviour
         yield return new WaitForSeconds(2f);
         health = 1f;
         amountCheck = 0;
+        endIntermission = false;
+        orb.transform.position = new Vector3(-61.82f, 35.8f, 4.77f);
     }
 }
 

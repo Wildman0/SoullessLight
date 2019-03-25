@@ -42,6 +42,7 @@ public class Intermission : MonoBehaviour
             phase.retrievedPhase = false;
             approaching.SetBool("Approaching", false);
 
+            OrbSetUp.endIntermission = true;
             PlayerHealth.instance.TakeDamage(0.3f);
         }
         else if(orbsDestroyed == true)
