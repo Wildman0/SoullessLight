@@ -16,12 +16,13 @@ public class BossProjectileVelocity : MonoBehaviour
     // considered as OnStart(), ensures the spawn animation will play correctly. this also sets the speed for the orb.
     private void OnEnable()
     {
-        transform.localScale = new Vector3(0,0,0);
         anim.SetTrigger("StartSpawn");
+        //GetComponent<Rigidbody>().velocity = -Vector3.right*zSpeed;
 
-        Vector3 force = new Vector3(0, 0, zSpeed);
-
-        GetComponent<Rigidbody>().velocity = force;
+        Rigidbody rig = GetComponent<Rigidbody>();
+        Transform parent = GetComponentInParent<Transform>();
+        rig.velocity = new Vector3(0,parent.transform.rotation.y, 0);
+        rig.velocity = Vector3.forward * zSpeed;
 
     }
 

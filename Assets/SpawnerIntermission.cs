@@ -13,10 +13,13 @@ public class SpawnerIntermission : MonoBehaviour
     public string id = "orb";
     public float speed = 5f;
     public bool velocityOrb = false;
+    public Vector3 pos;
+    public Quaternion rot;
+
 
     private void Awake()
     {
-        if (velocityOrb)
+        if (!velocityOrb)
         {
             splineC = GetComponent<SplineComputer>();
         }
@@ -26,15 +29,28 @@ public class SpawnerIntermission : MonoBehaviour
     {
         waitDelay = new WaitForSeconds(spawnDelay);
         StartCoroutine(Spawn());
+
+        if (velocityOrb)
+        {
+            pos = transform.position;
+            rot = transform.rotation;
+        }
+        else
+        {
+            pos = Vector3.zero;
+            rot = Quaternion.identity;
+        }
     }
+
 
     IEnumerator Spawn()
     {
         while (spawnAmount < maxSpawnAmount)
         {
             yield return waitDelay;
-            GameObject clone = ObjectPoolManager.instance.CallObject(id, null, Vector3.zero, Quaternion.identity);
-            if (velocityOrb)
+            GameObject clone = ObjectPoolManager.instance.CallObject(id, transform, pos, rot);
+
+            if (!velocityOrb)
             {
                 SplineFollower follower = clone.GetComponent<SplineFollower>();
                 follower.followSpeed = speed;
