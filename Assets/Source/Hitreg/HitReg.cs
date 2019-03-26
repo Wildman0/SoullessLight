@@ -171,11 +171,17 @@ public class HitReg : MonoBehaviour
 
             if(tag[tagIndex] == "Rat")
             {
-                ratHealth.health -= 0.1f;
-                hit.transform.gameObject.GetComponent<AnimController>().Flinch();
-                hasHit = true;
-                StartCoroutine(HitBoss());
-                RatSource.Play();
+                RatHealth rh = hit.transform.gameObject.GetComponent<RatHealth>();
+                float health = rh.health;
+
+                if(health > 0)
+                {
+                    ratHealth.health -= 0.1f;
+                    hit.transform.gameObject.GetComponent<AnimController>().Flinch();
+                    hasHit = true;
+                    StartCoroutine(HitBoss());
+                    RatSource.Play();
+                }
             }
         }
     }

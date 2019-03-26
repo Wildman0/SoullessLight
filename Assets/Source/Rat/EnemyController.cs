@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     public float approxStoppingDistance;
 
     public bool isAttacking;
+    private bool isDead;
 
     Transform target;
     NavMeshAgent agent;
@@ -43,9 +44,13 @@ public class EnemyController : MonoBehaviour
 
     private void HealthCheck()
     {
-        if(ratHealth.health >= 0)
+        if(ratHealth.health > 0)
         {
             LookRadius();
+        }
+        else if(ratHealth.health < 0)
+        {
+            isDead = true;
         }
     }
 
@@ -53,7 +58,7 @@ public class EnemyController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= lookRadius)
+        if (distance <= lookRadius && isDead == false)
         {
             agent.SetDestination(target.position);
             animController.IsWalking();
