@@ -33,6 +33,7 @@ public class Phase : MonoBehaviour
     public static bool isAttacking;
     public bool retrievedPhase;
     public static bool trigger;
+    public static bool invincibility;
 
     public string phaseSwitchingCheck;
 
@@ -99,10 +100,14 @@ public class Phase : MonoBehaviour
         {
             SelectPhase();
             AttackManagement();
+
+            invincibility = false;
         }
         if(intermissionCheck == true)
         {
             intermission.PlayerAnimation();
+
+            invincibility = true;
         }
     }
 

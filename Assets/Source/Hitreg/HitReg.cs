@@ -105,36 +105,27 @@ public class HitReg : MonoBehaviour
         {
             if (tag[tagIndex] == "Boss")
             {
-                switch (lastPlayerAttackType)
+                if (Phase.invincibility == false)
                 {
-                    case PlayerAttackTypes.LightAttack:
-                        playerAttack.DamageBoss(playerAttack.lightAttackDamage);
-                        break;
 
-                    case PlayerAttackTypes.HeavyAttack:
-                        playerAttack.DamageBoss(playerAttack.heavyAttackDamage);
-                        break;
+                    switch (lastPlayerAttackType)
+                    {
+                        case PlayerAttackTypes.LightAttack:
+                            playerAttack.DamageBoss(playerAttack.lightAttackDamage);
+                            break;
+
+                        case PlayerAttackTypes.HeavyAttack:
+                            playerAttack.DamageBoss(playerAttack.heavyAttackDamage);
+                            break;
+                    }
+
+                    hasHit = true;
+                    MusicSource.Play();
+                    UI.instance.bossAttacked.GetComponent<Image>().enabled = true;
+                    UI.instance.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
+                    StartCoroutine(HitBoss());
                 }
-
-                hasHit = true;
-                MusicSource.Play();
-                UI.instance.bossAttacked.GetComponent<Image>().enabled = true;
-                UI.instance.bossAttacked.GetComponent<Animator>().SetTrigger("BossContact");
-                StartCoroutine(HitBoss());
             }
-
-            //if (tag[tagIndex] == "Player")
-            //{
-            //    if (!PlayerHealth.instance.isInvincible)
-            //    {
-            //        hasHit = true;
-            //        UI.instance.playerAttacked.GetComponent<Image>().enabled = true;
-            //        UI.instance.playerAttacked.GetComponent<Animator>().SetTrigger("IsFlinched");
-            //        StartCoroutine(HitBoss());
-
-            //        PlayerHealth.instance.TakeDamage(Phase.attackDamage);
-            //    }
-            //}
 
             if(tag[tagIndex] == "Player" && this.gameObject.name == "The_Sunken_New")
             {

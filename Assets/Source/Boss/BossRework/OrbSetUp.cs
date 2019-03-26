@@ -13,13 +13,13 @@ public class OrbSetUp : MonoBehaviour
 
     public static float health;
 
-    public int animationIndex;
+    private int animationIndex;
     public int orbAmount;
-    public int amountCheck;
+    private int amountCheck;
 
     public string orbName;
 
-    public GameObject orb;
+    private GameObject orb;
 
     public static Animator anim;
 
@@ -38,10 +38,11 @@ public class OrbSetUp : MonoBehaviour
     private void Update()
     {
         ActivationCheck();
-        orbHealth();
+        OrbHealth();
         EndIntermission();
     }
 
+    //Checks if boss is in intermission stage
     private void ActivationCheck()
     {
         if(activateOrb == true)
@@ -50,11 +51,12 @@ public class OrbSetUp : MonoBehaviour
         }
     }
 
+    //Makes orb visible in game and and chooses a random destination for the orb to go to
     private void ActivateOrb()
     {
         if (amountCheck != orbAmount)
         {
-            if (selectPath == false)
+            if (selectPath == false && activateOrb == true)
             {
                 orb.SetActive(true);
                 anim = orb.GetComponent<Animator>();
@@ -66,7 +68,8 @@ public class OrbSetUp : MonoBehaviour
         }
     }
 
-    private void orbHealth()
+    //Checks the orbs health. if health hits 0 orb will reset to go spawn again
+    private void OrbHealth()
     {
         if(health <= 0)
         {
@@ -114,6 +117,7 @@ public class OrbSetUp : MonoBehaviour
         endIntermission = false;
         orb.transform.position = new Vector3(-61.82f, 35.8f, 4.77f);
         intermission.orbsDestroyed = false;
-        //selectPath = false;
+        selectPath = false;
+        firstOrb = false;
     }
 }
