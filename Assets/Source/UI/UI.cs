@@ -110,10 +110,7 @@ public class UI : MonoBehaviour
 
     private void OrbHealth()
     {
-        for (int i = 0; i < orbHealth.Length; i++)
-        {
-            orbHealth[0].fillAmount = OrbSetUp.health;
-        }
+        orbHealth[0].fillAmount = OrbSetUp.health;
     }
 
     //Manages the heal charge UI elements
