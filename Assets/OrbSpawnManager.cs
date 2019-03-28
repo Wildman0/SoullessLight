@@ -15,6 +15,7 @@ public class OrbSpawnManager : MonoBehaviour {
     public void DisableVelocitySpawner()
     {
         SI.enabled = false;
+        SI.spawnAmount = 0;
 
     }
 

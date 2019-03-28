@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1688651013554308}
+  m_IsPrefabAsset: 1
+--- !u!1 &1688651013554308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4104990890493566}
+  - component: {fileID: 114498449439361174}
+  m_Layer: 0
+  m_Name: A_ProjectileSP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4104990890493566
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1688651013554308}
+  m_LocalRotation: {x: -0.03238937, y: 0.14239487, z: -0.21941933, w: 0.9646397}
+  m_LocalPosition: {x: 0.8129996, y: -0.40000066, z: -0.466999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 16.794, z: -25.629002}
+--- !u!114 &114498449439361174
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1688651013554308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 368bd34f1a97a1247ae623fc9c9964cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDelay: 0.0625
+  spawnAmount: 0
+  maxSpawnAmount: 20
+  id: orbV
+  speed: 5
