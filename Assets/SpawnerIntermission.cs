@@ -7,57 +7,47 @@ public class SpawnerIntermission : MonoBehaviour
 {
     private SplineComputer splineC;
     public float spawnDelay = 1f;
-    private WaitForSeconds waitDelay;
     public int spawnAmount = 0;
     public int maxSpawnAmount = 10;
     public string id = "orb";
     public float speed = 5f;
-    public bool velocityOrb = false;
-    public Vector3 pos;
-    public Quaternion rot;
-
+    private Transform spTransform;
+    private float timer = 0;
 
     private void Awake()
     {
-        if (!velocityOrb)
-        {
+        maxSpawnAmount--;
             splineC = GetComponent<SplineComputer>();
-        }
+            spTransform = transform;
+            Spawn();
     }
 
-    private void Start()
+
+    private void Update()
     {
-        waitDelay = new WaitForSeconds(spawnDelay);
-        StartCoroutine(Spawn());
+        if (spawnAmount >= maxSpawnAmount)
+            return;
 
-        if (velocityOrb)
+        if (timer < spawnDelay)
+            timer += Time.deltaTime;
+        else if (timer >= spawnDelay)
         {
-            pos = transform.position;
-            rot = transform.rotation;
-        }
-        else
-        {
-            pos = Vector3.zero;
-            rot = Quaternion.identity;
+            timer = 0;
+            Spawn();
         }
     }
 
-
-    IEnumerator Spawn()
+    private void Spawn()
     {
-        while (spawnAmount < maxSpawnAmount)
+        GameObject clone = ObjectPoolManager.instance.CallObject(id, null, spTransform.position, spTransform.rotation);
+
+        SplineFollower follower = clone.GetComponent<SplineFollower>();
+        if (follower != null)
         {
-            yield return waitDelay;
-            GameObject clone = ObjectPoolManager.instance.CallObject(id, transform, pos, rot);
-
-            if (!velocityOrb)
-            {
-                SplineFollower follower = clone.GetComponent<SplineFollower>();
-                follower.followSpeed = speed;
-                follower.computer = splineC;
-            }
-            spawnAmount++;
+            follower.followSpeed = speed;
+            follower.computer = splineC;
         }
+        spawnAmount++;
     }
-
 }
+
