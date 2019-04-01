@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using NDA.PlayerInput;
+using UnityEditor.Experimental.Rendering;
 using UnityEngine;
 
 /// <summary>
@@ -8,12 +9,17 @@ using UnityEngine;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    public static GameManager gameManager;
+    public static GameManager instance;
     public InputController.ControllerType controller;
 	public static InputController inputController = new XboxOneInputController();
 
     void Awake()
     {
+        if (!instance)
+            instance = this;
+        else
+            Debug.Log("More than one instance of GameManager in the scene");
+        
         switch (controller)
         {
             case InputController.ControllerType.XboxOne:
