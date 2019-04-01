@@ -158,15 +158,17 @@ public class HitReg : MonoBehaviour
                 OrbSetUp.health -= .2f;
                 hasHit = true;
                 OrbSetUp.anim.SetTrigger("OrbDamaged");
-                StartCoroutine(HitBoss());
+                Controller.Vibrate(0, 0.5f, 0.5f);
                 UI.instance.OrbHurt.GetComponent<Animator>().SetTrigger("OrbHurt");
-               
+                StartCoroutine(HitBoss());
+
             }
 
             if (tag[tagIndex] == "projectile")
             {
                 TutorialProjectile.health -= 1;
                 hasHit = true;
+                Controller.Vibrate(0, 0.5f, 0.5f);
                 StartCoroutine(HitBoss());
             }
 
@@ -179,6 +181,7 @@ public class HitReg : MonoBehaviour
                 {
                     ratHealth.health -= 0.1f;
                     hit.transform.gameObject.GetComponent<AnimController>().Flinch();
+                    Controller.Vibrate(0, 0.5f, 0.5f);
                     hasHit = true;
                     StartCoroutine(HitBoss());
                     RatSource.Play();
