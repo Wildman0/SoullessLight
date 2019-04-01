@@ -23,6 +23,8 @@ public class OrbSetUp : MonoBehaviour
     private GameObject orb;
 
     public static Animator anim;
+    public AudioSource orbSpawn;
+    public AudioSource orbDie;
 
 
     private void Start()
@@ -64,6 +66,7 @@ public class OrbSetUp : MonoBehaviour
                 anim = orb.GetComponent<Animator>();
                 animationIndex = Random.Range(1, 4);
                 anim.SetInteger("PathIndex", animationIndex);
+                orbSpawn.Play();
 
                 selectPath = true;
             }
@@ -76,6 +79,7 @@ public class OrbSetUp : MonoBehaviour
         if(health <= 0)
         {
             orb.SetActive(false);
+            orbDie.Play();
             orb.transform.position = new Vector3(-61.82f, 35.8f, 4.77f);
             amountCheck += 1;
             selectPath = false;
