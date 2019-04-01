@@ -54,6 +54,7 @@ public class Phase : MonoBehaviour
     private void Update()
     {
         HasPhaseChanged();
+        fmod();
     }
 
 
@@ -191,5 +192,21 @@ public class Phase : MonoBehaviour
     public void SelectNewIndex()
     {
         attackIndex = Random.Range(0, currentAttackAnimationClips.Count);
+    }
+
+    public void fmod()
+    {
+        if(currentPhase.phaseName == "PhaseTwo")
+        {
+            MusicController.instance.SetBossStageParameter(2);
+        }
+        if(currentPhase.phaseName == "PhaseThree" && bossHealth.health < 0.1f)
+        {
+            MusicController.instance.SetBossStageParameter(3);
+        }
+        else if(bossHealth.health > 0.1f)
+        {
+            MusicController.instance.SetBossStageParameter(4);
+        }
     }
 }
