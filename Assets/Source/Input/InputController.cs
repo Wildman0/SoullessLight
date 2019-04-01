@@ -66,15 +66,13 @@ namespace NDA.PlayerInput
         public KeyCode inputBack = KeyCode.S;
         public KeyCode inputRight = KeyCode.D;
         public KeyCode inputLeft = KeyCode.A;
-        public KeyCode inputRoll = KeyCode.LeftShift;
-        public KeyCode inputSprint = KeyCode.Space;
-        public KeyCode inputCamLockToggle = KeyCode.Tab;
-        public KeyCode inputBlock = KeyCode.Mouse1;
+        public KeyCode inputRoll = KeyCode.Space;
+        public KeyCode inputSprint = KeyCode.F;
+        //public KeyCode inputBlock = KeyCode.Mouse1;
         public KeyCode inputLightAttack = KeyCode.Mouse0;
         public KeyCode inputHeavyAttack = KeyCode.Mouse2;
         public KeyCode inputHeal = KeyCode.F;
-        //ryan
-        public KeyCode inputJump = KeyCode.V;
+        public KeyCode inputCameraLock = KeyCode.Q;
 
         //Runs every frame
         public override void Update()
@@ -88,12 +86,11 @@ namespace NDA.PlayerInput
             roll = BoolCasting.ToFloat(Input.GetKey(inputRoll));
             sprint = BoolCasting.ToFloat(Input.GetKey(inputSprint));
             lightAttack = BoolCasting.ToFloat(Input.GetKey(inputLightAttack));
-            block = BoolCasting.ToFloat(Input.GetKey(inputBlock));
+            //block = BoolCasting.ToFloat(Input.GetKey(inputBlock));
             raiseCamera = FloatMath.GetAmountAboveZero(Input.GetAxis("Vertical"));
             lowerCamera = FloatMath.GetAmountBelowZero(Input.GetAxis("Vertical"));
             rotateCamera = Input.GetAxis("Horizontal");
-            //ryan
-            jump = BoolCasting.ToFloat(Input.GetKey(inputJump));
+            cameraLockToggle = Input.GetKeyDown(inputCameraLock);
 
             forwardDown = BoolCasting.ToFloat(Input.GetKeyDown(inputForward));
             backDown = BoolCasting.ToFloat(Input.GetKeyDown(inputBack));
@@ -102,10 +99,8 @@ namespace NDA.PlayerInput
             rollDown = BoolCasting.ToFloat(Input.GetKeyDown(inputRoll));
             sprintDown = BoolCasting.ToFloat(Input.GetKeyDown(inputSprint));
             lightAttackDown = BoolCasting.ToFloat(Input.GetKeyDown(inputLightAttack));
-            blockDown = BoolCasting.ToFloat(Input.GetKeyDown(inputBlock));
+            //blockDown = BoolCasting.ToFloat(Input.GetKeyDown(inputBlock));
             healDown = BoolCasting.ToFloat(Input.GetKeyDown(inputHeal));
-            //ryan
-            jumpDown = BoolCasting.ToFloat(Input.GetKeyDown(inputJump));
         }
     }
     
