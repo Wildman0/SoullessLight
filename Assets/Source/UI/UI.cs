@@ -23,6 +23,7 @@ public class UI : MonoBehaviour
     public Image bossAttacked;
     public Image playerAttacked;
     public Image BossDefeated;
+    public Image OrbHurt;
 
     public Image[] orbHealth;
     [SerializeField] Image[] playerHealCharges;
