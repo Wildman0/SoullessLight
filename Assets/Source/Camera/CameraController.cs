@@ -127,4 +127,22 @@ public class CameraController : MonoBehaviour
 
         return go[Array.IndexOf(distances, distances.Min())];
     }
+
+    public void ShakeCamera(float intensity, float time)
+    {
+        StartCoroutine(ShakeCameraIEnumerator(intensity, time));
+    }
+
+    private IEnumerator ShakeCameraIEnumerator(float intensity, float time)
+    {
+        cineMachine.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain =
+            2.5f * intensity;
+        cineMachine.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain =
+            1.0f * intensity;
+        
+        yield return new WaitForSeconds(time);
+        
+        cineMachine.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_FrequencyGain = 0.0f;
+        cineMachine.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.0f;
+    }
 }

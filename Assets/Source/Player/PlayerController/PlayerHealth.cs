@@ -113,7 +113,7 @@ public class PlayerHealth : MonoBehaviour
 			{
 				PlayerAnim.instance.Flinch();
 				PlayerMovement.instance.DisableMovement(0.3f);
-				PlayerController.instance.mainCamera.GetComponent<RFX4_CameraShake>().PlayShake();
+				CameraController.instance.ShakeCamera(1.5f, 0.8f);
 			}
 		}
 	}
