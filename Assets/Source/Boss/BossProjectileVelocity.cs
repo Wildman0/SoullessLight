@@ -5,13 +5,10 @@ using Dreamteck.Splines;
 
 public class BossProjectileVelocity : MonoBehaviour
 {
-    public GameObject spawner;
     [SerializeField] private float projectileDamage = 0.1f;
-    public static SplineComputer sc;
-    private SplineFollower follower;
     [SerializeField] private Animator anim;
-    public float zSpeed = 10f;
-
+    public float speed = 10f;
+    public float destroyTime = 10f;
 
     // considered as OnStart(), ensures the spawn animation will play correctly. this also sets the speed for the orb.
     private void Start()
@@ -19,8 +16,8 @@ public class BossProjectileVelocity : MonoBehaviour
         anim.SetTrigger("StartSpawn");
 
         Rigidbody rig = GetComponent<Rigidbody>();
-        rig.velocity = transform.forward * zSpeed;
-
+        rig.velocity = transform.forward * speed;
+        Invoke("Destroy",destroyTime);
     }
 
     // when colliding with player and they are not rolling run destroy()

@@ -16,7 +16,7 @@ public class SpawnerIntermission : MonoBehaviour
 
     private void Awake()
     {
-        maxSpawnAmount--;
+            maxSpawnAmount--;
             splineC = GetComponent<SplineComputer>();
             spTransform = transform;
             Spawn();
