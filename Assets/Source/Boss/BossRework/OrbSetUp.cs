@@ -19,6 +19,7 @@ public class OrbSetUp : MonoBehaviour
 
     public string orbName;
 
+    public GameObject OrbUi;
     private GameObject orb;
 
     public static Animator anim;
@@ -59,6 +60,7 @@ public class OrbSetUp : MonoBehaviour
             if (selectPath == false && activateOrb == true)
             {
                 orb.SetActive(true);
+                OrbUi.SetActive(true);
                 anim = orb.GetComponent<Animator>();
                 animationIndex = Random.Range(1, 4);
                 anim.SetInteger("PathIndex", animationIndex);
@@ -102,6 +104,7 @@ public class OrbSetUp : MonoBehaviour
         if (amountCheck == orbAmount || endIntermission == true)
         {
             orb.SetActive(false);
+            OrbUi.SetActive(false);
             intermission.orbsDestroyed = true;
             activateOrb = false;
 
