@@ -3,6 +3,7 @@ using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using Cinemachine;
 using NDA.PlayerInput;
 using UnityEngine;
@@ -43,6 +44,22 @@ public class CameraController : MonoBehaviour
         
         currentCamera = gameObject.GetComponent<Camera>();
         cinemachineBrain = gameObject.GetComponent<CinemachineBrain>();
+    }
+
+    void Start()
+    {
+        SetCinemachineAxes();
+    }
+    
+    // Sets the axes that cinemachine uses for camera movement. Note that this is set up with controller by default so 
+    // there is no need to change it to controller controls.
+    void SetCinemachineAxes()
+    {
+        if (GameManager.instance.controller == InputController.ControllerType.Keyboard)
+        {
+            cineMachine.m_XAxis.m_InputAxisName = "Mouse X";
+            cineMachine.m_YAxis.m_InputAxisName = "Mouse Y";
+        }
     }
 
     void LateUpdate ()
