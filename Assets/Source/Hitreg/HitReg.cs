@@ -159,6 +159,7 @@ public class HitReg : MonoBehaviour
                 hasHit = true;
                 OrbSetUp.anim.SetTrigger("OrbDamaged");
                 StartCoroutine(HitBoss());
+                UI.instance.OrbHurt.GetComponent<Animator>().SetTrigger("OrbHurt");
                
             }
 
