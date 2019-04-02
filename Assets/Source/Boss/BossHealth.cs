@@ -15,6 +15,7 @@ public class BossHealth : MonoBehaviour
     bool active;
 
     public UI ui;
+    public GameObject BossDefeated;
     public AudioSource audioSource;
     public AudioSource audioSource1;
     public AudioSource audioSource2;
@@ -44,6 +45,7 @@ public class BossHealth : MonoBehaviour
             phase.anim.SetBool("IsDead", true);
             ui.BossDefeated.GetComponent<Image>().enabled = true;
             ui.BossDefeated.GetComponent<Animator>().SetTrigger("IsDefeated");
+            BossDefeated.SetActive(false);
             audioSource.Stop();
             audioSource1.Play();
             StartCoroutine(Conclusion());
