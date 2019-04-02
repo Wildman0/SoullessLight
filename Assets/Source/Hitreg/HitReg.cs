@@ -28,6 +28,7 @@ public class HitReg : MonoBehaviour
     public AudioSource MusicSource;
     public AudioClip RatHit;
     public AudioSource RatSource;
+    public AudioSource OrbHit;
 
     private RaycastHit hit;
 
@@ -158,6 +159,7 @@ public class HitReg : MonoBehaviour
                 OrbSetUp.health -= .2f;
                 hasHit = true;
                 OrbSetUp.anim.SetTrigger("OrbDamaged");
+                OrbHit.Play();
                 Controller.Vibrate(0, 0.5f, 0.5f);
                 UI.instance.OrbHurt.GetComponent<Animator>().SetTrigger("OrbHurt");
                 StartCoroutine(HitBoss());
