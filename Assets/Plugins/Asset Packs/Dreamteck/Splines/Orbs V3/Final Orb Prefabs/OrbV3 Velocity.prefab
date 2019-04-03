@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 135496873890652252}
   - component: {fileID: 114212041907197924}
   - component: {fileID: 54538294882156812}
-  - component: {fileID: 114558417239972574}
   m_Layer: 0
   m_Name: OrbV3 Velocity
   m_TagString: Untagged
@@ -136,17 +135,6 @@ MonoBehaviour:
   anim: {fileID: 95782777992104012}
   speed: 10
   destroyTime: 10
---- !u!114 &114558417239972574
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1651341650974530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4d8c1fce27fbf642a52f9b6469d1a55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &135496873890652252
 SphereCollider:
   m_ObjectHideFlags: 1
