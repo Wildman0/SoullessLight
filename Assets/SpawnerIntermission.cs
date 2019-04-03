@@ -9,7 +9,7 @@ public class SpawnerIntermission : MonoBehaviour
     public float spawnDelay = 1f;
     public int spawnAmount = 0;
     public int maxSpawnAmount = 10;
-    public string id = "orb";
+    public string id;
     public float speed = 5f;
     private Transform spTransform;
     private float timer = 0;

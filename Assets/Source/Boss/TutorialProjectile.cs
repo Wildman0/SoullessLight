@@ -10,7 +10,6 @@ public class TutorialProjectile : MonoBehaviour
     public GameObject doorBlocker;
     public GameObject spawn;
     public static int health = 3;
-    public SplineFollower follower;
 
     private void Start()
     {
