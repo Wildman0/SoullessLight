@@ -15,7 +15,7 @@ public class FlyCam : MonoBehaviour
 
     private void Start()
     {
-        Screen.lockCursor = true; 
+        //Screen.lockCursor = true; 
     }
 
     private void Update()
