@@ -71,7 +71,7 @@ namespace NDA.PlayerInput
         //public KeyCode inputBlock = KeyCode.Mouse1;
         public KeyCode inputLightAttack = KeyCode.Mouse0;
         public KeyCode inputHeavyAttack = KeyCode.Mouse2;
-        public KeyCode inputHeal = KeyCode.F;
+        public KeyCode inputHeal = KeyCode.E;
         public KeyCode inputCameraLock = KeyCode.Q;
 
         //Runs every frame
