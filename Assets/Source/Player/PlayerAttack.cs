@@ -49,7 +49,7 @@ public class PlayerAttack : MonoBehaviour
         BlockingChecks();
         
         if (FloatCasting.ToBool(PlayerController.instance.inputController.lightAttackDown) && canAttack &&
-            PlayerStamina.instance.stamina > lightAttackStamina)
+            PlayerStamina.instance.stamina > lightAttackStamina && CanLightAttack())
         {
             LightAttack();
         }
@@ -147,5 +147,15 @@ public class PlayerAttack : MonoBehaviour
                && !p.GetPlayerState(PlayerActions.Sprinting)
                && !p.GetPlayerState(PlayerActions.Rolling)
                && !p.GetPlayerState(PlayerActions.HeavyAttacking);
+    }
+
+    bool CanLightAttack()
+    {
+        PlayerController p = PlayerController.instance;
+
+        return PlayerStamina.instance.stamina > lightAttackStamina
+               && !p.GetPlayerState(PlayerActions.Healing)
+               && !p.GetPlayerState(PlayerActions.Blocking)
+               && !p.GetPlayerState(PlayerActions.Sprinting);
     }
 }

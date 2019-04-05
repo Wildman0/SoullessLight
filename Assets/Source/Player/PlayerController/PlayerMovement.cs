@@ -209,10 +209,11 @@ public class PlayerMovement : MonoBehaviour
 	//Returns whether or not the player is able to sprint based on their current action
 	bool CanSprint()
 	{
-		return Math.Abs(PlayerStamina.instance.stamina) >= 0.01f && velocity > 5.0f &&
-		       !PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking) &&
-		       !PlayerController.instance.GetPlayerState(PlayerActions.Attacking);
-	}
+		return Math.Abs(PlayerStamina.instance.stamina) >= 0.01f && velocity > 5.0f 
+            && !PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking) 
+            && !PlayerController.instance.GetPlayerState(PlayerActions.Attacking)
+            && !PlayerController.instance.GetPlayerState(PlayerActions.Healing);
+    }
 	
 	//Returns whether or not the player is able to roll based on their current action
 	bool CanRoll()
