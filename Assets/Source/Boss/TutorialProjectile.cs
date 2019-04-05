@@ -9,6 +9,7 @@ public class TutorialProjectile : MonoBehaviour
     public GameObject enableMe;
     public GameObject doorBlocker;
     public GameObject spawn;
+    public GameObject UIDisable;
     public static int health = 3;
 
     private void Start()
@@ -23,6 +24,8 @@ public class TutorialProjectile : MonoBehaviour
     {
         if (health <= 0)
         {
+            Implode();
+            doorBlocker.active = false;
             Destroy(gameObject);
         }
     }
@@ -40,9 +43,4 @@ public class TutorialProjectile : MonoBehaviour
         Destroy(spawn);
     }
 
-    private void OnDestroy()
-    {
-        Destroy(doorBlocker);
-        Implode();
-    }
 }

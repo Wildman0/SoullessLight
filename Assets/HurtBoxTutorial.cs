@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HurtBoxTutorial : MonoBehaviour {
 
-    public GameObject me;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

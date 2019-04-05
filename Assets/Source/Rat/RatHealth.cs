@@ -7,6 +7,7 @@ public class RatHealth : MonoBehaviour
     private AnimController animController;
     public GameObject disableOnDeath;
     private CapsuleCollider cC;
+    private BoxCollider bC;
 
     [Range(0, 1)]
     public float health;
@@ -16,6 +17,7 @@ public class RatHealth : MonoBehaviour
         animController = GetComponentInChildren<AnimController>();
 
         cC = GetComponent < CapsuleCollider >();
+        bC = GetComponent<BoxCollider>();
     }
 
     void Update ()
@@ -35,6 +37,7 @@ public class RatHealth : MonoBehaviour
             animController.IsDead();
             disableOnDeath.active = false;
             cC.enabled = false;
+            bC.enabled = false;
         }
 
     }
