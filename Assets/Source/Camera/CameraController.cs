@@ -29,7 +29,8 @@ public class CameraController : MonoBehaviour
     public float minCamHeight = -1.5f;
 
     public bool isLocked = false;
-    public Animator LockOn;
+    //public Animator LockOn;
+    public GameObject LockOn;
 
     public Camera currentCamera;
     [SerializeField] private CinemachineFreeLook cineMachine;
@@ -81,17 +82,19 @@ public class CameraController : MonoBehaviour
     void ToggleCameraLock()
     {
         isLocked = !isLocked;
-        LockOn.SetTrigger("LockOn");
+        //LockOn.SetTrigger("LockOn");
         
         if (isLocked)
         {
             cinemachineBrain.enabled = false;
             secondaryTarget = FindNearestEnemy().transform;
+            LockOn.active = true;
         }
         else
         {
             cinemachineBrain.enabled = true;
             cineMachine.m_LookAt = playerEmpty;
+            LockOn.active = false;
         }
     }
     
