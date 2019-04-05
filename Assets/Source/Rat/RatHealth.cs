@@ -5,6 +5,8 @@ using UnityEngine;
 public class RatHealth : MonoBehaviour
 {
     private AnimController animController;
+    public GameObject disableOnDeath;
+    private CapsuleCollider cC;
 
     [Range(0, 1)]
     public float health;
@@ -12,6 +14,8 @@ public class RatHealth : MonoBehaviour
     private void Start()
     {
         animController = GetComponentInChildren<AnimController>();
+
+        cC = GetComponent < CapsuleCollider >();
     }
 
     void Update ()
@@ -29,6 +33,9 @@ public class RatHealth : MonoBehaviour
         if(health <= 0)
         {
             animController.IsDead();
+            disableOnDeath.active = false;
+            cC.enabled = false;
         }
+
     }
 }
