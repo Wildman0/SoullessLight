@@ -56,6 +56,8 @@ public class RatHealth : MonoBehaviour
             isDead = true;
             healthUI.fillAmount = 0;
 
+            health = 0;
+            
             animController.IsDead();
             disableOnDeath.active = false;
             cC.enabled = false;
