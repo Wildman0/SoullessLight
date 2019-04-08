@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		RollChecks();
 
-		if (!movementLocked)
+		if (!movementLocked && PlayerController.instance.characterController.isGrounded)
 			SetMovement();
 		
 		Move();
