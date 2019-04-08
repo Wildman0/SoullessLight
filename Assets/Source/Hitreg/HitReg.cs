@@ -141,7 +141,7 @@ public class HitReg : MonoBehaviour
                 }
             }
 
-            if(tag[tagIndex] == "Player" && this.gameObject.name == "Rat") // Rat name needs editing maybe !!!
+            if(tag[tagIndex] == "Player" && gameObject.tag == "Rat") // Rat name needs editing maybe !!!
             {
                 if (!PlayerHealth.instance.isInvincible)
                 {
