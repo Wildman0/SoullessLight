@@ -12,6 +12,8 @@ public class RatHealth : MonoBehaviour
     [Range(0, 1)]
     public float health;
 
+    public bool isDead;
+
     private void Start()
     {
         animController = GetComponentInChildren<AnimController>();
@@ -38,6 +40,8 @@ public class RatHealth : MonoBehaviour
             disableOnDeath.active = false;
             cC.enabled = false;
             bC.enabled = false;
+
+            isDead = true;
         }
 
     }
