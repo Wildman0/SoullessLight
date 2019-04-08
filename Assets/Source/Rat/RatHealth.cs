@@ -9,7 +9,8 @@ public class RatHealth : MonoBehaviour
     public GameObject disableOnDeath;
     private CapsuleCollider cC;
     private BoxCollider bC;
-    private Image healthUI;
+    public Image healthUI;
+    public Image healthOutline;
 
     [Range(0, 1)]
     public float health;
@@ -24,8 +25,8 @@ public class RatHealth : MonoBehaviour
         cC = GetComponent < CapsuleCollider >();
         bC = GetComponent<BoxCollider>();
 
-        healthUI = GetComponentInChildren<Image>();
         healthUI.enabled = false;
+        healthOutline.enabled = false;
 
         beginningHealth = health;
     }
@@ -41,6 +42,7 @@ public class RatHealth : MonoBehaviour
         if (health < beginningHealth)
         {
             healthUI.enabled = true;
+            healthOutline.enabled = true;
         }
 
         if (health >= 0.02f)
@@ -55,6 +57,7 @@ public class RatHealth : MonoBehaviour
         {
             isDead = true;
             healthUI.fillAmount = 0;
+            healthOutline.fillAmount = 0;
 
             health = 0;
             
@@ -62,7 +65,9 @@ public class RatHealth : MonoBehaviour
             disableOnDeath.active = false;
             cC.enabled = false;
             bC.enabled = false;
+            healthOutline.enabled = false;
             healthUI.enabled = false;
+            
         }
 
     }
