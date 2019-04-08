@@ -36,12 +36,12 @@ public class RatHealth : MonoBehaviour
     {
         if(health <= 0)
         {
+            isDead = true;
+
             animController.IsDead();
             disableOnDeath.active = false;
             cC.enabled = false;
             bC.enabled = false;
-
-            isDead = true;
         }
 
     }
