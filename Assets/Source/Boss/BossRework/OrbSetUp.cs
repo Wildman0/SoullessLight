@@ -13,7 +13,7 @@ public class OrbSetUp : MonoBehaviour
 
     public static float health;
 
-    private int animationIndex;
+    public int animationIndex;
     public int orbAmount;
     private int amountCheck;
 
