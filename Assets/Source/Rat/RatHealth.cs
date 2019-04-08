@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RatHealth : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class RatHealth : MonoBehaviour
     public GameObject disableOnDeath;
     private CapsuleCollider cC;
     private BoxCollider bC;
+    private Image healthUI;
 
     [Range(0, 1)]
     public float health;
@@ -20,23 +22,30 @@ public class RatHealth : MonoBehaviour
 
         cC = GetComponent < CapsuleCollider >();
         bC = GetComponent<BoxCollider>();
+
+        healthUI = GetComponentInChildren<Image>();
     }
 
     void Update ()
     {
         Death();
+        HealthUI();
 	}
 
-    public void Damage()
+    private void HealthUI()
     {
-
+        if (health >= 0.02f)
+        {
+            healthUI.fillAmount = health;
+        }
     }
 
     private void Death()
     {
-        if(health <= 0)
+        if(health <= 0.02f)
         {
             isDead = true;
+            healthUI.fillAmount = 0;
 
             animController.IsDead();
             disableOnDeath.active = false;
