@@ -13,6 +13,7 @@ public class RatHealth : MonoBehaviour
 
     [Range(0, 1)]
     public float health;
+    private float beginningHealth;
 
     public bool isDead;
 
@@ -24,6 +25,9 @@ public class RatHealth : MonoBehaviour
         bC = GetComponent<BoxCollider>();
 
         healthUI = GetComponentInChildren<Image>();
+        healthUI.enabled = false;
+
+        beginningHealth = health;
     }
 
     void Update ()
@@ -34,6 +38,11 @@ public class RatHealth : MonoBehaviour
 
     private void HealthUI()
     {
+        if (health < beginningHealth)
+        {
+            healthUI.enabled = true;
+        }
+
         if (health >= 0.02f)
         {
             healthUI.fillAmount = health;
@@ -51,6 +60,7 @@ public class RatHealth : MonoBehaviour
             disableOnDeath.active = false;
             cC.enabled = false;
             bC.enabled = false;
+            healthUI.enabled = false;
         }
 
     }
