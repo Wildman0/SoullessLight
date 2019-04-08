@@ -142,17 +142,23 @@ public class CameraController : MonoBehaviour
 
         for (int i = 0; i < distances.Length; i++)
         {
-            if (go[i].GetComponent<RatHealth>().isDead)
+            if (go[i].GetComponent<RatHealth>())
             {
-                go[i] = null;
+                if (go[i].GetComponent<RatHealth>().isDead)
+                {
+                    go[i] = null;
+                }
             }
 
+            // Sets distances to high number if that gameObject is null, otherwise the method recognizes a null as the
+            // least distance
             if (go[i])
-            {
                 distances[i] = Vector3.Distance(gameObject.transform.position, go[i].transform.position);
-            }
+            else
+                distances[i] = 100000.0f;
         }
 
+        Debug.Log(go[Array.IndexOf(distances, distances.Min())]);
         return go[Array.IndexOf(distances, distances.Min())];
     }
 
