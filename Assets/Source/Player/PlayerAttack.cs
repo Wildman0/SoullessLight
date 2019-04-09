@@ -20,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
     
     public float heavyAttackDamage = 0.04f;
     [SerializeField] private float heavyAttackMovementLockTime = 2.5f;
-    [SerializeField] private float additionalTimeBetweenHeavyAttacks = 0.5f;
+    [SerializeField] private float additionalTimeBetweenHeavyAttacks = 3.5f;
     [SerializeField] private float heavyAttackStamina = 0.15f;
     
     

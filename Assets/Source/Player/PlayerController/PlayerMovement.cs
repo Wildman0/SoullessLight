@@ -36,7 +36,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float rollInvincibilityTime = 0.4f;
 	[SerializeField] private float rollSpeed = 4.5f;
 	[SerializeField] private float additionalTimeBetweenRolls = 1.0f;
-	
+
+	[SerializeField] private float lightAttackSpeed = 2.5f;
 	[SerializeField] private float heavyAttackSpeed = 1.0f;
 	
 	public Vector3 directionVector;
@@ -161,6 +162,9 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking))
 			return heavyAttackSpeed;
+		
+		if (PlayerController.instance.GetPlayerState(PlayerActions.Attacking))
+			return lightAttackSpeed;
 		
 		if (PlayerController.instance.GetPlayerState(PlayerActions.Rolling))
 			return rollSpeed;
