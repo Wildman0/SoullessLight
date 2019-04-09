@@ -7,10 +7,12 @@ public class RatHealth : MonoBehaviour
 {
     private AnimController animController;
     public GameObject disableOnDeath;
+    public GameObject lockOnGone;
     private CapsuleCollider cC;
     private BoxCollider bC;
     public Image healthUI;
     public Image healthOutline;
+    
 
     [Range(0, 1)]
     public float health;
@@ -66,6 +68,7 @@ public class RatHealth : MonoBehaviour
             cC.enabled = false;
             bC.enabled = false;
             healthOutline.enabled = false;
+            lockOnGone.SetActive(false);
             healthUI.enabled = false;
             
         }
