@@ -14,9 +14,14 @@ public class SpawnerIntermission : MonoBehaviour
     private Transform spTransform;
     private float timer = 0;
 
-    private void Awake()
+    private void Start()
     {
-            maxSpawnAmount--;
+        maxSpawnAmount = maxSpawnAmount - 1;
+    }
+
+
+    private void OnEnable()
+    {
             splineC = GetComponent<SplineComputer>();
             spTransform = transform;
             Spawn();
@@ -48,6 +53,12 @@ public class SpawnerIntermission : MonoBehaviour
             follower.computer = splineC;
         }
         spawnAmount++;
+    }
+
+
+    private void OnDisable()
+    {
+        spawnAmount = 0;   
     }
 }
 
