@@ -83,7 +83,9 @@ public class PlayerAttack : MonoBehaviour
         
         PlayerStamina.instance.isUsingStaminaAction = true;
         canAttack = false;
+        PlayerController.instance.playerState[(int)PlayerActions.Attacking] = true;
         yield return new WaitForSeconds(lightAttackMovementLockTime);
+        PlayerController.instance.playerState[(int)PlayerActions.Attacking] = false;
         canAttack = true;
         PlayerStamina.instance.isUsingStaminaAction = false;
     }
