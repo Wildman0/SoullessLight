@@ -135,7 +135,7 @@ public class CameraController : MonoBehaviour
     GameObject FindNearestEnemy()
     {
         List<GameObject> go = new List<GameObject>();
-        go.AddRange(GameObject.FindGameObjectsWithTag("Rat"));
+        go.AddRange(GameObject.FindGameObjectsWithTag("Lock"));
         go.AddRange(GameObject.FindGameObjectsWithTag("Boss"));
 
         float[] distances = new float[go.Count];
