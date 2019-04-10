@@ -13,8 +13,9 @@ public class Intermission : MonoBehaviour
 
     public bool activated;
     public bool orbsDestroyed;
-
+    // added by Pedrek
     public List<GameObject> intermissionAttacks = new List<GameObject>();
+    //
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class Intermission : MonoBehaviour
             phase.anim.SetTrigger("IntermissionIn");
             OrbSetUp.activateOrb = true;
             activated = true;
-
+            //added by Pedrek
             if(intermissionCounter == 0)
             {
                 intermissionAttacks[0].SetActive(true);
@@ -41,6 +42,7 @@ public class Intermission : MonoBehaviour
                 intermissionAttacks[1].SetActive(true);
                 intermissionAttacks[Random.Range(2, intermissionAttacks.Count)].SetActive(true);
             }
+            //
         }
         IntermissionTime();
     }
@@ -57,11 +59,12 @@ public class Intermission : MonoBehaviour
             OrbSetUp.endIntermission = true;
             PlayerHealth.instance.TakeDamage(0.3f);
 
+            //added by Pedrek
             foreach(GameObject obj in intermissionAttacks)
             {
                 obj.SetActive(false);
             }
-
+            //
 
         }
         else if(orbsDestroyed == true)
@@ -70,12 +73,12 @@ public class Intermission : MonoBehaviour
             phase.intermissionCheck = false;
             phase.retrievedPhase = false;;
             approaching.SetBool("Approaching", false);
-
+            // added by Pedrek
             foreach (GameObject obj in intermissionAttacks)
             {
                 obj.SetActive(false);
             }
-
+            //
         }
         else if(intermissionTime[listNumber] <= 25)
         {
