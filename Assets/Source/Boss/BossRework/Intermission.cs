@@ -15,6 +15,7 @@ public class Intermission : MonoBehaviour
     public bool orbsDestroyed;
     // added by Pedrek
     public List<GameObject> intermissionAttacks = new List<GameObject>();
+    public float delayTimeOrbs;
     //
 
     private void Start()
@@ -33,14 +34,11 @@ public class Intermission : MonoBehaviour
             //added by Pedrek
             if(intermissionCounter == 0)
             {
-                intermissionAttacks[0].SetActive(true);
-                intermissionCounter++;
-                intermissionAttacks[Random.Range(2, intermissionAttacks.Count)].SetActive(true);
+                StartCoroutine("AIOne");
             }
             if(intermissionCounter == 1)
             {
-                intermissionAttacks[1].SetActive(true);
-                intermissionAttacks[Random.Range(2, intermissionAttacks.Count)].SetActive(true);
+                StartCoroutine("AITwo");
             }
             //
         }
@@ -64,7 +62,7 @@ public class Intermission : MonoBehaviour
             {
                 obj.SetActive(false);
             }
-            //
+            //           
 
         }
         else if(orbsDestroyed == true)
@@ -84,5 +82,20 @@ public class Intermission : MonoBehaviour
         {
             approaching.SetBool("Approaching",true);
         }
+        intermissionCounter++;
+    }
+
+    private IEnumerator AIOne()
+    {
+        yield return new WaitForSeconds(delayTimeOrbs);
+        intermissionAttacks[0].SetActive(true);
+        intermissionAttacks[Random.Range(2, intermissionAttacks.Count)].SetActive(true);
+    }
+
+    private IEnumerator AITwo()
+    {
+        yield return new WaitForSeconds(delayTimeOrbs);
+        intermissionAttacks[1].SetActive(true);
+        intermissionAttacks[Random.Range(2, intermissionAttacks.Count)].SetActive(true);
     }
 }
