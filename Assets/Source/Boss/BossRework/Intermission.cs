@@ -8,11 +8,13 @@ public class Intermission : MonoBehaviour
 
     public List<float> intermissionTime = new List<float>();
     public int listNumber;
+    private int intermissionCounter = 0;
     public Animator approaching;
 
     public bool activated;
     public bool orbsDestroyed;
 
+    public List<GameObject> intermissionAttacks = new List<GameObject>();
 
     private void Start()
     {
@@ -26,8 +28,19 @@ public class Intermission : MonoBehaviour
         {
             phase.anim.SetTrigger("IntermissionIn");
             OrbSetUp.activateOrb = true;
-
             activated = true;
+
+            if(intermissionCounter == 0)
+            {
+                intermissionAttacks[0].SetActive(true);
+                intermissionCounter++;
+                intermissionAttacks[Random.Range(2, intermissionAttacks.Count)].SetActive(true);
+            }
+            if(intermissionCounter == 1)
+            {
+                intermissionAttacks[1].SetActive(true);
+                intermissionAttacks[Random.Range(2, intermissionAttacks.Count)].SetActive(true);
+            }
         }
         IntermissionTime();
     }
@@ -41,9 +54,15 @@ public class Intermission : MonoBehaviour
             phase.intermissionCheck = false;
             phase.retrievedPhase = false;
             approaching.SetBool("Approaching", false);
-
             OrbSetUp.endIntermission = true;
             PlayerHealth.instance.TakeDamage(0.3f);
+
+            foreach(GameObject obj in intermissionAttacks)
+            {
+                obj.SetActive(false);
+            }
+
+
         }
         else if(orbsDestroyed == true)
         {
@@ -51,6 +70,12 @@ public class Intermission : MonoBehaviour
             phase.intermissionCheck = false;
             phase.retrievedPhase = false;;
             approaching.SetBool("Approaching", false);
+
+            foreach (GameObject obj in intermissionAttacks)
+            {
+                obj.SetActive(false);
+            }
+
         }
         else if(intermissionTime[listNumber] <= 25)
         {
