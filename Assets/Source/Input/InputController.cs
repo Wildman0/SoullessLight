@@ -113,7 +113,7 @@ namespace NDA.PlayerInput
         public KeyCode inputRoll = KeyCode.LeftShift;
         public KeyCode inputSprint = KeyCode.Space;
         public KeyCode inputCamLockToggle = KeyCode.Tab;
-        public KeyCode inputBlock = KeyCode.Mouse1;
+      //  public KeyCode inputBlock = KeyCode.Mouse1;
         public KeyCode inputLightAttack = KeyCode.Mouse0;
         public KeyCode inputHeavyAttack = KeyCode.Mouse2;
         //ryan
@@ -133,7 +133,7 @@ namespace NDA.PlayerInput
             rotateCamera = Input.GetAxis("Right Stick Horizontal");
             rotateCameraVertical = Input.GetAxis("Right Stick Vertical");
             cameraLockToggle = Input.GetKeyDown(KeyCode.JoystickButton3);
-            block = Input.GetAxis("Left Trigger");
+           // block = Input.GetAxis("Left Trigger");
             
             rollDown = BoolCasting.ToFloat(Input.GetButtonDown("Fire2"));
             lightAttackDown = BoolCasting.ToFloat(Input.GetButtonDown("Fire3")); 

@@ -11,7 +11,7 @@ public class OrbSetUp : MonoBehaviour
     private bool selectPath;
     public static bool endIntermission;
 
-    public static float health;
+    public static float health ;
 
     public int animationIndex;
     public int orbAmount;
@@ -35,7 +35,7 @@ public class OrbSetUp : MonoBehaviour
         orb = GameObject.FindGameObjectWithTag("Orb");
         orb.SetActive(false);
 
-        health = 1f;
+        health = .5f;
     }
 
     private void Update()
@@ -83,7 +83,7 @@ public class OrbSetUp : MonoBehaviour
             orb.transform.position = new Vector3(-61.82f, 35.8f, 4.77f);
             amountCheck += 1;
             selectPath = false;
-            health = 1f;
+            health = .5f;
         }
     }
 
@@ -119,7 +119,7 @@ public class OrbSetUp : MonoBehaviour
     private IEnumerator ResetValues()
     {
         yield return new WaitForSeconds(2f);
-        health = 1f;
+        health = .5f;
         amountCheck = 0;
         endIntermission = false;
         orb.transform.position = new Vector3(-61.82f, 35.8f, 4.77f);
