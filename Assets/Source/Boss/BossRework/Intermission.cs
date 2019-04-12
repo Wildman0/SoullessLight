@@ -36,7 +36,7 @@ public class Intermission : MonoBehaviour
             {
                 StartCoroutine("AIOne");
             }
-            if(intermissionCounter == 1)
+            else
             {
                 StartCoroutine("AITwo");
             }
@@ -71,6 +71,7 @@ public class Intermission : MonoBehaviour
             phase.intermissionCheck = false;
             phase.retrievedPhase = false;;
             approaching.SetBool("Approaching", false);
+            intermissionCounter++;
             // added by Pedrek
             foreach (GameObject obj in intermissionAttacks)
             {
@@ -81,6 +82,7 @@ public class Intermission : MonoBehaviour
         else if(intermissionTime[listNumber] <= 25)
         {
             approaching.SetBool("Approaching",true);
+            intermissionCounter++;
         }
         intermissionCounter++;
     }

@@ -31,6 +31,13 @@ public class BossProjectileVelocity : MonoBehaviour
                 Destroy();
             }
         }
+        if (other.tag == "ProjectileStopper")
+        {
+            if (!PlayerHealth.instance.isInvincible)
+            {
+                Destroy();
+            }
+        }
     }
 
     // disable when reached end (done via triggers in the follower), and reset position
