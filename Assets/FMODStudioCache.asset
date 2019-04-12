@@ -19,9 +19,24 @@ MonoBehaviour:
   - {fileID: 114344381259466704}
   MasterBankRef: {fileID: 114330225131127298}
   StringsBankRef: {fileID: 114409125238585068}
-  stringsBankWriteTime: 636893807998046307
+  stringsBankWriteTime: 636898165057607793
   cacheVersion: 2
 --- !u!114 &114058140595996208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: bossBattleStage
+  Min: 0
+  Max: 4
+  Default: 0
+--- !u!114 &114082804687007506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,6 +93,36 @@ MonoBehaviour:
   - Name: Desktop
     Value: 808
   Exists: 1
+--- !u!114 &114138473775745602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: bossBattleStage
+  Min: 0
+  Max: 4
+  Default: 0
+--- !u!114 &114156414870752400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: bossBattleStage
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114200487609382274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,10 +142,10 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114357244731251420}
+  - {fileID: 114789545950430868}
   MinDistance: 0
   MaxDistance: 0
-  Length: 335396
+  Length: 295000
 --- !u!114 &114330225131127298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,12 +159,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: D:\GitLight\SoullessLight2\SoullessLight\Assets\Audio\FMODAUDIO\Forsaken FMOD
     File\Forsaken FMOD File\Build\Desktop\Master Bank.bank
-  lastModified: 636893807998026504
+  lastModified: 636898165057587740
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 3938848
+    Value: 3939072
   Exists: 1
+--- !u!114 &114344350920327100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: bossBattleStage
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114344381259466704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +199,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114719995974815142}
+  - {fileID: 114082804687007506}
   MinDistance: 0
   MaxDistance: 0
   Length: 335094
@@ -171,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop\Master
     Bank.strings.bank
-  lastModified: 636893807998046307
+  lastModified: 636898165057607793
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -215,6 +275,21 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 335396
+--- !u!114 &114496437992857832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: bossBattleStage
+  Min: 0
+  Max: 4
+  Default: 0
 --- !u!114 &114575258009269556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +313,21 @@ MonoBehaviour:
   MaxDistance: 0
   Length: 149433
 --- !u!114 &114719995974815142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: bossBattleStage
+  Min: 0
+  Max: 4
+  Default: 0
+--- !u!114 &114789545950430868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,3 +437,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 800
   Exists: 1
+--- !u!114 &114942400018153398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: bossBattleStage
+  Min: 0
+  Max: 4
+  Default: 0
+--- !u!114 &114946677962701876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: bossBattleStage
+  Min: 0
+  Max: 4
+  Default: 0

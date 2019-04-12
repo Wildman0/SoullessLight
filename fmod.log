@@ -16,7 +16,7 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000000C5C1D8E8 isAsync 1 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000000161DA12B8 isAsync 1 updatePeriod 0.02
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -26,7 +26,649 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Profile::init                            : Profiler listening on port: 9264
-[ERR] RuntimeBankModel::openFile               : Failed to open file 'Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/.strings.bank'
+[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] Manager::readBank                        : fileversion = 100, compatVersion = 99 (oldest = 44, newest = 99)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 81920, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : setdata soundi = 00000000C7C68248 : node = 000000003DAD9A20
+[LOG] SystemI::createSound                     : add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000C7C68248
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000003DAD9B38
+[LOG] SystemI::createSound                     :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSound                     :     setdata soundi = 00000000C7C68FC8 : node = 000000003DAD9390
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] Thread::initThread                       :         Init FMOD file thread. Priority: 1, Stack Size: 16384, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000C7C68248
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000C7C68FC8
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000003DAD94A8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000C7C68FC8
+[LOG] SoundI::getSubSound                      : sound 00000000C7C68248.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000000C7C68FC8.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000C7C68AB8 : node = 000000003DAD9F60
+[LOG] SystemI::createSound                     : add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000C7C68AB8
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSound                     :     setdata soundi = 00000000C7C683F8 : node = 000000003DAD9CC0
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSound                     :     add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000003DADA078
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 45283
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000C7C68AB8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000C7C683F8
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000003DAD9DD8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 45283
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000C7C683F8
+[LOG] SoundI::getSubSound                      : sound 00000000C7C68AB8.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000000C7C683F8.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000C7C68FC8)
+[LOG] SoundI::release                          : remove stream samples. (00000000C7C68FC8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000D729E508)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000C7C68FC8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000E1F42C68)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000C7C68FC8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000C7C68248)
+[LOG] SoundI::release                          : remove stream samples. (00000000C7C68248)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000D729E848)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000C7C68248)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000001392B178)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000C7C68248)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000001811B30E8 : node = 000000003AF24570
+[LOG] SystemI::createSound                     : add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000001811B30E8
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSound                     :     setdata soundi = 00000001811B3298 : node = 000000003AF24810
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSound                     :     add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000003AF24688
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 36226
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000001811B30E8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000001811B3298
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000003AF24928
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 36226
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000001811B3298
+[LOG] SoundI::getSubSound                      : sound 00000001811B30E8.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000001811B3298.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000C7C683F8)
+[LOG] SoundI::release                          : remove stream samples. (00000000C7C683F8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000776C67F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000C7C683F8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000E1F42758)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000C7C683F8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000C7C68AB8)
+[LOG] SoundI::release                          : remove stream samples. (00000000C7C68AB8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000D729E6A8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000C7C68AB8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000E1F423F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000C7C68AB8)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000016038D578 : node = 0000000050E36D60
+[LOG] SystemI::createSound                     : add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000016038D068 : node = 0000000050E36430
+[LOG] SystemI::createSound                     : add node to async list : head = 00000000E2C08E78.  list count = 1
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000016038D578
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000050E36E78
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 45283
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000016038D578
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000016038D068
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000050E36548
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 45283
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000016038D068
+[LOG] SoundI::getSubSound                      : sound 000000016038D578.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 000000016038D068.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000001811B3298)
+[LOG] SoundI::release                          : remove stream samples. (00000001811B3298)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000776C5E38)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000001811B3298)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000E1F42C68)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000001811B3298)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000001811B30E8)
+[LOG] SoundI::release                          : remove stream samples. (00000001811B30E8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000776C6998)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000001811B30E8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000E1F42AB8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000001811B30E8)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000C7C68248 : node = 000000003DAD9F60
+[LOG] SystemI::createSound                     : add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000C7C68248
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSound                     :     setdata soundi = 00000000C7C68908 : node = 000000003DAD9A20
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSound                     :     add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000003DADA078
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 36226
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000C7C68248
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000C7C68908
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000003DAD9B38
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 36226
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000C7C68908
+[LOG] SoundI::getSubSound                      : sound 00000000C7C68248.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000000C7C68908.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (000000016038D068)
+[LOG] SoundI::release                          : remove stream samples. (000000016038D068)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000776C6658)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000016038D068)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000E1F42E18)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000016038D068)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (000000016038D578)
+[LOG] SoundI::release                          : remove stream samples. (000000016038D578)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000776C6178)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000016038D578)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000E1F423F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000016038D578)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000186F8898 : node = 0000000040C8C490
+[LOG] SystemI::createSound                     : add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000186F7B18 : node = 0000000040C8D840
+[LOG] SystemI::createSound                     : add node to async list : head = 00000000E2C08E78.  list count = 1
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000186F8898
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000040C8C5A8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 45283
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000186F8898
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000186F7B18
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000040C8D958
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 45283
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000186F7B18
+[LOG] SoundI::getSubSound                      : sound 00000000186F8898.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000000186F7B18.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000C7C68908)
+[LOG] SoundI::release                          : remove stream samples. (00000000C7C68908)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000776C67F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000C7C68908)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000E1F425A8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000C7C68908)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000C7C68248)
+[LOG] SoundI::release                          : remove stream samples. (00000000C7C68248)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000776C6318)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000C7C68248)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000E1F43178)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000C7C68248)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000186F70F8 : node = 0000000040C8D990
+[LOG] SystemI::createSound                     : add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000186F8388 : node = 0000000040C8BF50
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000186F70F8
+[LOG] SystemI::createSound                     : add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000040C8DAA8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 36226
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000186F70F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000186F8388
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000040C8C068
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 36226
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000186F8388
+[LOG] SoundI::getSubSound                      : sound 00000000186F70F8.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000000186F8388.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000186F7B18)
+[LOG] SoundI::release                          : remove stream samples. (00000000186F7B18)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000014C362548)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000186F7B18)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (0000000040682578)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000186F7B18)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000186F8898)
+[LOG] SoundI::release                          : remove stream samples. (00000000186F8898)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000014C362208)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000186F8898)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000406823C8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000186F8898)
+[LOG] SoundI::release                          : done
+[LOG] SystemI::createSound                     : filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000000186F7B18 : node = 0000000040C8D840
+[LOG] SystemI::createSound                     : add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000186F7B18
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSound                     :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     setdata soundi = 00000000186F8898 : node = 0000000040C8C0A0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000040C8D958
+[LOG] SystemI::createSound                     :     add node to async list : head = 00000000E2C08E78.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 45283
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000186F7B18
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000186F8898
+[LOG] SystemI::createSoundInternal             :     filename = Assets\Audio\FMODAUDIO\Forsaken FMOD File\Forsaken FMOD File\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3914592
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 24480
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000040C8C1B8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 45283
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 3911264
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 00000000776802B8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 3911264, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000186F8898
+[LOG] SoundI::getSubSound                      : sound 00000000186F7B18.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000000186F8898.  Subsound index 0 / 1
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000186F8388)
+[LOG] SoundI::release                          : remove stream samples. (00000000186F8388)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000014C3623A8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000186F8388)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (0000000181641D58)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000186F8388)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000186F70F8)
+[LOG] SoundI::release                          : remove stream samples. (00000000186F70F8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000014C362068)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000186F70F8)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000001816419F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000186F70F8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000186F8898)
+[LOG] SoundI::release                          : remove stream samples. (00000000186F8898)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000014C362208)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000186F8898)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000E2BC9A98)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000186F8898)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Forsaken Main Theme Final Mix (00000000186F7B18)
+[LOG] SoundI::release                          : remove stream samples. (00000000186F7B18)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (000000014C362548)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000186F7B18)
+[LOG] SoundI::release                          :     Forsaken Main Theme Final Mix (00000000E2BC9C48)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000186F7B18)
+[LOG] SoundI::release                          : done
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -44,5 +686,7 @@
 [LOG] SystemI::close                           : Free software output.
 [LOG] SystemI::close                           : Free emulated output.
 [LOG] SystemI::close                           : Free channel pool.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
 [LOG] SystemI::close                           : done.
 

@@ -19,11 +19,14 @@ public class MusicController : MonoBehaviour
 		bossBattleMusic = FMODUnity.RuntimeManager.CreateInstance("event:/MainTheme");
 		bossBattleMusic.start();
 		bossBattleMusic.getParameter("bossBattleStage", out bossBattleStage);
+        bossBattleMusic.setParameterValue("bossBattleStage", 0);
 		Debug.Log(bossBattleStage);
-	}
+        
+    }
 	
 	public void SetBossStageParameter(int i)
 	{
 		bossBattleMusic.setParameterValue("bossBattleStage", i);
+        Debug.Log(i);
 	}
 }

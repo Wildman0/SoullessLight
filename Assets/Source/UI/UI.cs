@@ -26,6 +26,8 @@ public class UI : MonoBehaviour
     public Image OrbHurt;
 
     public Image[] orbHealth;
+    public Image[] orbHealth1;
+
     [SerializeField] Image[] playerHealCharges;
 
     public Color playerHealthBarFull = Color.red;
@@ -112,6 +114,7 @@ public class UI : MonoBehaviour
     private void OrbHealth()
     {
         orbHealth[0].fillAmount = OrbSetUp.health;
+        orbHealth1[0].fillAmount = TutorialProjectile.health;
     }
 
     //Manages the heal charge UI elements

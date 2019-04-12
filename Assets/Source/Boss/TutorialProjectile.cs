@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Dreamteck.Splines;
+using UnityEngine.UI;
 
 public class TutorialProjectile : MonoBehaviour
 {
@@ -10,13 +11,16 @@ public class TutorialProjectile : MonoBehaviour
     public GameObject doorBlocker;
     public GameObject spawn;
     public GameObject UIDisable;
-    public static int health = 3;
+    public Image healthUI;
+
+    public static float health = 3;
 
     private void Start()
     {
         enableMe.SetActive(false);
         doorBlocker = GameObject.Find("DoorBlocker");
         StartCoroutine(SpawnComplete());
+
     
     }
 
@@ -27,6 +31,11 @@ public class TutorialProjectile : MonoBehaviour
             Implode();
             doorBlocker.active = false;
             Destroy(gameObject);
+        }
+
+        if (health <= 0.02f)
+        {
+            healthUI.fillAmount = health;
         }
     }
 
