@@ -34,6 +34,7 @@ public class OrbSetUp : MonoBehaviour
         GameObject orbPrefab = (GameObject)Instantiate(Resources.Load(orbName), new Vector3(-61.82f, 35.8f, 4.77f), Quaternion.identity);
         orb = GameObject.FindGameObjectWithTag("Orb");
         orb.SetActive(false);
+        OrbUi.SetActive(false);
 
         health = .5f;
     }

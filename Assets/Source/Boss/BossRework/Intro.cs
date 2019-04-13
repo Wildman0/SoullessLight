@@ -16,6 +16,7 @@ public class Intro : MonoBehaviour
     private void Start()
     {
         phase = GetComponent<Phase>();
+        bossUI.SetActive(false);
     }
 
     private void Update()
