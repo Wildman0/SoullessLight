@@ -128,7 +128,7 @@ public class CameraController : MonoBehaviour
         //smoothed locking in, please don't take it out, tested.
         Vector3 direction = (secondaryTarget.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 8f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
         lockedSpeed += Time.deltaTime;
 
         if (lockedSpeed >= 0.8)

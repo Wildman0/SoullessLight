@@ -6,16 +6,58 @@ public class EscapeMenu : MonoBehaviour
 {
 
     public GameObject escapeMenu;
-
+    public bool screenActive;
+    
     // Update is called once per frame
-    void Update()
+    void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
+        screenActive = true;
+    }
+    void LateUpdate()
+    {
+        InputCheck();           
+    }
+
+
+    void InputCheck()
+    {
         if (Input.GetKeyDown(KeyCode.Escape))
-            escapeMenu.SetActive(true);
-
-        else if (Input.GetKeyDown(KeyCode.Escape))
-            escapeMenu.SetActive(false);
+        {
+            ToggleEscape();
+        }
 
     }
+
+    void ToggleEscape()
+    {
+        screenActive = !screenActive;
+
+        if (!screenActive)
+        {
+            Debug.Log("Open");
+            escapeMenu.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+        }
+        else if (screenActive)
+        {
+            Debug.Log("Close");
+            escapeMenu.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+
+        }
+    }
+
+    public void CursorReturn()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        screenActive = !screenActive;
+    }
+
 }
