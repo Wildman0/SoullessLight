@@ -68,7 +68,7 @@ public class RatHealth : MonoBehaviour
             cC.enabled = false;
             bC.enabled = false;
             healthOutline.enabled = false;
-            lockOnGone.SetActive(false);
+            Destroy(lockOnGone);
             healthUI.enabled = false;
             
         }

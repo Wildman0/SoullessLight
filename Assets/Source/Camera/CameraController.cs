@@ -76,6 +76,11 @@ public class CameraController : MonoBehaviour
     {
         if (PlayerController.instance.inputController.cameraLockToggle)
             ToggleCameraLock();
+
+        if (isLocked && !secondaryTarget)
+        {
+            ToggleCameraLock();
+        }
     }
 
     // Toggles whether or not the camera is locked to a target or is free looking
@@ -153,7 +158,7 @@ public class CameraController : MonoBehaviour
             // Sets distances to high number if that gameObject is null, otherwise the method recognizes a null as the
             // least distance
             if (go[i])
-                distances[i] = Vector3.Distance(gameObject.transform.position, go[i].transform.position);
+                distances[i] = Vector3.Distance(target.transform.position, go[i].transform.position);
             else
                 distances[i] = 100000.0f;
         }
