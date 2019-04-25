@@ -17,6 +17,7 @@ public class CameraController : MonoBehaviour
     public Transform target;
     public Transform secondaryTarget;
 
+
     public float smoothing = 0.125f;
     public Vector3 offset;
     private Vector3 originalOffset;
@@ -34,6 +35,8 @@ public class CameraController : MonoBehaviour
 
     public Camera currentCamera;
     [SerializeField] private CinemachineFreeLook cineMachine;
+    [SerializeField] private float lockedSpeed;
+    
     private CinemachineBrain cinemachineBrain;
 
     private void Awake()
@@ -50,6 +53,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         SetCinemachineAxes();
+
     }
     
     // Sets the axes that cinemachine uses for camera movement. Note that this is set up with controller by default so 
@@ -91,18 +95,24 @@ public class CameraController : MonoBehaviour
         
         if (isLocked)
         {
+            cineMachine.m_LookAt = secondaryTarget;
+
             cinemachineBrain.enabled = false;
             secondaryTarget = FindNearestEnemy().transform;
             LockOn.active = true;
+           
         }
         else
         {
             cinemachineBrain.enabled = true;
+            
             cineMachine.m_LookAt = playerEmpty;
+            lockedSpeed = 0;
             LockOn.active = false;
         }
     }
-    
+
+
     // Movement the camera while locked onto a target
     void LockedCameraMovement()	
     {	
@@ -113,9 +123,19 @@ public class CameraController : MonoBehaviour
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothing);	
         transform.position = smoothedPosition;	
         
-        offset = new Vector3(offset.x, offset.y, offset.z);	
+        offset = new Vector3(offset.x, offset.y, offset.z);
+
+        //smoothed locking in, please don't take it out, tested.
+        Vector3 direction = (secondaryTarget.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 8f);
+        lockedSpeed += Time.deltaTime;
+
+        if (lockedSpeed >= 0.8)
+        {
+          transform.LookAt(secondaryTarget);
+        }
         
-        transform.LookAt(secondaryTarget);
     }
     
     // Applies vertical camera movement according to relevant input
