@@ -15,20 +15,47 @@ public class PlayerCharacterRotation : MonoBehaviour
             {
                 if (CameraController.instance.isLocked)
                 {
-                    transform.LookAt(PlayerMovement.instance.directionVector);
+                    //Smooth Rolling while lockedon[Isaac]
+                    Vector3 direction = (PlayerMovement.instance.directionVector);
+                    Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
+                    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+
+                    //transform.LookAt(PlayerMovement.instance.directionVector);
+                   
                 }
                 else
                 {
-                    if (!PlayerMovement.instance.movementLocked)
+                    Smoothen();
+
+                    if (!PlayerMovement.instance.movementLocked && !PlayerController.instance.GetPlayerState(PlayerActions.Rolling))
                     {
                         Transform t = CameraController.instance.currentCamera.transform;
                         t.eulerAngles = new Vector3(0, t.eulerAngles.y, t.eulerAngles.z);
 
-                        transform.LookAt(t.TransformDirection(PlayerMovement.instance.directionVector));
+                        Vector3 direction = (t.TransformDirection(PlayerMovement.instance.directionVector));
+                        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
+                        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+
+                        //Isaac, Fixed the rolling bug with glitchy turning :)
+                        //transform.LookAt(t.TransformDirection(PlayerMovement.instance.directionVector));
                         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, transform.eulerAngles.z);
                     }
                 }
             }
+
+
         }
     }
+    //smoothen while rolling
+    void Smoothen()
+    {
+        Transform t = CameraController.instance.currentCamera.transform;
+        t.eulerAngles = new Vector3(0, t.eulerAngles.y, t.eulerAngles.z);
+
+        Vector3 direction = (t.TransformDirection(PlayerMovement.instance.directionVector));
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 15f);
+    }
+
+  
 }

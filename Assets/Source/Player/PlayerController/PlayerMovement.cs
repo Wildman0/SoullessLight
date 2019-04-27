@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 	private Vector3 movementVector;
 
 	[SerializeField] private float rollTime = 1.0f;
+    private float rollLock;
 	[SerializeField] private float rollInvincibilityTime = 0.4f;
 	[SerializeField] private float rollSpeed = 4.5f;
 	[SerializeField] private float additionalTimeBetweenRolls = 1.0f;
@@ -56,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
 	void Start()
 	{
 		SetPlayerState += PlayerController.instance.OnSetPlayerState;
+        rollLock = rollTime - 0.1f;
 	}
 
 	private void Update()
@@ -127,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
 			0,
 			PlayerController.instance.inputController.forward - PlayerController.instance.inputController.back);
 		
-		movementTarget = Vector3.Lerp(vec, movementTarget, directionChangeSpeed);
+		movementTarget =  Vector3.Slerp(vec, movementTarget, directionChangeSpeed);
 		
 		if (CameraController.instance.isLocked)
 		{
@@ -245,7 +247,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		SetPlayerState(PlayerActions.Rolling, true);
 		PlayerAnim.instance.Roll();
-		LockMovement(rollTime);
+		LockMovement(rollLock);
 		yield return new WaitForSeconds(additionalTimeBetweenRolls);
 		SetPlayerState(PlayerActions.Rolling, false);
 	}
