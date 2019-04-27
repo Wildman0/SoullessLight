@@ -21,8 +21,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float healCool = 3f;
 	
 	public int healCount = 3;
+    public float increasedAmount;
 
-	public bool isInvincible;
+    public bool isInvincible;
 	private bool isHealing;
 
 	//Creates a singleton instance
@@ -63,8 +64,14 @@ public class PlayerHealth : MonoBehaviour
             NearDeath.SetBool("NearDeath", false);
             LowHealthVibration.instance.SetVibration(false);
         }
-	}
-	
+
+        if (PlayerController.instance.GetPlayerState(PlayerActions.Healing))
+        {
+            HealingUI();
+        }
+    }
+
+
 	//Heals the player
 	void Heal()
 	{
@@ -73,9 +80,9 @@ public class PlayerHealth : MonoBehaviour
 		
 		UI.instance.Healing.GetComponent<Image>().enabled = true;
 		UI.instance.Healing.GetComponent<Animator>().SetTrigger("IsDamaged");
-		
-		health += healAmount;
-		healCount -= 1;
+
+        increasedAmount = health + healAmount;
+        healCount -= 1;
 		
 		UI.instance.SetPlayerHealthChargeCount(healCount);
 
@@ -87,8 +94,23 @@ public class PlayerHealth : MonoBehaviour
 		StartCoroutine(DisableHealing(healTime));
 	}
 
-	//Disallows the player from healing for a given amount of time
-	private IEnumerator DisableHealing(float time)
+    void HealingUI()
+    {
+
+        if (increasedAmount > health)
+        {
+            health += healAmount * Time.fixedDeltaTime;
+        }
+
+
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
+
+    //Disallows the player from healing for a given amount of time
+    private IEnumerator DisableHealing(float time)
 	{
 		SetPlayerState(PlayerActions.Healing, true);
 		isHealing = true;

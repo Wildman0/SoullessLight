@@ -78,7 +78,7 @@ public class UI : MonoBehaviour
         if (f < PlayerHealth.instance.health + 0.01f &&
             Mathf.Abs(PlayerHealth.instance.health - playerHealthBar.fillAmount) > 0.015f)
         {
-            f += 0.01f;
+            f += 0.01f * Time.fixedDeltaTime;
         }
         else if (f > PlayerHealth.instance.health &&
                  Mathf.Abs(PlayerHealth.instance.health - playerHealthBar.fillAmount) > 0.015f)

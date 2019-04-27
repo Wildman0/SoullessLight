@@ -32,11 +32,15 @@ public class PlayerRotation : MonoBehaviour
 
 	private void LookForward()
 	{
-        Vector3 direction = (Reset);
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+        if (!PlayerController.instance.GetPlayerState(PlayerActions.Rolling))
+        {
+            Vector3 direction = (Reset);
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+        }
+       
 
-        if (gradualRotate >= 1)
+        if (gradualRotate >= 1 && !PlayerController.instance.GetPlayerState(PlayerActions.Rolling))
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
