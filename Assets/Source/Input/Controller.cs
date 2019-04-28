@@ -11,7 +11,7 @@ public class Controller : MonoBehaviour
     void Awake()
     {
         instance = this;
-        Debug.Log(instance);
+        //Debug.Log(instance);
     }
 
     //Makes a given controller vibrate at a given intensity for a given amount of time

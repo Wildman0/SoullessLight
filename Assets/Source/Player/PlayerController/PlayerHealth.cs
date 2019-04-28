@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
     public float increasedAmount;
 
     public bool isInvincible;
+    [SerializeField] private bool debugDeath;
 	private bool isHealing;
 
 	//Creates a singleton instance
@@ -38,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
 	void Start()
 	{
 		SetPlayerState += PlayerController.instance.OnSetPlayerState;
+        debugDeath = false;
 	}
 	
 	void FixedUpdate()
@@ -69,6 +71,11 @@ public class PlayerHealth : MonoBehaviour
         {
             HealingUI();
         }
+        if (debugDeath)
+        {
+            Death();
+        }
+
     }
 
 
@@ -130,6 +137,7 @@ public class PlayerHealth : MonoBehaviour
 			if (health < 0.01f)
 			{
 				Death();
+                debugDeath = false;
 			}
 			else
 			{

@@ -11,6 +11,6 @@ public class LastFrameData : MonoBehaviour
     void LateUpdate()
     {
         position = transform.position;
-        Debug.Log("Yeet");
+        //Debug.Log("Yeet");
     }
 }

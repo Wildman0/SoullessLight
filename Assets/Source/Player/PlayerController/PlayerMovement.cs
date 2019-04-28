@@ -44,20 +44,25 @@ public class PlayerMovement : MonoBehaviour
 	public Vector3 directionVector;
 	public float velocity;
 
+    private Spawning sp;
+
 	public Vector3 dirVector;
 	
 	private void Awake()
 	{
 		if (!instance)
 			instance = this;
-		else
-			Debug.LogError("More than one instance of PlayerMovement");
+		//else
+			//Debug.LogError("More than one instance of PlayerMovement");
 	}
 
 	void Start()
 	{
 		SetPlayerState += PlayerController.instance.OnSetPlayerState;
         rollLock = rollTime - 0.1f;
+
+        sp = GameObject.FindGameObjectWithTag("SP").GetComponent<Spawning>();
+        transform.position = sp.lastCheckpointPos;
 	}
 
 	private void Update()
