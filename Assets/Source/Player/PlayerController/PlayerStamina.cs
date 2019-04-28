@@ -13,6 +13,9 @@ public class PlayerStamina : MonoBehaviour
 	[SerializeField] float maxStamina = 1.0f;
 	[SerializeField] float staminaReplenishPerSecond = 0.3f;
 	[SerializeField] float runningStaminaReductionPerSecond = 0.3f;
+    private float staminaWait = 0.5f;
+
+
 	public float rollingStaminaReduction = 0.2f;
     public Animator staminaLow;
 
@@ -28,13 +31,21 @@ public class PlayerStamina : MonoBehaviour
 	{
 		if (!IsUsingStaminaActions() && !isUsingStaminaAction)
 		{
-			ReplenishStamina();
+            staminaWait += Time.deltaTime;
+            
+            if (staminaWait > 0.5f) //Mini pause after using stamina [isaac]
+            {
+                ReplenishStamina();
+            }
 		}
 		else
 		{
-			if (PlayerController.instance.GetPlayerState(PlayerActions.Sprinting))
+            staminaWait = 0;
+
+            if (PlayerController.instance.GetPlayerState(PlayerActions.Sprinting))
 			{
 				ReduceStamina();
+                
 			}
 		}
 

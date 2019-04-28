@@ -18,7 +18,9 @@ public class UI : MonoBehaviour
     public Image StaminaLow;
 
     public Image playerHealthBar;
+    public Image playerHealthBarBehind;
     public Image playerStaminaBar;
+    public Image playerStaminaBarBehind;
     public Image bossHealthBar;
     public Image bossAttacked;
     public Image playerAttacked;
@@ -39,6 +41,9 @@ public class UI : MonoBehaviour
     public Color healCoolDownDone = Color.yellow;
     public Color healCoolDownStart = new Color(58, 98, 100, 22);
 
+    private float virtualHealth;
+    private float virtualStamina;
+
     /// <summary>
     /// Sets a given image to a given condition
     /// </summary>
@@ -57,6 +62,11 @@ public class UI : MonoBehaviour
             Debug.LogError("More than one instance of UI in the scene");
         
         bossHealth = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHealth>();
+        playerHealthBarBehind.fillAmount = PlayerHealth.instance.health;
+
+        //Setting Up Virtual Modifiers
+        virtualHealth = 1f;
+        virtualStamina = 1f;
     }
 
     //Runs every frame
@@ -72,8 +82,10 @@ public class UI : MonoBehaviour
     private void PlayerHealthBar()
     {
         playerHealthBar.fillAmount = PlayerHealth.instance.health;
+        
 
         float f = playerHealthBar.fillAmount;
+        //float v = playerHealthBarBehind.fillAmount;
 
         if (f < PlayerHealth.instance.health + 0.01f &&
             Mathf.Abs(PlayerHealth.instance.health - playerHealthBar.fillAmount) > 0.015f)
@@ -84,13 +96,27 @@ public class UI : MonoBehaviour
                  Mathf.Abs(PlayerHealth.instance.health - playerHealthBar.fillAmount) > 0.015f)
         {
             f -= 0.01f;
+           
         }
 
         playerHealthBar.fillAmount = f;
+        playerHealthBarBehind.fillAmount = virtualHealth;
+        
         
         playerHealthBar.color = Color.Lerp(playerHealthBarEmpty,
                                            playerHealthBarFull,
                                            PlayerHealth.instance.health);
+        //VirtualHealth Smoothing
+        if (virtualHealth > PlayerHealth.instance.health)
+        {
+            virtualHealth -= 0.05f * Time.deltaTime * 2f;
+            Debug.Log(virtualHealth);
+        }
+        if (virtualHealth < PlayerHealth.instance.health)
+        {
+            virtualHealth = PlayerHealth.instance.health;
+            Debug.Log(virtualHealth);
+        }
     }
 
     //Manages the fill level of the stamina UI bar
@@ -100,6 +126,26 @@ public class UI : MonoBehaviour
         playerStaminaBar.color = Color.Lerp(playerStaminaBarEmpty,
                                             playerStaminaBarFull,
                                             PlayerStamina.instance.stamina);
+
+        playerStaminaBarBehind.fillAmount = virtualStamina;
+
+        //Apologies for messyness, I tried using "isUsingStaminaAction" but it ignored 
+        if (!PlayerController.instance.GetPlayerState(PlayerActions.Attacking) &&
+            (!PlayerController.instance.GetPlayerState(PlayerActions.Rolling)) &&
+            (!PlayerController.instance.GetPlayerState(PlayerActions.Sprinting)))
+            //Virtual Stamina Smoothing 
+        {
+            if (virtualStamina > PlayerStamina.instance.stamina)
+            {
+                virtualStamina -= 0.05f * Time.deltaTime * 5f;
+            }
+       
+        }
+
+        if (virtualStamina < PlayerStamina.instance.stamina)
+        {
+            virtualStamina = PlayerStamina.instance.stamina;
+        }
     }
 
     //Manages the fill level of the boss health UI bar
