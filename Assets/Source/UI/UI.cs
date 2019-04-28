@@ -60,7 +60,8 @@ public class UI : MonoBehaviour
             instance = this;
         else
             Debug.LogError("More than one instance of UI in the scene");
-        
+
+        //OrbHurt.SetActive(false);
         bossHealth = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHealth>();
         playerHealthBarBehind.fillAmount = PlayerHealth.instance.health;
 
