@@ -54,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
             LightAttack();
         }
         else if (FloatCasting.ToBool(PlayerController.instance.inputController.heavyAttackDown) && canAttack &&
-                 CanHeavyAttack())
+                 CanHeavyAttack() && (!PlayerController.instance.GetPlayerState(PlayerActions.HeavyAttacking)))
         {
             HeavyAttack();
         }
@@ -108,10 +108,10 @@ public class PlayerAttack : MonoBehaviour
         PlayerStamina.instance.isUsingStaminaAction = true;
         canAttack = false;
         yield return new WaitForSeconds(heavyAttackMovementLockTime);
-        canAttack = true;
         PlayerStamina.instance.isUsingStaminaAction = false;
         
         yield return new WaitForSeconds(additionalTimeBetweenHeavyAttacks);
+        canAttack = true;
         PlayerController.instance.playerState[(int)PlayerActions.HeavyAttacking] = false;
     }
 
