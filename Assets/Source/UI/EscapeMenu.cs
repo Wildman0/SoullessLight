@@ -37,7 +37,7 @@ public class EscapeMenu : MonoBehaviour
 
         if (!screenActive)
         {
-            Debug.Log("Open");
+            //Debug.Log("Open");
             escapeMenu.SetActive(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -45,7 +45,7 @@ public class EscapeMenu : MonoBehaviour
         }
         else if (screenActive)
         {
-            Debug.Log("Close");
+            //Debug.Log("Close");
             escapeMenu.SetActive(false);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;

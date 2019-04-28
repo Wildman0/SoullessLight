@@ -31,8 +31,8 @@ public class PlayerHealth : MonoBehaviour
 	{
 		if (!instance)
 			instance = this;
-		else 
-			Debug.LogError("More than one instance of PlayerHealth");
+		//else 
+			//Debug.LogError("More than one instance of PlayerHealth");
 	}
 
 	void Start()
@@ -146,7 +146,7 @@ public class PlayerHealth : MonoBehaviour
 		if (FloatCasting.ToBool(PlayerController.instance.inputController.healDown) && CanHeal())
 		{
 			Heal();
-			Debug.Log("Heal");
+			//Debug.Log("Heal");
 		}
 	}
  

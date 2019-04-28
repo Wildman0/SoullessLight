@@ -32,8 +32,8 @@ public class PlayerAttack : MonoBehaviour
     {
         if (!instance)
             instance = this;
-        else
-            Debug.LogError("More than one instance of PlayerAttack");
+        //else
+            //Debug.LogError("More than one instance of PlayerAttack");
     }
 
     private void Start()
@@ -118,7 +118,7 @@ public class PlayerAttack : MonoBehaviour
     //Takes a given amount of health away from the boss
     public void DamageBoss(float damage)
     {
-        Debug.Log("Damage");
+        //Debug.Log("Damage");
         bossHealth.Damage(damage); 
         Controller.Vibrate(0, 0.5f, 0.5f);
     }
@@ -132,7 +132,7 @@ public class PlayerAttack : MonoBehaviour
 
             if (bossHealth == null)
             {
-                Debug.LogError("Was unable to find boss");
+                //Debug.LogError("Was unable to find boss");
             }
 
         bossGameObject = bossHealth.gameObject;

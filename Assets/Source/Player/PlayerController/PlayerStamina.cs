@@ -23,8 +23,8 @@ public class PlayerStamina : MonoBehaviour
 	{
 		if (!instance)
 			instance = this;
-		else
-			Debug.LogError("More than one instance of PlayerStamina");
+		//else
+			//Debug.LogError("More than one instance of PlayerStamina");
 	}
 
 	void Update()

@@ -58,8 +58,8 @@ public class UI : MonoBehaviour
     {
         if (!instance)
             instance = this;
-        else
-            Debug.LogError("More than one instance of UI in the scene");
+        //else
+            //Debug.LogError("More than one instance of UI in the scene");
 
         //OrbHurt.SetActive(false);
         bossHealth = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHealth>();
@@ -111,12 +111,12 @@ public class UI : MonoBehaviour
         if (virtualHealth > PlayerHealth.instance.health)
         {
             virtualHealth -= 0.05f * Time.deltaTime * 2f;
-            Debug.Log(virtualHealth);
+            //Debug.Log(virtualHealth);
         }
         if (virtualHealth < PlayerHealth.instance.health)
         {
             virtualHealth = PlayerHealth.instance.health;
-            Debug.Log(virtualHealth);
+            //Debug.Log(virtualHealth);
         }
     }
 

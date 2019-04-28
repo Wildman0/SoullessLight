@@ -14,7 +14,7 @@ public class MusicController : MonoBehaviour
 		if (!instance)
 			instance = this;
 		else
-			Debug.LogError("More than one instance of MusicController in the scene");
+			//Debug.LogError("More than one instance of MusicController in the scene");
 		
 		bossBattleMusic = FMODUnity.RuntimeManager.CreateInstance("event:/MainTheme");
 		bossBattleMusic.start();

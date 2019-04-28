@@ -199,7 +199,7 @@ public class HitReg : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(0.05f);
             Time.timeScale = 1f;
-            Debug.Log("HitStop");
+            //Debug.Log("HitStop");
         }
     }
 
@@ -245,11 +245,11 @@ public class HitReg : MonoBehaviour
                     {
                         Hit(hit);
 
-                        if (debug)
-                            Debug.DrawLine(hitRegNodeOldPositions[i],
-                                hitRegNodeCurrentPositions[i],
-                                Color.red,
-                                0.5f);
+                        //if (debug)
+                            //Debug.DrawLine(hitRegNodeOldPositions[i],
+                                //hitRegNodeCurrentPositions[i],
+                                //Color.red,
+                                //0.5f);
                     }
 
                     if (hit.transform.tag == "Rat")
@@ -260,11 +260,11 @@ public class HitReg : MonoBehaviour
             }
             else
             {
-                if (debug)
-                    Debug.DrawLine(hitRegNodeOldPositions[i],
-                        hitRegNodeCurrentPositions[i],
-                        Color.green,
-                        0.5f);
+                //if (debug)
+                    //Debug.DrawLine(hitRegNodeOldPositions[i],
+                        //hitRegNodeCurrentPositions[i],
+                        //Color.green,
+                        //0.5f);
             }
         }
     }

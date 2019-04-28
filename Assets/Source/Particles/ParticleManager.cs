@@ -66,7 +66,7 @@ public class ParticleManager : MonoBehaviour {
             Destroy(NewObject, 8);
             
 
-            Debug.Log(animClipName + dontDuplicate);   
+            //Debug.Log(animClipName + dontDuplicate);   
             
 
         }

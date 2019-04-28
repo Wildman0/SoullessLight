@@ -29,8 +29,8 @@ public class PlayerAnim : MonoBehaviour
     {
         if (!instance)
             instance = this;
-        else 
-            Debug.LogError("More than one instance of PlayerAnim in the scene");
+        //else 
+            //Debug.LogError("More than one instance of PlayerAnim in the scene");
         
         go = FindObjectOfType<GameManager>().gameObject;
         particleManager = go.GetComponent<ParticleManager>();
@@ -63,7 +63,7 @@ public class PlayerAnim : MonoBehaviour
     public void HeavyAttack()
     {
         anim.SetTrigger("IsHeavyAtt");
-        Debug.Log("Attack");
+        //Debug.Log("Attack");
     }
 
     //Player idle animation
@@ -94,18 +94,6 @@ public class PlayerAnim : MonoBehaviour
         anim.SetBool("IsRolling", true);
         if (!MusicSource2.isPlaying)
             MusicSource2.Play();
-    }
-
-    //Player roll right animation
-    public void RollRight()
-    {
-        anim.SetBool("RollRight", true);
-    }
-
-    //Player roll left animation
-    public void RollLeft()
-    {
-        anim.SetBool("RollLeft", true);
     }
 
     //Player walk animation

@@ -58,6 +58,6 @@ public class BossHealth : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(5f);
         audioSource2.Play();
-        Debug.Log("Conclusion");
+        //Debug.Log("Conclusion");
     }
 }

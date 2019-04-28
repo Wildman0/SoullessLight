@@ -33,6 +33,6 @@ public class BossPhases : ScriptableObject
 
     public void Start()
     {
-        Debug.Log("OK");
+        //Debug.Log("OK");
     }
 }

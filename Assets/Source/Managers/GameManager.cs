@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     {
         if (!instance)
             instance = this;
-        else
-            Debug.Log("More than one instance of GameManager in the scene");
+        //else
+            //Debug.Log("More than one instance of GameManager in the scene");
         
         switch (controller)
         {
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
                 break;
 
             default:
-                Debug.LogError("Invalid control scheme given");
+                //Debug.LogError("Invalid control scheme given");
                 break;
         }
     }

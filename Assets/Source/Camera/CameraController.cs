@@ -44,7 +44,7 @@ public class CameraController : MonoBehaviour
         if (!instance)
             instance = this;
         else
-            Debug.LogError("More than one instance of CameraController in the scene");
+            //Debug.LogError("More than one instance of CameraController in the scene");
         
         currentCamera = gameObject.GetComponent<Camera>();
         cinemachineBrain = gameObject.GetComponent<CinemachineBrain>();
@@ -183,7 +183,7 @@ public class CameraController : MonoBehaviour
                 distances[i] = 100000.0f;
         }
 
-        Debug.Log(go[Array.IndexOf(distances, distances.Min())]);
+        //Debug.Log(go[Array.IndexOf(distances, distances.Min())]);
         return go[Array.IndexOf(distances, distances.Min())];
     }
 

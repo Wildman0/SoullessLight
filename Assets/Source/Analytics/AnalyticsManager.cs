@@ -18,8 +18,8 @@ public class AnalyticsManager : MonoBehaviour
 
 		if (!current)
 			current = this;
-		else
-			Debug.LogError("More than one active AnalyticsManager");
+		//else
+			//Debug.LogError("More than one active AnalyticsManager");
 	}
 
 	//Provides a template game status file

@@ -16,8 +16,8 @@ public class LowHealthVibration : MonoBehaviour
 	{
 		if (!instance)
 			instance = this;
-		else
-			Debug.LogError("More than one instance of LowHealth Vibration in the scene");
+		//else
+			//Debug.LogError("More than one instance of LowHealth Vibration in the scene");
 	}
 
 	//Toggles the vibration on/off
