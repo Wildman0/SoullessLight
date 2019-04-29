@@ -29,6 +29,7 @@ public class HitReg : MonoBehaviour
     public AudioClip RatHit;
     public AudioSource RatSource;
     public AudioSource OrbHit;
+    public AudioSource OrbDeath;
 
     private RaycastHit hit;
 
@@ -38,6 +39,7 @@ public class HitReg : MonoBehaviour
 
     RatHealth ratHealth;
     public AnimController animController;
+   
 
     private bool isActive;
     private bool hasHit;
@@ -172,6 +174,13 @@ public class HitReg : MonoBehaviour
                 hasHit = true;
                 Controller.Vibrate(0, 0.5f, 0.5f);
                 StartCoroutine(HitBoss());
+                TutorialAnim.tutorialOrb.SetTrigger("OrbDamaged");
+                OrbHit.Play();
+
+                if (TutorialProjectile.health < 0.1)
+                {
+                    OrbDeath.Play();
+                }
             }
 
             if(tag[tagIndex] == "Rat")

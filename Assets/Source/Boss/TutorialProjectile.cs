@@ -12,6 +12,7 @@ public class TutorialProjectile : MonoBehaviour
     public GameObject spawn;
     public GameObject UIDisable;
     public Image healthUI;
+    private bool implode;
 
     public static float health = 3;
 
@@ -20,17 +21,20 @@ public class TutorialProjectile : MonoBehaviour
         enableMe.SetActive(false);
         doorBlocker = GameObject.Find("DoorBlocker");
         StartCoroutine(SpawnComplete());
+        implode = false;
+
 
     
     }
 
     private void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && !implode)
         {
             Implode();
             doorBlocker.active = false;
-            Destroy(gameObject);
+            Destroy(gameObject, 0.1f);           
+            
         }
 
         if (health <= 0.02f)
@@ -41,6 +45,7 @@ public class TutorialProjectile : MonoBehaviour
 
     void Implode()
     {
+        implode = true;
         GameObject implo = Instantiate(implosion, transform.position, Quaternion.identity);
         implo.GetComponent<ParticleSystem>().Play();
     }
