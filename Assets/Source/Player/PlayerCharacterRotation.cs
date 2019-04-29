@@ -21,7 +21,6 @@ public class PlayerCharacterRotation : MonoBehaviour
                     transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
 
                     //transform.LookAt(PlayerMovement.instance.directionVector);
-                   
                 }
                 else
                 {
@@ -32,7 +31,7 @@ public class PlayerCharacterRotation : MonoBehaviour
                         Transform t = CameraController.instance.currentCamera.transform;
                         t.eulerAngles = new Vector3(0, t.eulerAngles.y, t.eulerAngles.z);
 
-                        Vector3 direction = (t.TransformDirection(PlayerMovement.instance.directionVector));
+                        Vector3 direction = t.TransformDirection(PlayerMovement.instance.directionVector);
                         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
                         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
 
@@ -42,11 +41,10 @@ public class PlayerCharacterRotation : MonoBehaviour
                     }
                 }
             }
-
-
         }
     }
-    //smoothen while rolling
+    
+    // Smoothen while rolling
     void Smoothen()
     {
         Transform t = CameraController.instance.currentCamera.transform;
@@ -56,6 +54,4 @@ public class PlayerCharacterRotation : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, direction.y, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 15f);
     }
-
-  
 }
