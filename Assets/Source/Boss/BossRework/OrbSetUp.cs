@@ -16,6 +16,7 @@ public class OrbSetUp : MonoBehaviour
     public int animationIndex;
     public int orbAmount;
     private int amountCheck;
+    private float bossHealth;
 
     public string orbName;
 
@@ -37,6 +38,8 @@ public class OrbSetUp : MonoBehaviour
         OrbUi.SetActive(false);
 
         health = .5f;
+
+        bossHealth = GetComponent<BossHealth>().health;
     }
 
     private void Update()
@@ -90,14 +93,14 @@ public class OrbSetUp : MonoBehaviour
 
     private IEnumerator ActivationDelay()
     {
-        if(firstOrb == false)
+        if(firstOrb == false && bossHealth < 1f)
         {
             yield return new WaitForSeconds(7);
             ActivateOrb();
 
             firstOrb = true;
         }
-        else
+        else if (bossHealth < 1f)
         {
             yield return new WaitForSeconds(2);
             ActivateOrb();
