@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ResetHealth : MonoBehaviour {
 
-    PlayerHealth pH;
+    public PlayerHealth pH;
 
 
 
-    private void Start()
+    public void Start()
     {
         pH = PlayerHealth.instance;
 
@@ -21,6 +21,7 @@ public class ResetHealth : MonoBehaviour {
 
             pH.healCount = 3;
             pH.health = 1f;
+            UI.instance.HealUi();
         }
     }
 }

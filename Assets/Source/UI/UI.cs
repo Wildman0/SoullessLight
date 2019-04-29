@@ -172,4 +172,12 @@ public class UI : MonoBehaviour
             playerHealCharges[i].enabled = false;
         }
     }
+
+    public void HealUi()
+    { 
+            playerHealCharges[1].enabled = true;
+            playerHealCharges[2].enabled = true;
+            playerHealCharges[3].enabled = true;
+        
+    }
 }
