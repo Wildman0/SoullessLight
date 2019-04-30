@@ -9,6 +9,7 @@ public class SetMasterVolume : MonoBehaviour
 
     public AudioMixer mixer;
     public Slider slider;
+    public Button buttonSelect;
 
     void Start()
     {
@@ -18,5 +19,12 @@ public class SetMasterVolume : MonoBehaviour
     {
         mixer.SetFloat("masterVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MasterVolume", sliderValue);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.JoystickButton1))
+            buttonSelect.Select();
+
     }
 }

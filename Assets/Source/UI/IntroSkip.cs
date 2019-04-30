@@ -12,5 +12,7 @@ public class IntroSkip : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
             introScreen.SetActive(false);
 
+        if (Input.GetKeyDown(KeyCode.JoystickButton7))
+            introScreen.SetActive(false);
     }
 }
