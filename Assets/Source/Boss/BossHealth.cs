@@ -14,7 +14,7 @@ public class BossHealth : MonoBehaviour
     Phase phase;
 
     [Range(0, 1)]
-    public float health = 0f;
+    public float health = 1.0f;
 
     bool active;
 
@@ -48,13 +48,13 @@ public class BossHealth : MonoBehaviour
         {
             phase.anim.SetBool("IsDead", true);
             ui.BossDefeated.GetComponent<Image>().enabled = true;
-            ui.BossDefeated.GetComponent<Animator>().SetTrigger("IsDefeated");
+            ui.BossDefeated.GetComponent<Animator>().SetTrigger("IsDefeated");           
             BossDefeated.SetActive(false);
             audioSource.Stop();
             audioSource1.Play();
             StartCoroutine(Conclusion());
             StartCoroutine(EndState());
-            ui.Endstate.GetComponent<Animator>().SetTrigger("isEnd");
+           
 
             active = true;
         }
@@ -69,14 +69,13 @@ public class BossHealth : MonoBehaviour
 
     private IEnumerator EndState()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(6f);
+        ui.Endstate.GetComponent<Animator>().SetTrigger("isEnd");
         //Endstate();
     }
 
-    //public void Endstate()
-    //{
-        //UI.instance.Endstate.GetComponent<Image>().enabled = true;
-       
-        //I.instance.Endstate.GetComponent<Animator>().Play("Death");
-   // }
+    public void Endstate()
+    {
+        UI.instance.Endstate.GetComponent<Image>().enabled = true;             
+    }
 }
