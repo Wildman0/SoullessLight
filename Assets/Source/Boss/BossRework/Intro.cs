@@ -32,6 +32,7 @@ public class Intro : MonoBehaviour
             phase.anim.SetBool("Start", phase.anim.GetCurrentAnimatorStateInfo(0).IsName("Start"));
             cameraShake = true;
             bossUI.SetActive(true);
+            MusicController.instance.SetBossStageParameter(1);
         }
         else if (phase.anim != phase.anim.GetCurrentAnimatorStateInfo(0).IsName("Start"))
         {

@@ -196,6 +196,10 @@ public class Phase : MonoBehaviour
 
     public void fmod()
     {
+        if(bossHealth.health >= 0.99f)
+        {
+            MusicController.instance.SetBossStageParameter(1);
+        }
         if(currentPhase.phaseName == "PhaseTwo")
         {
             MusicController.instance.SetBossStageParameter(2);
@@ -204,7 +208,7 @@ public class Phase : MonoBehaviour
         {
             MusicController.instance.SetBossStageParameter(3);
         }
-        else if(bossHealth.health > 0.1f)
+        else if(bossHealth.health < 0.1f)
         {
             MusicController.instance.SetBossStageParameter(4);
         }
