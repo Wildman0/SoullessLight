@@ -23,6 +23,7 @@ public class UI : MonoBehaviour
     public Image playerStaminaBar;
     public Image playerStaminaBarBehind;
     public Image bossHealthBar;
+    public Image bossVirtualBar;
     public Image bossAttacked;
     public Image playerAttacked;
     public Image BossDefeated;
@@ -44,6 +45,8 @@ public class UI : MonoBehaviour
 
     private float virtualHealth;
     private float virtualStamina;
+    private float bossVirtualHealth;
+    public bool bossVirtual;
 
     /// <summary>
     /// Sets a given image to a given condition
@@ -69,12 +72,18 @@ public class UI : MonoBehaviour
         //Setting Up Virtual Modifiers
         virtualHealth = 1f;
         virtualStamina = 1f;
+        bossVirtualHealth = 1f;
+        bossVirtual = false;
     }
 
     //Runs every frame
     public void Update()
     {
-        BossHealthBar();
+        if (bossHealthBar)
+        {
+            BossHealthBar();
+        }
+        
         PlayerHealthBar();
         PlayerStaminaBar();
         OrbHealth();
@@ -157,6 +166,23 @@ public class UI : MonoBehaviour
         bossHealthBar.color = Color.Lerp(playerHealthBarEmpty,
                                          playerHealthBarFull,
                                          PlayerHealth.instance.health);
+
+        bossVirtualBar.fillAmount = bossVirtualHealth;
+
+        if (bossVirtual)
+        {
+            if (bossVirtualHealth > bossHealth.health)
+            {
+                bossVirtualHealth -= 0.05f * Time.deltaTime * 0.5f;
+
+            }
+            if (bossVirtualHealth < bossHealth.health)
+            {
+                bossVirtualHealth = bossHealth.health;
+
+            }
+        }
+       
     }
 
     private void OrbHealth()

@@ -93,7 +93,7 @@ public class OrbSetUp : MonoBehaviour
 
     private IEnumerator ActivationDelay()
     {
-        if(firstOrb == false && bossHealth <= 0.9f)
+        if(firstOrb == false)
         {
             yield return new WaitForSeconds(7);
             ActivateOrb();

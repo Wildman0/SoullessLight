@@ -6,11 +6,15 @@ using UnityEngine.UI;
 
 
 public class BossHealth : MonoBehaviour
+
+    
 {
+    public static BossHealth instance;
+
     Phase phase;
 
     [Range(0, 1)]
-    public float health = 0;
+    public float health = 0f;
 
     bool active;
 
