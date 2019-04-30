@@ -49,6 +49,8 @@ public class BossHealth : MonoBehaviour
             audioSource.Stop();
             audioSource1.Play();
             StartCoroutine(Conclusion());
+            StartCoroutine(EndState());
+            ui.Endstate.GetComponent<Animator>().SetTrigger("isEnd");
 
             active = true;
         }
@@ -60,4 +62,17 @@ public class BossHealth : MonoBehaviour
         audioSource2.Play();
         //Debug.Log("Conclusion");
     }
+
+    private IEnumerator EndState()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        //Endstate();
+    }
+
+    //public void Endstate()
+    //{
+        //UI.instance.Endstate.GetComponent<Image>().enabled = true;
+       
+        //I.instance.Endstate.GetComponent<Animator>().Play("Death");
+   // }
 }

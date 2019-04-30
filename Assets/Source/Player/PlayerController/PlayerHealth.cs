@@ -176,5 +176,6 @@ public class PlayerHealth : MonoBehaviour
 		
 		UI.instance.deathImage.GetComponent<Image>().enabled = true;
 		UI.instance.deathImage.GetComponent<Animator>().SetTrigger("isEnd");
+
 	}
 }

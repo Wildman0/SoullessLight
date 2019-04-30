@@ -16,6 +16,7 @@ public class UI : MonoBehaviour
     public Image deathImage;
     public Image Healing;
     public Image StaminaLow;
+    public Image Endstate;
 
     public Image playerHealthBar;
     public Image playerHealthBarBehind;
