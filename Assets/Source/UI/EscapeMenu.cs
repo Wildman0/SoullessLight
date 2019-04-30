@@ -29,6 +29,11 @@ public class EscapeMenu : MonoBehaviour
             ToggleEscape();
         }
 
+        if (Input.GetKeyDown(KeyCode.JoystickButton7))
+        {
+            ToggleEscape();
+        }
+
     }
 
     void ToggleEscape()
