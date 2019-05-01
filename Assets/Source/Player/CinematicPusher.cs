@@ -27,6 +27,7 @@ public class CinematicPusher : MonoBehaviour
 	{
 		transform.position = new Vector3(-63.0f, 47.2f, -26.2f);
 		isMoving = true;
+        StartCoroutine(DestroyAfterTime());
 	}
 
 	IEnumerator DestroyAfterTime()

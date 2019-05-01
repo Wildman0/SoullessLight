@@ -37,7 +37,12 @@ public class RatHealth : MonoBehaviour
     {
         Death();
         HealthUI();
-	}
+
+        if (isDead == true)
+        {
+            Destroy(lockOnGone);
+        }
+    }
 
     private void HealthUI()
     {
@@ -70,8 +75,10 @@ public class RatHealth : MonoBehaviour
             healthOutline.enabled = false;
             Destroy(lockOnGone);
             healthUI.enabled = false;
-            
+            lockOnGone.SetActive(false);
         }
+
+        
 
     }
 }

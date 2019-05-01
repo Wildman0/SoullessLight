@@ -51,5 +51,13 @@ MonoBehaviour:
     - animationClip: {fileID: 7400000, guid: c274be62fb938e349aed31b8d8f48b24, type: 2}
       attackDamage: 0.3
   longAttacks:
-    leftAttacks: []
-    rightAttacks: []
+    leftAttacks:
+    - animationClip: {fileID: 7400000, guid: ed26962518c7b9b43bc921a95354db79, type: 2}
+      attackDamage: 0
+    - animationClip: {fileID: 7400000, guid: ed26962518c7b9b43bc921a95354db79, type: 2}
+      attackDamage: 0
+    rightAttacks:
+    - animationClip: {fileID: 7400000, guid: ed26962518c7b9b43bc921a95354db79, type: 2}
+      attackDamage: 0
+    - animationClip: {fileID: 7400000, guid: ed26962518c7b9b43bc921a95354db79, type: 2}
+      attackDamage: 0
