@@ -41,6 +41,7 @@ public class OrbSetUp : MonoBehaviour
         health = .5f;
 
         bossHealth = GameObject.FindGameObjectWithTag("Boss").GetComponent<BossHealth>();
+        endIntermission = true;
     }
 
     private void Update()
@@ -94,7 +95,7 @@ public class OrbSetUp : MonoBehaviour
 
     private IEnumerator ActivationDelay()
     {
-        if(firstOrb == false)
+        if (firstOrb == false)
         {
             yield return new WaitForSeconds(7);
             ActivateOrb();
@@ -106,6 +107,11 @@ public class OrbSetUp : MonoBehaviour
             yield return new WaitForSeconds(2);
             ActivateOrb();
         }
+
+        //if (PlayerHealth.instance.health <= 0.01f)
+        //{
+            
+        //}
     }
 
     private void EndIntermission()
